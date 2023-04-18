@@ -1,0 +1,172 @@
+[
+  {
+    "key": "key.when.click",
+    "description": "Déclenche un click sur l'élément sélectionné",
+    "wording": "je clique"
+  },
+  {
+    "key": "key.when.headers.forUriAndMethod",
+    "description": "Positionne un ou plusieurs headers à la requête http indiquée et uniquement pour la méthode Http (GET / POST / etc...) passée en paramètre",
+    "wording": "je saisie le(s) header(s) pour l'Uri {string} et la methode {string}"
+  },
+  {
+    "key": "key.when.headers.forUri",
+    "description": "Positionne un ou plusieurs headers à la requête http indiquée",
+    "wording": "je saisie le(s) header(s) pour l'Uri {string}"
+  },
+  {
+    "key": "key.when.resetContext",
+    "description": "Supprime l'élément sélectionné et le timeout du contexte",
+    "wording": "je reinitialise le contexte"
+  },
+  {
+    "key": "key.when.timeout",
+    "description": "Positionne le timeout (en milliseconde) pour la recherche des éléments dans le dom",
+    "wording": "je positionne le timeout à {int} secondes"
+  },
+  {
+    "key": "key.when.type",
+    "description": "Saisit de la phrase passée en paramètre (utile par exemple de remplir un champ de formulaire)",
+    "wording": "je saisie le(s) mot(s) {string}"
+  },
+  {
+    "key": "key.when.visit",
+    "description": "Navigue vers l'Uri passé en paramètre (url complète étant constituée de la BASE_URL + Uri) ou navigue vers l'Url si ça commence par http:// ou https://",
+    "wording": "je visite l'Url {string}"
+  },
+  {
+    "key": "key.when.withinElement.ariaLabel",
+    "description": "Sélectionne l'élément dont l'aria-label est spécifié",
+    "wording": "je vais à l'intérieur de l'élément ayant pour aria-label {string}"
+  },
+  {
+    "key": "key.when.withinElement.selector",
+    "description": "Sélectionne l'élément dont le sélecteur est spécifié",
+    "wording": "je vais à l'intérieur de l'élément ayant pour sélecteur {string}"
+  },
+  {
+    "key": "key.when.withinElement.roleAndName",
+    "description": "Sélectionne l'élément dont le [rôle accessible](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles#aria_role_types) et le [nom accessible](https://russmaxdesign.github.io/html-elements-names/) sont spécifiés",
+    "wording": "je vais à l'intérieur de l'élément ayant pour rôle {string} et pour nom {string}"
+  },
+  {
+    "key": "key.when.withinElement.testId",
+    "description": "Sélectionne l'élément dont l'attribut data-testId est spécifié",
+    "wording": "je vais à l'intérieur de l'élément ayant pour testId {string}"
+  },
+  {
+    "key": "key.when.mock.withBody",
+    "description": "Simule une réponse d'API avec un contenu spécifique",
+    "wording": "je simule une requête {} sur l'uri {string} nommée {string} avec le contenu suivant {}"
+  },
+  {
+    "key": "key.when.mock.withFixture",
+    "description": "Simule une réponse d'API avec un fichier spécifique ayant pour extension .json, .js, .coffee, .html, .txt, .csv, .png, .jpg, .jpeg, .gif, .tif, .tiff, .zip",
+    "wording": "je simule une requête {} sur l'uri {string} nommée {string} avec le fichier suivant {}"
+  },
+  {
+    "key": "key.when.mock.withStatusCode",
+    "description": "Simule une réponse d'API avec un code http spécifique",
+    "wording": "je simule une requête {} sur l'uri {string} nommée {string} avec le code http {int}"
+  },
+  {
+    "key": "key.given.viewport.preset",
+    "description": "Configure les dimensions de la fenêtre avec à un des préréglages définit par Cypress: https://docs.cypress.io/api/commands/viewport#Preset",
+    "wording": "je redimensionne la fenêtre à la vue {string}"
+  },
+  {
+    "key": "key.given.viewport.withWidthAndHeight",
+    "description": "Configure les dimensions de la fenêtre à la largeur et la longueur spécifiées",
+    "wording": "je redimensionne la fenêtre avec une largeur de {int} px et une longueur de {int} px"
+  },
+  {
+    "key": "key.then.attributes.withValues",
+    "description": "Vérifie des attributs Html de l'élément sélectionné",
+    "wording": "je dois voir les attributs avec valeurs suivantes"
+  },
+  {
+    "key": "key.then.element.withAriaLabelAndContent",
+    "description": "Vérifie qu'un élément Html existe avec l'attribut aria-label et le contenu spécifiés",
+    "wording": "je dois voir un élément ayant pour aria-label {string} et pour contenu {string}"
+  },
+  {
+    "key": "key.then.element.withAriaLabel",
+    "description": "Vérifie qu'un élément Html existe avec l'attribut aria-label spécifié",
+    "wording": "je dois voir un élément ayant pour aria-label {string}"
+  },
+  {
+    "key": "key.then.element.withContent",
+    "description": "Vérifie qu'un élément Html existe avec le contenu spécifié",
+    "wording": "je dois voir un élément qui contient {string}"
+  },
+  {
+    "key": "key.then.element.withSelector",
+    "description": "Vérifie qu'un élément Html existe avec le sélecteur spécifié",
+    "wording": "'je dois voir un élément ayant pour sélecteur {string}'"
+  },
+  {
+    "key": "key.then.element.withRoleAndNameAndContentDisabled",
+    "description": "Vérifie qu'un élément Html existe avec le [rôle accessible](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles#aria_role_types), le [nom accessible](https://russmaxdesign.github.io/html-elements-names/) et le contenu spécifiés, et avec l'attribut disabled à true",
+    "wording": "je dois voir un élément avec le rôle {string} et le nom {string} et pour contenu {string} inactif"
+  },
+  {
+    "key": "key.then.element.withRoleAndNameAndContentEnabled",
+    "description": "Vérifie qu'un élément Html existe avec le [rôle accessible](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles#aria_role_types), le [nom accessible](https://russmaxdesign.github.io/html-elements-names/) et le contenu spécifiés et avec l'attribut disabled à false",
+    "wording": "je dois voir un élément avec le rôle {string} et le nom {string} et pour contenu {string} actif"
+  },
+  {
+    "key": "key.then.element.withRoleAndNameAndContent",
+    "description": "Vérifie qu'un élément Html existe avec le [rôle accessible](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles#aria_role_types), le [nom accessible](https://russmaxdesign.github.io/html-elements-names/) et le contenu spécifiés",
+    "wording": "je dois voir un élément avec le rôle {string} et le nom {string} et pour contenu {string}"
+  },
+  {
+    "key": "key.then.element.withRoleAndName",
+    "description": "Vérifie qu'un élément Html existe avec le [rôle accessible](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles#aria_role_types) et le [nom accessible](https://russmaxdesign.github.io/html-elements-names/) spécifiés",
+    "wording": "je dois voir un élément avec le rôle {string} et le nom {string}"
+  },
+  {
+    "key": "key.then.element.withTestId",
+    "description": "Vérifie qu'un élément Html existe avec l'attribut data-testid spécifié",
+    "wording": "je dois voir un élément ayant pour testId {string}"
+  },
+  {
+    "key": "key.then.list.withNameAndContent",
+    "description": "Vérifie qu'il existe une liste avec le nom et le contenu spécifiés",
+    "wording": "je dois voir des elements de la liste ayant pour nom {string}"
+  },
+  {
+    "key": "key.then.element.not.withContent",
+    "description": "Vérifie qu'un élément Html n'existe pas avec le contenu spécifié",
+    "wording": "je ne dois pas voir un élément qui contient {string}"
+  },
+  {
+    "key": "key.then.element.not.withTestId",
+    "description": "Vérifie qu'un élément Html n'existe pas avec l'attribut data-testid spécifié",
+    "wording": "je ne dois pas voir un élément ayant pour testId {string}"
+  },
+  {
+    "key": "key.then.element.not.withRoleAndName",
+    "description": "Vérifie qu'un élément Html n'existe pas avec le [rôle accessible](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles#aria_role_types) et le [nom accessible](https://russmaxdesign.github.io/html-elements-names/) spécifiés",
+    "wording": "je ne dois pas voir un élément avec le rôle {string} et le nom {string}"
+  },
+  {
+    "key": "key.then.element.not.withAriaLabel",
+    "description": "Vérifie qu'un élément Html n'existe pas avec l'attribut aria-label spécifié",
+    "wording": "je ne dois pas voir un élément ayant pour aria-label {string}"
+  },
+  {
+    "key": "key.then.wait.mock",
+    "description": "Vérifie qu'un bouchon nommé ait bien été consommé",
+    "wording": "je dois consommer le bouchon nommé {string}"
+  },
+  {
+    "key": "key.then.wait.milliSeconds",
+    "description": "Attends un nombre de millisecondes",
+    "wording": "j'attends {int} ms"
+  },
+  {
+    "key": "key.then.a11y.check",
+    "description": "Vérifie que sur la page courante il n'y a aucune [erreur d'accessibilité](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)",
+    "wording": "je ne dois pas avoir de problèmes d'accessibilité"
+  }
+]

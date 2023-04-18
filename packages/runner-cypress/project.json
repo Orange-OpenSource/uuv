@@ -1,0 +1,27 @@
+{
+  "name": "runner-cypress",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/runner-cypress/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "rootDir": "packages/runner-cypress/src",
+        "outputPath": "packages/runner-cypress/dist/",
+        "main": "packages/runner-cypress/src/index.ts",
+        "tsConfig": "packages/runner-cypress/tsconfig.lib.json",
+        "assets": ["packages/runner-cypress/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/runner-cypress/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

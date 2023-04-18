@@ -1,0 +1,19 @@
+{
+  "name": "@uuv/runner-commons",
+  "version": "1.2.0-beta-20230417",
+  "type": "commonjs",
+  "author": "Louis Fredice NJAKO MOLOM (https://gitlab.com/curacao) & Stanley SERVICAL (https://gitlab.com/stanleyservical)",
+  "description": "A common lib for uuv",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:e2e-testing/uuv.git"
+  },
+  "keywords": ["uuv", "UUV"],
+  "scripts": {
+    "package": "npm pack --pack-destination=\"../../dist/packages\""
+  },
+  "files": [
+    "dist/**/*"
+  ]
+}

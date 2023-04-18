@@ -1,0 +1,5 @@
+{
+  "root": "packages/docs",
+  "sourceRoot": "packages/docs/src",
+  "projectType": "application"
+}

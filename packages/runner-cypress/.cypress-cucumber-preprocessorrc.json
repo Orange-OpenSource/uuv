@@ -1,0 +1,6 @@
+{
+  "stepDefinitions": [
+    "src/cucumber/step_definitions/cypress/generated/**/*.{js,ts}",
+    "src/cucumber/step_definitions/cypress/unsafe/*.{js,ts}"
+  ]
+}

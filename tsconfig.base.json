@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": true,
+    "declaration": true,
+    "declarationMap": true,
+    "baseUrl": ".",
+    "rootDir": ".",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "paths": {
+      "@uuv/runner-commons": ["packages/runner-commons/src/index.ts"],
+      "@uuv/runner-cypress": ["packages/runner-cypress/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

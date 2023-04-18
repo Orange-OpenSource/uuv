@@ -1,0 +1,20 @@
+{
+  "name": "UUV",
+  "version": "1.0",
+  "manifest_version": 3,
+  "devtools_page": "uuv-devtools.html",
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "css": [
+        "./uuv-generator/build/static/css/main.66102904.css"
+      ],
+      "js": [
+        "./content-script.js",
+        "./uuv-generator/build/static/js/main.9ad10013.js"
+      ]
+    }
+  ]
+}

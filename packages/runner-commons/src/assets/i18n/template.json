@@ -1,0 +1,64 @@
+{
+  "when": {
+    "visit": "",
+    "click": "",
+    "type": "",
+    "timeout": "",
+    "withinElement": {
+      "roleAndName": "",
+      "ariaLabel": "",
+      "testId": "",
+      "selector": ""
+    },
+    "mock": {
+      "withBody": "",
+      "withStatusCode": "",
+      "withFixture": ""
+    },
+    "resetContext": "",
+    "headers": {
+      "forUri": "",
+      "forUriAndMethod": ""
+    }
+  },
+  "given": {
+    "viewport": {
+      "preset": "",
+      "withWidthAndHeight": ""
+    }
+  },
+  "then": {
+    "element": {
+      "withContent": "",
+      "withRoleAndName": "",
+      "withTestId": "",
+      "withRoleAndNameAndContent": "",
+      "withRoleAndNameAndContentDisabled": "",
+      "withRoleAndNameAndContentEnabled": "",
+      "withAriaLabel": "",
+      "withAriaLabelAndContent": "",
+      "withSelector": "",
+      "not": {
+        "withContent": "",
+        "withRoleAndName": "",
+        "withTestId": "",
+        "withRoleAndNameAndContent": "",
+        "withAriaLabel": "",
+        "withAriaLabelAndContent": ""
+      }
+    },
+    "wait": {
+      "mock": "",
+      "milliSeconds": ""
+    },
+    "list": {
+      "withNameAndContent": ""
+    },
+    "attributes": {
+      "withValues": ""
+    },
+    "a11y" : {
+      "check": ""
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "root": "packages/assistant",
+  "sourceRoot": "packages/assistant/src",
+  "projectType": "library"
+}

@@ -1,0 +1,70 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+    --ifm-color-primary: #000000;
+    --ifm-color-primary-dark: #000000;
+    --ifm-color-primary-darker: #000000;
+    --ifm-color-primary-darkest: #000000;
+    --ifm-color-primary-light: #000000;
+    --ifm-color-primary-lighter: #000000;
+    --ifm-color-primary-lightest: #000000;
+    --ifm-navbar-background-color: white;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+    --ifm-color-primary: #ff7900;
+    --ifm-color-primary-dark: #e66d00;
+    --ifm-color-primary-darker: #d96700;
+    --ifm-color-primary-darkest: #cf6200;
+    --ifm-color-primary-light: #ff861a;
+    --ifm-color-primary-lighter: #ff8d26;
+    --ifm-color-primary-lightest: #ffa14d;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+    --ifm-navbar-background-color: black;
+    --ifm-hero-background-color: black;
+}
+
+.footer {
+    background-color: #000000;
+}
+
+.homepage-feature {
+    background-color: #f4f4f4;
+}
+
+[data-theme='dark'] .homepage-feature {
+    background-color: #434244;
+    color: white;
+}
+
+[data-theme='dark'] .hero__title {
+    color: #ff7900;
+}
+
+[data-theme='dark'] .hero__logo {
+    filter: drop-shadow(0 0 0.2rem white);
+}
+
+[data-theme='dark'] .homepage-feature-img {
+    filter: drop-shadow(0 0 0.1rem white);
+}
+
+[data-theme='dark'] .aa-DetachedSearchButton {
+    color: white;
+}
+
+[data-theme='dark'] .aa-DetachedSearchButtonIcon {
+    color: white;
+}
+
+
+
+code {
+    background-color: #ffffff1a;
+}
