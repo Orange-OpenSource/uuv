@@ -6,18 +6,13 @@
   },
   {
     "key": "key.when.headers.forUriAndMethod",
-    "description": "Sets one or more headers to the indicated http request and only for the Http method (GET / POST / etc...) passed as a argument",
+    "description": "Sets one or more headers to the indicated http request and only for the Http method (GET / POST / etc...) passed as a argument.<i> If you use Playwright as execution engine, <b>method</b> isn't used.</i>",
     "wording": "I set header(s) for uri {string} and method {string}"
   },
   {
     "key": "key.when.headers.forUri",
     "description": "Sets one or more headers to the indicated http request",
     "wording": "I set header(s) for uri {string}"
-  },
-  {
-    "key": "key.when.headers.forUriAndMethod",
-    "description": "Set one or more headers to the indicated http request and only for the Http method (GET / POST / etc...) passed in parameter",
-    "wording": "I set header(s) for uri {string} and method {string}"
   },
   {
     "key": "key.when.resetContext",
@@ -61,22 +56,22 @@
   },
   {
     "key": "key.when.mock.withBody",
-    "description": "Mock a named API response with body",
-    "wording": "I mock a request {} on uri {string} named {string} with content {}"
+    "description": "Mock a named API response with body. <i>If you use Playwright as runtime engine, <b>request</b> and <b>named</b> are unused.</i>",
+    "wording": "I mock a request {} on url {string} named {string} with content {}"
   },
   {
     "key": "key.when.mock.withFixture",
     "description": "Mock a named API response with file's extension .json, .js, .coffee, .html, .txt, .csv, .png, .jpg, .jpeg, .gif, .tif, .tiff, .zip",
-    "wording": "I mock a request {} on uri {string} named {string} with fixture {}"
+    "wording": "I mock a request {} on url {string} named {string} with fixture {}"
   },
   {
     "key": "key.when.mock.withStatusCode",
     "description": "Mock a named API response with status code",
-    "wording": "I mock a request {} on uri {string} named {string} with status code {int}"
+    "wording": "I mock a request {} on url {string} named {string} with status code {int}"
   },
   {
     "key": "key.given.viewport.preset",
-    "description": "Sets the viewport dimensions with one of the presets defined by Cypress: https://docs.cypress.io/api/commands/viewport#Preset",
+    "description": "Sets the viewport dimensions with one of the presets defined by your runtime engine as Cypress: [Link](https://docs.cypress.io/api/commands/viewport#Arguments) or Playwright: [Link](https://github.com/microsoft/playwright/blob/main/packages/playwright-core/src/server/deviceDescriptorsSource.json)",
     "wording": "I set viewport to preset {string}"
   },
   {
@@ -166,7 +161,7 @@
   },
   {
     "key": "key.then.wait.milliSeconds",
-    "description": "Wait milliseconds",
+    "description": "Wait milliseconds. <b>Warning:</b> use this sentence <b>in production</b> can make your <b>test flaky</b>.",
     "wording": "I wait {int} ms"
   },
   {

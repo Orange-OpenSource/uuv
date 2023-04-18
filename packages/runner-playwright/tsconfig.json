@@ -1,0 +1,33 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "types": ["axe-playwright", "node"]
+  },
+  "files": [],
+  "include": [
+    "src/**.*ts",
+    "**.*ts",
+    "**.*js"
+  ],
+  "exclude": [
+    "dist/**.*"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ],
+  "ts-node": {
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  }
+}

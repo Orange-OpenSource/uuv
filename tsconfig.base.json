@@ -19,7 +19,8 @@
     "skipLibCheck": true,
     "paths": {
       "@uuv/runner-commons": ["packages/runner-commons/src/index.ts"],
-      "@uuv/runner-cypress": ["packages/runner-cypress/src/index.ts"]
+      "@uuv/runner-cypress": ["packages/runner-cypress/src/index.ts"],
+      "@uuv/runner-playwright": ["packages/runner-playwright/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

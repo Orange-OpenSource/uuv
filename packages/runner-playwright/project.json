@@ -1,0 +1,27 @@
+{
+  "name": "runner-playwright",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/runner-playwright/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "rootDir": "packages/runner-playwright/src",
+        "outputPath": "packages/runner-playwright/dist/",
+        "main": "packages/runner-playwright/src/index.ts",
+        "tsConfig": "packages/runner-playwright/tsconfig.lib.json",
+        "assets": ["packages/runner-playwright/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/runner-playwright/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

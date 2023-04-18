@@ -6,7 +6,7 @@
   },
   {
     "key": "key.when.headers.forUriAndMethod",
-    "description": "Positionne un ou plusieurs headers à la requête http indiquée et uniquement pour la méthode Http (GET / POST / etc...) passée en paramètre",
+    "description": "Positionne un ou plusieurs headers à la requête http indiquée et uniquement pour la méthode Http (GET / POST / etc...) passée en paramètre. <i>Si le moteur d'exécution est playwright, la <b>méthode</b> n'est pas gérée.</i>",
     "wording": "je saisie le(s) header(s) pour l'Uri {string} et la methode {string}"
   },
   {
@@ -56,22 +56,22 @@
   },
   {
     "key": "key.when.mock.withBody",
-    "description": "Simule une réponse d'API avec un contenu spécifique",
-    "wording": "je simule une requête {} sur l'uri {string} nommée {string} avec le contenu suivant {}"
+    "description": "Simule une réponse d'API avec un contenu spécifique. <i>Si vous utilisez Playwright comme moteur d'exécution, les attributs <b>méthode de requête</b> et <b>nom</b> ne sont pas utilisés.</i>",
+    "wording": "je simule une requête {} sur l'url {string} nommée {string} avec le contenu suivant {}"
   },
   {
     "key": "key.when.mock.withFixture",
     "description": "Simule une réponse d'API avec un fichier spécifique ayant pour extension .json, .js, .coffee, .html, .txt, .csv, .png, .jpg, .jpeg, .gif, .tif, .tiff, .zip",
-    "wording": "je simule une requête {} sur l'uri {string} nommée {string} avec le fichier suivant {}"
+    "wording": "je simule une requête {} sur l'url {string} nommée {string} avec le fichier suivant {}"
   },
   {
     "key": "key.when.mock.withStatusCode",
     "description": "Simule une réponse d'API avec un code http spécifique",
-    "wording": "je simule une requête {} sur l'uri {string} nommée {string} avec le code http {int}"
+    "wording": "je simule une requête {} sur l'url {string} nommée {string} avec le code http {int}"
   },
   {
     "key": "key.given.viewport.preset",
-    "description": "Configure les dimensions de la fenêtre avec à un des préréglages définit par Cypress: https://docs.cypress.io/api/commands/viewport#Preset",
+    "description": "Configure les dimensions de la fenêtre avec à un des préréglages définit par le moteur d'exécution à savoir pour Cypress: [lien](https://docs.cypress.io/api/commands/viewport#Preset) et pour Playwright: [lien](https://github.com/microsoft/playwright/blob/main/packages/playwright-core/src/server/deviceDescriptorsSource.json)",
     "wording": "je redimensionne la fenêtre à la vue {string}"
   },
   {
@@ -102,7 +102,7 @@
   {
     "key": "key.then.element.withSelector",
     "description": "Vérifie qu'un élément Html existe avec le sélecteur spécifié",
-    "wording": "'je dois voir un élément ayant pour sélecteur {string}'"
+    "wording": "je dois voir un élément ayant pour sélecteur {string}"
   },
   {
     "key": "key.then.element.withRoleAndNameAndContentDisabled",
@@ -161,7 +161,7 @@
   },
   {
     "key": "key.then.wait.milliSeconds",
-    "description": "Attends un nombre de millisecondes",
+    "description": "Attends un nombre de millisecondes. <b>Attention:</b> Utiliser cette phrase <b>en production</b> peut rendre votre <b>test <i>flaky</i></b>.",
     "wording": "j'attends {int} ms"
   },
   {
