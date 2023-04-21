@@ -32,7 +32,7 @@ import {
     getCookie,
     getPageOrElement,
     MockType,
-    notFoundWithRoleAndName,
+    notFoundWithRoleAndName, showAttributesInLocator,
     withinRoleAndName
 } from "./core-engine";
 
@@ -74,8 +74,11 @@ When(`${key.when.withinElement.selector}`, async function (this: World, selector
 });
 
 When(`${key.when.type}`, async function (this: World, textToType: string) {
-    await getPageOrElement(this).then((element: Locator) => element.focus({timeout: 10000}));
-    await getPageOrElement(this).then((element: Locator) => element.type(textToType));
+    await getPageOrElement(this).then(async (element: Locator) => {
+        await element.focus({timeout: 10000});
+        await element.fill(textToType);
+         // console.debug(await showAttributesInLocator(element));
+    });
 });
 
 When(`${key.when.timeout}`,  async function (this: World, newTimeout: number) {
@@ -119,7 +122,7 @@ When(
     `${key.when.mock.withFixture}`,
     async function (this: World, verb: string, url: string, name: string, fixture: any) {
         await addCookieWhenValueIsList(this.context, COOKIE_NAME.MOCK_URL, {name: name, url: url});
-        const data = await JSON.parse(fs.readFile(`playwright/fixtures/${fixture}`));
+        const data = await fs.readFileSync(`playwright/fixtures/${fixture}`);
         await this.page.route(url, async route => {
             await route.fulfill({ body: data });
         });
@@ -231,10 +234,10 @@ Then(`${key.then.wait.mock}`, async function(this: World, name: string) {
     const mockUrls: MockType[] = JSON.parse(cookie.value);
     const mockUrl: MockType | undefined = mockUrls.find(mock => mock.name === name);
     await expect(mockUrl).not.toBeUndefined;
-    const requestPromise = this.page.waitForResponse(mockUrl?.url);
+    const requestPromise = await this.page.waitForResponse(mockUrl?.url);
     const request = await requestPromise;
     await deleteCookieByValue(this.context, COOKIE_NAME.MOCK_URL, mockUrl);
-    console.debug("request: ", request);
+    // console.debug("request: ", request);
 });
 //
 Then(`${key.then.wait.milliSeconds}`, async function (this: World, ms: number) {
@@ -244,41 +247,36 @@ Then(`${key.then.wait.milliSeconds}`, async function (this: World, ms: number) {
 Then(
     `${key.then.attributes.withValues}`,
     async function (this: World, expectedAttributeList: DataTable) {
-        return getPageOrElement(this).then(async (element) => {
-            for (let currentIndex in expectedAttributeList.raw()) {
-                const attributeName = expectedAttributeList.raw()[currentIndex][0];
-                const attributeValue = expectedAttributeList.raw()[currentIndex][1];
-                // console.debug ("element: ",element)
-                // console.debug ("expected attribute: ",attributeName, attributeValue)
-                // console.debug ("getAttribute: ",element.getAttribute(attributeName))
-                await expect(element.getAttribute(attributeName)).toEqual(attributeValue);
+        await getPageOrElement(this).then(async (element) => {
+            // console.debug("expectedAttributeList.raw(),", expectedAttributeList.raw())
+            for (const expectedAttribute of expectedAttributeList.raw()) {
+                const attributeName = expectedAttribute[0];
+                const attributeValue = expectedAttribute[1];
+                // await showAttributesInLocator(element);
+                expect(await element.getAttribute(attributeName)).toEqual(attributeValue);
             }
         });
     }
 );
-//
-// Then(
-//     `${key.then.list.withNameAndContent}`,
-//     (expectedListName: string, expectedElementsOfList: DataTable) => {
-//         cy.uuvFindByRole("list", {name: expectedListName})
-//             .uuvFoundedElement()
-//             .should("exist")
-//             .within(() => {
-//                 return cy.uuvFindAllByRole("listitem", {}).then((listitem) => {
-//                     let foundedElement: any[] = [];
-//                     for (let i = 0; i < listitem.length; i++) {
-//                         foundedElement.push([listitem[i].textContent]);
-//                     }
-//                     assert.equal(listitem.length, expectedElementsOfList.raw().length);
-//                     assert.deepEqual(
-//                         foundedElement,
-//                         expectedElementsOfList.raw(),
-//                         `expected [${expectedElementsOfList.raw()}] to be [${foundedElement}]`
-//                     );
-//                 });
-//             });
-//     }
-// );
-//
+
+Then(
+    `${key.then.list.withNameAndContent}`,
+    async function(this: World, expectedListName: string, expectedElementsOfList: DataTable) {
+        await withinRoleAndName(this, "list", expectedListName);
+        await getPageOrElement(this).then(async (element) => {
+            const listitem = await element.getByRole("listitem").all();
+            let foundedElement: any[] = [];
+            for (const element of listitem) {
+                const textContent = await element.textContent();
+                foundedElement.push([textContent]);
+            }
+            await expect(foundedElement.length).toBeGreaterThan(0);
+            // console.debug(`expected [${expectedElementsOfList.raw()}] to be [${foundedElement}]`);
+            await expect(listitem.length).toEqual(expectedElementsOfList.raw().length);
+            await expect(foundedElement).toEqual(expectedElementsOfList.raw());
+        });
+    }
+);
+
 
 

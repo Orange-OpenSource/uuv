@@ -45,7 +45,7 @@ export async function getPageOrElement(world: World): Promise<any>{
         // console.debug("cookieGetPageOrElement", cookie)
         if (cookie.value !== COOKIE_VALUE.NOT_EXIST.toString()) {
             const filters: FilterType[] = JSON.parse(cookie.value);
-             console.debug("filters",filters);
+            // console.debug("filters",filters);
             for (const filter of filters) {
                 switch (filter.name) {
                     case FILTER_TYPE.SELECTOR:
@@ -97,7 +97,7 @@ export async function getCookie(context: BrowserContext, cookieName: COOKIE_NAME
     const cookies = await context.cookies();
     if (cookies) {
         const cookieInContext = await cookies.filter(cookie => cookie.name === cookieName.toString())[0];
-         await console.debug("selector", cookieInContext)
+        // console.debug("selector", cookieInContext)
         if (cookieInContext) {
             cookie = cookieInContext;
         }
@@ -151,28 +151,39 @@ export async function findWithRoleAndNameAndContent(world: World, expectedRole: 
            const byRole = await element.getByRole(expectedRole, {name: name, includeHidden : true});
            await expect(byRole).toHaveCount(1);
         if (expectedTextContent !== undefined) {
-             await expect(byRole.filter({hasText: expectedTextContent})).toHaveCount(1);
+             await expect(await byRole.inputValue()).toEqual(expectedTextContent);
         }
     });
 }
 
 export async function findWithRoleAndNameAndContentDisable(world: World, expectedRole: string, name: string, expectedTextContent: string) {
     expectedRole = encodeURIComponent(expectedRole);
-    name = encodeURIComponent(name);
     await getPageOrElement(world).then(async(element) => {
         const byRole = await element.getByRole(expectedRole, {name: name, includeHidden: true});
         await expect(byRole).toHaveCount(1)
-        await expect(byRole.filter({ hasText: expectedTextContent })).toHaveCount(1);
-        await expect(byRole).toBeEnabled();
+        await expect(await byRole.inputValue()).toEqual(expectedTextContent);
+        await expect(byRole).toBeDisabled();
     });}
 
 export async function findWithRoleAndNameAndContentEnable(world: World, expectedRole: string, name: string, expectedTextContent: string) {
     expectedRole = encodeURIComponent(expectedRole);
-    name = encodeURIComponent(name);
     await getPageOrElement(world).then(async (element) => {
         const byRole = element.getByRole(expectedRole, {name: name, includeHidden: true});
         await expect(byRole).toHaveCount(1)
-        await expect(byRole.filter({ hasText: expectedTextContent })).toHaveCount(1);
+        await expect(await byRole.inputValue()).toEqual(expectedTextContent);
         await expect(byRole).toBeEnabled();
     });
+}
+
+export async function showAttributesInLocator(element) {
+    const attributes = await element.evaluateHandle((aElement) => {
+        const attributeNames = aElement.getAttributeNames();
+        const result = {};
+        attributeNames.forEach((name) => {
+            result[name] = aElement.getAttribute(name);
+        });
+        return result;
+    });
+
+    console.debug("attributes of ", element, await attributes.jsonValue());
 }
