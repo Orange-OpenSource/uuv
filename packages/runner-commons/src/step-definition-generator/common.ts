@@ -80,9 +80,8 @@ export class Common {
         data: string
     ): void {
         fs.writeFileSync(generatedFile, data);
-        let url = generatedFile.split("/");
         console.log(
-            `[WRITE] ${url[url.length-5].toUpperCase()} ${url[url.length-1]} written successfully`
+            `[WRITE] ${generatedFile} written successfully`
         );
     }
 }

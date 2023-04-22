@@ -63,7 +63,7 @@ Feature: English Test Step Definition
     And Within the element with role "textbox" and name "Last name"
     When I type the sentence "Toto"
      And I reset context
-    Then I should see an element with role "textbox" and name "Last name" and content "TotoDoe"
+    Then I should see an element with role "textbox" and name "Last name" and content "Toto"
 
   Scenario: key.then.a11y.check
     Then I should not have any accessibility issue

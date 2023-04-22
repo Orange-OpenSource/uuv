@@ -15,8 +15,8 @@
     "package": "npm pack --pack-destination=\"../../dist/packages\"",
     "postinstall": "node postinstall.js",
     "serverTest:run": "ts-node playwright/run-test-app.ts 9002",
-    "test:run": "npx bddgen -o tests/.features-gen && npx playwright test",
-    "test:clean:run": "npx playwright test"
+    "test:run": "npx bddgen -o tests/.features-gen && ts-node playwright/translate-features.ts && npx playwright test",
+    "test:alone:run": "npx playwright test"
   },
   "bin": {
     "uuv": "./src/lib/uuv-cli.js"
