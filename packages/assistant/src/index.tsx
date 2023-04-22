@@ -17,15 +17,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import UuvGenerator from './UuvGenerator';
+import UuvAssistantComponent from "./UuvAssistantComponent";
 import reportWebVitals from './reportWebVitals';
 
-document.addEventListener("UUVReadyToLoad", () => {
+document.addEventListener("UUVAssistantReadyToLoad", (e: any) => {
+    console.log("event listened: UUVAssistantReadyToLoad");
     const root = ReactDOM.createRoot(
         document.getElementById('uvv-assistant-root') as HTMLElement
     );
     root.render(
-        <UuvGenerator/>
+        <UuvAssistantComponent translator={e.detail.translator}/>
     );
 
 // If you want to start measuring performance in your app, pass a function
