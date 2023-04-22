@@ -17,22 +17,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log('content-script');
 
-    function setSelectedElement(el) {
-        alert('toto');
-        console.log('tata');
-    }
-
-    window.addEventListener("load", (event) => {
-        console.log("page is fully loaded");
-    });
-
-    window.addEventListener('click', (event) => {
-        console.log('event.target');
-        console.log(event.target);
-        console.log(document.activeElement)
-        //setSelectedElement(event.target);
-    }, true);
-
     let rootElement = document.createElement('div');
     rootElement.id = 'uvv-assistant-root';
     document.body.appendChild(rootElement);

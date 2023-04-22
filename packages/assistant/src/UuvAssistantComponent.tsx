@@ -15,7 +15,7 @@
  */
 
 import React from 'react';
-import './UuvGenerator.css';
+import './UuvAssistantComponent.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Navbar, OverlayTrigger, Toast, ToastContainer, Tooltip} from "react-bootstrap";
 import {base, Clear, Copy, Select} from "grommet-icons";
@@ -39,13 +39,17 @@ const theme = deepmerge(base, {
 });
 
 
-interface UuvGeneratorState {
+interface UuvAssistantState {
     generatedScript?: string;
     currentAction: 'selection' | 'none';
     resultCopied: boolean;
 }
 
-class UuvGenerator extends React.Component<any, UuvGeneratorState> {
+interface UuvAssistantProps {
+    translator?: (el: HTMLElement) => string;
+}
+
+class UuvAssistantComponent extends React.Component<UuvAssistantProps, UuvAssistantState> {
     private inspector: any;
 
     constructor(props: any) {
@@ -98,15 +102,19 @@ class UuvGenerator extends React.Component<any, UuvGeneratorState> {
             root: 'body',
             excluded: ['#uvv-assistant-root'],
             outlineStyle: '2px solid red',
-            onClick: (el: any) => {
+            onClick: (el: HTMLElement) => {
                 this.setState({
                     ...this.state,
-                    generatedScript: `Then I should see an element with role "${getRole(el)}" and name "${computeAccessibleName(el)}"`,
+                    generatedScript: this.translate(el),
                     currentAction: "none"
                 });
                 this.inspector.cancel();
             }
         });
+    }
+
+    private translate(el: HTMLElement) {
+        return this.props.translator ? this.props.translator(el) : `Then I should see an element with role "${getRole(el)}" and name "${computeAccessibleName(el)}"`;
     }
 
     componentDidMount() {
@@ -134,7 +142,7 @@ class UuvGenerator extends React.Component<any, UuvGeneratorState> {
                             <Toast.Body className="text-white">Résultat copié dans le presse papier</Toast.Body>
                         </Toast>
                     </ToastContainer>
-                    <Navbar className="UuvGenerator" fixed="bottom" bg="dark" variant="dark">
+                    <Navbar className="UuvAssistant" fixed="bottom" bg="dark" variant="dark">
                         <div className="w-100 d-flex flex-row align-items-stretch gap-3 ps-4 pe-4">
                             <div>
                                 <OverlayTrigger
@@ -197,4 +205,4 @@ class UuvGenerator extends React.Component<any, UuvGeneratorState> {
     }
 }
 
-export default UuvGenerator;
+export default UuvAssistantComponent;

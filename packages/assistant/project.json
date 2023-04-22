@@ -1,5 +1,22 @@
 {
   "root": "packages/assistant",
   "sourceRoot": "packages/assistant/src",
-  "projectType": "library"
+  "projectType": "library",
+  "targets": {
+    "tsc:build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "rootDir": "packages/assistant",
+        "outputPath": "packages/assistant/dist/",
+        "main": "packages/assistant/launcher/index.ts",
+        "tsConfig": "packages/assistant/tsconfig.launcher.json",
+        "assets": [
+          "packages/assistant/*.md"
+        ]
+      }
+    }
+  }
 }
