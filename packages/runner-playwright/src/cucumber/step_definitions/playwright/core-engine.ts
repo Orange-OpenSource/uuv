@@ -41,7 +41,7 @@ export type FilterType = {name: FILTER_TYPE, value: any}
 
 export async function getPageOrElement(world: World): Promise<any>{
     let pointer: Locator | Page = world.page;
-   await getCookie(world.context, COOKIE_NAME.SELECTED_ELEMENT).then(async cookie => {
+   await getCookie(world, COOKIE_NAME.SELECTED_ELEMENT).then(async cookie => {
         // console.debug("cookieGetPageOrElement", cookie)
         if (cookie.value !== COOKIE_VALUE.NOT_EXIST.toString()) {
             const filters: FilterType[] = JSON.parse(cookie.value);
@@ -73,30 +73,32 @@ export async function getPageOrElement(world: World): Promise<any>{
     })
     return pointer;
 }
-export async function addCookieWhenValueIsList(context: BrowserContext, cookieName: COOKIE_NAME, value: any) {
+export async function addCookieWhenValueIsList(world: World, cookieName: COOKIE_NAME, value: any) {
      // console.debug("value", value)
-    const cookie = await getCookie(context, cookieName);
+    const cookieNameStr = `${cookieName.toString()}_${world.testInfo.testId}`;
+    const cookie = await getCookie(world, cookieName);
     if (cookie.value !== COOKIE_VALUE.NOT_EXIST.toString()) {
         // console.debug("cookieValue", cookie.value);
         let cookieValue: any[] = JSON.parse(cookie.value);
         cookieValue.push(value);
         // console.debug("cookieValueJSON", JSON.stringify(cookieValue));
-        await context.addCookies([{name: cookieName.toString(), value:JSON.stringify(cookieValue), path: "/", domain: ".gitlab.com"}]);
+        await world.context.addCookies([{name: cookieNameStr, value:JSON.stringify(cookieValue), path: "/", domain: ".gitlab.com"}]);
     } else {
-        await context.addCookies([{name: cookieName.toString(), value:`[${JSON.stringify(value)}]`, path: "/", domain: ".gitlab.com"}]);
+        await world.context.addCookies([{name: cookieNameStr, value:`[${JSON.stringify(value)}]`, path: "/", domain: ".gitlab.com"}]);
     }
 }
-export async function getCookie(context: BrowserContext, cookieName: COOKIE_NAME) {
+export async function getCookie(world: World, cookieName: COOKIE_NAME) {
+    const cookieNameStr = `${cookieName.toString()}_${world.testInfo.testId}`;
     let cookie = {
-        "name": cookieName.toString(),
+        "name": cookieNameStr,
         "value": COOKIE_VALUE.NOT_EXIST.toString(),
         "domain": ".gitlab.com",
         "path": "/",
     } as Cookie;
 
-    const cookies = await context.cookies();
+    const cookies = await world.context.cookies();
     if (cookies) {
-        const cookieInContext = await cookies.filter(cookie => cookie.name === cookieName.toString())[0];
+        const cookieInContext = await cookies.filter(cookie => cookie.name === cookieNameStr)[0];
         // console.debug("selector", cookieInContext)
         if (cookieInContext) {
             cookie = cookieInContext;
@@ -105,27 +107,27 @@ export async function getCookie(context: BrowserContext, cookieName: COOKIE_NAME
     return cookie;
 }
 
-export async function deleteCookieByValue(context: BrowserContext, cookieName: COOKIE_NAME, node: any) {
-    const filteredCookies = (await context
+export async function deleteCookieByValue(world: World, cookieName: COOKIE_NAME, node: any) {
+    const filteredCookies = (await world.context
         .cookies())
         .map((cookie) => {
-            if (cookie.name === cookieName.toString()) {
+            if (cookie.name === `${cookieName.toString()}_${world.testInfo.testId}`) {
                 const mocks: [] = JSON.parse(cookie.value);
                 mocks.filter(mock => mock[0] !== node[0] && mock[1] !== node[1])
             }
             return cookie;
         })
 
-    await context.clearCookies()
-    await context.addCookies(filteredCookies)
+    await world.context.clearCookies()
+    await world.context.addCookies(filteredCookies)
 }
-export async function deleteCookieByName(context: BrowserContext, cookieName: COOKIE_NAME) {
-    const filteredCookies = (await context
+export async function deleteCookieByName(world: World, cookieName: COOKIE_NAME) {
+    const filteredCookies = (await world.context
         .cookies())
-        .filter((cookie) => cookie.name !== cookieName.toString())
+        .filter((cookie) => cookie.name !== `${cookieName.toString()}_${world.testInfo.testId}`)
 
-    await context.clearCookies()
-    await context.addCookies(filteredCookies)
+    await world.context.clearCookies()
+    await world.context.addCookies(filteredCookies)
 }
 
 export async function findWithRoleAndName(world: World, role: string, name: string) {
@@ -134,7 +136,7 @@ export async function findWithRoleAndName(world: World, role: string, name: stri
 
 export async function withinRoleAndName(world: World, role: string, name: string) {
     await findWithRoleAndNameAndContent(world, role, name);
-    await addCookieWhenValueIsList(world.context,COOKIE_NAME.SELECTED_ELEMENT, {name: FILTER_TYPE.SELECTOR, value: `role=${role}[name="${name}"]`});
+    await addCookieWhenValueIsList(world ,COOKIE_NAME.SELECTED_ELEMENT, {name: FILTER_TYPE.SELECTOR, value: `role=${role}[name="${name}"]`});
 
 }
 
@@ -151,7 +153,7 @@ export async function findWithRoleAndNameAndContent(world: World, expectedRole: 
            const byRole = await element.getByRole(expectedRole, {name: name, includeHidden : true});
            await expect(byRole).toHaveCount(1);
         if (expectedTextContent !== undefined) {
-             await expect(await byRole.inputValue()).toEqual(expectedTextContent);
+             await checkTextContentLocator(byRole, expectedTextContent);
         }
     });
 }
@@ -161,7 +163,7 @@ export async function findWithRoleAndNameAndContentDisable(world: World, expecte
     await getPageOrElement(world).then(async(element) => {
         const byRole = await element.getByRole(expectedRole, {name: name, includeHidden: true});
         await expect(byRole).toHaveCount(1)
-        await expect(await byRole.inputValue()).toEqual(expectedTextContent);
+        await checkTextContentLocator(byRole, expectedTextContent);
         await expect(byRole).toBeDisabled();
     });}
 
@@ -170,7 +172,7 @@ export async function findWithRoleAndNameAndContentEnable(world: World, expected
     await getPageOrElement(world).then(async (element) => {
         const byRole = element.getByRole(expectedRole, {name: name, includeHidden: true});
         await expect(byRole).toHaveCount(1)
-        await expect(await byRole.inputValue()).toEqual(expectedTextContent);
+        await checkTextContentLocator(byRole, expectedTextContent);
         await expect(byRole).toBeEnabled();
     });
 }
@@ -186,4 +188,33 @@ export async function showAttributesInLocator(element) {
     });
 
     console.debug("attributes of ", element, await attributes.jsonValue());
+}
+
+export async function checkTextContentLocator(locator: Locator, expectedTextContent: string): Promise<void> {
+   // await showAttributesInLocator(locator);
+    try {
+        await expect(locator).toHaveValue(expectedTextContent);
+    } catch (err){
+        console.error("No value found for locator: ", locator);
+        try {
+            await expect(await locator.getAttribute("value")).toBe(expectedTextContent);
+        } catch (err){
+            console.error("No attribute value found for locator: ", locator);
+            try {
+                if ("true"){
+                    await expect(locator).toBeChecked();
+                } else {
+                    await expect(locator).not.toBeChecked();
+                }
+            } catch (err){
+                console.error("Can't verify check for locator: ", locator);
+                try {
+                    await expect(locator).toHaveText(expectedTextContent);
+                } catch (err){
+                    console.error("No text found for locator: ", locator);
+                    throw new Error(`Content '${expectedTextContent}' isn't present in locator '${locator}'`);
+                }
+            }
+        }
+    }
 }

@@ -50,7 +50,7 @@ Given(
 );
 
 Given(`${key.when.visit}`, { timeout: 60 * 1000 }, async function (this: World, siteUrl: string) {
-    await deleteCookieByName(this.context, COOKIE_NAME.SELECTED_ELEMENT);
+    await deleteCookieByName(this, COOKIE_NAME.SELECTED_ELEMENT);
     await this.page.goto(`${siteUrl}`);
 });
 
@@ -62,7 +62,7 @@ When(`${key.when.click}`, async function (this: World) {
 When(`${key.when.withinElement.ariaLabel}`, async function (this: World, expectedAriaLabel: string) {
     expectedAriaLabel = encodeURIComponent(expectedAriaLabel);
     await getPageOrElement(this).then((element) => expect(element.getByLabel(expectedAriaLabel)).toHaveCount(1));
-    await addCookieWhenValueIsList(this.context,COOKIE_NAME.SELECTED_ELEMENT, {name: FILTER_TYPE.ARIA_LABEL, value: expectedAriaLabel});
+    await addCookieWhenValueIsList(this,COOKIE_NAME.SELECTED_ELEMENT, {name: FILTER_TYPE.ARIA_LABEL, value: expectedAriaLabel});
 });
 When(`${key.when.resetContext}`, async function (this: World) {
     await this.context.clearCookies();
@@ -70,7 +70,7 @@ When(`${key.when.resetContext}`, async function (this: World) {
 
 When(`${key.when.withinElement.selector}`, async function (this: World, selector: string) {
     await getPageOrElement(this).then((element) => expect(element.locator(selector)).toHaveCount(1));
-    await addCookieWhenValueIsList(this.context, COOKIE_NAME.SELECTED_ELEMENT, {name: FILTER_TYPE.SELECTOR, value: selector});
+    await addCookieWhenValueIsList(this, COOKIE_NAME.SELECTED_ELEMENT, {name: FILTER_TYPE.SELECTOR, value: selector});
 });
 
 When(`${key.when.type}`, async function (this: World, textToType: string) {
@@ -93,14 +93,14 @@ When(`${key.when.withinElement.roleAndName}`, async function (this: World, role:
 When(`${key.when.withinElement.testId}`, async function (this: World, testId: string) {
     testId = encodeURIComponent(testId);
     await getPageOrElement(this).then(async (element) => await expect(element.getByTestId(testId)).toHaveCount(1));
-    await addCookieWhenValueIsList(this.context, COOKIE_NAME.SELECTED_ELEMENT, {name: FILTER_TYPE.TEST_ID, value: testId});
+    await addCookieWhenValueIsList(this, COOKIE_NAME.SELECTED_ELEMENT, {name: FILTER_TYPE.TEST_ID, value: testId});
 });
 
 
 When(
     `${key.when.mock.withBody}`,
     async function (this: World, verb: string, url: string, name: string, body: any) {
-        await addCookieWhenValueIsList(this.context, COOKIE_NAME.MOCK_URL, {name: name, url: url});
+        await addCookieWhenValueIsList(this, COOKIE_NAME.MOCK_URL, {name: name, url: url});
         await this.page.route(url, async route => {
             const json = body;
             await route.fulfill({ json });
@@ -111,7 +111,7 @@ When(
 When(
     `${key.when.mock.withStatusCode}`,
     async function (this: World, verb: string, url: string, name: string, statusCode: number) {
-        await addCookieWhenValueIsList(this.context, COOKIE_NAME.MOCK_URL, {name: name, url: url});
+        await addCookieWhenValueIsList(this, COOKIE_NAME.MOCK_URL, {name: name, url: url});
         await this.page.route(url, async route => {
             await route.fulfill({ status: statusCode });
         });
@@ -121,7 +121,7 @@ When(
 When(
     `${key.when.mock.withFixture}`,
     async function (this: World, verb: string, url: string, name: string, fixture: any) {
-        await addCookieWhenValueIsList(this.context, COOKIE_NAME.MOCK_URL, {name: name, url: url});
+        await addCookieWhenValueIsList(this, COOKIE_NAME.MOCK_URL, {name: name, url: url});
         const data = await fs.readFileSync(`playwright/fixtures/${fixture}`);
         await this.page.route(url, async route => {
             await route.fulfill({ body: data });
@@ -230,13 +230,13 @@ Then(`${key.then.element.withAriaLabelAndContent}`, async function(this: World, 
 });
 
 Then(`${key.then.wait.mock}`, async function(this: World, name: string) {
-    const cookie = await getCookie(this.context, COOKIE_NAME.MOCK_URL);
+    const cookie = await getCookie(this, COOKIE_NAME.MOCK_URL);
     const mockUrls: MockType[] = JSON.parse(cookie.value);
     const mockUrl: MockType | undefined = mockUrls.find(mock => mock.name === name);
     await expect(mockUrl).not.toBeUndefined;
     const requestPromise = await this.page.waitForResponse(mockUrl?.url);
     const request = await requestPromise;
-    await deleteCookieByValue(this.context, COOKIE_NAME.MOCK_URL, mockUrl);
+    await deleteCookieByValue(this, COOKIE_NAME.MOCK_URL, mockUrl);
     // console.debug("request: ", request);
 });
 //
