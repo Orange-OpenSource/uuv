@@ -18,9 +18,6 @@
     "test:run": "npx bddgen -o tests/.features-gen && ts-node playwright/translate-features.ts && npx playwright test",
     "test:alone:run": "npx playwright test"
   },
-  "bin": {
-    "uuv": "./src/lib/uuv-cli.js"
-  },
   "dependencies": {
     "axe-core": "4.6.3",
     "chalk": "4.1.2",

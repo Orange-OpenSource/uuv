@@ -38,3 +38,4 @@ testem.log
 .DS_Store
 Thumbs.db
 *.iml
+packages/runner-cypress/cypress/screenshots/

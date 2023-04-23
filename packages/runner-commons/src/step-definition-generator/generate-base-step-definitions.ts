@@ -60,7 +60,8 @@ export class BaseStepDefinition extends GenerateFileProcessing {
     ): void {
         const wordingFile = `${__dirname}/../assets/i18n/${lang}.json`;
         const data = fs.readFileSync(
-            this.stepDefinitionFile,
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            this.stepDefinitionFile!,
             {encoding: "utf8"});
         const updatedData = this.computeWordingFile(data, wordingFile);
         Common.writeWordingFile(generatedFile, updatedData);

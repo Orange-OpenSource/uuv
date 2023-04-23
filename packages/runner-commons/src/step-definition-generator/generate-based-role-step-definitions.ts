@@ -39,7 +39,8 @@ export class BasedRoleStepDefinition extends GenerateFileProcessing {
     ): void {
         const wordingFile = `${__dirname}/../assets/i18n/${lang}-enriched-wordings.json`;
         const data = fs.readFileSync(
-            this.stepDefinitionFile,
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            this.stepDefinitionFile!,
             {encoding: "utf8"});
         this.computeWordingFile(data, wordingFile);
     }
