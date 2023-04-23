@@ -19,7 +19,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/runner-commons/**/*.ts"]
+        "lintFilePatterns": ["packages/runner-commons/src/**/*.ts"]
       }
     },
     "test": {

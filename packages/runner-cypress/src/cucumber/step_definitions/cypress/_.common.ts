@@ -33,6 +33,7 @@ export function uuvCheckContextFocusedElement(): Cypress.Chainable<Context> {
         });
 }
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 export function uuvPatchContext(partOfContext: any): Cypress.Chainable<Context>{
   return cy.get<Context>('@context').then(context => {
     cy.wrap({
@@ -42,14 +43,16 @@ export function uuvPatchContext(partOfContext: any): Cypress.Chainable<Context>{
   });
 }
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 function addContextOptions(context: Context, roleOptions: any): any {
-  let retour = {
+  const retour = {
     timeout: context.timeout
   };
 
   return Object.assign(roleOptions, retour);
 }
 
+/* eslint-disable  @typescript-eslint/ban-types */
 function abstractFindBy(callBackFunction: Function, inputToSearch: any, inputOptions: any) : Cypress.Chainable<JQuery<HTMLElement>> {
   return cy.uuvGetContext().then(context => {
     console.log('context');

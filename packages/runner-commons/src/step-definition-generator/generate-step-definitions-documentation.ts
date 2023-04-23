@@ -33,7 +33,6 @@ class Common {
 }
 
 export function runGenerateDoc(destDir: string) {
-    const fs = require("fs");
     const GENERATED_DIR_DOC = `${destDir}/docs/03-wordings/01-generated-wording-description`;
 
     Object.values(LANG).forEach((lang: string, index: number) => {
@@ -62,7 +61,7 @@ export function runGenerateDoc(destDir: string) {
 
     function computeWordingFile(wordingBaseFile: string, wordingEnrichedFile: string, lang: string): string {
         const wordingsBase = fs.readFileSync(wordingBaseFile);
-        const wordingsBaseJson = JSON.parse(wordingsBase);
+        const wordingsBaseJson = JSON.parse(wordingsBase.toString());
         const wordingsEnriched = fs.readFileSync(wordingEnrichedFile,
             {encoding: "utf8"});
         const title = (function () {
@@ -101,14 +100,14 @@ export function runGenerateDoc(destDir: string) {
         const dataOrigin: string = wordingsEnriched;
         let dataUpdated: string = dataOrigin;
         // console.debug("roles", wordingsEnrichedJson.role)
-        let wordingsEnrichedJson = JSON.parse(dataUpdated);
+        const wordingsEnrichedJson = JSON.parse(dataUpdated);
         wordingsEnrichedJson.role.forEach((role) => {
             rows.push(`### ${role.id}`)
             // console.debug("dataUpdated", dataUpdated)
             dataUpdated = dataOrigin
                 .replaceAll("$roleName", role.name)
                 .replaceAll("$roleId", role.id)
-            let wordingsEnrichedJson = JSON.parse(dataUpdated);
+            const wordingsEnrichedJson = JSON.parse(dataUpdated);
             const enrichedGiven = computeStepDefinition(
                 wordingsEnrichedJson.enriched,
                 "key.given",
@@ -142,6 +141,7 @@ export function runGenerateDoc(destDir: string) {
         return rows.join("\n");
     }
 
+    /* eslint-disable  @typescript-eslint/no-explicit-any */
     function computeStepDefinition(
         wordingsJson: any,
         stepKey: string,
@@ -155,9 +155,7 @@ export function runGenerateDoc(destDir: string) {
         wordingsJson.forEach((conf) => {
             if (conf.key.startsWith(stepKey)) {
                 const wording = `${level} ${conf.wording}`;
-                // @ts-ignore
                 step.push(wording);
-                // @ts-ignore
                 step.push(`> ${conf.description ?? ""}\n`);
             }
         });

@@ -24,8 +24,8 @@ export class BasedRoleStepDefinition extends GenerateFileProcessing {
     generatedFile = "";
     runGenerate() {
         Object.values(LANG).forEach((lang: string) => {
-            let generatedSubfolder = `enriched/${lang}`;
-            let generatedFolder = `${this.generatedDir}/${generatedSubfolder}`;
+            const generatedSubfolder = `enriched/${lang}`;
+            const generatedFolder = `${this.generatedDir}/${generatedSubfolder}`;
             Common.cleanFolderIfExists(generatedFolder);
             Common.buildDirIfNotExists(generatedFolder);
             this.generatedFile = `${generatedFolder}/_${lang}-generated-steps-definition_$roleId.ts`;
@@ -48,7 +48,7 @@ export class BasedRoleStepDefinition extends GenerateFileProcessing {
         const dataOrigin: string = data;
         let dataUpdated: string = dataOrigin;
         const wordings = fs.readFileSync(wordingFile);
-        const wordingsJson = JSON.parse(wordings);
+        const wordingsJson = JSON.parse(wordings.toString());
         wordingsJson.role.forEach((role) => {
             // console.debug("role", role)
             dataUpdated =
@@ -68,7 +68,7 @@ export class BasedRoleStepDefinition extends GenerateFileProcessing {
                     .replaceAll("$roleId", role.id)
                     .replaceAll("$roleName", role.name);
             });
-            let generatedFilename = this.generatedFile.replace("$roleId", role.id);
+            const generatedFilename = this.generatedFile.replace("$roleId", role.id);
             // console.debug(">>> data", dataUpdated)
             // console.debug(">>> generatedFilename", generatedFilename)
             Common.writeWordingFile(generatedFilename, dataUpdated);

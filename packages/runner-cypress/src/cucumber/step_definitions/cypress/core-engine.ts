@@ -27,6 +27,7 @@ export function assertTextContent<Subject>(
     try {
         assert.equal(response[0].textContent, expectedTextContent);
     } catch (e) {
+        /* eslint-disable  @typescript-eslint/no-explicit-any */
         assert.equal((response[0] as any).value, expectedTextContent);
     }
 }

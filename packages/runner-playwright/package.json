@@ -1,6 +1,6 @@
 {
   "name": "@uuv/playwright",
-  "version": "1.2.0-beta-20230417",
+  "version": "1.2.0-beta-20230421",
   "type": "commonjs",
   "author": "Louis Fredice NJAKO MOLOM (https://gitlab.com/curacao) & Stanley SERVICAL (https://gitlab.com/stanleyservical)",
   "description": "A transpiler from cucumber step definitions to cypress.",
@@ -59,7 +59,7 @@
   "devDependencies": {
     "@types/minimist": "1.2.2",
     "@types/node": "18.15.11",
-    "@uuv/runner-commons": "1.2.0-beta-20230417",
+    "@uuv/runner-commons": "1.2.0-beta-20230421",
     "cross-env": "7.0.3",
     "serve-handler": "6.1.5",
     "ts-loader": "9.4.2",

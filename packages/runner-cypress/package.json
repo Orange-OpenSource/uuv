@@ -69,7 +69,7 @@
   "devDependencies": {
     "@types/minimist": "1.2.2",
     "@types/node": "18.15.11",
-    "@uuv/runner-commons": "1.2.0-beta-20230417",
+    "@uuv/runner-commons": "1.2.0-beta-20230421",
     "cross-env": "7.0.3",
     "serve-handler": "6.1.5",
     "ts-loader": "9.4.2",
