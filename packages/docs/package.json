@@ -12,7 +12,8 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
+    "start-en": "docusaurus start",
+    "start-fr": "docusaurus start --locale fr",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -23,7 +24,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@cmfcmf/docusaurus-search-local": "^0.11.0",
+    "@cmfcmf/docusaurus-search-local": "^1.1.0",
     "@docusaurus/core": "^2.4.0",
     "@docusaurus/preset-classic": "^2.4.0",
     "@mdx-js/react": "^1.6.22",

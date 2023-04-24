@@ -4,11 +4,11 @@ import TabItem from '@theme/TabItem';
 # Installation
 
 :::info
-First of all you have to choose your runners among the following :
+Tout d'abord vous devez choisir votre runners parmi les suivants :
 - [Cypress](#cypress)
 - [Playwright](#playwright)
 
-When your tests are written you can change the runner by replacing the npm dependency without having to modify them.
+Lorsque vos tests sont écrits vous pouvez changer de runner sans avoir à les modifier.
 :::
 
 
@@ -16,11 +16,11 @@ When your tests are written you can change the runner by replacing the npm depen
 ## Cypress
 :::caution
 
-Npm/Yarn will need access to the internet when installing the Cypress library.
+Npm/Yarn aura besoin d'accéder à internet lors de l'installation de la librairie Cypress.
 
 :::
 
-Run the following command :
+Exécuter la commande suivante :
 
 <Tabs>
 <TabItem value="npm" label="Npm">
@@ -43,11 +43,11 @@ yarn add -D @uuv/cypress
 ## Playwright
 :::caution
 
-Npm/Yarn will need access to the internet when installing the Playwright library.
+Npm/Yarn aura besoin d'accéder à internet lors de l'installation de la librairie Playwright.
 
 :::
 
-Run the following command :
+Exécuter la commande suivante :
 
 <Tabs>
 <TabItem value="npm" label="Npm">

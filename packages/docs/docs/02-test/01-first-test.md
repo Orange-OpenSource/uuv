@@ -1,11 +1,11 @@
-# Mon premier test
+# Your first test
 
 :::caution
-**Pour l'autocompletion depuis IntelliJ**:  télécharger le plugin [cucumber.js](https://plugins.jetbrains.com/plugin/7418-cucumber-js)
+**For autocompletion from IntelliJ**, download the [cucumber.js](https://plugins.jetbrains.com/plugin/7418-cucumber-js) plugin.
 :::
 
 ## Ecriture du test
-Pour écrire votre premier test, créer à la racine du projet le fichier `uuv/e2e/first-test.feature` avec le contenu suivant :
+To write your first test, create the file `uuv/e2e/first-test.feature` in the project root with the following content :
 ```gherkin
 Feature: Hello World
 

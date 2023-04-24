@@ -1,15 +1,15 @@
-# Recommandations
+# Recommendation
 
 :::tip
-Vos scénarios de tests doivent ressembler autant que possible aux interactions utilisateur avec votre application.<br/>
-Pour cela nous vous recommandons cet ordre de priorité dans vos vérifications de DOM :
+Your test scenario should resemble as much as possible the user interactions with your application.<br/>
+For this we recommend this order of priority in your DOM checks :
 :::
 
-## 1. Requêtes basées sur l'accessibilité
-1. ### Rechercher un élément à partir de son [rôle accessible](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles#aria_role_types) et son contenu
-2. ### Rechercher un élément à partir de son contenu
-3. ### Rechercher un élément à partir de son attribut aria-label
+## 1. Accessibility-based queries
+1. ### Look for an element using its [accessible role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles#aria_role_types) and content
+2. ### Look for an element using its content
+3. ### Look for an element using its aria-label attribute
 
 ## 2. Test IDs
-   1. ### Rechercher un élément à partir de son attribut data-testid
+1. ### Look for an element using its data-testid attribute
 

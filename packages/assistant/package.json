@@ -71,7 +71,7 @@
     "replace-json-property": "1.8.0"
   },
   "files": [
-    "dist/**/*",
+    "dist/launcher/**/*",
     "build/static/css/**/*.css",
     "build/static/js/main.*.js",
     "postinstall.js",

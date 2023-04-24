@@ -1,8 +1,8 @@
 {
-  "label": "Phrases (Step Definition)",
+  "label": "Step Definition",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Cette rubrique vous expliquera tout ce que vous devez savoir sur les phrases."
+    "description": "Discover the steps definitions provided by UUV"
   }
 }

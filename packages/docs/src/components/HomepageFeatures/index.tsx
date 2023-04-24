@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
+import Translate, {translate} from '@docusaurus/Translate';
 
 type FeatureItem = {
   title: string;
@@ -10,30 +11,24 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
     {
-        title: 'Behaviour Driven',
+        title: translate({id: 'homepage.keyFeature.featureOne.title', message: 'Behaviour Driven'}),
         Svg: require('@site/static/img/scenario.svg').default,
         description: (
-          <>
-            Expression des scénarios d'utilisation simplifiée.
-          </>
+          <><Translate id="homepage.keyFeature.featureOne.message">Simplified expression of use cases</Translate></>
         ),
     },
     {
-        title: 'Environnement Web',
+        title: translate({id: 'homepage.keyFeature.featureTwo.title', message: 'Web environment'}),
         Svg: require('@site/static/img/browser.svg').default,
         description: (
-            <>
-                Toute application qui s'exécute dans un navigateur web est éligible.
-            </>
+            <><Translate id="homepage.keyFeature.featureTwo.message">Any application that runs in a web browser is eligible</Translate></>
         ),
     },
     {
-        title: 'User Centric',
+        title: translate({id: 'homepage.keyFeature.featureThree.title', message: 'User Centric'}),
         Svg: require('@site/static/img/user-centric.svg').default,
         description: (
-            <>
-                Vérifications dans le DOM seront effectués en s'appuyant sur les rôles et attributs accessibles.
-            </>
+            <><Translate id="homepage.keyFeature.featureThree.message">Checks in the DOM will be performed based on the accessible roles and attributes</Translate></>
         )
     }
 ];

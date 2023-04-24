@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git@gitlab.com:e2e-testing/uuv.git"
   },
+  "bin": {
+    "uuv": "./dist/lib/uuv-cli.js"
+  },
   "keywords": [ "uuv", "UUV" ,"E2E", "test", "testing", "cypress", "testing-library", "cucumber", "gherkin"],
   "scripts": {
     "generate:step-definitions": "ts-node generate-step-definitions.ts",
@@ -23,6 +26,7 @@
     "@badeball/cypress-cucumber-preprocessor": "15.1.3",
     "@cypress/webpack-preprocessor": "5.16.2",
     "@testing-library/cypress": "9.0.0",
+    "@uuv/runner-commons": "1.2.0-beta-20230424",
     "axe-core": "4.6.3",
     "chalk": "4.1.2",
     "cucumber-json-report-formatter": "0.1.4",
@@ -38,7 +42,11 @@
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
   "files": [
-    "dist/**/*",
+    "dist/cucumber/**/*",
+    "dist/cypress/**/*",
+    "dist/lib/**/*",
+    "dist/index.d.ts",
+    "dist/index.js",
     "postinstall.js",
     "target-config/**/*"
   ],
@@ -67,7 +75,6 @@
   "devDependencies": {
     "@types/minimist": "1.2.2",
     "@types/node": "18.15.11",
-    "@uuv/runner-commons": "1.2.0-beta-20230421",
     "cross-env": "7.0.3",
     "serve-handler": "6.1.5",
     "ts-loader": "9.4.2",

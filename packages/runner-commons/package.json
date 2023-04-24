@@ -15,6 +15,10 @@
     "package": "npm pack --pack-destination=\"../../dist/packages\""
   },
   "files": [
-    "dist/**/*"
+    "dist/index.d.ts",
+    "dist/index.js",
+    "dist/step-definition-generator/**/*",
+    "dist/assets/**/*",
+    "dist/runner/**/*"
   ]
 }

@@ -1,39 +1,73 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Exécution des tests
+# Running tests
 
-## 1. Ouverture de Cypress
+## Opening runner
 
 :::tip
-Pour modifier l'url, changer le paramètre `e2e.baseUrl` dans le fichier `uuv/cypress.config.ts` afin de renseigner l'url
-cible
+- Pour le runner `Cypress` modifier l'url, changer le paramètre `e2e.baseUrl` dans le fichier `uuv/cypress.config.ts` afin de renseigner l'url
+cible.
+- [WIP] Pour le runner `Plawright` modifier l'url, changer le paramètre `e2e.baseUrl` dans le fichier `uuv/cypress.config.ts` afin de renseigner l'url
+    cible.
 :::
 
-Depuis powershell ou un terminal cmd **en mode non-administrateur** :
+From powershell or cmd terminal **in non-administrator mode** :
+
+<Tabs>
+<TabItem value="Npm" label="Npm">
+
+```shell
+npm run uuv open
+```
+
+</TabItem>
+<TabItem value="Yarn" label="Yarn">
+
+```shell
+yarn uuv open
+```
+
+</TabItem>
+</Tabs>
+
+## Exécution des tests E2E depuis la console
+
+From powershell or cmd terminal **in non-administrator mode** :
 
 
 <Tabs>
 <TabItem value="Npm" label="Npm">
 
 ```shell
-npm run uuv:open
+npm run uuv e2e
+```
+
+With arguments
+
+```shell
+npm run uuv e2e -- --browser=edge --env="{'TAGS':'@mobile'}" --generateHtmlReport
 ```
 
 </TabItem>
-<TabItem value="Node" label="Node">
+<TabItem value="Yarn" label="Yarn">
 
 ```shell
-node uuv-cli.ts openCypress
+yarn uuv e2e
+```
+
+With arguments
+
+```shell
+yarn uuv e2e -- --browser=edge --env="{'TAGS':'@mobile'}" --generateHtmlReport
 ```
 
 </TabItem>
 </Tabs>
 
-## 2. Exécution des tests E2E depuis la console
-
+### Cypress
 :::tip
-Pour modifier la BASE_URL en mode E2E, il suffit de positionner la variable d'environnement :
+To modify the BASE_URL in E2E mode, simply set the environment variable :
 
 <Tabs>
 <TabItem value="Windows" label="Windows">
@@ -53,43 +87,14 @@ export CYPRESS_BASE_URL=http://localhost:4200
 </Tabs>
 :::
 
-Depuis powershell ou un terminal cmd **en mode non-administrateur** :
+#### Arguments
+
+| Nom     | Description                                                                                                   | Valeur                                                                                                                                                                                                                                                                                 |
+|---------|---------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `browser` | Target browser                                                                                                | `chrome` / `edge` / `firefox` / `electron`                                                                                                                                                                                                                                             |
+| `env` | Environment variables                                                                                         | Json object containing the properties: <br/> - `TAGS` : To target the [cucumber tags](https://cucumber.io/docs/cucumber/api/?lang=javascript#tags) <br/> - `...` : All [possible properties](https://docs.cypress.io/guides/references/configuration#Global) for cypress |
+| `generateHtmlReport` | When this option is present, an html report of the executed tests will be generated here : `./reports/e2e/html/` | N/A                                                                                                                                                                                                                                                                                    |
 
 
-<Tabs>
-<TabItem value="Npm" label="Npm">
-
-```shell
-npm run uuv:e2e
-```
-
-Avec des arguments
-
-```shell
-npm run uuv:e2e -- --browser=edge --env="{'TAGS':'@mobile'}" --generateHtmlReport
-```
-
-</TabItem>
-<TabItem value="Node" label="Node">
-
-```shell
-node uuv-cli.ts runE2ETests
-```
-
-Avec des arguments
-
-```shell
-node uuv-cli.ts runE2ETests --browser=edge --env="{'TAGS':'@mobile'}" --generateHtmlReport
-```
-
-</TabItem>
-</Tabs>
-
-### Arguments
-
-| Nom     | Description                                                                                                   | Valeur                                                                                                                                                                                                                                                                               |
-|---------|---------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `browser` | Navigateur cible                                                                                              | `chrome` / `edge` / `firefox` / `electron`                                                                                                                                                                                                                                           |
-| `env` | Variable d'environnement                                                                                      | Objet json contenant les propriétés: <br/> - `TAGS` : Pour cibler des [tags cucumber](https://cucumber.io/docs/cucumber/api/?lang=javascript#tags) <br/> - `...` : L'ensemble des [propriétés possible pour cypress](https://docs.cypress.io/guides/references/configuration#Global) |
-| `generateHtmlReport` | Lorsque cette option est présente, un rapport html des tests éxécutés sera généré içi : `./reports/e2e/html/` | N/A                                                                                                                                                                                                                                                                                  |
-
+### Playwright
+WIP

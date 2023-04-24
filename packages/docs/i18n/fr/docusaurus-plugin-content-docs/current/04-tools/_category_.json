@@ -1,0 +1,8 @@
+{
+  "label": "Outils",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Découvrez les autres outils de l'écosystème UUV."
+  }
+}

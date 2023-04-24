@@ -1,11 +1,11 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Ajouter vos propres phrases
+# Add custom step definitions
 
-## 1. Installation de la dépendance ts-loader
+## Install dependency ts-loader
 
-Depuis powershell ou un terminal cmd **en mode non-administrateur** :
+From powershell or cmd terminal **in non-administrator mode** :
 
 
 <Tabs>
@@ -26,9 +26,10 @@ yarn add -D ts-loader
 </Tabs>
 
 
-## 2. Ajout de vos propres phrases
-Créer un fichier `.ts` ou `.js` dans le dossier `uuv/cucumber/step_definitions/`.<br/>
-Voici un exemple :
+## Create custom step definition
+### Cypress
+Create new `.ts` or `.js` file in the `uuv/cucumber/step_definitions/` folder.<br/>
+Here is an example :
 ```typescript title='uuv/cucumber/step_definitions/my-custom-step-definitions.ts'
 import {Given, When, Then} from "@badeball/cypress-cucumber-preprocessor";
 
@@ -41,53 +42,53 @@ Then('My second custom step definition', () => {
   expect(true).toBeTruthy();
 });
 ```
-Pour plus d'informations sur la mise en place de phrases cucumber, consulter cette [documentation](https://cucumber.io/docs/cucumber/step-definitions/?sbsearch=step+definition&lang=javascript)
+For more information on setting up custom step definition, see this [documentation](https://cucumber.io/docs/cucumber/step-definitions/?sbsearch=step+definition&lang=javascript)
 
-## 3. (Optionnel) Utilisation des commandes Cypress UUV
-Lors de la rédaction de vos propres phrases, vous pouvez utiliser :
-- [Les commandes Cypress par défaut](https://docs.cypress.io/api/table-of-contents#Commands) 
-- [Les commandes Cypress Testing Library](https://testing-library.com/docs/cypress-testing-library/intro#usage)
-- Les commandes `Cypress UVV` suivantes :
+#### (Optionnel) Utilisation des commandes Cypress UUV
+When writing your own sentences, you can use :
+- [Cypress default commands](https://docs.cypress.io/api/table-of-contents#Commands) 
+- [Testing Library Cypress commands](https://testing-library.com/docs/cypress-testing-library/intro#usage)
+- Following `Cypress UVV` command :
 
-### `uuvGetContext(): Cypress.Chainable<Context>`
-> Retourne le contexte courant (élément Dom sélectionné & timeout) UUV
-
----
-
-### `uuvCheckContextFocusedElement(): Cypress.Chainable<Context>`
-> Retourne élément Dom sélectionné dans le contexte UUV
+##### `uuvGetContext(): Cypress.Chainable<Context>`
+> Returns the current UUV context (selected Dom element & timeout)
 
 ---
 
-### `uuvPatchContext(partOfContext: any): Chainable<Context>`
-> Mise à jour du contexte UUV
+##### `uuvCheckContextFocusedElement(): Cypress.Chainable<Context>`
+> Returns Dom element selected in UUV context
 
 ---
 
-### `uuvFindByText(textToSearch: string, roleOptions: ByRoleOptions): Cypress.Chainable<JQuery<HTMLElement>>`
-> Recherche d'un élément à partir de son contenu textuel
+##### `uuvPatchContext(partOfContext: any): Chainable<Context>`
+> Update of UUV context
 
 ---
 
-### `uuvFindByTestId(testId: string): Cypress.Chainable<JQuery<HTMLElement>>`
-> Recherche d'un élément à partir de son attribut data-testid
+##### `uuvFindByText(textToSearch: string, roleOptions: ByRoleOptions): Cypress.Chainable<JQuery<HTMLElement>>`
+> Look for an element from its textual content
 
 ---
 
-### `uuvFindByRole(role: string, roleOptions: ByRoleOptions): Cypress.Chainable<JQuery<HTMLElement>>`
-> Recherche d'un élément à partir de son rôle accessible
+##### `uuvFindByTestId(testId: string): Cypress.Chainable<JQuery<HTMLElement>>`
+> Look for an element from its data-testid attribute
 
 ---
 
-### `uuvFindByLabelText(labelTextToSearch: string, roleOptions: ByRoleOptions): Cypress.Chainable<JQuery<HTMLElement>>`
-> Recherche d'un élément à partir de son libellé (idéal pour les champs de formulaire)
+##### `uuvFindByRole(role: string, roleOptions: ByRoleOptions): Cypress.Chainable<JQuery<HTMLElement>>`
+> Look for an element from its accessible role
 
 ---
 
-### `uuvFindAllByRole(role: string, roleOptions: ByRoleOptions): Cypress.Chainable<JQuery<HTMLElement>>`
-> Recherche tous les éléments correspondant à un rôle accessible
+##### `uuvFindByLabelText(labelTextToSearch: string, roleOptions: ByRoleOptions): Cypress.Chainable<JQuery<HTMLElement>>`
+> Look for an element from its label (ideal for form fields)
 
 ---
 
-### `uuvFoundedElement(): Cypress.Chainable<JQuery<HTMLElement>>`
-> Retourne l'élément trouvé lorsqu'une recherche a été effectuée 
+##### `uuvFindAllByRole(role: string, roleOptions: ByRoleOptions): Cypress.Chainable<JQuery<HTMLElement>>`
+> Look for all items matching an accessible role
+
+---
+
+##### `uuvFoundedElement(): Cypress.Chainable<JQuery<HTMLElement>>`
+> Returns the item found when a query has been performed

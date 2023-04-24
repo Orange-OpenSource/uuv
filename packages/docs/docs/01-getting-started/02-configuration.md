@@ -3,39 +3,69 @@ import TabItem from '@theme/TabItem';
 
 # Configuration
 
-## 1. Ajout des scripts npm :
-
-Modifier le fichier `package.json` pour rajouter les lignes suivantes dans la section script :
+## Add npm script
+Edit the `package.json` file to add the following line in the script section :
 
 ```json title='package.json'
 {
 ...
     "scripts": {
         "...
-        "uuv:open": "node uuv-cli.js openCypress",
-        "uuv:e2e": "node uuv-cli.js runE2ETests"
+        "uuv": "uuv"
+    },
+  ...
+}
+```
+### Cypress
+:::info
+This step is only necessary if you have chosen the `Cypress` runner and you cannot [run the tests normally](/docs/test/running-test).
+:::
+Edit the `package.json` file to add the following line in the script section :
+
+```json title='package.json'
+{
+...
+    "scripts": {
+        "...
+        "uuv": "node node_modules/@uuv/cypress/dist/lib/uuv-cli.js"
     },
   ...
 }
 ```
 
-## 2. Mise à jour du gitignore
+### Playwright
+:::info
+This step is only necessary if you have chosen the `Playwright` runner and you cannot [run the tests normally](/docs/test/running-test).
+:::
+Edit the `package.json` file to add the following line in the script section :
 
-Modifier le fichier `.gitignore` pour rajouter les lignes suivantes :
+```json title='package.json'
+{
+...
+    "scripts": {
+        "...
+        "uuv": "node node_modules/@uuv/playwright/dist/lib/uuv-cli.js"
+    },
+  ...
+}
+```
+
+## Update of the .gitignore
+
+Edit the `.gitignore` file to add the following lines :
 
 ```gitignore title='.gitignore'
 #@nobelisation/uuv
-/uuv-cli.js
 /uuv/reports
 ```
 
-## 3. Ajout des types Typescripts
 
-:::info
-Cette étape n'est nécessaire que si vous prévoyez de rajouter vos
-propres [step_definitions](/docs/wordings/add-custom-step-definition).
+## (Optionnel) Add Typescript types
+### Cypress
+:::warning
+This step is only necessary if you plan to add your own [step_definitions](/docs/wordings/add-custom-step-definition).
 :::
-Ajouter un nouveau fichier `tsconfig.e2e.json` pour inclure les types nécessaires :
+Add a new file `tsconfig.e2e.json` to include the necessary types :
 
 ```json title='tsconfig.e2e.json'
 {
@@ -55,5 +85,7 @@ Ajouter un nouveau fichier `tsconfig.e2e.json` pour inclure les types nécessair
     "src/**/*.cy.ts"
   ]
 }
-
 ```
+
+### Playwright
+WIP

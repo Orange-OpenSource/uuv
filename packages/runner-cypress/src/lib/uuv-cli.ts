@@ -54,10 +54,10 @@ async function main() {
   let command = findTargetCommand(argv);
   console.info(chalk.blue(`Executing UUV command ${command}...`));
   switch (command) {
-    case "openCypress":
+    case "open":
       await openCypress(argv);
       break;
-    case "runE2ETests":
+    case "e2e":
       await runE2ETests(argv);
       break;
     default:

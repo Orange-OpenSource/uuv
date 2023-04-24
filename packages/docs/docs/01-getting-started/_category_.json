@@ -1,8 +1,7 @@
 {
-  "label": "Premiers pas",
+  "label": "Getting started",
   "position": 2,
   "link": {
-    "type": "generated-index",
-    "description": "Pour l'autocompletion depuis IntelliJ, télécharger le plugin cucumber.js : https://plugins.jetbrains.com/plugin/7418-cucumber-js"
+    "type": "generated-index"
   }
 }
