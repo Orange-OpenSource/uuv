@@ -37,7 +37,7 @@ Then(`${key.then.element.withRoleAndName}`, (name: string) => {
 Then(
     `${key.then.element.not.withRoleAndName}`,
     (name: string) => {
-        notFoundWithRoleAndName("[NOT] $roleId", name);
+        notFoundWithRoleAndName("$roleId", name);
     }
 );
 

@@ -8,7 +8,6 @@ Fonctionnalité: phrases enrichies
     Et je dois voir un titre nommé "Grouping Form Data with Fieldset"
 
   Scénario: key.then.element.not.withRoleAndName
-    Et je ne dois pas voir un titre nommé "Grouping Form Data with Fieldset"
     Et je ne dois pas voir un titre nommé "[NOT] Grouping Form Data with Fieldset"
 
   Scénario: key.then.element.withRoleAndNameAndContent
@@ -23,7 +22,7 @@ Fonctionnalité: phrases enrichies
   Scénario: key.then.attributes.withValues
     Et je vais à l'intérieur de boîte à texte nommée "First name"
     Et je dois voir les attributs avec valeurs suivantes
-  | class | fname-class |
+      | class | fname-class |
 
 
 

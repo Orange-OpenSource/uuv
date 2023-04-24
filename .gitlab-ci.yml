@@ -1,0 +1,135 @@
+variables:
+  NPM_PACKAGE_SCOPE: "uuv"
+  NPM_REPO: "registry.npmjs.org/"
+
+stages:
+  - install
+  - lint
+  - build
+  - test
+  - deploy
+
+install:
+  image: node:18.14.0-slim
+  stage: install
+  script:
+    - npm ci
+  artifacts:
+    paths:
+      - "node_modules"
+      - "packages/docs/node_modules"
+      - "packages/runner-commons/node_modules"
+      - "packages/runner-cypress/node_modules"
+      - "packages/runner-playwright/node_modules"
+  only:
+    - master
+
+lint:
+  image: node:18.14.0-slim
+  stage: lint
+  script:
+    - npm run nx run-many -- --all --target=lint
+  allow_failure: true
+  needs:
+    - install
+  only:
+    - master
+
+build-runner-commons:
+  image: node:18.14.0-slim
+  stage: build
+  script:
+    - npm run nx build runner-commons
+  needs:
+    - install
+  artifacts:
+    paths:
+      - "dist"
+      - "packages/runner-commons/dist"
+  only:
+    - master
+
+build-runner-cypress:
+  image: node:18.14.0-slim
+  stage: build
+  script:
+    - npm run nx generate:step-definitions runner-cypress
+    - npm run nx generate:step-definitions-documentation runner-cypress
+    - npm run nx build runner-cypress
+  needs:
+    - install
+    - build-runner-commons
+  artifacts:
+    paths:
+      - "packages/runner-cypress/dist"
+      - "packages/runner-cypress/src/cucumber/step_definitions/cypress/generated"
+      - "packages/docs/docs/03-wordings/01-generated-wording-description"
+  only:
+    - master
+
+build-docs:
+  image: node:18.14.0-slim
+  stage: build
+  script:
+    - npm run nx build docs
+  needs:
+    - install
+    - build-runner-cypress
+  artifacts:
+    paths:
+      - "packages/docs/build"
+  only:
+    - master
+
+test-cypress:
+  image: cypress/browsers:node18.12.0-chrome107
+  stage: test
+  script:
+    - npm ci
+    - cd packages/runner-cypress && npm run test:run
+  needs:
+    - install
+    - build-runner-commons
+    - build-runner-cypress
+  only:
+    - master
+
+.deploy:
+  image: node:18.14.0-slim
+  stage: deploy
+  script:
+    - echo "//${NPM_REPO}:_authToken=$NPM_ACCESS_TOKEN" >> .npmrc
+    - cd ./packages/${PACKAGE_NAME}
+    - npm publish --scope ${NPM_PACKAGE_SCOPE} --access public
+  when: manual
+  only:
+    - master
+
+deploy-commons:
+  extends: .deploy
+  variables:
+    PACKAGE_NAME: "runner-commons"
+  needs:
+    - build-runner-commons
+
+deploy-cypress:
+  extends: .deploy
+  variables:
+    PACKAGE_NAME: "runner-cypress"
+  needs:
+    - build-runner-cypress
+
+pages:
+  image: ubuntu
+  stage: deploy
+  script:
+    - mkdir public
+    - cp -r packages/docs/build/* ./public
+  needs:
+    - build-docs
+  artifacts:
+    paths:
+      - public
+  when: manual
+  only:
+    - master

@@ -23,7 +23,9 @@ export class BaseStepDefinition extends GenerateFileProcessing {
     runGenerate() {
         Object.values(LANG).forEach((lang: string) => {
             const generatedFile = `${this.generatedDir}/_${lang}-generated-cucumber-steps-definition.ts`;
-            Common.buildDirIfNotExists(this.generatedDir!!);
+
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            Common.buildDirIfNotExists(this.generatedDir!);
             Common.cleanGeneratedFilesIfExists(generatedFile);
             this.generateWordingFiles(generatedFile, lang);
         });
@@ -44,7 +46,7 @@ export class BaseStepDefinition extends GenerateFileProcessing {
             .replace("../i18n/template.json", "../../i18n/template.json")
             .replace("./core-engine", "../core-engine");
         const wordings = fs.readFileSync(wordingFile);
-        const wordingsJson = JSON.parse(wordings);
+        const wordingsJson = JSON.parse(wordings.toString());
         wordingsJson.forEach((conf) => {
             data = data.replace("${" + conf.key + "}", conf.wording);
             // console.debug(conf, data)
@@ -58,7 +60,8 @@ export class BaseStepDefinition extends GenerateFileProcessing {
     ): void {
         const wordingFile = `${__dirname}/../assets/i18n/${lang}.json`;
         const data = fs.readFileSync(
-            this.stepDefinitionFile,
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            this.stepDefinitionFile!,
             {encoding: "utf8"});
         const updatedData = this.computeWordingFile(data, wordingFile);
         Common.writeWordingFile(generatedFile, updatedData);

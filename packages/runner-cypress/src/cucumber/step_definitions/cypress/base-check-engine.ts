@@ -92,11 +92,6 @@ When(`${key.when.withinElement.testId}`, (testId: string) => {
     });
 });
 
-
-When(`${key.then.element.withSelector}`, (selector: string) => {
-    return cy.get(selector).should("exist");
-});
-
 When(`${key.when.withinElement.selector}`, (selector: string) => {
     const foundedElement = cy.uuvGetContext().then(context => {
         const parentElement = context.focusedElement;
@@ -310,6 +305,11 @@ Then(
         });
     }
 );
+
+Then(`${key.then.element.withSelector}`, (selector: string) => {
+    return cy.get(selector).should("exist");
+});
+
 
 Then(
     `${key.then.a11y.check}`,

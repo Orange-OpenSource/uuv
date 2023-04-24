@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-export const fs = require("fs");
+import fs from "fs";
+
+export {fs};
 
 export abstract class GenerateFileProcessing {
     baseDir?: string;
@@ -56,7 +58,7 @@ export class Common {
     ): void {
         if (fs.existsSync(generatedFile)) {
             fs.rmSync(generatedFile);
-            let url = generatedFile.split("/");
+            const url = generatedFile.split("/");
             console.log(
                 `[DEL] ${url[url.length-1]} deleted successfully`
             );
@@ -68,7 +70,7 @@ export class Common {
     ): void {
         if (fs.existsSync(folder)) {
             fs.rmSync(folder, { recursive: true, force: true });
-            let url = folder.split("/");
+            const url = folder.split("/");
             console.log(
                 `[DEL] ${url[url.length-1]} deleted successfully`
             );
@@ -80,9 +82,8 @@ export class Common {
         data: string
     ): void {
         fs.writeFileSync(generatedFile, data);
-        let url = generatedFile.split("/");
         console.log(
-            `[WRITE] ${url[url.length-5].toUpperCase()} ${url[url.length-1]} written successfully`
+            `[WRITE] ${generatedFile} written successfully`
         );
     }
 }
