@@ -1,6 +1,6 @@
 {
   "name": "@uuv/assistant",
-  "version": "1.2.0-beta-20230421",
+  "version": "1.2.0-beta-20230424",
   "author": "Louis Fredice NJAKO MOLOM (https://gitlab.com/curacao) & Stanley SERVICAL (https://gitlab.com/stanleyservical)",
   "description": "UUV wizard used to improve the life of testers and developers by generating cucumber phrases from the GUI.",
   "license": "Apache-2.0",
