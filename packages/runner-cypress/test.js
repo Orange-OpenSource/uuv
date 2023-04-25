@@ -86,14 +86,21 @@ async function testUUV() {
         }
         command()
             .then(async (result) => {
-                console.log(`Tests suite have been executed in ${chalk.blue(result.totalDuration)} ms`);
                 server.close();
-                console.log(`Status ${result.totalFailed ? chalk.red('failed') : chalk.green('success')}`);
-                process.exit(result.totalFailed);
+                if (result) {
+                    console.log(`Tests suite have been executed in ${chalk.blue(result.totalDuration)} ms`);
+                    console.log(`Status ${result.totalFailed ? chalk.red('failed') : chalk.green('success')}`);
+                    process.exit(result.totalFailed);
+                } else {
+                    console.error(chalk.red('An error occured'));
+                    server.close();
+                    process.exit(-1);
+                }
             })
             .catch((err) => {
                 console.error(chalk.red(err));
                 server.close();
+                process.exit(-1);
             });
     });
 }

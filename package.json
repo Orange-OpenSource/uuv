@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com:e2e-testing/uuv.git"
+    "url": "https://github.com/e2e-test-quest/uuv"
   },
   "keywords": [ "uuv", "UUV" ,"E2E", "test", "testing", "cypress", "testing-library", "cucumber", "gherkin"],
   "scripts": {
@@ -39,6 +39,6 @@
     "packages/*"
   ],
   "engines": {
-    "node": "^18.14.0"
+    "node": "^18.12.0"
   }
 }

@@ -1,7 +1,6 @@
 # Concepts
 
-The `@nobelization/uuv` library (User centric Usecases Validator) is an ecosystem that simplifies the writing of
-End to End tests in a BDD approach and a user-centric way.
+The `@uuv` library (User centric Usecases Validator) is an ecosystem that simplifies the writing of End to End tests in a BDD approach and a user-centric way.
 
 ## The problem
 
