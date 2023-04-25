@@ -1,4 +1,5 @@
 {
+  "name": "assistant",
   "root": "packages/assistant",
   "sourceRoot": "packages/assistant/src",
   "projectType": "library",
@@ -6,7 +7,7 @@
     "tsc:build": {
       "executor": "@nrwl/js:tsc",
       "outputs": [
-        "{options.outputPath}"
+        "packages/assistant/dist"
       ],
       "options": {
         "rootDir": "packages/assistant",
@@ -17,6 +18,20 @@
           "packages/assistant/*.md"
         ]
       }
+    },
+    "build": {
+      "executor": "nx:run-script",
+      "outputs": [
+        "packages/assistant/dist",
+        "packages/assistant/build"
+      ],
+      "options": {
+        "script": "conf:build"
+      },
+      "dependsOn": [
+        "react:build",
+        "tsc:build"
+      ]
     }
   }
 }

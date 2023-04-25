@@ -39,3 +39,4 @@ testem.log
 Thumbs.db
 *.iml
 packages/runner-cypress/cypress/screenshots/
+packages/docs/docs/03-wordings/01-generated-wording-description/
