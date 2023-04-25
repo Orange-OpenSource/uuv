@@ -19,6 +19,7 @@
     "generate:step-definitions-documentation": "ts-node generate-step-definitions-documentation.ts",
     "package": "npm pack --pack-destination=\"../../dist/packages\"",
     "postinstall": "node postinstall.js",
+    "test": "npm run test:run",
     "test:run": "node test.js --run",
     "test:open": "node test.js --open"
   },
