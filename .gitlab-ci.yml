@@ -9,19 +9,28 @@ stages:
   - test
   - publish
 
+# Caches
+.node_modules-cache: &node_modules-cache
+  key:
+    files:
+      - package-lock.json
+  paths:
+    - "node_modules"
+    - "packages/assistant/node_modules"
+    - "packages/docs/node_modules"
+    - "packages/runner-commons/node_modules"
+    - "packages/runner-cypress/node_modules"
+    - "packages/runner-playwright/node_modules"
+  policy: pull
+
 install:
   image: node:18.14.0-slim
   stage: install
   script:
     - npm ci
-  artifacts:
-    paths:
-      - "node_modules"
-      - "packages/assistant/node_modules"
-      - "packages/docs/node_modules"
-      - "packages/runner-commons/node_modules"
-      - "packages/runner-cypress/node_modules"
-      - "packages/runner-playwright/node_modules"
+  cache:
+    - <<: *node_modules-cache
+      policy: pull-push
   only:
     - master
 
@@ -31,6 +40,8 @@ lint:
   script:
     - npm run nx run-many -- --all --target=lint
   allow_failure: true
+  cache:
+    - <<: *node_modules-cache
   needs:
     - install
   only:
@@ -41,6 +52,8 @@ build-runner-commons:
   stage: build
   script:
     - npm run nx build runner-commons
+  cache:
+    - <<: *node_modules-cache
   needs:
     - install
   artifacts:
@@ -59,6 +72,8 @@ build-runner-cypress:
   needs:
     - install
     - build-runner-commons
+  cache:
+    - <<: *node_modules-cache
   artifacts:
     paths:
       - "packages/runner-cypress/dist"
@@ -76,6 +91,8 @@ build-assistant:
     - npm run nx conf:build assistant
   needs:
     - install
+  cache:
+    - <<: *node_modules-cache
   artifacts:
     paths:
       - "packages/assistant/dist"
@@ -91,6 +108,8 @@ build-docs:
   needs:
     - install
     - build-runner-cypress
+  cache:
+    - <<: *node_modules-cache
   artifacts:
     paths:
       - "packages/docs/build"
@@ -103,6 +122,8 @@ test-cypress:
   script:
     - npm ci
     - cd packages/runner-cypress && npm run test:run
+  cache:
+    - <<: *node_modules-cache
   needs:
     - install
     - build-runner-commons
@@ -113,6 +134,8 @@ test-cypress:
 .publish:
   image: node:18.14.0-slim
   stage: publish
+  cache:
+    - <<: *node_modules-cache
   script:
     - echo "//${NPM_REPO}:_authToken=$NPM_ACCESS_TOKEN" >> .npmrc
     - cd ./packages/${PACKAGE_NAME}
@@ -153,6 +176,8 @@ pages:
   artifacts:
     paths:
       - public
+  cache:
+    - <<: *node_modules-cache
   when: manual
   only:
     - master
