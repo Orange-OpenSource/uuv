@@ -7,8 +7,9 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com:e2e-testing/uuv.git"
+    "url": "https://github.com/e2e-test-quest/uuv"
   },
+  "homepage": "https://e2e-test-quest.github.io/uuv/",
   "keywords": [ "uuv", "UUV" ,"E2E", "test", "testing", "playwright", "testing-library", "cucumber", "gherkin"],
   "scripts": {
     "generate:step-definitions": "ts-node generate-step-definitions.ts",

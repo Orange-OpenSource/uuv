@@ -1,0 +1,29 @@
+name: NX Run Many
+description: Action for run Nx Many target
+inputs:
+  node-version:
+    required: true
+    description: Nodejs version
+  target:
+    required: true
+    description: Target command to run
+runs:
+  using: "composite"
+  steps:
+    - name: Cache node modules
+      uses: actions/cache@v3
+      with:
+        key: cache-node-modules
+        path: |
+          node_modules
+          packages/assistant/node_modules
+          packages/docs/node_modules
+          packages/runner-commons/node_modules
+          packages/runner-cypress/node_modules
+          packages/runner-playwright/node_modules
+    - name: Use Node.js ${{ inputs.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ inputs.node-version }}
+    - run: npm run nx run-many -- --all --target=${{ inputs.target }}
+      shell: bash
