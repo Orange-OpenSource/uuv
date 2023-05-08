@@ -1,6 +1,23 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:base",
+    ":rebaseStalePrs"
+  ],
+  "baseBranches": ["dev"],
+  "assignees": ["stanlee974", "luifr10"],
+  "packageRules": [
+    {
+      "description": "Automatically merge minor and patch-level updates",
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "rebase"
+    }
   ]
 }

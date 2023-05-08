@@ -30,8 +30,41 @@
       },
       "dependsOn": [
         "react:build",
-        "tsc:build"
+        "tsc:build",
+        "copy:sentences"
       ]
+    },
+    "copy:sentences": {
+      "executor": "nx:run-script",
+      "outputs": [
+        "packages/assistant/src/assets"
+      ],
+      "options": {
+        "script": "copy:sentences"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/assistant/src/**/*.{jsx,tsx}"],
+        "fix": true,
+        "eslintConfig": "packages/assistant/.eslintrc.json"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/assistant/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
     }
   }
 }

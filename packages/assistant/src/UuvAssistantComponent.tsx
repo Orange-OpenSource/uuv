@@ -14,195 +14,387 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import './UuvAssistantComponent.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {Button, Navbar, OverlayTrigger, Toast, ToastContainer, Tooltip} from "react-bootstrap";
-import {base, Clear, Copy, Select} from "grommet-icons";
-import deepmerge from "deepmerge";
-import {ThemeProvider} from "styled-components";
-import {computeAccessibleName, getRole} from "dom-accessibility-api";
+import React from "react";
+import "./UuvAssistantComponent.css";
+import uuvLogoJson from "./assets/uuvLogo.json";
+import warningIconJson from "./assets/warningIcon.json";
+import moonJson from "./assets/moon.json";
+import sunJson from "./assets/sun.json";
 
-const Inspector = require('inspector-dom');
+import { CheckActionEnum, TranslateHelper } from "./helper/TranslateHelper";
+import { Avatar, Button, Col, ConfigProvider, Divider, Drawer, Layout, notification, Row, Select, theme, Tooltip, Typography } from "antd";
+import { CopyOutlined, SelectOutlined, DoubleLeftOutlined } from "@ant-design/icons";
+import { CssHelper } from "./helper/CssHelper";
 
-const theme = deepmerge(base, {
-    global: {
-        colors: {
-            brand: 'white',
-        },
-    },
-    icon: {
-        size: {
-            medium: '16px',
-        },
-    },
-});
+const Inspector = require("inspector-dom");
 
-
-interface UuvAssistantState {
-    generatedScript?: string;
-    currentAction: 'selection' | 'none';
-    resultCopied: boolean;
+export interface UuvAssistantState {
+  generatedScript: string[];
+  currentAction: "selection" | "none";
+  resultCopied: boolean;
+  checkAction: string;
+  disabledElement: string;
+  isExtended: boolean;
+  isHide: boolean;
+  isDark: boolean;
 }
 
+
 interface UuvAssistantProps {
-    translator?: (el: HTMLElement) => string;
+  translator?: (el: HTMLElement) => string;
 }
 
 class UuvAssistantComponent extends React.Component<UuvAssistantProps, UuvAssistantState> {
-    private inspector: any;
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
+  private inspector: any;
 
-    constructor(props: any) {
-        console.log('constructor: ');
-        super(props);
-        this.state = {
-            currentAction: "none",
-            resultCopied: false
-        };
-        this.reset = this.reset.bind(this);
-        this.startSelect = this.startSelect.bind(this);
-        this.copyResult = this.copyResult.bind(this);
-        this.setShowResultCopiedToast = this.setShowResultCopiedToast.bind(this);
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      generatedScript: [],
+      currentAction: "none",
+      resultCopied: false,
+      checkAction: CheckActionEnum.EXPECT,
+      disabledElement: "",
+      isExtended: true,
+      isDark: true,
+      isHide: false,
+    };
+    this.reset = this.reset.bind(this);
+    this.startSelect = this.startSelect.bind(this);
+    this.copyResult = this.copyResult.bind(this);
+    this.setShowResultCopiedToast = this.setShowResultCopiedToast.bind(this);
+  }
+
+  reset() {
+    this.inspector.cancel();
+    this.setState({
+      ...this.state,
+      currentAction: "none",
+      checkAction: CheckActionEnum.EXPECT,
+      disabledElement: "",
+      isExtended: false,
+      isDark: true
+    });
+  }
+
+  setShowResultCopiedToast(resultCopied: boolean) {
+    this.setState({
+      ...this.state,
+      resultCopied: resultCopied
+    });
+  }
+
+  copyResult() {
+    if (this.state?.generatedScript?.length > 0) {
+      navigator.clipboard.writeText(this.state.generatedScript?.join("\n"));
+      this.setShowResultCopiedToast(true);
+      notification.success({
+        message: "Message",
+        description:
+          "Result copied to the clipboard"
+      });
     }
+  }
 
-    reset() {
-        console.log('reset');
+  startSelect() {
+    const removeDisableHandler = this.clickOnDisabledElementFeature();
+    document.addEventListener("mouseover", removeDisableHandler);
+    this.inspector.enable();
+    this.setState({
+      ...this.state,
+      currentAction: "selection",
+      isHide: true
+    });
+  }
+
+  buildSelector() {
+    this.inspector = new Inspector({
+      root: "body",
+      excluded: ["#uvv-assistant-root"],
+      outlineStyle: "2px solid red",
+      onClick: (el: HTMLElement) => {
+        const sentences = this.translate(el);
+        this.setState({
+          ...this.state,
+          generatedScript: sentences,
+          currentAction: "none",
+          isHide: false
+        });
         this.inspector.cancel();
-        this.setState({
-            ...this.state,
-            currentAction: "none"
-        });
-    }
+      }
+    });
+  }
 
-    setShowResultCopiedToast(resultCopied: boolean) {
+  private clickOnDisabledElementFeature() {
+    const removeDisableHandler = (e: MouseEvent): void => {
+      e.preventDefault();
+      const element = document.elementFromPoint(e.clientX, e.clientY);
+      let disabledElement = this.state.disabledElement;
+      if (this.state.currentAction === "selection" && element && element.hasAttribute("disabled")) {
+        disabledElement = TranslateHelper.getSelector(element);
+        element.removeAttribute("disabled");
+        element.setAttribute("readonly", "true");
         this.setState({
-            ...this.state,
-            resultCopied: resultCopied
+          ...this.state,
+          disabledElement: disabledElement
         });
-    }
-
-    copyResult() {
-        if (this.state?.generatedScript) {
-            navigator.clipboard.writeText(this.state.generatedScript);
-            this.setShowResultCopiedToast(true);
+      } else {
+        console.log("ce n'est plus deleted");
+        if (disabledElement) {
+          const querySelector = document.querySelector(disabledElement);
+          querySelector?.setAttribute("disabled", "true");
+          querySelector?.removeAttribute("readonly");
+          this.setState({
+            ...this.state,
+            disabledElement: ""
+          });
+          console.log("querySelector", this.state.disabledElement);
         }
-    }
+      }
+    };
+    return removeDisableHandler;
+  }
 
-    startSelect() {
-        console.log('startSelect');
-        this.inspector.enable();
-        this.setState({
-            ...this.state,
-            currentAction: "selection"
-        });
-    }
+  private translate(el: HTMLElement): string[] {
+    console.debug("translator,", this.props.translator);
+    return this.props.translator
+      ? [this.props.translator(el)]
+      : TranslateHelper.translateEngine(el, this.state.checkAction, this.state.disabledElement !== "");
+  }
 
-    buildSelector() {
-        this.inspector = new Inspector({
-            root: 'body',
-            excluded: ['#uvv-assistant-root'],
-            outlineStyle: '2px solid red',
-            onClick: (el: HTMLElement) => {
-                this.setState({
-                    ...this.state,
-                    generatedScript: this.translate(el),
-                    currentAction: "none"
-                });
-                this.inspector.cancel();
-            }
-        });
-    }
+ override componentDidMount() {
+    this.buildSelector();
+  }
 
-    private translate(el: HTMLElement) {
-        return this.props.translator ? this.props.translator(el) : `Then I should see an element with role "${getRole(el)}" and name "${computeAccessibleName(el)}"`;
-    }
+  override componentWillUnmount() {
+    this.reset();
+  }
 
-    componentDidMount() {
-        this.buildSelector();
-    }
+  override render() {
+    const handleSelectCheckActionChange = (value: string) => {
+      this.setState({
+        ...this.state,
+        checkAction: value
+      });
+    };
 
-    componentWillUnmount() {
-        this.reset();
-    }
+    const handleChangeLightMode = () => {
+      this.setState({
+        ...this.state,
+        isDark: !this.state.isDark
+      });
+    };
 
-    render() {
-        return (
-            <div className="App">
-                <ThemeProvider theme={theme}>
-                    <ToastContainer
-                        className="p-3"
-                        position="top-end"
-                        style={{zIndex: 1}}
-                    >
-                        <Toast onClose={() => this.setShowResultCopiedToast(false)} show={this.state.resultCopied}
-                               delay={3000} autohide bg="success">
-                            <Toast.Header>
-                                <strong className="me-auto">Message</strong>
-                            </Toast.Header>
-                            <Toast.Body className="text-white">Résultat copié dans le presse papier</Toast.Body>
-                        </Toast>
-                    </ToastContainer>
-                    <Navbar className="UuvAssistant" fixed="bottom" bg="dark" variant="dark">
-                        <div className="w-100 d-flex flex-row align-items-stretch gap-3 ps-4 pe-4">
-                            <div>
-                                <OverlayTrigger
-                                    placement={'top'}
-                                    overlay={
-                                        <Tooltip>
-                                            Annuler
-                                        </Tooltip>
-                                    }
-                                >
-                                    <Button variant="secondary" className="IconBtn m-1" onClick={this.reset}
-                                            disabled={this.state.currentAction === 'none'}>
-                                        <Clear color='brand' size='medium'/>
-                                    </Button>
-                                </OverlayTrigger>
-                                <OverlayTrigger
-                                    placement={'top'}
-                                    overlay={
-                                        <Tooltip>
-                                            Sélectionner un élément
-                                        </Tooltip>
-                                    }
-                                >
-                                    <Button variant="primary" className="IconBtn m-1" onClick={this.startSelect}
-                                            disabled={this.state.currentAction === 'selection'}>
-                                        <Select color='brand' size='medium'/>
-                                    </Button>
-                                </OverlayTrigger>
-                            </div>
-                            <div>
-                                <div className="vr"></div>
-                            </div>
-                            <div className={"flex-grow-1 d-flex flex-row align-items-center"}>
-                                <span className="GeneratedScriptLabel">Résultat :</span>
-                                <span className="GeneratedScript ms-3">{this.state.generatedScript}</span>
-                            </div>
-                            <div>
-                                <div className="vr"></div>
-                            </div>
-                            <div>
-                                <OverlayTrigger
-                                    placement={'top'}
-                                    overlay={
-                                        <Tooltip>
-                                            Copier
-                                        </Tooltip>
-                                    }
-                                >
-                                    <Button variant="warning" className="IconBtn m-1" onClick={this.copyResult}
-                                            disabled={!this.state.generatedScript}>
-                                        <Copy color='black' size='medium'/>
-                                    </Button>
-                                </OverlayTrigger>
-                            </div>
-                        </div>
-                    </Navbar>
-                </ThemeProvider>
-            </div>
-        );
-    }
+    const handleExpandInspector = () => {
+      this.setState({
+        ...this.state,
+        isExtended: !this.state.isExtended
+      });
+    };
+
+    const { Content, Sider } = Layout;
+    const { Text } = Typography;
+    const expander = CssHelper.expanderConfig(this.state.isDark, this.state.isExtended);
+    const buttonConfig = CssHelper.buttonConfig(this.state.isDark);
+    const lightMode = this.state.isDark ? CssHelper.getBase64File(sunJson) : CssHelper.getBase64File(moonJson);
+    const warningIcon = CssHelper.getBase64File(warningIconJson);
+    const uuvLogo = CssHelper.getBase64File(uuvLogoJson);
+    return (
+      <ConfigProvider
+        theme={{
+          algorithm: this.state.isDark ? theme.darkAlgorithm : theme.defaultAlgorithm,
+          token: {
+            fontSize: 18,
+            zIndexBase: 9999999989,
+            zIndexPopupBase: 9999999999
+          }
+        }}
+      >
+        <Drawer
+          placement='bottom'
+          open={!this.state.isHide}
+          closable={false}
+          className={["uuvAssistant"].join(" ")}
+          height={this.state.isExtended ? 300 : 20}
+          bodyStyle={{ padding: "0px", overflowY: "hidden" }}
+          mask={false}
+        >
+          <Tooltip placement='top' title='Resize the Uuv assistant' zIndex = {9999999780}>
+          <Button
+            data-testid={"expanderButton"}
+            onClick={handleExpandInspector}
+            className='uuvArrowExpander'
+            icon={<DoubleLeftOutlined aria-label={expander.rotate === 90 ?
+              "uvv Assistant not expanded" : "uvv Assistant expanded"}
+            rotate={expander.rotate} spin={true} style={{ color: expander.color }} />}
+            style={{
+              boxShadow: expander.shadow,
+              backgroundColor: expander.background
+            }}>
+          </Button>
+          </Tooltip>
+          {!this.state.isExtended ?
+            <Row>
+                <Button
+                  aria-label="floating select button"
+                  className='m-1 pt-0 pb-1 uuvFloatingButton'
+                        onClick={this.startSelect}
+                        style={{ left: "calc(50% - 400px)",
+                          background: buttonConfig.background, color: buttonConfig.color }}
+                        disabled={this.state.currentAction === "selection"} icon={<SelectOutlined />}>
+                  Select
+                </Button>
+                <Button
+                  aria-label="floating copy button"
+                  className='uuvFloatingButton'
+                        style={{
+                          left: "calc(50% - 270px)",
+                          background: this.state.generatedScript.length > 0 ? buttonConfig.background : "grey",
+                          color: buttonConfig.color,
+                          cursor: this.state.generatedScript.length > 0 ? "pointer" : "not-allowed"
+                        }}
+                        onClick={this.copyResult}
+                        disabled={this.state.generatedScript.length === 0} icon={<CopyOutlined />}>
+                  Copy
+                </Button>
+                <Select
+                  aria-label={"floating select list"}
+                  data-testid={"floatingSelectList"}
+                  defaultValue={this.state.checkAction}
+                  size='middle'
+                  onChange={handleSelectCheckActionChange}
+                  className='uuvFloatingButton'
+                  style={{ left: "calc(50% - 140px)" }}
+                  options={[
+                    {
+                      value: CheckActionEnum.EXPECT.toString(),
+                      label: CheckActionEnum.EXPECT.toString()
+                    },
+                    {
+                      value: CheckActionEnum.WITHIN.toString(),
+                      label: CheckActionEnum.WITHIN.toString()
+                    },
+                    {
+                      value: CheckActionEnum.CLICK.toString(),
+                      label: CheckActionEnum.CLICK.toString()
+                    }
+                  ]}
+                /></Row> : ""}
+          <Layout>
+            <Sider width={250} collapsible={true} collapsedWidth={0}
+                   theme={this.state.isDark ? "dark" : "light"}>
+              <Row align='middle' style={{ marginTop: 10, marginBottom: 20, marginLeft: 10 }}>
+                <Col span={6}>
+                  <Avatar style={{ backgroundColor: this.state.isDark ?
+                      "#073a69" : "#C0C0C0", height: "50px", width: "50px" }} size='large'>
+                    <Tooltip placement='top' title='Go to steps definition'>
+                      <a href='https://e2e-test-quest.github.io/uuv/docs/category/description-of-sentences'>
+                        <img
+                          src={uuvLogo}
+                          width='40'
+                          height='40'
+                          alt='UUV logo'
+                        />
+                      </a>
+                    </Tooltip>
+                  </Avatar>
+                </Col>
+                <Col span={18}>
+                  <Text strong>UUV Assistant</Text>
+                </Col>
+              </Row>
+              <Divider />
+              <Col>
+                <Tooltip placement='left' title='Select an element'>
+                  <Button aria-label="select button"
+                          className='m-1 pt-0 pb-1 uuvActionAside' onClick={this.startSelect}
+                          style={{ background: buttonConfig.background, color: buttonConfig.color }}
+                          disabled={this.state.currentAction === "selection"} icon={<SelectOutlined />}>
+                    Select
+                  </Button>
+                </Tooltip>
+                <Tooltip placement='left' title='Copy in clipboard'>
+                  <Button
+                    aria-label="copy button" className='uuvActionAside'
+                          style={{ marginTop: "10px",
+                            background: this.state.generatedScript.length > 0 ?
+                              buttonConfig.background : "grey", color: buttonConfig.color }}
+                          onClick={this.copyResult}
+                          disabled={this.state.generatedScript.length === 0} icon={<CopyOutlined />}>
+                    Copy
+                  </Button>
+                </Tooltip>
+                <Tooltip placement='left' title='Choose the generated action'>
+                  <Select
+                    aria-label="select list expanded"
+                    data-testid="selectListExpanded"
+                    defaultValue={this.state.checkAction}
+                    size='large'
+                    onChange={handleSelectCheckActionChange}
+                    style={{ marginTop: "10px" }}
+                    className='uuvActionAside'
+                    options={[
+                      {
+                        value: CheckActionEnum.EXPECT.toString(),
+                        label: CheckActionEnum.EXPECT.toString()
+                      },
+                      {
+                        value: CheckActionEnum.WITHIN.toString(),
+                        label: CheckActionEnum.WITHIN.toString()
+                      },
+                      {
+                        value: CheckActionEnum.CLICK.toString(),
+                        label: CheckActionEnum.CLICK.toString()
+                      }
+                    ]}
+                  />
+                </Tooltip>
+              </Col>
+            </Sider>
+            <Layout style={{ padding: "20px 24px 24px", marginLeft: 25 }}>
+              <Row>
+                <Col span={23}>
+                  <Text strong underline type={this.state.isDark ? "warning" : "secondary"}>Result</Text>
+                </Col>
+                <Col span={1}>
+                  <Avatar onClick={handleChangeLightMode}
+                          src={<img src={lightMode} alt='Light mode' />}
+                          style={{ cursor: "pointer" }} />
+                </Col>
+              </Row>
+              <Content
+                aria-label={"sentences"}
+                style={{
+                  padding: 24,
+                  margin: 0,
+                  minHeight: 280
+                }}
+              >
+                {this.state.generatedScript.map((value, index) =>
+                  [<Col
+                    key={value.concat(index.toString())}> <Row align='middle'><span
+                    style={{ color: this.state.isDark ? "white" : "black" }}>{value}</span> {value.includes("selector") ?
+                    <Tooltip placement='right' title='Accessibility role and name must be defined'><Avatar key={index} style={{
+                      marginLeft: "20px",
+                      marginTop: 15
+                    }}
+                   src={<img src={warningIcon}
+                             alt='logo warning'
+                             style={{
+                               height: "20px",
+                               width: "20px"
+                             }} />} />
+                    </Tooltip> : ""} </Row></Col>]
+                )}
+              </Content>
+            </Layout>
+          </Layout>
+        </Drawer>
+      </ConfigProvider>
+    );
+  }
 }
 
 export default UuvAssistantComponent;

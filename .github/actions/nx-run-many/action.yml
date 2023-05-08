@@ -7,13 +7,17 @@ inputs:
   target:
     required: true
     description: Target command to run
+  exclude:
+    required: true
+    default: ""
+    description: Projects to exclude
 runs:
   using: "composite"
   steps:
     - name: Cache node modules
       uses: actions/cache@v3
       with:
-        key: cache-node-modules
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
         path: |
           node_modules
           packages/assistant/node_modules
@@ -25,5 +29,5 @@ runs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ inputs.node-version }}
-    - run: npm run nx run-many -- --all --target=${{ inputs.target }}
+    - run: npm run nx run-many -- --all --target=${{ inputs.target }} --exclude=${{ inputs.exclude }}
       shell: bash

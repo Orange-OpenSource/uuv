@@ -11,9 +11,8 @@ First of all you have to choose your runners among the following :
 When your tests are written you can change the runner by replacing the npm dependency without having to modify them.
 :::
 
-
-
 ## Cypress
+
 :::caution
 
 Npm/Yarn will need access to the internet when installing the Cypress library.
@@ -39,8 +38,8 @@ yarn add -D @uuv/cypress
 </TabItem>
 </Tabs>
 
-
 ## Playwright
+
 :::caution
 
 Npm/Yarn will need access to the internet when installing the Playwright library.

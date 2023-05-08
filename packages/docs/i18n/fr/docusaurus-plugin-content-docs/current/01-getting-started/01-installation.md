@@ -11,9 +11,8 @@ Tout d'abord vous devez choisir votre runners parmi les suivants :
 Lorsque vos tests sont écrits vous pouvez changer de runner sans avoir à les modifier.
 :::
 
-
-
 ## Cypress
+
 :::caution
 
 Npm/Yarn aura besoin d'accéder à internet lors de l'installation de la librairie Cypress.
@@ -39,8 +38,8 @@ yarn add -D @uuv/cypress
 </TabItem>
 </Tabs>
 
-
 ## Playwright
+
 :::caution
 
 Npm/Yarn aura besoin d'accéder à internet lors de l'installation de la librairie Playwright.

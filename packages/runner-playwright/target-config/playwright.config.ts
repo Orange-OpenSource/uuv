@@ -1,28 +1,28 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
-  testDir: 'tests/.features-gen',
-  testMatch: ['**/*.spec.ts', '**/*.{ts,js}'],
+  testDir: ".uuv-features-gen",
+  testMatch: ["**/*.spec.ts", "**/*.{ts,js}"],
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: [['html', { outputFolder: 'report/playwright' }]],
+  reporter: "@uuv/playwright/uuv-playwright-reporter",
   use: {
-    baseURL: 'http://127.0.0.1:3000',
-    trace: 'on-first-retry',
+    baseURL: "http://localhost:4200",
+    trace: "on-first-retry",
   },
 
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: "chromium",
+      use: { ...devices["Desktop Chrome"] },
     },
 
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
+    {
+      name: "firefox",
+      use: { ...devices["Desktop Firefox"] },
+    },
     //
     // {
     //   name: 'webkit',
@@ -40,13 +40,13 @@ export default defineConfig({
     // },
 
     /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ..devices['Desktop Chrome'], channel: 'chrome' },
-    // },
+    {
+      name: "Microsoft Edge",
+      use: { ...devices["Desktop Edge"], channel: "msedge" },
+    },
+    {
+      name: "Google Chrome",
+      use: { ...devices["Desktop Chrome"], channel: "chrome" },
+    },
   ],
 });

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-"use strict";
+
 
 /**
  * Copyright UUV.
@@ -17,42 +17,27 @@
  * limitations under the License.
  */
 
-main();
+import report from "multiple-cucumber-html-reporter";
+import chalk from "chalk";
+import figlet from "figlet";
+import minimist from "minimist";
+import fs from "fs";
 
-async function main() {
-  const chalk = require("chalk");
+import cypress from "cypress";
+
+import { Formatter } from "cucumber-json-report-formatter";
+
+export async function main() {
   const JSON_REPORT_DIR = "./uuv/reports/e2e/json";
   const HTML_REPORT_DIR = "./uuv/reports/e2e/html";
   const CUCUMBER_MESSAGES_FILE = "./uuv/cucumber-messages.ndjson";
-  const fs = require("fs");
   const PROJECT_DIR = "./uuv";
-  const Os = require('os');
-  const isAdmin = require('is-admin');
-  const figlet = require('figlet');
 
-  figlet.text('UUV', {
-    font: 'Big',
-    horizontalLayout: 'default',
-    verticalLayout: 'default',
-    width: 80,
-    whitespaceBreak: true
-  }, function(err, data) {
-    if (err) {
-      console.error(chalk.red('Something went wrong...'));
-      console.dir(err);
-      process.exit(-1);
-    }
-    console.log(chalk.blue(data));
-  });
+  printBanner(getCurrentVersion);
 
-  if(Os.platform() === 'win32' && await isAdmin()) {
-    console.error(chalk.red(`Please re-run this command without administrator privileges`));
-    process.exit(-1)
-  }
-
-  let argv = require("minimist")(process.argv.slice(2));
-  let command = findTargetCommand(argv);
-  console.info(chalk.blue(`Executing UUV command ${command}...`));
+  const argv = minimist(process.argv.slice(2));
+  const command = findTargetCommand(argv);
+  console.info(chalk.blueBright(`Executing UUV command ${command}...`));
   switch (command) {
     case "open":
       await openCypress(argv);
@@ -68,7 +53,7 @@ async function main() {
 
   function extractArgs(argv: any) {
     const browser = argv.browser ? argv.browser : "chrome";
-    const env = argv.env ? JSON.parse(argv.env.replace(/'/g, '"')) : {};
+    const env = argv.env ? JSON.parse(argv.env.replace(/'/g, "\"")) : {};
 
     console.debug("Variables: ");
     console.debug(`  -> browser: ${browser}`);
@@ -78,7 +63,6 @@ async function main() {
 
   function openCypress(argv: any): Promise<any> {
     const { env } = extractArgs(argv);
-    const cypress = require("cypress");
     return cypress.open({
       project: PROJECT_DIR,
       env,
@@ -87,12 +71,6 @@ async function main() {
 
   function runE2ETests(argv: any): Promise<any> {
     const { browser, env } = extractArgs(argv);
-    const cypress = require("cypress");
-
-    // Creating needed dirs
-    if (!fs.existsSync(JSON_REPORT_DIR)) {
-      fs.mkdirSync(JSON_REPORT_DIR, { recursive: true });
-    }
 
     // Running Tests
     return cypress
@@ -103,14 +81,17 @@ async function main() {
       })
       .then(async (result) => {
         if (argv.generateHtmlReport) {
-          console.info(chalk.blue("Generating Test Report..."));
+          console.info(chalk.blueBright("Generating Test Report..."));
           await generateHtmlReport(browser, argv);
         }
         if (fs.existsSync(CUCUMBER_MESSAGES_FILE)) {
           fs.rmSync(CUCUMBER_MESSAGES_FILE);
         }
-        console.log(`Status ${result.totalFailed ? chalk.red('failed') : chalk.green('success')}`);
-        process.exit(result.totalFailed);
+        if ("totalFailed" in result) {
+          console.log(`Status ${result.totalFailed ? chalk.red("failed") : chalk.green("success")}`);
+          process.exit(result.totalFailed);
+        }
+        process.exit();
       })
       .catch((err: any) => {
         console.error(chalk.red(err));
@@ -118,14 +99,17 @@ async function main() {
   }
 
   async function formatCucumberMessageFile() {
-    const { Formatter } = require("cucumber-json-report-formatter");
+    // Creating needed dirs
+    if (!fs.existsSync(JSON_REPORT_DIR)) {
+      fs.mkdirSync(JSON_REPORT_DIR, { recursive: true });
+    }
+
     const formatter = new Formatter();
     const outputFile = `${JSON_REPORT_DIR}/cucumber-report.json`;
     await formatter.parseCucumberJson(CUCUMBER_MESSAGES_FILE, outputFile);
   }
 
   function generateHtmlReportFromJson(browser: string, argv: any) {
-    const report = require("multiple-cucumber-html-reporter");
     const UNKOWN_VALUE = "unknown";
     report.generate({
       jsonDir: JSON_REPORT_DIR,
@@ -154,7 +138,29 @@ async function main() {
       console.error(chalk.red("No command specified"));
       process.exit(1);
     }
-    let command = argv._[0];
+    const command = argv._[0];
     return command;
+  }
+
+  function printBanner(getCurrentVersion: () => string) {
+    console.log(
+        chalk.blueBright(
+            figlet.textSync("UUV", {
+              font: "Big",
+              horizontalLayout: "default",
+              verticalLayout: "default",
+              width: 80,
+              whitespaceBreak: true
+            })
+        )
+    );
+    console.info(chalk.blueBright(`Version: ${getCurrentVersion()}\n\n`));
+  }
+
+  function getCurrentVersion(): string {
+    const pJsonStr = fs.readFileSync(`${__dirname}/../../package.json`, {
+      encoding: "utf8", flag: "r"
+    });
+    return JSON.parse(pJsonStr).version;
   }
 }

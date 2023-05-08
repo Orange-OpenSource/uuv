@@ -5,20 +5,30 @@ import TabItem from '@theme/TabItem';
 
 ## Opening runner
 
+<Tabs>
+<TabItem value="cypress" label="Cypress">
+
 :::tip
-- Pour le runner `Cypress` modifier l'url, changer le paramètre `e2e.baseUrl` dans le fichier `uuv/cypress.config.ts` afin de renseigner l'url
-cible.
-- [WIP] Pour le runner `Plawright` modifier l'url, changer le paramètre `e2e.baseUrl` dans le fichier `uuv/cypress.config.ts` afin de renseigner l'url
-    cible.
+To modify the url, change the `e2e.baseUrl` parameter in the `uuv/cypress.config.ts` file in order to fill the target url.
 :::
 
-From powershell or cmd terminal **in non-administrator mode** :
+</TabItem>
+<TabItem value="playwright" label="Playwright">
+
+:::tip
+To modify the url, change the `use.baseURL` parameter in the `uuv/playwright.config.ts` file in order to fill the target url.
+:::
+
+</TabItem>
+</Tabs>
+
+From powershell or cmd terminal :
 
 <Tabs>
 <TabItem value="Npm" label="Npm">
 
 ```shell
-npm run uuv open
+npx uuv open
 ```
 
 </TabItem>
@@ -33,20 +43,20 @@ yarn uuv open
 
 ## Exécution des tests E2E depuis la console
 
-From powershell or cmd terminal **in non-administrator mode** :
+From powershell or cmd terminal :
 
 
 <Tabs>
 <TabItem value="Npm" label="Npm">
 
 ```shell
-npm run uuv e2e
+npx uuv e2e
 ```
 
 With arguments
 
 ```shell
-npm run uuv e2e -- --browser=edge --env="{'TAGS':'@mobile'}" --generateHtmlReport
+npx uuv e2e --browser=edge --env="{'TAGS':'@mobile'}" --generateHtmlReport
 ```
 
 </TabItem>
@@ -59,13 +69,17 @@ yarn uuv e2e
 With arguments
 
 ```shell
-yarn uuv e2e -- --browser=edge --env="{'TAGS':'@mobile'}" --generateHtmlReport
+yarn uuv e2e --browser=edge --env="{'TAGS':'@mobile'}" --generateHtmlReport
 ```
 
 </TabItem>
 </Tabs>
 
-### Cypress
+### Arguments
+
+<Tabs>
+<TabItem value="Windows" label="Cypress">
+
 :::tip
 To modify the BASE_URL in E2E mode, simply set the environment variable :
 
@@ -87,14 +101,27 @@ export CYPRESS_BASE_URL=http://localhost:4200
 </Tabs>
 :::
 
-#### Arguments
+| Nom                  | Description                                                                                                   | Valeur                                                                                                                                                                                                                                                                                 |
+|----------------------|---------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `browser`            | Target browser                                                                                                | `chrome` / `edge` / `firefox` / `electron`                                                                                                                                                                                                                                             |
+| `env`                | Environment variables                                                                                         | Json object containing the properties: <br/> - `TAGS` : To target the [cucumber tags](https://cucumber.io/docs/cucumber/api/?lang=javascript#tags) <br/> - `...` : All [possible properties](https://docs.cypress.io/guides/references/configuration#Global) for cypress |
+| `generateHtmlReport` | When this option is present, an html report of the executed tests will be generated here : `./reports/e2e/html/` | N/A                                                                                                                                                                                                                                                                                    |
 
-| Nom     | Description                                                                                                   | Valeur                                                                                                                                                                                                                                                                                 |
-|---------|---------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `browser` | Target browser                                                                                                | `chrome` / `edge` / `firefox` / `electron`                                                                                                                                                                                                                                             |
-| `env` | Environment variables                                                                                         | Json object containing the properties: <br/> - `TAGS` : To target the [cucumber tags](https://cucumber.io/docs/cucumber/api/?lang=javascript#tags) <br/> - `...` : All [possible properties](https://docs.cypress.io/guides/references/configuration#Global) for cypress |
+</TabItem>
+<TabItem value="playwright" label="Playwright">
+
+:::tip
+To modify the BASE_URL in E2E mode, simply set the environment variable :
+
+WIP
+:::
+
+| Nom                  | Description                                                                                                   | Valeur                                                                                                                                                                                                                                                                                 |
+|----------------------|---------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `browser` WIP        | Target browser                                                                                                | `chrome` / `edge` / `firefox` / `electron`                                                                                                                                                                                                                                             |
 | `generateHtmlReport` | When this option is present, an html report of the executed tests will be generated here : `./reports/e2e/html/` | N/A                                                                                                                                                                                                                                                                                    |
 
 
-### Playwright
-WIP
+</TabItem>
+</Tabs>
+
