@@ -28,7 +28,6 @@
     "nx": "nx",
     "prepare": "husky install"
   },
-  "private": true,
   "dependencies": {
     "tslib": "2.5.0"
   },
