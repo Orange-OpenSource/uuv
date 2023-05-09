@@ -113,35 +113,96 @@ jobs:
           node-version: ${{env.NODE_VERSION}}
           target: "lint"
 
-  release:
+#  release:
+#    if: github.ref == 'refs/heads/main'
+#    needs: [ lint, build, test ]
+#    permissions:
+#      contents: write
+#      packages: write
+#      issues: write
+#    runs-on: ubuntu-latest
+#    environment: release
+#    steps:
+#      - uses: actions/checkout@v3
+#      - name: Download build artifact
+#        uses: actions/download-artifact@v3
+#        with:
+#          name: build-artifacts
+#          path: packages
+#      - name: Release public packages
+#        uses: ./.github/actions/nx-run-many
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+#        with:
+#          node-version: ${{env.NODE_VERSION}}
+#          target: "semantic-release"
+#          parallel: "false"
+  
+  publish-npm-assistant:
     if: github.ref == 'refs/heads/main'
-    needs: [ lint, build, test ]
-    permissions:
-      contents: write
-      packages: write
-      issues: write
+    needs: [ lint, build, test, test-cypress, test-playwright ]
     runs-on: ubuntu-latest
     environment: release
     steps:
       - uses: actions/checkout@v3
-      - name: Download build artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: build-artifacts
-          path: packages
-      - name: Release public packages
-        uses: ./.github/actions/nx-run-many
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish @uuv/assistant
+        uses: ./.github/actions/npm-publish
         with:
           node-version: ${{env.NODE_VERSION}}
-          target: "semantic-release"
-          parallel: "false"
+          app-name: "assistant"
+          npm-package-scope: ${{env.NPM_PACKAGE_SCOPE}}
+          npm-token: ${{secrets.NPM_TOKEN}}
+
+  publish-npm-runner-commons:
+    if: github.ref == 'refs/heads/main'
+    needs: [ lint, build, test, test-cypress, test-playwright ]
+    runs-on: ubuntu-latest
+    environment: release
+    steps:
+      - uses: actions/checkout@v3
+      - name: Publish @uuv/runner-commons
+        uses: ./.github/actions/npm-publish
+        with:
+          node-version: ${{env.NODE_VERSION}}
+          app-name: "runner-commons"
+          npm-package-scope: ${{env.NPM_PACKAGE_SCOPE}}
+          npm-token: ${{secrets.NPM_TOKEN}}
+
+
+  publish-npm-runner-cypress:
+    if: github.ref == 'refs/heads/main'
+    needs: [ lint, build, test, test-cypress, test-playwright ]
+    runs-on: ubuntu-latest
+    environment: release
+    steps:
+      - uses: actions/checkout@v3
+      - name: Publish @uuv/cypress
+        uses: ./.github/actions/npm-publish
+        with:
+          node-version: ${{env.NODE_VERSION}}
+          app-name: "runner-cypress"
+          npm-package-scope: ${{env.NPM_PACKAGE_SCOPE}}
+          npm-token: ${{secrets.NPM_TOKEN}}
+
+  publish-npm-runner-playwright:
+    if: github.ref == 'refs/heads/main'
+    needs: [ lint, build, test, test-cypress, test-playwright ]
+    runs-on: ubuntu-latest
+    environment: release
+    steps:
+      - uses: actions/checkout@v3
+      - name: Publish @uuv/playwright
+        uses: ./.github/actions/npm-publish
+        with:
+          node-version: ${{env.NODE_VERSION}}
+          app-name: "runner-playwright"
+          npm-package-scope: ${{env.NPM_PACKAGE_SCOPE}}
+          npm-token: ${{secrets.NPM_TOKEN}}
 
   publish-docs:
     if: github.ref == 'refs/heads/main'
-    needs: [ release ]
+    needs: [ lint, build, test, test-cypress, test-playwright ]
     permissions:
       pages: write
       id-token: write
