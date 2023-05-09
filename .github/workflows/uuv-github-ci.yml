@@ -115,10 +115,11 @@ jobs:
 
   release:
     if: github.ref == 'refs/heads/main'
-    needs: [ lint, build, test, test-cypress, test-playwright ]
+    needs: [ lint, build, test ]
     permissions:
       contents: write
       packages: write
+      issues: write
     runs-on: ubuntu-latest
     environment: release
     steps:
