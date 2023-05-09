@@ -130,6 +130,8 @@ jobs:
           path: packages
       - name: Release public packages
         uses: ./.github/actions/nx-run-many
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           node-version: ${{env.NODE_VERSION}}
           target: "semantic-release"
