@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/e2e-test-quest/uuv/compare/runner-commons-v1.3.0...runner-commons-v1.3.1) (2023-05-09)
+
+
+### Bug Fixes
+
+* **runner-commons:** fix npm documentation, [#87](https://github.com/e2e-test-quest/uuv/issues/87) ([ba7394c](https://github.com/e2e-test-quest/uuv/commit/ba7394cd755e350fd5a5964aed26435e5979e77d))
+* **runner-commons:** modify keyword for npmjs, [#87](https://github.com/e2e-test-quest/uuv/issues/87) ([392c4d0](https://github.com/e2e-test-quest/uuv/commit/392c4d0337179dae2c2a96c26dc2cc32e0ad87b3))
 
 # Change Log
 All notable changes to this project will be documented in this file.
