@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/e2e-test-quest/uuv/compare/runner-commons-v1.3.1...runner-commons-v1.3.2) (2023-05-11)
+
+
+### Bug Fixes
+
+* **runner-playwright:** update @cucumber/cucumber dep version, [#93](https://github.com/e2e-test-quest/uuv/issues/93) ([a891a70](https://github.com/e2e-test-quest/uuv/commit/a891a70daad1cb5d7d34f25097a31d89f92b92c6))
+
 ## [1.3.1](https://github.com/e2e-test-quest/uuv/compare/runner-commons-v1.3.0...runner-commons-v1.3.1) (2023-05-09)
 
 
