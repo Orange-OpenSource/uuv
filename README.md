@@ -42,3 +42,4 @@ To answer the above issues and many others, our solution is to set up a coherent
 
 ![Ecosystème UUV](./packages/docs/static/img/docs/ecosystem-uuv.png)
 
+<a href="https://e2e-test-quest.github.io/uuv/"><img src="https://img.shields.io/badge/Online%20documentation%20doc-red?&style=for-the-badge&logo=github&logoColor=white" alt="Online documentation"/></a>
