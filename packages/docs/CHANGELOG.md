@@ -1,3 +1,14 @@
+## [1.3.2](https://github.com/e2e-test-quest/uuv/compare/docs-v1.3.1...docs-v1.3.2) (2023-05-11)
+
+
+### Bug Fixes
+
+* **assistant:** modify doc for npmjs, fixes [#94](https://github.com/e2e-test-quest/uuv/issues/94) ([c59f40c](https://github.com/e2e-test-quest/uuv/commit/c59f40c6e55d060e7186fa45ac1109d42f5c6d58))
+* **runner-cypress:** add lint script [#8](https://github.com/e2e-test-quest/uuv/issues/8) ([78c43d1](https://github.com/e2e-test-quest/uuv/commit/78c43d1406709953086793298132f8fb85e68ba8))
+* **runner-cypress:** modify doc for npmjs [#94](https://github.com/e2e-test-quest/uuv/issues/94) ([b7ba332](https://github.com/e2e-test-quest/uuv/commit/b7ba332900081318984e495d563c1477ffacd801))
+* **runner-playwright:** add lint script [#8](https://github.com/e2e-test-quest/uuv/issues/8) ([0cd7451](https://github.com/e2e-test-quest/uuv/commit/0cd7451a2bb73698e05aefc6c89be01c2ea41c96))
+* **runner-playwright:** update @cucumber/cucumber dep version, [#93](https://github.com/e2e-test-quest/uuv/issues/93) ([a891a70](https://github.com/e2e-test-quest/uuv/commit/a891a70daad1cb5d7d34f25097a31d89f92b92c6))
+
 ## [1.3.1](https://github.com/e2e-test-quest/uuv/compare/docs-v1.3.0...docs-v1.3.1) (2023-05-09)
 
 
