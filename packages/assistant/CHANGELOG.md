@@ -1,3 +1,12 @@
+## [1.3.2](https://github.com/e2e-test-quest/uuv/compare/assistant-v1.3.1...assistant-v1.3.2) (2023-05-11)
+
+
+### Bug Fixes
+
+* **assistant:** add lint & test script [#8](https://github.com/e2e-test-quest/uuv/issues/8) ([11a8fce](https://github.com/e2e-test-quest/uuv/commit/11a8fced2dd3a4e6e17202e450b846c3f50b784a))
+* **assistant:** modify doc for npmjs, fixes [#94](https://github.com/e2e-test-quest/uuv/issues/94) ([c59f40c](https://github.com/e2e-test-quest/uuv/commit/c59f40c6e55d060e7186fa45ac1109d42f5c6d58))
+* **runner-playwright:** update @cucumber/cucumber dep version, [#93](https://github.com/e2e-test-quest/uuv/issues/93) ([a891a70](https://github.com/e2e-test-quest/uuv/commit/a891a70daad1cb5d7d34f25097a31d89f92b92c6))
+
 ## [1.3.1](https://github.com/e2e-test-quest/uuv/compare/assistant-v1.3.0...assistant-v1.3.1) (2023-05-09)
 
 
