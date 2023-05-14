@@ -2,7 +2,7 @@ name: 'UUV NPM Publish'
 
 on:
   push:
-    tags: [ "*-v*.*.*"]
+    tags: [ "*"]
 
 env:
   NODE_VERSION: 18.14.0
