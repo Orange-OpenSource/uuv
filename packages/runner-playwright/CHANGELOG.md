@@ -1,3 +1,10 @@
+## [1.3.3](https://github.com/e2e-test-quest/uuv/compare/runner-playwright-v1.3.2...runner-playwright-v1.3.3) (2023-05-15)
+
+
+### Bug Fixes
+
+* **runner-playwright:** fix workspace lint during ci, [#108](https://github.com/e2e-test-quest/uuv/issues/108) ([a3ac0d6](https://github.com/e2e-test-quest/uuv/commit/a3ac0d68d27c34f36237b6f74b94e160b7cde9b8))
+
 ## [1.3.2](https://github.com/e2e-test-quest/uuv/compare/runner-playwright-v1.3.1...runner-playwright-v1.3.2) (2023-05-11)
 
 
