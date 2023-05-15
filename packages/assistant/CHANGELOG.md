@@ -1,3 +1,11 @@
+## [1.3.3](https://github.com/e2e-test-quest/uuv/compare/assistant-v1.3.2...assistant-v1.3.3) (2023-05-15)
+
+
+### Bug Fixes
+
+* **assistant:** fix package conf file [#105](https://github.com/e2e-test-quest/uuv/issues/105) ([b67b4a0](https://github.com/e2e-test-quest/uuv/commit/b67b4a0db435ac7c5deef8255e56e0ef0d270b37))
+* **runner-playwright:** fix workspace lint during ci, [#108](https://github.com/e2e-test-quest/uuv/issues/108) ([a3ac0d6](https://github.com/e2e-test-quest/uuv/commit/a3ac0d68d27c34f36237b6f74b94e160b7cde9b8))
+
 ## [1.3.2](https://github.com/e2e-test-quest/uuv/compare/assistant-v1.3.1...assistant-v1.3.2) (2023-05-11)
 
 
