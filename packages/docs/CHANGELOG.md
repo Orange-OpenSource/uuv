@@ -1,3 +1,12 @@
+## [1.3.3](https://github.com/e2e-test-quest/uuv/compare/docs-v1.3.2...docs-v1.3.3) (2023-05-15)
+
+
+### Bug Fixes
+
+* **docs:** add seo keyword, fixes [#104](https://github.com/e2e-test-quest/uuv/issues/104) ([f7ef1ee](https://github.com/e2e-test-quest/uuv/commit/f7ef1eea4e44856aaa0331fdc7c984b7c74dc383))
+* **docs:** fix package conf file, fixes [#105](https://github.com/e2e-test-quest/uuv/issues/105) ([f544c05](https://github.com/e2e-test-quest/uuv/commit/f544c0524124166794e9585f3d1cc8cbcf4eccde))
+* **runner-playwright:** fix workspace lint during ci, [#108](https://github.com/e2e-test-quest/uuv/issues/108) ([a3ac0d6](https://github.com/e2e-test-quest/uuv/commit/a3ac0d68d27c34f36237b6f74b94e160b7cde9b8))
+
 ## [1.3.2](https://github.com/e2e-test-quest/uuv/compare/docs-v1.3.1...docs-v1.3.2) (2023-05-11)
 
 
