@@ -82,7 +82,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: cypress/browsers:node18.12.0-chrome107
-    needs: build
+    needs: [test, build]
     steps:
       - uses: actions/checkout@v3
       - name: Running cypress tests
@@ -93,7 +93,7 @@ jobs:
 
   test-playwright:
     runs-on: ubuntu-latest
-    needs: build
+    needs: [test, build]
     steps:
       - uses: actions/checkout@v3
       - name: Running playwright tests
@@ -115,7 +115,7 @@ jobs:
 
   release:
     if: github.ref == 'refs/heads/main'
-    needs: [ build ]
+    needs: [ test-cypress, test-playwright ]
     permissions:
       contents: write
       packages: write
@@ -166,10 +166,10 @@ jobs:
         with:
           name: release-artifacts
           path: dist/packages
-      - name: Use Node.js ${{inputs.node-version}}
+      - name: Use Node.js ${{env.NODE_VERSION}}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{inputs.node-version}}
+          node-version: ${{env.NODE_VERSION}}
           registry-url: 'https://registry.npmjs.org'
       - name: Publishing packages
         env:
