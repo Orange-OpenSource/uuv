@@ -46,7 +46,7 @@ we see that the sentence proposed by **UUV is the most understandable** of all
 |:--|:--|
 | Cypress  | cy.get('result').should('exist') |
 | Playwright| await expect(page.getByTitle('Result')).toHaveCount(1) |
-| Testing library  | expect(screen.getByTitle(/Result/i)).toBeNull() |
+| Testing library  | expect(screen.getByTitle(/Result/i)).toBeTruthy() |
 | UUV | Then I should see a title named "Result"|
 
 ## Documentation
