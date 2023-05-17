@@ -11,7 +11,8 @@
       "executor": "@theunderscorer/nx-semantic-release:semantic-release",
       "options": {
         "npm": false,
-        "github": false
+        "github": false,
+        "commitMessage": "release(docs): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
     }
   }

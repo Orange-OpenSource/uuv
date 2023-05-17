@@ -60,6 +60,7 @@
     "semantic-release": {
       "executor": "@theunderscorer/nx-semantic-release:semantic-release",
       "options": {
+        "commitMessage": "release(assistant): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
         "plugins": [
           [
             "@semantic-release/npm",
@@ -67,12 +68,6 @@
               "npmPublish": false,
               "tarballDir": "dist/packages",
               "pkgRoot": "packages/assistant"
-            }
-          ],
-          [
-            "@semantic-release/git",
-            {
-              "message": "chore(release): assistant ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
             }
           ],
           [

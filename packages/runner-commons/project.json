@@ -39,6 +39,7 @@
     "semantic-release": {
       "executor": "@theunderscorer/nx-semantic-release:semantic-release",
       "options": {
+        "commitMessage": "release(runner-commons): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
         "plugins": [
           [
             "@semantic-release/npm",
@@ -46,12 +47,6 @@
               "npmPublish": false,
               "tarballDir": "dist/packages",
               "pkgRoot": "packages/runner-commons"
-            }
-          ],
-          [
-            "@semantic-release/git",
-            {
-              "message": "chore(release): runner-commons ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
             }
           ],
           [

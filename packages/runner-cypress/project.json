@@ -43,6 +43,7 @@
     "semantic-release": {
       "executor": "@theunderscorer/nx-semantic-release:semantic-release",
       "options": {
+        "commitMessage": "release(runner-cypress): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
         "plugins": [
           [
             "@semantic-release/npm",
@@ -50,12 +51,6 @@
               "npmPublish": false,
               "tarballDir": "dist/packages",
               "pkgRoot": "packages/runner-cypress"
-            }
-          ],
-          [
-            "@semantic-release/git",
-            {
-              "message": "chore(release): runner-cypress ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
             }
           ],
           [
