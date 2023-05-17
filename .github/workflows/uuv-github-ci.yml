@@ -117,10 +117,6 @@ jobs:
   release:
     if: github.ref == 'refs/heads/main'
     needs: [ test-cypress, test-playwright ]
-    permissions:
-      contents: write
-      packages: write
-      issues: write
     runs-on: ubuntu-latest
     environment: release
     steps:
@@ -133,7 +129,7 @@ jobs:
       - name: Release public packages
         uses: ./.github/actions/nx-run-many
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           node-version: ${{env.NODE_VERSION}}
