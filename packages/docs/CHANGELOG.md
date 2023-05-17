@@ -1,3 +1,14 @@
+# [1.4.0](https://github.com/e2e-test-quest/uuv/compare/assistant-v1.3.3...assistant-v1.4.0) (2023-05-16)
+
+### Bug Fixes
+
+* **assistant:** add benefit block, fixes [#112](https://github.com/e2e-test-quest/uuv/issues/112) ([7017ef4](https://github.com/e2e-test-quest/uuv/commit/7017ef4c4df5cdac6f9b336e21cc2680a4672587))
+* **assistant:** restructure documentation, [#112](https://github.com/e2e-test-quest/uuv/issues/112) ([a4a7496](https://github.com/e2e-test-quest/uuv/commit/a4a7496411c5c46cbfdc3d59bc41d0d4043ec71d))
+
+### Features
+
+* **runner-playwright:** add error details and screenshot to report, fixes [#110](https://github.com/e2e-test-quest/uuv/issues/110) ([3c4a3cd](https://github.com/e2e-test-quest/uuv/commit/3c4a3cd192b90242dd07bbdc4bb3ece780ee0c40))
+
 ## [1.3.3](https://github.com/e2e-test-quest/uuv/compare/docs-v1.3.2...docs-v1.3.3) (2023-05-15)
 
 

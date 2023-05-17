@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/e2e-test-quest/uuv/compare/runner-playwright-v1.3.3...runner-playwright-v1.4.0) (2023-05-16)
+
+### Bug Fixes
+
+* **runner-commons:** restructure documentation, [#112](https://github.com/e2e-test-quest/uuv/issues/112) ([f5db612](https://github.com/e2e-test-quest/uuv/commit/f5db612da3c31d2e6f4a3f647546167ebcbddaa5))
+* **runner-playwright:** add benefit block [#112](https://github.com/e2e-test-quest/uuv/issues/112) ([e037cc2](https://github.com/e2e-test-quest/uuv/commit/e037cc24c14edc45093a1073598b3ea484d5e420))
+* **runner-playwright:** restructure documentation, [#112](https://github.com/e2e-test-quest/uuv/issues/112) ([954e2ac](https://github.com/e2e-test-quest/uuv/commit/954e2ac13819f2cb97a13dbcdedb017db9cd4365))
+
+### Features
+
+* **runner-playwright:** add error details and screenshot to report, fixes [#110](https://github.com/e2e-test-quest/uuv/issues/110) ([3c4a3cd](https://github.com/e2e-test-quest/uuv/commit/3c4a3cd192b90242dd07bbdc4bb3ece780ee0c40))
+
 ## [1.3.3](https://github.com/e2e-test-quest/uuv/compare/runner-playwright-v1.3.2...runner-playwright-v1.3.3) (2023-05-15)
 
 

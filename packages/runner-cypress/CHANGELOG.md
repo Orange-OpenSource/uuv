@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/e2e-test-quest/uuv/compare/runner-cypress-v1.3.3...runner-cypress-v1.4.0) (2023-05-16)
+
+### Bug Fixes
+
+* **runner-commons:** restructure documentation, [#112](https://github.com/e2e-test-quest/uuv/issues/112) ([f5db612](https://github.com/e2e-test-quest/uuv/commit/f5db612da3c31d2e6f4a3f647546167ebcbddaa5))
+* **runner-cypress:** add benefit block [#112](https://github.com/e2e-test-quest/uuv/issues/112) ([04cf36f](https://github.com/e2e-test-quest/uuv/commit/04cf36fd0e43614ae801bb08bf514a4ba3cca975))
+* **runner-cypress:** restructure documentation, [#112](https://github.com/e2e-test-quest/uuv/issues/112) ([43353a8](https://github.com/e2e-test-quest/uuv/commit/43353a88499e3270fa64c518b7332541e3a01652))
+
+### Features
+
+* **runner-playwright:** add error details and screenshot to report, fixes [#110](https://github.com/e2e-test-quest/uuv/issues/110) ([3c4a3cd](https://github.com/e2e-test-quest/uuv/commit/3c4a3cd192b90242dd07bbdc4bb3ece780ee0c40))
+
 ## [1.3.3](https://github.com/e2e-test-quest/uuv/compare/runner-cypress-v1.3.2...runner-cypress-v1.3.3) (2023-05-15)
 
 
