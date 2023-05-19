@@ -1,3 +1,12 @@
+## [1.4.1](https://github.com/e2e-test-quest/uuv/compare/assistant-v1.4.0...assistant-v1.4.1) (2023-05-19)
+
+
+### Bug Fixes
+
+* **assistant:** fix assistant css problem, [#120](https://github.com/e2e-test-quest/uuv/issues/120) ([026d66a](https://github.com/e2e-test-quest/uuv/commit/026d66ad6ad7e9090282f1734335c5a7b1e417c6))
+* release 1.4.0 package.json and rchangelog was not updated, [#117](https://github.com/e2e-test-quest/uuv/issues/117) ([cd7723d](https://github.com/e2e-test-quest/uuv/commit/cd7723d6d790dd5fd928a5d9d41bfd075159378a))
+* remove explicit plugin @semantic-release/git and just set commit message, [#117](https://github.com/e2e-test-quest/uuv/issues/117) ([ac1f818](https://github.com/e2e-test-quest/uuv/commit/ac1f8188cccbcb224acb15180cd0bd131aaa6cd1))
+
 # [1.4.0](https://github.com/e2e-test-quest/uuv/compare/assistant-v1.3.3...assistant-v1.4.0) (2023-05-16)
 
 ### Bug Fixes
