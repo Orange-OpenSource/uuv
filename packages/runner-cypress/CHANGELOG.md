@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/e2e-test-quest/uuv/compare/runner-cypress-v1.4.1...runner-cypress-v1.4.2) (2023-05-19)
+
+
+### Bug Fixes
+
+* fix example url in readme, [#100](https://github.com/e2e-test-quest/uuv/issues/100) ([c0609dc](https://github.com/e2e-test-quest/uuv/commit/c0609dc6eee36e842e3dc74095a338d48b5248cc))
+
 ## [1.4.1](https://github.com/e2e-test-quest/uuv/compare/runner-cypress-v1.4.0...runner-cypress-v1.4.1) (2023-05-19)
 
 
