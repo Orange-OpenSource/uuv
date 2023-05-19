@@ -14,5 +14,5 @@ Feature: Hello World
     When I visit path "/"
     Then I should see an element with role "heading" and name "My app title"
 ```
-Vous pouvez trouver d'autres exemples de test ici : [google.feature](https://github.com/e2e-test-quest/uuv/example/google.fr.feature)
+Vous pouvez trouver d'autres exemples de test ici : [google.feature](https://github.com/e2e-test-quest/uuv/blob/main/example/google.fr.feature)
 
