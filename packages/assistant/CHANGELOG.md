@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/e2e-test-quest/uuv/compare/assistant-v1.4.2...assistant-v1.4.3) (2023-05-29)
+
+
+### Bug Fixes
+
+* **runner-playwright:** regenerate package-lock.json to fix lint, [#109](https://github.com/e2e-test-quest/uuv/issues/109) ([70044df](https://github.com/e2e-test-quest/uuv/commit/70044dfd9efb2c6776a85cadd18966610d2d61f2))
+
 ## [1.4.2](https://github.com/e2e-test-quest/uuv/compare/assistant-v1.4.1...assistant-v1.4.2) (2023-05-19)
 
 
