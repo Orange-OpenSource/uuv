@@ -1,3 +1,13 @@
+## [1.4.3](https://github.com/e2e-test-quest/uuv/compare/docs-v1.4.2...docs-v1.4.3) (2023-05-29)
+
+
+### Bug Fixes
+
+* **docs:** update concept page to add npmjs.com content, [#122](https://github.com/e2e-test-quest/uuv/issues/122) ([71194e9](https://github.com/e2e-test-quest/uuv/commit/71194e90d2fa0a10db872dd937c3771cabd31d45))
+* fix playwright build, [#109](https://github.com/e2e-test-quest/uuv/issues/109) ([c5ef9c9](https://github.com/e2e-test-quest/uuv/commit/c5ef9c9185f228e35fcaa41363ebae6409a050c7))
+* **runner-playwright:** add unsafe step_definitions for autocompletion, [#122](https://github.com/e2e-test-quest/uuv/issues/122) ([b5dc1d0](https://github.com/e2e-test-quest/uuv/commit/b5dc1d0063e506cc376f35d4f1fe1fc4c1d5ded0))
+* **runner-playwright:** regenerate package-lock.json to fix lint, [#109](https://github.com/e2e-test-quest/uuv/issues/109) ([70044df](https://github.com/e2e-test-quest/uuv/commit/70044dfd9efb2c6776a85cadd18966610d2d61f2))
+
 ## [1.4.2](https://github.com/e2e-test-quest/uuv/compare/docs-v1.4.1...docs-v1.4.2) (2023-05-19)
 
 
