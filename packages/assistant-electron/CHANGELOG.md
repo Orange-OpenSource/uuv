@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/e2e-test-quest/uuv/compare/assistant-electron-v1.5.0...assistant-electron-v1.5.1) (2023-07-03)
+
+
+### Bug Fixes
+
+* **assistant:** retrieve version from conf.json fixes [#135](https://github.com/e2e-test-quest/uuv/issues/135) ([6c19608](https://github.com/e2e-test-quest/uuv/commit/6c19608beb7ac107e969a95e1242f3997da10eb8))
+
 # [1.5.0](https://github.com/e2e-test-quest/uuv/compare/assistant-electron-v1.4.3...assistant-electron-v1.5.0) (2023-07-02)
 
 
