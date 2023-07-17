@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/e2e-test-quest/uuv/compare/assistant-v1.5.1...assistant-v1.6.0) (2023-07-17)
+
+
+### Bug Fixes
+
+* **runner-playwright:** replace encoded space character, fixes [#139](https://github.com/e2e-test-quest/uuv/issues/139) ([6fbc533](https://github.com/e2e-test-quest/uuv/commit/6fbc533a19abe7ed2ec6cd720709ce2bc3ee7283))
+
+
+### Features
+
+* add assistant-desktop to several docs, closes [#144](https://github.com/e2e-test-quest/uuv/issues/144) ([61dd396](https://github.com/e2e-test-quest/uuv/commit/61dd3961fb5b8ca40e72762baf7b326686171788))
+
 ## [1.5.1](https://github.com/e2e-test-quest/uuv/compare/assistant-v1.5.0...assistant-v1.5.1) (2023-07-03)
 
 
