@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/e2e-test-quest/uuv/compare/runner-cypress-v1.5.0...runner-cypress-v1.6.0) (2023-07-17)
+
+
+### Features
+
+* add assistant-desktop to several docs, closes [#144](https://github.com/e2e-test-quest/uuv/issues/144) ([61dd396](https://github.com/e2e-test-quest/uuv/commit/61dd3961fb5b8ca40e72762baf7b326686171788))
+
 # [1.5.0](https://github.com/e2e-test-quest/uuv/compare/runner-cypress-v1.4.3...runner-cypress-v1.5.0) (2023-07-02)
 
 
