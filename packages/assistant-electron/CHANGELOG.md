@@ -1,3 +1,16 @@
+# [1.6.0](https://github.com/e2e-test-quest/uuv/compare/assistant-electron-v1.5.1...assistant-electron-v1.6.0) (2023-07-18)
+
+
+### Bug Fixes
+
+* **runner-playwright:** replace encoded space character, fixes [#139](https://github.com/e2e-test-quest/uuv/issues/139) ([6fbc533](https://github.com/e2e-test-quest/uuv/commit/6fbc533a19abe7ed2ec6cd720709ce2bc3ee7283))
+
+
+### Features
+
+* add assistant-desktop to several docs, closes [#144](https://github.com/e2e-test-quest/uuv/issues/144) ([61dd396](https://github.com/e2e-test-quest/uuv/commit/61dd3961fb5b8ca40e72762baf7b326686171788))
+* improve assistant-electron design, [#138](https://github.com/e2e-test-quest/uuv/issues/138) ([7cdf9b7](https://github.com/e2e-test-quest/uuv/commit/7cdf9b775cf58b2f29e37f4762d39bb8d924d2d2))
+
 # [1.6.0](https://github.com/e2e-test-quest/uuv/compare/assistant-electron-v1.5.1...assistant-electron-v1.6.0) (2023-07-17)
 
 
