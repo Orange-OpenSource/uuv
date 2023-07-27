@@ -11,6 +11,7 @@
   "releaseRules": [
     {"type": "docs", "release": "patch"},
     {"type": "refactor", "release": "patch"},
-    {"scope": "no-release", "release": false}
+    {"scope": "no-release", "release": false},
+    {"type": "chore", "scope": "deps", "release": "patch"}
   ]
 }
