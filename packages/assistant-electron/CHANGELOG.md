@@ -1,3 +1,16 @@
+## [1.6.1](https://github.com/e2e-test-quest/uuv/compare/assistant-electron-v1.6.0...assistant-electron-v1.6.1) (2023-07-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @cucumber/cucumber to v9.3.0 ([212250b](https://github.com/e2e-test-quest/uuv/commit/212250be47e040e34de18af33986a1f26f7b00a2))
+* **deps:** update dependency @cypress/webpack-preprocessor to v5.17.1 ([9570e56](https://github.com/e2e-test-quest/uuv/commit/9570e5689387a2c770994576d779a34ff242ca76))
+* **deps:** update dependency antd to v5.7.3 ([452fc3c](https://github.com/e2e-test-quest/uuv/commit/452fc3c3861509e8aba46b3efa248f365bbfb747))
+* **deps:** update dependency axe-core to v4.7.2 ([965b9dc](https://github.com/e2e-test-quest/uuv/commit/965b9dcb1445c369c770ed056ab990e3f966197b))
+* **deps:** update dependency cypress to v12.17.2 ([49a3012](https://github.com/e2e-test-quest/uuv/commit/49a3012f7ebf0e6ecc879d21ff86147938967607))
+* **deps:** update dependency nanoid to v3.3.6 ([82fa0c3](https://github.com/e2e-test-quest/uuv/commit/82fa0c31207a9004a8b365fe0e92fcaac38e1be3))
+* **deps:** update docusaurus monorepo to v2.4.1 ([9c0f5fb](https://github.com/e2e-test-quest/uuv/commit/9c0f5fb6a641f54fc97d0940acfebdfb5106a790))
+
 # [1.6.0](https://github.com/e2e-test-quest/uuv/compare/assistant-electron-v1.5.1...assistant-electron-v1.6.0) (2023-07-18)
 
 
