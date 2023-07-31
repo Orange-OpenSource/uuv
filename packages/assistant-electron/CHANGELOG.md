@@ -1,3 +1,17 @@
+# [1.7.0](https://github.com/e2e-test-quest/uuv/compare/assistant-electron-v1.6.1...assistant-electron-v1.7.0) (2023-07-31)
+
+
+### Bug Fixes
+
+* correct link markdown not formated, [#164](https://github.com/e2e-test-quest/uuv/issues/164) ([470e6b6](https://github.com/e2e-test-quest/uuv/commit/470e6b6b07ef43261d14b0e8986cac304daf29d8))
+
+
+### Features
+
+* add accessibility sentences, [#164](https://github.com/e2e-test-quest/uuv/issues/164) ([e55b2c6](https://github.com/e2e-test-quest/uuv/commit/e55b2c647bec100294794fe34dabe582d2561643))
+* add accessibility tab and arrows, [#166](https://github.com/e2e-test-quest/uuv/issues/166) ([9b926cd](https://github.com/e2e-test-quest/uuv/commit/9b926cd322049860a5f06810027dbeb7efe6d795))
+* use accessibility sentences on playwright, [#164](https://github.com/e2e-test-quest/uuv/issues/164) ([b273e84](https://github.com/e2e-test-quest/uuv/commit/b273e842a1a6b82f1a9c707187aa3d176b7fcabc))
+
 ## [1.6.1](https://github.com/e2e-test-quest/uuv/compare/assistant-electron-v1.6.0...assistant-electron-v1.6.1) (2023-07-30)
 
 
