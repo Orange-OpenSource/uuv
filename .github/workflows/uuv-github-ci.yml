@@ -43,7 +43,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Installing Wine
-        run: sudo apt install wine64
+        run: sudo apt-get update -y && sudo apt install wine64
       - name: Build artifacts
         uses: ./.github/actions/nx-run-many
         with:
