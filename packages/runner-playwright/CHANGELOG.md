@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v1.7.0...runner-playwright-v1.7.1) (2023-08-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cypress to v12.17.3 ([35c812b](https://github.com/Orange-OpenSource/uuv/commit/35c812bdabd1a3a2d27e972d3bb5c9323497c449))
+
 # [1.7.0](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v1.6.1...runner-playwright-v1.7.0) (2023-07-31)
 
 
