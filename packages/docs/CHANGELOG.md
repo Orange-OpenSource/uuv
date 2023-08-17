@@ -1,3 +1,11 @@
+## [1.7.2](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.7.1...docs-v1.7.2) (2023-08-17)
+
+
+### Bug Fixes
+
+* accept cucumber Rule keyword when generate json from ndjson for … ([#207](https://github.com/Orange-OpenSource/uuv/issues/207)) ([05bc903](https://github.com/Orange-OpenSource/uuv/commit/05bc90342ea2f7149109b5a12e428b04237bf00b))
+* **runner-cypress:** relocate cypress-real-events dependency into project package.json, [#213](https://github.com/Orange-OpenSource/uuv/issues/213) ([ffca8dd](https://github.com/Orange-OpenSource/uuv/commit/ffca8dd21d3858d0020f6bf1974437bbf38fe6c4))
+
 ## [1.7.1](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.7.0...docs-v1.7.1) (2023-08-09)
 
 
