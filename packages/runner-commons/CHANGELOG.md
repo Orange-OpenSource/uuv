@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v1.6.1...runner-commons-v1.6.2) (2023-08-17)
+
+
+### Bug Fixes
+
+* **runner-cypress:** relocate cypress-real-events dependency into project package.json, [#213](https://github.com/Orange-OpenSource/uuv/issues/213) ([ffca8dd](https://github.com/Orange-OpenSource/uuv/commit/ffca8dd21d3858d0020f6bf1974437bbf38fe6c4))
+
 ## [1.6.1](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v1.6.0...runner-commons-v1.6.1) (2023-08-09)
 
 
