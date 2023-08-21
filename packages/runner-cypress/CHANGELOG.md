@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.7.2...runner-cypress-v1.7.3) (2023-08-21)
+
+
+### Bug Fixes
+
+* **runner-playwright:** use exact match while calling getByLabel, closes [#205](https://github.com/Orange-OpenSource/uuv/issues/205) ([d499b41](https://github.com/Orange-OpenSource/uuv/commit/d499b4138c01d072c251822e42a3d1b16b3cd7bb))
+
 ## [1.7.2](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.7.1...runner-cypress-v1.7.2) (2023-08-17)
 
 
