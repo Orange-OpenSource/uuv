@@ -1,3 +1,17 @@
+# [1.8.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.7.3...runner-cypress-v1.8.0) (2023-08-22)
+
+
+### Bug Fixes
+
+* prototype pollution in lodash - cve-2019-10744, [#219](https://github.com/Orange-OpenSource/uuv/issues/219) ([4b16741](https://github.com/Orange-OpenSource/uuv/commit/4b16741d53f814958ad0ee6d761e82d92374e5e8))
+
+
+### Features
+
+* **runner-cypress:** add locationHint for testLocation via teamcity, [#195](https://github.com/Orange-OpenSource/uuv/issues/195) ([9bb51c6](https://github.com/Orange-OpenSource/uuv/commit/9bb51c6be8984b004d89fac32668ae5cb2e43edb))
+* **runner-cypress:** add targetTestFile to run specific file, [#195](https://github.com/Orange-OpenSource/uuv/issues/195) ([daa2c4c](https://github.com/Orange-OpenSource/uuv/commit/daa2c4c9fe503e345455fcab352cee2f939b0fc9))
+* **runner-cypress:** add teamcity trace for IntelliJ Plugin, [#195](https://github.com/Orange-OpenSource/uuv/issues/195) ([2a134c0](https://github.com/Orange-OpenSource/uuv/commit/2a134c0c67a01fd18ec3a142a2c42738eac86732))
+
 ## [1.7.3](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.7.2...runner-cypress-v1.7.3) (2023-08-21)
 
 
