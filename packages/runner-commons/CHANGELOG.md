@@ -1,3 +1,10 @@
+## [1.6.3](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v1.6.2...runner-commons-v1.6.3) (2023-08-22)
+
+
+### Bug Fixes
+
+* prototype pollution in lodash - cve-2019-10744, [#219](https://github.com/Orange-OpenSource/uuv/issues/219) ([4b16741](https://github.com/Orange-OpenSource/uuv/commit/4b16741d53f814958ad0ee6d761e82d92374e5e8))
+
 ## [1.6.2](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v1.6.1...runner-commons-v1.6.2) (2023-08-17)
 
 
