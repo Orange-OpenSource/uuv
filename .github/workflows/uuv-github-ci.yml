@@ -212,8 +212,6 @@ jobs:
         with:
           commit_message: "chore(release): update package-lock.json [skip ci]"
           commit_user_name: UUV Bot
-          commit_user_email: uuv-bot@kemitech.io
-          commit_author: UUV Bot <uuv-bot@kemitech.io>
           file_pattern: "package-lock.json"
       - name: Upload Release artifact
         uses: actions/upload-artifact@v3
@@ -252,7 +250,7 @@ jobs:
       - name: Publishing Intellij plugin
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: cd packages/intellij-plugin && ./gradlew buildPlugin && ./gradlew publishPlugin
+        run: cd packages/intellij-plugin && chmod 755 ./gradlew && ./gradlew buildPlugin && ./gradlew publishPlugin
 
   publish-docs:
     if: github.ref == 'refs/heads/main'
