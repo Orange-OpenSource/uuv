@@ -1,3 +1,17 @@
+# [1.8.0](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v1.7.3...runner-playwright-v1.8.0) (2023-08-22)
+
+
+### Bug Fixes
+
+* prototype pollution in lodash - cve-2019-10744, [#219](https://github.com/Orange-OpenSource/uuv/issues/219) ([4b16741](https://github.com/Orange-OpenSource/uuv/commit/4b16741d53f814958ad0ee6d761e82d92374e5e8))
+
+
+### Features
+
+* **runner-playwright:** add locationHint for testLocation via teamcity, [#195](https://github.com/Orange-OpenSource/uuv/issues/195) ([d44dd9a](https://github.com/Orange-OpenSource/uuv/commit/d44dd9ae13e662e623391d43552b28c54ea465f1))
+* **runner-playwright:** add targetTestFile to run specific file, [#195](https://github.com/Orange-OpenSource/uuv/issues/195) ([5d58b1e](https://github.com/Orange-OpenSource/uuv/commit/5d58b1ea7d4bddbc1675ec8e15455a06278957ff))
+* **runner-playwright:** add teamcity trace for IntelliJ Plugin, [#195](https://github.com/Orange-OpenSource/uuv/issues/195) ([0d6b775](https://github.com/Orange-OpenSource/uuv/commit/0d6b7752ab26ffc4eaf8fe6a70fa60210ee747e8))
+
 ## [1.7.3](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v1.7.2...runner-playwright-v1.7.3) (2023-08-21)
 
 
