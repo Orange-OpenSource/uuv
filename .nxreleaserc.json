@@ -2,6 +2,9 @@
   "changelog": true,
   "npm": false,
   "git": true,
+  "gitAssets" : [
+    "packages/intellij-plugin/gradle.properties"
+  ],
   "github": false,
   "repositoryUrl": "https://github.com/Orange-OpenSource/uuv",
   "branches": [

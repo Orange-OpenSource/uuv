@@ -40,14 +40,6 @@
                 }
               ]
             }
-          ],
-          [
-            "@semantic-release/git",
-            {
-              "assets": [
-                "gradle.properties"
-              ]
-            }
           ]
         ]
       }

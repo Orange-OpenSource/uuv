@@ -219,6 +219,7 @@ jobs:
           name: release-artifacts
           path: |
             dist/packages
+            packages/intellij-plugin/gradle.properties
 
   publish-npm:
     if: github.ref == 'refs/heads/main'
@@ -234,7 +235,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: release-artifacts
-          path: dist/packages
       - name: Use Node.js ${{env.NODE_VERSION}}
         uses: actions/setup-node@v3
         with:
@@ -259,6 +259,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+      - name: Download Release artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: release-artifacts
       - name: Publishing Intellij plugin
         env:
           UUV_PUBLISH_TOKEN: ${{ secrets.UUV_PUBLISH_TOKEN }}
