@@ -37,7 +37,7 @@ yarn add -D @uuv/assistant
 ### Desktop executable
 1. Télécharger l'exécutable à l'aide du bouton suivant :
 
-   <a href="https://github.com/Orange-OpenSource/uuv/releases/latest/download/uuv-assistant-win32-x64.zip"><img src="https://img.shields.io/badge/Téléchager_uuv--assistant_desktop-black?&style=for-the-badge&logo=github&logoColor=white" alt="documentation"/></a>
+   <a href="https://github.com/Orange-OpenSource/uuv/releases/latest/download/uuv-assistant-win32-x64.zip"><img src="https://img.shields.io/badge/Télécharger_uuv--assistant_desktop-black?&style=for-the-badge&logo=github&logoColor=white" alt="documentation"/></a>
 2. Décompresser le fichier zip
 
 ## Lancement
