@@ -1,3 +1,5 @@
+## [1.8.1](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v1.8.0...runner-playwright-v1.8.1) (2023-08-25)
+
 # [1.8.0](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v1.7.3...runner-playwright-v1.8.0) (2023-08-22)
 
 
