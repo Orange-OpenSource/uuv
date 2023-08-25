@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.0.0...intellij-plugin-v1.1.0) (2023-08-25)
+
+
+### Bug Fixes
+
+* **intellij-plugin:** change local npm script executed, closes [#227](https://github.com/Orange-OpenSource/uuv/issues/227) ([e470431](https://github.com/Orange-OpenSource/uuv/commit/e470431d9d689d5f8a0193aac349c5873ecd8b53))
+
+
+### Features
+
+* **intellij-plugin:** add home directory option to intellij plugin runConfiguration, closes [#225](https://github.com/Orange-OpenSource/uuv/issues/225) ([8560e7b](https://github.com/Orange-OpenSource/uuv/commit/8560e7b27a937884656de3b713af27b1c46820f6))
+
 # 1.0.0 (2023-08-22)
 
 
