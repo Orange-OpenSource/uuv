@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.8.0...runner-cypress-v1.8.1) (2023-08-25)
+
+
+### Bug Fixes
+
+* **intellij-plugin:** manage result.test null case, closes [#228](https://github.com/Orange-OpenSource/uuv/issues/228) ([996982f](https://github.com/Orange-OpenSource/uuv/commit/996982fbc37016012fdff00bef24aad0ab69c8a0))
+
 # [1.8.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.7.3...runner-cypress-v1.8.0) (2023-08-22)
 
 
