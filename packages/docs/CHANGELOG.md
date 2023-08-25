@@ -1,3 +1,16 @@
+# [1.9.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.8.0...docs-v1.9.0) (2023-08-25)
+
+
+### Bug Fixes
+
+* **docs:** clean french description ([41001d4](https://github.com/Orange-OpenSource/uuv/commit/41001d423390a7be324d115e0759d43d8475fbbf))
+* **intellij-plugin:** manage result.test null case, closes [#228](https://github.com/Orange-OpenSource/uuv/issues/228) ([996982f](https://github.com/Orange-OpenSource/uuv/commit/996982fbc37016012fdff00bef24aad0ab69c8a0))
+
+
+### Features
+
+* **docs:** add documentation for [@uuv-playwright](https://github.com/uuv-playwright) custom step_definition, # 216 ([7af74b3](https://github.com/Orange-OpenSource/uuv/commit/7af74b314d27aeac4bcc72951fdf6851ac34f201))
+
 # [1.8.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.7.3...docs-v1.8.0) (2023-08-22)
 
 
