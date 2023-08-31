@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.8.1...runner-cypress-v1.8.2) (2023-08-31)
+
+
+### Bug Fixes
+
+* **runner-cypress:** check if testsuite is not already started, [#232](https://github.com/Orange-OpenSource/uuv/issues/232) ([a8d373f](https://github.com/Orange-OpenSource/uuv/commit/a8d373f58e81db799cd7e88eaac54fb98c74eba0))
+
 ## [1.8.1](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.8.0...runner-cypress-v1.8.1) (2023-08-25)
 
 
