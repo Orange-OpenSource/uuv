@@ -1,3 +1,11 @@
+## [1.8.3](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.8.2...runner-cypress-v1.8.3) (2023-08-31)
+
+
+### Bug Fixes
+
+* **runner-cypress:** call badeball preprecessor befor teamcity logs, [#239](https://github.com/Orange-OpenSource/uuv/issues/239) ([f12ae26](https://github.com/Orange-OpenSource/uuv/commit/f12ae261e71d4662ea0cc7b3a2cbcd32344a19b2))
+* **runner-cypress:** return error code when an error occured, [#239](https://github.com/Orange-OpenSource/uuv/issues/239) ([fbc8b97](https://github.com/Orange-OpenSource/uuv/commit/fbc8b97eacef535356e479a7d87fdf2e16df1549))
+
 ## [1.8.2](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.8.1...runner-cypress-v1.8.2) (2023-08-31)
 
 
