@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.1.0...intellij-plugin-v1.1.1) (2023-08-31)
+
+
+### Bug Fixes
+
+* **intellij-plugin:** move magic string in properties file ([485e0ba](https://github.com/Orange-OpenSource/uuv/commit/485e0ba23cfa200ebced03c9287427a1f74b378c))
+* **intellij-plugin:** set flag to display passed tests, [#234](https://github.com/Orange-OpenSource/uuv/issues/234) ([c764d79](https://github.com/Orange-OpenSource/uuv/commit/c764d79025ddf2b250444531bb00bd16beb21b3d))
+
 # [1.1.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.0.0...intellij-plugin-v1.1.0) (2023-08-25)
 
 
