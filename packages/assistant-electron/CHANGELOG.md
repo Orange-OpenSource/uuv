@@ -1,3 +1,11 @@
+## [1.8.2](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.8.1...assistant-electron-v1.8.2) (2023-08-31)
+
+
+### Bug Fixes
+
+* **runner-playwright:** adapt color of skipped scenario in console, # 215 ([51d30c7](https://github.com/Orange-OpenSource/uuv/commit/51d30c7b827f39dacd7512aad6564d7bfbfefcbc))
+* **runner-playwright:** remove skipped steps in counter of scenario skipped, # 215 ([f077f4c](https://github.com/Orange-OpenSource/uuv/commit/f077f4c93c72186f06c882174c9f4afe57b97545))
+
 ## [1.8.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.8.0...assistant-electron-v1.8.1) (2023-08-25)
 
 # [1.8.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.7.3...assistant-electron-v1.8.0) (2023-08-22)
