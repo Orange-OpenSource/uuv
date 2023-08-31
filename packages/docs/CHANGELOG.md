@@ -1,3 +1,12 @@
+## [1.9.1](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.9.0...docs-v1.9.1) (2023-08-31)
+
+
+### Bug Fixes
+
+* **runner-cypress:** check if testsuite is not already started, [#232](https://github.com/Orange-OpenSource/uuv/issues/232) ([a8d373f](https://github.com/Orange-OpenSource/uuv/commit/a8d373f58e81db799cd7e88eaac54fb98c74eba0))
+* **runner-playwright:** adapt color of skipped scenario in console, # 215 ([51d30c7](https://github.com/Orange-OpenSource/uuv/commit/51d30c7b827f39dacd7512aad6564d7bfbfefcbc))
+* **runner-playwright:** remove skipped steps in counter of scenario skipped, # 215 ([f077f4c](https://github.com/Orange-OpenSource/uuv/commit/f077f4c93c72186f06c882174c9f4afe57b97545))
+
 # [1.9.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.8.0...docs-v1.9.0) (2023-08-25)
 
 
