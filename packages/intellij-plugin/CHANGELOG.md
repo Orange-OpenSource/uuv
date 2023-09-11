@@ -1,3 +1,16 @@
+# [1.2.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.1.1...intellij-plugin-v1.2.0) (2023-09-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cypress to v12.17.4 ([998b754](https://github.com/Orange-OpenSource/uuv/commit/998b754038941de8b035abbd47800d45b1dac022))
+* **deps:** update dependency cypress-real-events to v1.10.1 ([f60978d](https://github.com/Orange-OpenSource/uuv/commit/f60978da4bdd76483bcb2479324ccbbf3b36d87b))
+
+
+### Features
+
+* **docs:** add autocompletion searchfield to steps definition page, [#255](https://github.com/Orange-OpenSource/uuv/issues/255) ([a0323ee](https://github.com/Orange-OpenSource/uuv/commit/a0323eec01a6351f9b60399398d145cb2bc86779))
+
 ## [1.1.1](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.1.0...intellij-plugin-v1.1.1) (2023-08-31)
 
 
