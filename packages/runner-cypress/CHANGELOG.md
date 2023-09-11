@@ -1,3 +1,18 @@
+# [1.9.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.8.3...runner-cypress-v1.9.0) (2023-09-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cypress to v12.17.4 ([998b754](https://github.com/Orange-OpenSource/uuv/commit/998b754038941de8b035abbd47800d45b1dac022))
+* **deps:** update dependency cypress-real-events to v1.10.1 ([f60978d](https://github.com/Orange-OpenSource/uuv/commit/f60978da4bdd76483bcb2479324ccbbf3b36d87b))
+
+
+### Features
+
+* add sentences to click on element and reset context, [#250](https://github.com/Orange-OpenSource/uuv/issues/250) ([347e327](https://github.com/Orange-OpenSource/uuv/commit/347e327bdfc5c6befc3a58a2c880bea3b0c8400c))
+* **docs:** add autocompletion searchfield to steps definition page, [#255](https://github.com/Orange-OpenSource/uuv/issues/255) ([a0323ee](https://github.com/Orange-OpenSource/uuv/commit/a0323eec01a6351f9b60399398d145cb2bc86779))
+* update example test files, [#250](https://github.com/Orange-OpenSource/uuv/issues/250) ([ffc15b5](https://github.com/Orange-OpenSource/uuv/commit/ffc15b5a66ee7d3712541722228f53b692c7a1ab))
+
 ## [1.8.3](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.8.2...runner-cypress-v1.8.3) (2023-08-31)
 
 
