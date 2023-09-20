@@ -1,3 +1,15 @@
+# [1.10.0](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v1.9.0...runner-playwright-v1.10.0) (2023-09-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cypress-real-events to v1.10.3 ([9e3c991](https://github.com/Orange-OpenSource/uuv/commit/9e3c9914420c6d527f7ad8b0017a0f8e26250f86))
+
+
+### Features
+
+* **runner-playwright:** regenerate .spec when update, add or remove a .feature in open mode, [#236](https://github.com/Orange-OpenSource/uuv/issues/236) ([8a2599a](https://github.com/Orange-OpenSource/uuv/commit/8a2599a3fa4e577b9e626929537f2cc5f8e57bcc))
+
 # [1.9.0](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v1.8.2...runner-playwright-v1.9.0) (2023-09-11)
 
 
