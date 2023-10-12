@@ -1,3 +1,17 @@
+# [1.12.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.11.0...docs-v1.12.0) (2023-10-12)
+
+
+### Bug Fixes
+
+* **deps:** update docusaurus monorepo to v2.4.3 ([9e7ccf7](https://github.com/Orange-OpenSource/uuv/commit/9e7ccf78176e5b38da147d6d26097730c7859da8))
+
+
+### Features
+
+* **docs:** add example to key.then.list.withNameAndContent sentence, [#252](https://github.com/Orange-OpenSource/uuv/issues/252) ([e919ead](https://github.com/Orange-OpenSource/uuv/commit/e919ead3d403e13891b6084dcf6bd22558e1f19a))
+* **docs:** add jetbrain plugin configuration, [#252](https://github.com/Orange-OpenSource/uuv/issues/252) ([1db06fb](https://github.com/Orange-OpenSource/uuv/commit/1db06fb0e1b6020171868ba2a8b4e2d11400ab1a)), closes [#226](https://github.com/Orange-OpenSource/uuv/issues/226)
+* **docs:** specify make within before click, type and press, [#252](https://github.com/Orange-OpenSource/uuv/issues/252) ([a8b0b5c](https://github.com/Orange-OpenSource/uuv/commit/a8b0b5c116a05192800eeb4d92753e053426c5bd))
+
 # [1.11.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.10.0...docs-v1.11.0) (2023-09-20)
 
 
