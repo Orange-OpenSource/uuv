@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.3.0...intellij-plugin-v1.3.1) (2023-10-12)
+
+
+### Bug Fixes
+
+* **deps:** update docusaurus monorepo to v2.4.3 ([9e7ccf7](https://github.com/Orange-OpenSource/uuv/commit/9e7ccf78176e5b38da147d6d26097730c7859da8))
+
 # [1.3.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.0...intellij-plugin-v1.3.0) (2023-09-20)
 
 
