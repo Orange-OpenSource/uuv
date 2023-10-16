@@ -1,3 +1,5 @@
+## [1.11.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-v1.11.0...assistant-v1.11.1) (2023-10-16)
+
 # [1.11.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-v1.10.0...assistant-v1.11.0) (2023-10-12)
 
 
