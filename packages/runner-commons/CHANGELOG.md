@@ -1,3 +1,5 @@
+## [1.9.2](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v1.9.1...runner-commons-v1.9.2) (2023-10-26)
+
 ## [1.9.1](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v1.9.0...runner-commons-v1.9.1) (2023-10-16)
 
 # [1.9.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v1.8.0...runner-commons-v1.9.0) (2023-10-12)
