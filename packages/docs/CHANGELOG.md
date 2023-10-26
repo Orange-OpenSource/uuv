@@ -1,3 +1,5 @@
+## [1.12.2](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.12.1...docs-v1.12.2) (2023-10-26)
+
 ## [1.12.1](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.12.0...docs-v1.12.1) (2023-10-16)
 
 # [1.12.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.11.0...docs-v1.12.0) (2023-10-12)
