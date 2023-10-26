@@ -1,6 +1,6 @@
 {
   "name": "@uuv/assistant",
-  "version": "1.11.1",
+  "version": "1.11.2",
   "author": "Louis Fredice NJAKO MOLOM (https://github.com/luifr10) & Stanley SERVICAL (https://github.com/stanlee974)",
   "description": "UUV Helper used to improve the life of testers and developers by generating cucumber phrases from the GUI.",
   "license": "MIT",
