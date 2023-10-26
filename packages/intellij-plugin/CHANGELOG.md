@@ -1,3 +1,5 @@
+## [1.3.3](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.3.2...intellij-plugin-v1.3.3) (2023-10-26)
+
 ## [1.3.2](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.3.1...intellij-plugin-v1.3.2) (2023-10-16)
 
 ## [1.3.1](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.3.0...intellij-plugin-v1.3.1) (2023-10-12)
