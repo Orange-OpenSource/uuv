@@ -1,3 +1,15 @@
+# [1.12.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.11.2...runner-cypress-v1.12.0) (2023-10-31)
+
+
+### Bug Fixes
+
+* **deps:** update dependency primereact to v9.6.3 ([f52ee84](https://github.com/Orange-OpenSource/uuv/commit/f52ee84daccc1380586e2da95d10592f9dd87e8b))
+
+
+### Features
+
+* update lib definition, [#311](https://github.com/Orange-OpenSource/uuv/issues/311) ([e7b9e58](https://github.com/Orange-OpenSource/uuv/commit/e7b9e5862355116a972a6318e21776f178788664))
+
 ## [1.11.2](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.11.1...runner-cypress-v1.11.2) (2023-10-26)
 
 ## [1.11.1](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.11.0...runner-cypress-v1.11.1) (2023-10-16)
