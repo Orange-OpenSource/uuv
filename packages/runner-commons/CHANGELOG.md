@@ -1,3 +1,10 @@
+## [1.9.3](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v1.9.2...runner-commons-v1.9.3) (2023-10-31)
+
+
+### Bug Fixes
+
+* **deps:** update dependency primereact to v9.6.3 ([f52ee84](https://github.com/Orange-OpenSource/uuv/commit/f52ee84daccc1380586e2da95d10592f9dd87e8b))
+
 ## [1.9.2](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v1.9.1...runner-commons-v1.9.2) (2023-10-26)
 
 ## [1.9.1](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v1.9.0...runner-commons-v1.9.1) (2023-10-16)
