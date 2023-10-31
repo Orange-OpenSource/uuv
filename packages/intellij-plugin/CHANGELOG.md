@@ -1,3 +1,24 @@
+# [1.2.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.1.1...intellij-plugin-v1.2.0) (2023-10-31)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cypress to v12.17.4 ([998b754](https://github.com/Orange-OpenSource/uuv/commit/998b754038941de8b035abbd47800d45b1dac022))
+* **deps:** update dependency cypress-real-events to v1.10.1 ([f60978d](https://github.com/Orange-OpenSource/uuv/commit/f60978da4bdd76483bcb2479324ccbbf3b36d87b))
+* **deps:** update dependency cypress-real-events to v1.10.3 ([9e3c991](https://github.com/Orange-OpenSource/uuv/commit/9e3c9914420c6d527f7ad8b0017a0f8e26250f86))
+* **deps:** update dependency primereact to v9.6.3 ([f52ee84](https://github.com/Orange-OpenSource/uuv/commit/f52ee84daccc1380586e2da95d10592f9dd87e8b))
+* **deps:** update docusaurus monorepo to v2.4.3 ([9e7ccf7](https://github.com/Orange-OpenSource/uuv/commit/9e7ccf78176e5b38da147d6d26097730c7859da8))
+* **intellij-plugin:** use of selectedItem to store targetScript value, closes [#305](https://github.com/Orange-OpenSource/uuv/issues/305) ([91c3f13](https://github.com/Orange-OpenSource/uuv/commit/91c3f13bfaf0f3fe4b3dcf4ab8ae38264febe8b8))
+
+
+### Features
+
+* **docs:** add autocompletion searchfield to steps definition page, [#255](https://github.com/Orange-OpenSource/uuv/issues/255) ([a0323ee](https://github.com/Orange-OpenSource/uuv/commit/a0323eec01a6351f9b60399398d145cb2bc86779))
+* **intellij-plugin:** add path variable in run configuration, [#268](https://github.com/Orange-OpenSource/uuv/issues/268) ([959b91c](https://github.com/Orange-OpenSource/uuv/commit/959b91c39a86ddf2ab0b849bf473b79720dee977))
+* **intellij-plugin:** add validation of runconfiguration, [#268](https://github.com/Orange-OpenSource/uuv/issues/268) ([8ce987c](https://github.com/Orange-OpenSource/uuv/commit/8ce987c91776ecdbae496aef9a26e98e7d472b1f))
+* **intellij-plugin:** rename specificPathVariable -> specificEnvVariable and store it as json, [#268](https://github.com/Orange-OpenSource/uuv/issues/268) ([e8f485c](https://github.com/Orange-OpenSource/uuv/commit/e8f485cb1be60ca206da2dee18be7d40d1d46c07))
+* **runner-playwright:** regenerate .spec when update, add or remove a .feature in open mode, [#236](https://github.com/Orange-OpenSource/uuv/issues/236) ([8a2599a](https://github.com/Orange-OpenSource/uuv/commit/8a2599a3fa4e577b9e626929537f2cc5f8e57bcc))
+
 ## [1.3.3](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.3.2...intellij-plugin-v1.3.3) (2023-10-26)
 
 ## [1.3.2](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.3.1...intellij-plugin-v1.3.2) (2023-10-16)
