@@ -1,3 +1,18 @@
+# [1.13.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.12.2...docs-v1.13.0) (2023-10-31)
+
+
+### Bug Fixes
+
+* **deps:** update dependency primereact to v9.6.3 ([f52ee84](https://github.com/Orange-OpenSource/uuv/commit/f52ee84daccc1380586e2da95d10592f9dd87e8b))
+
+
+### Features
+
+* **docs:** add troubleshooting for jetbrains-plugin ([3ace61f](https://github.com/Orange-OpenSource/uuv/commit/3ace61fad155a5e9ea44b0afa2c9f7f574e47ccc))
+* **intellij-plugin:** review of documentation, [#268](https://github.com/Orange-OpenSource/uuv/issues/268) ([f0091ce](https://github.com/Orange-OpenSource/uuv/commit/f0091cecbcdacf33d940db6c3ff1f3be9df40c76))
+* **intellij-plugin:** review of documentation, [#268](https://github.com/Orange-OpenSource/uuv/issues/268) ([9b2bbcf](https://github.com/Orange-OpenSource/uuv/commit/9b2bbcf2af545caa6e608b09f92ce635480cb35c))
+* update lib definition, [#311](https://github.com/Orange-OpenSource/uuv/issues/311) ([e7b9e58](https://github.com/Orange-OpenSource/uuv/commit/e7b9e5862355116a972a6318e21776f178788664))
+
 ## [1.12.2](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.12.1...docs-v1.12.2) (2023-10-26)
 
 ## [1.12.1](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.12.0...docs-v1.12.1) (2023-10-16)
