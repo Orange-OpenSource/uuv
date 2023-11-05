@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.14.0...docs-v1.15.0) (2023-11-05)
+
+
+### Features
+
+* **docs:** add forgotten icon, [#317](https://github.com/Orange-OpenSource/uuv/issues/317) ([7255f66](https://github.com/Orange-OpenSource/uuv/commit/7255f66d3aa507b5dfe828bd45f48e32c9086614))
+
 # [1.14.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.13.0...docs-v1.14.0) (2023-11-05)
 
 
