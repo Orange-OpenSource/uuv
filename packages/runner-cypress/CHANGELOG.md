@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.12.0...runner-cypress-v1.13.0) (2023-11-05)
+
+
+### Features
+
+* add download counter, [#317](https://github.com/Orange-OpenSource/uuv/issues/317) ([87b7ade](https://github.com/Orange-OpenSource/uuv/commit/87b7ade2ac8d3ffe2e3ed79e579866dea8dfc941))
+
 # [1.12.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.11.2...runner-cypress-v1.12.0) (2023-10-31)
 
 
