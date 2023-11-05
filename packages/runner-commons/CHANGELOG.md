@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v1.9.3...runner-commons-v1.10.0) (2023-11-05)
+
+
+### Features
+
+* add download counter, [#317](https://github.com/Orange-OpenSource/uuv/issues/317) ([87b7ade](https://github.com/Orange-OpenSource/uuv/commit/87b7ade2ac8d3ffe2e3ed79e579866dea8dfc941))
+
 ## [1.9.3](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v1.9.2...runner-commons-v1.9.3) (2023-10-31)
 
 
