@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v1.13.0...runner-playwright-v1.13.1) (2023-11-12)
+
+
+### Bug Fixes
+
+* correct cypress syntax in readme, [#322](https://github.com/Orange-OpenSource/uuv/issues/322) ([6fd427a](https://github.com/Orange-OpenSource/uuv/commit/6fd427ac20c27213f864fb199a4433b91aff87ba))
+
 # [1.13.0](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v1.12.0...runner-playwright-v1.13.0) (2023-11-05)
 
 
