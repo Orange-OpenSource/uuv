@@ -1,3 +1,10 @@
+## [1.15.3](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.15.2...docs-v1.15.3) (2023-11-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency nanoid to v3.3.7 ([7d1d60e](https://github.com/Orange-OpenSource/uuv/commit/7d1d60e32fd7f799c61beaace586a9869791f55b))
+
 ## [1.15.2](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.15.1...docs-v1.15.2) (2023-11-13)
 
 ## [1.15.1](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.15.0...docs-v1.15.1) (2023-11-12)
