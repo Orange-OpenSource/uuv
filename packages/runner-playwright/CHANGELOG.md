@@ -1,3 +1,10 @@
+## [1.13.3](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v1.13.2...runner-playwright-v1.13.3) (2023-11-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency nanoid to v3.3.7 ([7d1d60e](https://github.com/Orange-OpenSource/uuv/commit/7d1d60e32fd7f799c61beaace586a9869791f55b))
+
 ## [1.13.2](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v1.13.1...runner-playwright-v1.13.2) (2023-11-13)
 
 ## [1.13.1](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v1.13.0...runner-playwright-v1.13.1) (2023-11-12)
