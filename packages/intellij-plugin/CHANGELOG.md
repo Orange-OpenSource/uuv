@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.3...intellij-plugin-v1.2.4) (2023-11-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency nanoid to v3.3.7 ([7d1d60e](https://github.com/Orange-OpenSource/uuv/commit/7d1d60e32fd7f799c61beaace586a9869791f55b))
+
 ## [1.2.3](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.2...intellij-plugin-v1.2.3) (2023-11-13)
 
 ## [1.2.2](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.1...intellij-plugin-v1.2.2) (2023-11-12)
