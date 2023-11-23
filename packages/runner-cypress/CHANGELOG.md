@@ -1,3 +1,11 @@
+# [1.14.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.13.3...runner-cypress-v1.14.0) (2023-11-23)
+
+
+### Features
+
+* add information about kata uuv(git repo, ci and report), [#342](https://github.com/Orange-OpenSource/uuv/issues/342) ([7dadc9f](https://github.com/Orange-OpenSource/uuv/commit/7dadc9fa12f5e1a6ac7b914a6eae5d70839da13e))
+* add targetTestFile parameter to docs and readme, [#341](https://github.com/Orange-OpenSource/uuv/issues/341) ([02e6faf](https://github.com/Orange-OpenSource/uuv/commit/02e6fafb537fcdda733c9b2976d8ba5811c1cc58))
+
 ## [1.13.3](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.13.2...runner-cypress-v1.13.3) (2023-11-22)
 
 
