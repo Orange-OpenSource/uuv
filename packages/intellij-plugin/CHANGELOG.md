@@ -1,3 +1,11 @@
+## [1.2.5](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.4...intellij-plugin-v1.2.5) (2023-11-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @cucumber/cucumber to v9.6.0 ([52a3e4c](https://github.com/Orange-OpenSource/uuv/commit/52a3e4c14fbe3b87b9b7f97b56a3e437f71f36bf))
+* **deps:** update dependency antd to v5.11.4 ([33a0cf4](https://github.com/Orange-OpenSource/uuv/commit/33a0cf4d6973e8bcc50c805a091b11deaa9afe72))
+
 ## [1.2.4](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.3...intellij-plugin-v1.2.4) (2023-11-22)
 
 
