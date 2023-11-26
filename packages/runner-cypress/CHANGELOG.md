@@ -1,3 +1,11 @@
+## [1.14.1](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.14.0...runner-cypress-v1.14.1) (2023-11-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @cucumber/cucumber to v9.6.0 ([52a3e4c](https://github.com/Orange-OpenSource/uuv/commit/52a3e4c14fbe3b87b9b7f97b56a3e437f71f36bf))
+* **deps:** update dependency antd to v5.11.4 ([33a0cf4](https://github.com/Orange-OpenSource/uuv/commit/33a0cf4d6973e8bcc50c805a091b11deaa9afe72))
+
 # [1.14.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v1.13.3...runner-cypress-v1.14.0) (2023-11-23)
 
 
