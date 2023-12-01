@@ -1,3 +1,10 @@
+## [1.14.2](https://github.com/Orange-OpenSource/uuv/compare/assistant-v1.14.1...assistant-v1.14.2) (2023-12-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency multiple-cucumber-html-reporter to v3.5.0 ([b8a9dab](https://github.com/Orange-OpenSource/uuv/commit/b8a9dabed814d5cea192be9aeefdeb8af93249ce))
+
 ## [1.14.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-v1.14.0...assistant-v1.14.1) (2023-11-26)
 
 
