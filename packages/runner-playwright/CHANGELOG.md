@@ -1,3 +1,12 @@
+## [1.14.3](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v1.14.2...runner-playwright-v1.14.3) (2023-12-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency axe-core to v4.8.2 ([66b7dc2](https://github.com/Orange-OpenSource/uuv/commit/66b7dc2fbd63a9d4429964abb50f63a88e06e99b))
+* **deps:** update dependency cypress-axe to v1.5.0 ([816775f](https://github.com/Orange-OpenSource/uuv/commit/816775f89ec46d385e3fb6d8322a70165c7e5ea5))
+* **deps:** update dependency figlet to v1.7.0 ([8fbde74](https://github.com/Orange-OpenSource/uuv/commit/8fbde7405cef7576b1cd4151785be463a823e6ef))
+
 ## [1.14.2](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v1.14.1...runner-playwright-v1.14.2) (2023-12-01)
 
 
