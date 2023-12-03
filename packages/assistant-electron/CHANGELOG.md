@@ -1,3 +1,18 @@
+# [1.15.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.14.3...assistant-electron-v1.15.0) (2023-12-03)
+
+
+### Bug Fixes
+
+* correct description of sentence, [#368](https://github.com/Orange-OpenSource/uuv/issues/368) ([3caf2f6](https://github.com/Orange-OpenSource/uuv/commit/3caf2f685aba3ada741716fd7c703e44307f5d08))
+* **deps:** update dependency @cucumber/cucumber to v9.6.0 ([d0ac7ca](https://github.com/Orange-OpenSource/uuv/commit/d0ac7ca26b3d9d1fddd17d7cb6c7034ff640e483))
+* **deps:** update dependency cypress-real-events to v1.11.0 ([1694807](https://github.com/Orange-OpenSource/uuv/commit/169480777dc4c87f14a2deb5c10beb9cb0e43238))
+* **runner-playwright:** fix mock path, closes [#375](https://github.com/Orange-OpenSource/uuv/issues/375) ([15830e7](https://github.com/Orange-OpenSource/uuv/commit/15830e74a4ef1b54caabd0be221413b6f5035c33))
+
+
+### Features
+
+* add contraction for typing sentence, [#368](https://github.com/Orange-OpenSource/uuv/issues/368) ([a8189ed](https://github.com/Orange-OpenSource/uuv/commit/a8189edbca7f46429ce16136e4b090e4b598935c))
+
 ## [1.14.3](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.14.2...assistant-electron-v1.14.3) (2023-12-02)
 
 
