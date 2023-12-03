@@ -1,3 +1,11 @@
+## [1.2.8](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.7...intellij-plugin-v1.2.8) (2023-12-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @cucumber/cucumber to v9.6.0 ([d0ac7ca](https://github.com/Orange-OpenSource/uuv/commit/d0ac7ca26b3d9d1fddd17d7cb6c7034ff640e483))
+* **deps:** update dependency cypress-real-events to v1.11.0 ([1694807](https://github.com/Orange-OpenSource/uuv/commit/169480777dc4c87f14a2deb5c10beb9cb0e43238))
+
 ## [1.2.7](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.6...intellij-plugin-v1.2.7) (2023-12-02)
 
 
