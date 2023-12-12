@@ -1,3 +1,27 @@
+# [2.0.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v1.11.0...runner-commons-v2.0.0) (2023-12-12)
+
+
+### Bug Fixes
+
+* **deps:** update dependency primereact to v9.6.4 ([ed3e76c](https://github.com/Orange-OpenSource/uuv/commit/ed3e76c6da6af1d9c17f98e0802ffbb1a46124a4))
+* **deps:** update dependency ts-node to v10.9.2 ([b5c5ebb](https://github.com/Orange-OpenSource/uuv/commit/b5c5ebbc1eb9556d66c9494d45b089018580ba70))
+* **deps:** update dependency tslib to v2.6.2 ([f43d897](https://github.com/Orange-OpenSource/uuv/commit/f43d8972746b85a386320ad67b80d9c7aa7bc313))
+
+
+* feat!: allow only correct indefinite article from role based sentence, #361 ([bf323dd](https://github.com/Orange-OpenSource/uuv/commit/bf323dd891d5640368851056185159d1860a90e5)), closes [#361](https://github.com/Orange-OpenSource/uuv/issues/361)
+* fix!: correct abusive capitalization for within, #254 ([b3037e8](https://github.com/Orange-OpenSource/uuv/commit/b3037e8c809629b8d68b656290270fabb3641072)), closes [#254](https://github.com/Orange-OpenSource/uuv/issues/254)
+
+
+### Features
+
+* fix pr review, [#361](https://github.com/Orange-OpenSource/uuv/issues/361) ([3aaf14a](https://github.com/Orange-OpenSource/uuv/commit/3aaf14a60e1d0035cf2460c0af6e4fc1527e3dee))
+
+
+### BREAKING CHANGES
+
+* #361 see doc https://orange-opensource.github.io/uuv/docs/migration/v1-to-v2#correct-abusive-capitalization
+* #254 see doc https://orange-opensource.github.io/uuv/docs/migration/v1-to-v2#correct-abusive-capitalization
+
 # [1.11.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v1.10.6...runner-commons-v1.11.0) (2023-12-03)
 
 
