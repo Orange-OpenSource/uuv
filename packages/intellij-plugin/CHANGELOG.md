@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.2...intellij-plugin-v1.2.3) (2023-12-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency antd to v5.12.2 ([0c472ee](https://github.com/Orange-OpenSource/uuv/commit/0c472eef7a05ed343c6aa9576092ba001c9ffb00))
+
 ## [1.2.2](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.1...intellij-plugin-v1.2.2) (2023-12-12)
 
 
