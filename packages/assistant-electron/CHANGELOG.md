@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.16.0...assistant-electron-v1.16.1) (2023-12-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency antd to v5.12.2 ([0c472ee](https://github.com/Orange-OpenSource/uuv/commit/0c472eef7a05ed343c6aa9576092ba001c9ffb00))
+
 # [1.16.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.15.0...assistant-electron-v1.16.0) (2023-12-12)
 
 
