@@ -1,3 +1,5 @@
+## [1.16.2](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.16.1...assistant-electron-v1.16.2) (2023-12-19)
+
 ## [1.16.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.16.0...assistant-electron-v1.16.1) (2023-12-17)
 
 
