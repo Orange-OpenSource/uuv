@@ -1,21 +1,3 @@
-## [1.2.4](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.3...intellij-plugin-v1.2.4) (2023-12-19)
-
-## [1.2.3](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.2...intellij-plugin-v1.2.3) (2023-12-17)
-
-
-### Bug Fixes
-
-* **deps:** update dependency antd to v5.12.2 ([0c472ee](https://github.com/Orange-OpenSource/uuv/commit/0c472eef7a05ed343c6aa9576092ba001c9ffb00))
-
-## [1.2.2](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.1...intellij-plugin-v1.2.2) (2023-12-12)
-
-
-### Bug Fixes
-
-* **deps:** update dependency primereact to v9.6.4 ([ed3e76c](https://github.com/Orange-OpenSource/uuv/commit/ed3e76c6da6af1d9c17f98e0802ffbb1a46124a4))
-* **deps:** update dependency ts-node to v10.9.2 ([b5c5ebb](https://github.com/Orange-OpenSource/uuv/commit/b5c5ebbc1eb9556d66c9494d45b089018580ba70))
-* **deps:** update dependency tslib to v2.6.2 ([f43d897](https://github.com/Orange-OpenSource/uuv/commit/f43d8972746b85a386320ad67b80d9c7aa7bc313))
-
 ## [1.2.1](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.0...intellij-plugin-v1.2.1) (2023-12-05)
 
 
