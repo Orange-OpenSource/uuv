@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.18.2...docs-v1.19.0) (2023-12-20)
+
+
+### Features
+
+* **docs:** switch vscode cucumber plugin to the official one, [#408](https://github.com/Orange-OpenSource/uuv/issues/408) ([cb9e235](https://github.com/Orange-OpenSource/uuv/commit/cb9e2351e44ed38ce67e49cc54c1d3e6933f3805))
+
 ## [1.18.2](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.18.1...docs-v1.18.2) (2023-12-19)
 
 ## [1.18.1](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.18.0...docs-v1.18.1) (2023-12-17)
