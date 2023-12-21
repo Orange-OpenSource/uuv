@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.2...intellij-plugin-v1.3.0) (2023-12-21)
+
+
+### Features
+
+* **intellij-plugin:** makes it compatible with jetbrains app versions >= 232, [#399](https://github.com/Orange-OpenSource/uuv/issues/399) ([449a06c](https://github.com/Orange-OpenSource/uuv/commit/449a06c583dd756e7df14bbb86f4852f1d4c0bf4))
+
 ## [1.2.2](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.1...intellij-plugin-v1.2.2) (2023-12-20)
 
 
