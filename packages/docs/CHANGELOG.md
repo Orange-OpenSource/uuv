@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.19.1...docs-v1.20.0) (2023-12-28)
+
+
+### Features
+
+* **runner-playwright:** add tags option for runner-playwright, [#416](https://github.com/Orange-OpenSource/uuv/issues/416) ([8787581](https://github.com/Orange-OpenSource/uuv/commit/87875818114bbf77ff4b35ff8ccb26d525eba450))
+
 ## [1.19.1](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.19.0...docs-v1.19.1) (2023-12-21)
 
 # [1.19.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.18.2...docs-v1.19.0) (2023-12-20)
