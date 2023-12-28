@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.16.3...assistant-electron-v1.17.0) (2023-12-28)
+
+
+### Features
+
+* **runner-playwright:** add tags option for runner-playwright, [#416](https://github.com/Orange-OpenSource/uuv/issues/416) ([8787581](https://github.com/Orange-OpenSource/uuv/commit/87875818114bbf77ff4b35ff8ccb26d525eba450))
+
 ## [1.16.3](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.16.2...assistant-electron-v1.16.3) (2023-12-21)
 
 ## [1.16.2](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.16.1...assistant-electron-v1.16.2) (2023-12-19)
