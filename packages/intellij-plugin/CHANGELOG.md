@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.3.0...intellij-plugin-v1.4.0) (2023-12-28)
+
+
+### Features
+
+* **runner-playwright:** add tags option for runner-playwright, [#416](https://github.com/Orange-OpenSource/uuv/issues/416) ([8787581](https://github.com/Orange-OpenSource/uuv/commit/87875818114bbf77ff4b35ff8ccb26d525eba450))
+
 # [1.3.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.2...intellij-plugin-v1.3.0) (2023-12-21)
 
 
