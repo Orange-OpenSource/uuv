@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.0.3...runner-commons-v2.1.0) (2023-12-28)
+
+
+### Features
+
+* **runner-playwright:** add tags option for runner-playwright, [#416](https://github.com/Orange-OpenSource/uuv/issues/416) ([8787581](https://github.com/Orange-OpenSource/uuv/commit/87875818114bbf77ff4b35ff8ccb26d525eba450))
+
 ## [2.0.3](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.0.2...runner-commons-v2.0.3) (2023-12-21)
 
 ## [2.0.2](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.0.1...runner-commons-v2.0.2) (2023-12-19)
