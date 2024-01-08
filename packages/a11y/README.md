@@ -82,16 +82,16 @@ For each criterion of the RGAA, the following algorithm is executed :
     ```
 2. Add script tag to execute
     ```html
-    <script>
-      const rgaaChecker = new uuvA11y.RgaaChecker(url, enabledRules);
+    <script type="module">
+      const rgaaChecker = new uuvA11y.RgaaChecker(window.location.url);
       const result = await rgaaChecker.validate().toPromise();
       // Print complete result
-      console.log(result);
+      console.log('result', result);
       // Print result summary group by criteria
-      console.log(result.summary());
+      console.log('summary', result.summary());
     </script>
     ```
-  [Stackblitz example](https://stackblitz.com/edit/web-platform-fihgra?file=index.html)
+  [Stackblitz example](https://stackblitz.com/edit/web-platform-fihgra?devToolsHeight=33&file=index.html)
 
 ### As a dependency
 1. Import @uuv/a11y npm dependency
