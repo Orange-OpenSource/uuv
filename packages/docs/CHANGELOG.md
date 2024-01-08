@@ -1,3 +1,10 @@
+## [1.22.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.21.1...docs-v1.22.0) (2024-01-08)
+
+
+### Features
+
+* **a11y:** reduce @uuv/a11y bundle size, [#330](https://github.com/Orange-OpenSource/uuv/issues/330) ([139b85a](https://github.com/Orange-OpenSource/uuv/commit/139b85a56e2ce4b8f370df4f6d410a9a1807e3b6))
+
 ## [1.21.1](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.21.0...docs-v1.21.1) (2024-01-08)
 
 
