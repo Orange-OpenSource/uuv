@@ -1,3 +1,10 @@
+## [1.5.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.4.0...intellij-plugin-v1.5.0) (2024-01-08)
+
+
+### Features
+
+* **a11y:** initialize @uuv/a11y lib, [#330](https://github.com/Orange-OpenSource/uuv/issues/330) ([3c27ac5](https://github.com/Orange-OpenSource/uuv/commit/3c27ac5a1698a407289123aac85e500508e2d8c6))
+
 # [1.4.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.3.0...intellij-plugin-v1.4.0) (2023-12-28)
 
 
