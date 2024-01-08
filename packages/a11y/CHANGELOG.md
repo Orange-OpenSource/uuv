@@ -1,3 +1,10 @@
+## [1.0.0-beta.3](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.2...a11y-v1.0.0-beta.3) (2024-01-08)
+
+
+### Features
+
+* **a11y:** reduce @uuv/a11y bundle size, [#330](https://github.com/Orange-OpenSource/uuv/issues/330) ([139b85a](https://github.com/Orange-OpenSource/uuv/commit/139b85a56e2ce4b8f370df4f6d410a9a1807e3b6))
+
 ## [1.0.0-beta.2](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.1...a11y-v1.0.0-beta.2) (2024-01-08)
 
 
