@@ -1,3 +1,11 @@
+## [1.0.0-beta.2](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.1...a11y-v1.0.0-beta.2) (2024-01-08)
+
+
+### Bug Fixes
+
+* **a11y:** fix post first publish, [#330](https://github.com/Orange-OpenSource/uuv/issues/330) ([76cf65b](https://github.com/Orange-OpenSource/uuv/commit/76cf65ba219f6128c58ecdec608d3cb4fe72bcc9))
+* **a11y:** update unpkg usage and stackblitz link, [#330](https://github.com/Orange-OpenSource/uuv/issues/330) ([6032415](https://github.com/Orange-OpenSource/uuv/commit/6032415fdf16ae1be23e96785e7c66b779d8cbf9))
+
 ## 1.0.0-beta.1 (2024-01-08)
 
 
