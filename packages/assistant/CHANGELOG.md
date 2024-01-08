@@ -1,3 +1,10 @@
+## [2.3.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.2.0...assistant-v2.3.0) (2024-01-08)
+
+
+### Features
+
+* **a11y:** reduce @uuv/a11y bundle size, [#330](https://github.com/Orange-OpenSource/uuv/issues/330) ([139b85a](https://github.com/Orange-OpenSource/uuv/commit/139b85a56e2ce4b8f370df4f6d410a9a1807e3b6))
+
 ## [2.2.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.1.0...assistant-v2.2.0) (2024-01-08)
 
 
