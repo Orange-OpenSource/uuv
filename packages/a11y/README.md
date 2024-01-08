@@ -68,7 +68,7 @@ The following references are available :
 
 For each criterion of the RGAA, the following algorithm is executed :
 
- ![Diagram a11Y RGAA](/docs/diagram-a11y-rgaa.png)
+ ![Diagram a11Y RGAA](https://unpkg.com/@uuv/a11y/docs/diagram-a11y-rgaa.png)
 
 **Consult [this page](https://orange-opensource.github.io/uuv/docs/tools/uuv-a11y#rgaa) to find out which RGAA verifications are implemented in the library**
 </p>  
@@ -77,7 +77,7 @@ For each criterion of the RGAA, the following algorithm is executed :
 ### With UNPKG
 1.  Add script tag to import @uuv/a11y in your html page :
     ```html
-    <script src="https://unpkg.com/@uuv/a11y/dist/bundle/uuv-a11y.bundle.js">
+    <script src="https://unpkg.com/@uuv/a11y/bundle/uuv-a11y.bundle.js">
     </script>
     ```
 2. Add script tag to execute
@@ -113,72 +113,269 @@ For each criterion of the RGAA, the following algorithm is executed :
     // Print result summary group by criteria
     console.log(result.summary());
     ```
-### During E2E Testing (recommended usage car visualisation des noeuds)
+### During E2E Testing (recommended usage because it allows DOM nodes to be visualized)
 1. add `@uuv/cypress` npm dependency :
     ```shell
     npm install --save-dev @uuv/cypress
     ```
-2. create the file `uuv/e2e/a11y.feature` in the project root with the following content and replace url `https://e2e-test-quest.github.io/simple-webapp/a11y-test.html` by yours :
-    ```gherkin
-    Feature: A11y
-  
-    Scenario: Default RGAA
-      When I visit path "https://e2e-test-quest.github.io/simple-webapp/a11y-test.html"
-      Then I should not have any rgaa accessibility issue
-    
-    Scenario: RGAA with result
-      When I visit path "https://e2e-test-quest.github.io/simple-webapp/a11y-test.html"
-      Then I should have the following result based on the rgaa reference
-      """json
-        {
-          "status": "error",
-          "criteria": {
-            "1.1": {
-              "status": "error"
-            },
-            "1.2": {
-              "status": "error"
-            },
-            "1.3": {
-              "status": "manual"
-            },
-            "1.4": {
-              "status": "manual"
-            },
-            "1.5": {
-              "status": "manual"
-            },
-            "1.6": {
-              "status": "success"
-            },
-            "2.1": {
-              "status": "error"
-            },
-            "8.1": {
-              "status": "error"
-            },
-            "8.3": {
-              "status": "success"
-            },
-            "8.4": {
-              "status": "manual"
-            },
-            "8.5": {
-              "status": "error"
-            },
-            "8.6": {
-              "status": "manual"
-            },
-            "8.10": {
-              "status": "error"
-            },
-            "11.1": {
-              "status": "success"
+   2. create the file `uuv/e2e/a11y.feature` in the project root with the following content and replace url `https://e2e-test-quest.github.io/simple-webapp/a11y-test.html` by yours :
+       ```gherkin
+       Feature: A11y validation
+          
+          Scenario: Default RGAA
+            When I visit path "https://e2e-test-quest.github.io/simple-webapp/a11y-test.html"
+            Then I should not have any rgaa accessibility issue
+       
+          Scenario: RGAA with result
+            When I visit path "https://e2e-test-quest.github.io/simple-webapp/a11y-test.html"
+            Then I should have the following result based on the rgaa reference
+            """json
+            {
+              "status": "error",
+              "criteria": {
+                "1.1": {
+                  "status": "error",
+                  "tests" : {
+                    "1.1.1": {
+                      "status": "error"
+                    },
+                    "1.1.2": {
+                      "status": "error"
+                    },
+                    "1.1.3": {
+                      "status": "success"
+                    },
+                    "1.1.4": {
+                      "status": "success"
+                    },
+                    "1.1.5": {
+                      "status": "error"
+                    },
+                    "1.1.6": {
+                      "status": "error"
+                    },
+                    "1.1.7": {
+                      "status": "error"
+                    },
+                    "1.1.8": {
+                      "status": "success"
+                    }
+                  }
+                },
+                "1.2": {
+                  "status": "success",
+                  "tests": {
+                    "1.2.1": {
+                      "status": "success"
+                    },
+                    "1.2.2": {
+                      "status": "success"
+                    },
+                    "1.2.3": {
+                      "status": "success"
+                    },
+                    "1.2.4": {
+                      "status": "success"
+                    },
+                    "1.2.5": {
+                      "status": "success"
+                    },
+                    "1.2.6": {
+                      "status": "success"
+                    }
+                  }
+                },
+                "1.3": {
+                  "status": "manual",
+                  "tests": {
+                    "1.3.1": {
+                      "status": "manual"
+                    },
+                    "1.3.2": {
+                      "status": "manual"
+                    },
+                    "1.3.3": {
+                      "status": "manual"
+                    },
+                    "1.3.4": {
+                      "status": "success"
+                    },
+                    "1.3.5": {
+                      "status": "success"
+                    },
+                    "1.3.6": {
+                      "status": "success"
+                    },
+                    "1.3.7": {
+                      "status": "success"
+                    },
+                    "1.3.9": {
+                      "status": "manual"
+                    }
+                  }
+                },
+                "1.4": {
+                  "status": "manual",
+                  "tests": {
+                    "1.4.1": {
+                      "status": "manual"
+                    },
+                    "1.4.2": {
+                      "status": "manual"
+                    },
+                    "1.4.3": {
+                      "status": "manual"
+                    },
+                    "1.4.4": {
+                      "status": "success"
+                    },
+                    "1.4.5": {
+                      "status": "success"
+                    },
+                    "1.4.6": {
+                      "status": "success"
+                    },
+                    "1.4.7": {
+                      "status": "success"
+                    }
+                  }
+                },
+                "1.5": {
+                  "status": "manual",
+                  "tests": {
+                    "1.5.1": {
+                      "status": "manual"
+                    },
+                    "1.5.2": {
+                      "status": "manual"
+                    }
+                  }
+                },
+                "1.6": {
+                  "status": "manual",
+                  "tests": {
+                    "1.6.1": {
+                      "status": "success"
+                    },
+                    "1.6.2": {
+                      "status": "success"
+                    },
+                    "1.6.3": {
+                      "status": "success"
+                    },
+                    "1.6.4": {
+                      "status": "success"
+                    },
+                    "1.6.5": {
+                      "status": "success"
+                    },
+                    "1.6.6": {
+                      "status": "success"
+                    },
+                    "1.6.7": {
+                      "status": "success"
+                    },
+                    "1.6.8": {
+                      "status": "success"
+                    },
+                    "1.6.9": {
+                      "status": "manual"
+                    },
+                    "1.6.10": {
+                      "status": "manual"
+                    }
+                  }
+                },
+                "2.1": {
+                  "status": "error",
+                  "tests": {
+                    "2.1.1": {
+                      "status": "error"
+                    }
+                  }
+                },
+                "2.2": {
+                  "status": "manual",
+                  "tests": {
+                    "2.2.1": {
+                      "status": "manual"
+                    }
+                  }
+                },
+                "3.1": {
+                  "status": "manual",
+                  "tests": {
+                    "3.1.3": {
+                      "status": "success"
+                    },
+                    "3.1.5": {
+                      "status": "manual"
+                    },
+                    "3.1.6": {
+                      "status": "manual"
+                    }
+                  }
+                },
+                "8.1": {
+                  "status": "error",
+                  "tests": {
+                    "8.1.1": {
+                      "status": "error"
+                    }
+                  }
+                },
+                "8.3": {
+                  "status": "success",
+                  "tests": {
+                    "8.3.1": {
+                      "status": "success"
+                    }
+                  }
+                },
+                "8.4": {
+                  "status": "manual",
+                  "tests": {
+                    "8.4.1": {
+                      "status": "manual"
+                    }
+                  }
+                },
+                "8.5": {
+                  "status": "error",
+                  "tests": {
+                    "8.5.1": {
+                      "status": "error"
+                    }
+                  }
+                },
+                "8.6": {
+                  "status": "manual",
+                  "tests": {
+                    "8.6.1": {
+                      "status": "manual"
+                    }
+                  }
+                },
+                "8.10": {
+                  "status": "error",
+                  "tests": {
+                    "8.10.1": {
+                      "status": "error"
+                    }
+                  }
+                },
+                "11.1": {
+                  "status": "success",
+                  "tests": {
+                    "11.1.1": {
+                      "status": "success"
+                    }
+                  }
+                }
+              }
             }
-          }
-        }
-      """
-    ```
+          """
+       ```
 3. Then execute your tests :
     ```shell
     npx uuv e2e

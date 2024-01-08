@@ -39,7 +39,7 @@ export function buildCoverage() {
             addMessages(completeCriteriaId, criteriaCoverage);
             Object.keys(criterion.criterium.tests).forEach((testId) => {
                 const completeTestId = `${topic.number}.${criterion.criterium.number}.${testId}`;
-                const testCoverage = new A11yReferenceTestCoverage(completeTestId, criterion.criterium.tests[testId].join("<br/>"));
+                const testCoverage = new A11yReferenceTestCoverage(completeTestId, criterion.criterium.tests[testId].join("\\\n"));
                 addMessages(completeTestId, testCoverage);
                 if (PARTIAL_COVERAGE.implemented.find((element) => element === completeTestId)) {
                     const checkModeForCriteria = getCheckModeForCriteria(completeTestId);
