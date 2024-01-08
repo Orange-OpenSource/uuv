@@ -1,6 +1,6 @@
 import { Query } from "./00-query";
 import { computeAccessibleName } from "dom-accessibility-api";
-import _ from "lodash";
+import { isEmpty } from "lodash";
 
 export class AccessibleNameQuery implements Query {
 
@@ -13,9 +13,9 @@ export class AccessibleNameQuery implements Query {
     execute(): HTMLElement[] {
         return this.subQuery.execute().filter(element => {
             const accessibleName = computeAccessibleName(element);
-            if (this.shouldBeEmpty && _.isEmpty(accessibleName)) {
+            if (this.shouldBeEmpty && isEmpty(accessibleName)) {
                 return true;
-            } else if (!this.shouldBeEmpty && !_.isEmpty(accessibleName)) {
+            } else if (!this.shouldBeEmpty && !isEmpty(accessibleName)) {
                 return true;
             } else {
                 return false;

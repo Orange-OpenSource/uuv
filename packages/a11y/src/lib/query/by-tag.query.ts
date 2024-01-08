@@ -1,5 +1,6 @@
 import { Query } from "./00-query";
-import $ from "jquery";
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const $ = require("jquery/dist/jquery.min");
 
 export class ByTagQuery implements Query {
     constructor(readonly selectors: string[]) {

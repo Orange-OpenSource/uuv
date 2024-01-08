@@ -1,5 +1,4 @@
 import { Query } from "./00-query";
-import $ from "jquery";
 
 export class FormQuery implements Query {
     LABEL_ATTRIBUTE = "$LABEL";
