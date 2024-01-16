@@ -1,3 +1,10 @@
+## [1.24.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.23.0...docs-v1.24.0) (2024-01-16)
+
+
+### Features
+
+* **docs:** add a11y to concept page, [#330](https://github.com/Orange-OpenSource/uuv/issues/330) ([e0fefd3](https://github.com/Orange-OpenSource/uuv/commit/e0fefd3300498bf72919476f25ee2bc85b1d977c))
+
 ## [1.23.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.22.0...docs-v1.23.0) (2024-01-11)
 
 
