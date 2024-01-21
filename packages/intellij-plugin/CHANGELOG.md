@@ -1,35 +1,3 @@
-## [1.4.1](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.4.0...intellij-plugin-v1.4.1) (2024-01-21)
-
-
-### Bug Fixes
-
-* **intellij-plugin:** make jetbrains plugin compatible with 233.* ([eafd8e9](https://github.com/Orange-OpenSource/uuv/commit/eafd8e94c803727f85d771f732dad8bb8995372b))
-
-## [1.4.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.3.0...intellij-plugin-v1.4.0) (2024-01-21)
-
-
-### Features
-
-* **intellij-plugin:** makes it compatible with jetbrains app versions >= 233 ([859f2a1](https://github.com/Orange-OpenSource/uuv/commit/859f2a12f2e99d752344d7649502d6f6308bee11))
-
-
-### Bug Fixes
-
-* **a11y:** update dependency @testing-library/dom to v9.3.4 ([368b6b4](https://github.com/Orange-OpenSource/uuv/commit/368b6b4210f83d2da7695a0bfedd8ac593df171a))
-* **assistant:** fix assistant and enable uuv test for assistant, [#437](https://github.com/Orange-OpenSource/uuv/issues/437) ([da82e1b](https://github.com/Orange-OpenSource/uuv/commit/da82e1b588a391eb24573ac8c3f2db18cfdbf5a5))
-* **deps:** update dependency @easyops-cn/docusaurus-search-local to v0.40.1 ([d5ed3d7](https://github.com/Orange-OpenSource/uuv/commit/d5ed3d75f44e2b83af81fcd7227521dea00371e6))
-
-## [1.3.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.2...intellij-plugin-v1.3.0) (2024-01-11)
-
-
-### Features
-
-* **a11y:** add a contains sentence for a11y rgaa, [#424](https://github.com/Orange-OpenSource/uuv/issues/424) ([297cc33](https://github.com/Orange-OpenSource/uuv/commit/297cc3378798d1eb9c973a2038423ae6f874f70f))
-* **a11y:** initialize @uuv/a11y lib, [#330](https://github.com/Orange-OpenSource/uuv/issues/330) ([3c27ac5](https://github.com/Orange-OpenSource/uuv/commit/3c27ac5a1698a407289123aac85e500508e2d8c6))
-* **a11y:** reduce @uuv/a11y bundle size, [#330](https://github.com/Orange-OpenSource/uuv/issues/330) ([139b85a](https://github.com/Orange-OpenSource/uuv/commit/139b85a56e2ce4b8f370df4f6d410a9a1807e3b6))
-* **intellij-plugin:** makes it compatible with jetbrains app versions >= 232, [#399](https://github.com/Orange-OpenSource/uuv/issues/399) ([449a06c](https://github.com/Orange-OpenSource/uuv/commit/449a06c583dd756e7df14bbb86f4852f1d4c0bf4))
-* **runner-playwright:** add tags option for runner-playwright, [#416](https://github.com/Orange-OpenSource/uuv/issues/416) ([8787581](https://github.com/Orange-OpenSource/uuv/commit/87875818114bbf77ff4b35ff8ccb26d525eba450))
-
 ## [1.2.2](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.2.1...intellij-plugin-v1.2.2) (2023-12-20)
 
 
