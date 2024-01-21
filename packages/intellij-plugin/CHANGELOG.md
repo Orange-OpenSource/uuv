@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.4.0...intellij-plugin-v1.4.1) (2024-01-21)
+
+
+### Bug Fixes
+
+* **intellij-plugin:** make jetbrains plugin compatible with 233.* ([eafd8e9](https://github.com/Orange-OpenSource/uuv/commit/eafd8e94c803727f85d771f732dad8bb8995372b))
+
 ## [1.4.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.3.0...intellij-plugin-v1.4.0) (2024-01-21)
 
 
