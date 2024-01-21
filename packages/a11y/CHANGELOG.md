@@ -1,3 +1,12 @@
+## [1.0.0-beta.5](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.4...a11y-v1.0.0-beta.5) (2024-01-21)
+
+
+### Bug Fixes
+
+* **a11y:** update dependency @testing-library/dom to v9.3.4 ([368b6b4](https://github.com/Orange-OpenSource/uuv/commit/368b6b4210f83d2da7695a0bfedd8ac593df171a))
+* **assistant:** fix assistant and enable uuv test for assistant, [#437](https://github.com/Orange-OpenSource/uuv/issues/437) ([da82e1b](https://github.com/Orange-OpenSource/uuv/commit/da82e1b588a391eb24573ac8c3f2db18cfdbf5a5))
+* **deps:** update dependency @easyops-cn/docusaurus-search-local to v0.40.1 ([d5ed3d7](https://github.com/Orange-OpenSource/uuv/commit/d5ed3d75f44e2b83af81fcd7227521dea00371e6))
+
 ## [1.0.0-beta.4](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.3...a11y-v1.0.0-beta.4) (2024-01-11)
 
 
