@@ -1,3 +1,15 @@
+## [2.5.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.4.1...runner-cypress-v2.5.0) (2024-01-23)
+
+
+### Features
+
+* **a11y:** add RGAA 1.1.6 and 1.1.3, [#429](https://github.com/Orange-OpenSource/uuv/issues/429) ([0e65889](https://github.com/Orange-OpenSource/uuv/commit/0e65889b479651c27e16c29fdb8e5123fe689f03))
+
+
+### Bug Fixes
+
+* **runner-playwright:** update dependency axe-core to v4.8.3 ([4623485](https://github.com/Orange-OpenSource/uuv/commit/46234851677cf0e5f0479fe30bc786ae2a607f1e))
+
 ## [2.4.1](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.4.0...runner-cypress-v2.4.1) (2024-01-21)
 
 
