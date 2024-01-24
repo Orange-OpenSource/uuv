@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.4.0...intellij-plugin-v1.4.1) (2024-01-24)
+
+
+### Bug Fixes
+
+* **intellij-plugin:** downgrade target intellij version to 2022.3.3, closes [#448](https://github.com/Orange-OpenSource/uuv/issues/448) ([6e63448](https://github.com/Orange-OpenSource/uuv/commit/6e6344842155c22a052e750df6953d58b90ac7d0))
+
 ## [1.4.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.3.0...intellij-plugin-v1.4.0) (2024-01-23)
 
 
