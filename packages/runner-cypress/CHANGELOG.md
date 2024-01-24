@@ -1,3 +1,10 @@
+## [2.6.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.5.0...runner-cypress-v2.6.0) (2024-01-24)
+
+
+### Features
+
+* **a11y:** add rgaa topic 2, [#432](https://github.com/Orange-OpenSource/uuv/issues/432) ([#450](https://github.com/Orange-OpenSource/uuv/issues/450)) ([231d95b](https://github.com/Orange-OpenSource/uuv/commit/231d95b48ecfbeb0c86f44d0de0ca8c68df7b9f1))
+
 ## [2.5.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.4.1...runner-cypress-v2.5.0) (2024-01-23)
 
 
