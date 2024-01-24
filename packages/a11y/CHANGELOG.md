@@ -1,3 +1,10 @@
+## [1.0.0-beta.7](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.6...a11y-v1.0.0-beta.7) (2024-01-24)
+
+
+### Features
+
+* **a11y:** add rgaa topic 2, [#432](https://github.com/Orange-OpenSource/uuv/issues/432) ([#450](https://github.com/Orange-OpenSource/uuv/issues/450)) ([231d95b](https://github.com/Orange-OpenSource/uuv/commit/231d95b48ecfbeb0c86f44d0de0ca8c68df7b9f1))
+
 ## [1.0.0-beta.6](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.5...a11y-v1.0.0-beta.6) (2024-01-23)
 
 
