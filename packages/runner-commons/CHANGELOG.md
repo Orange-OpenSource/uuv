@@ -1,3 +1,11 @@
+## [2.6.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.5.0...runner-commons-v2.6.0) (2024-02-02)
+
+
+### Features
+
+* rationalize list sentences, [#453](https://github.com/Orange-OpenSource/uuv/issues/453) ([dd98466](https://github.com/Orange-OpenSource/uuv/commit/dd98466f025a61d9ec007001b0a05de2482adef6))
+* setup role based parameters shouldGenerateContainsSentence & shouldGenerateTypeSentence, [#453](https://github.com/Orange-OpenSource/uuv/issues/453) ([613b821](https://github.com/Orange-OpenSource/uuv/commit/613b821fadc70040fbfd4a27cc57b2197cc674bc))
+
 ## [2.5.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.4.1...runner-commons-v2.5.0) (2024-01-23)
 
 
