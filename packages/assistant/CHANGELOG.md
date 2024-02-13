@@ -1,3 +1,10 @@
+## [2.6.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.6.0...assistant-v2.6.1) (2024-02-13)
+
+
+### Bug Fixes
+
+* update dependency multiple-cucumber-html-reporter to v3.6.2 ([95d85c3](https://github.com/Orange-OpenSource/uuv/commit/95d85c3f29ff261232f75c83175d795b63766a89))
+
 ## [2.6.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.5.0...assistant-v2.6.0) (2024-02-02)
 
 
