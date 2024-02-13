@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.4.1...intellij-plugin-v1.4.2) (2024-02-13)
+
+
+### Bug Fixes
+
+* update dependency multiple-cucumber-html-reporter to v3.6.2 ([95d85c3](https://github.com/Orange-OpenSource/uuv/commit/95d85c3f29ff261232f75c83175d795b63766a89))
+
 ## [1.4.1](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.4.0...intellij-plugin-v1.4.1) (2024-01-24)
 
 
