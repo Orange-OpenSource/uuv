@@ -1,3 +1,11 @@
+## [1.0.0-beta.8](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.7...a11y-v1.0.0-beta.8) (2024-02-13)
+
+
+### Features
+
+* **a11y:** add rgaa criteria 5.1 to 5.5, [#451](https://github.com/Orange-OpenSource/uuv/issues/451) ([fa3b369](https://github.com/Orange-OpenSource/uuv/commit/fa3b3693e102b54e1d72321aba573e66c864f4e3))
+* **a11y:** add rgaa criteria 5.6 to 5.8, [#451](https://github.com/Orange-OpenSource/uuv/issues/451) ([9cdf4ad](https://github.com/Orange-OpenSource/uuv/commit/9cdf4ad0e5ba16d7b8ddb90e014d96fc741acc17))
+
 ## [1.0.0-beta.7](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.6...a11y-v1.0.0-beta.7) (2024-01-24)
 
 
