@@ -1,3 +1,11 @@
+## [1.28.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.27.0...docs-v1.28.0) (2024-02-13)
+
+
+### Features
+
+* **a11y:** add rgaa criteria 5.1 to 5.5, [#451](https://github.com/Orange-OpenSource/uuv/issues/451) ([fa3b369](https://github.com/Orange-OpenSource/uuv/commit/fa3b3693e102b54e1d72321aba573e66c864f4e3))
+* **a11y:** add rgaa criteria 5.6 to 5.8, [#451](https://github.com/Orange-OpenSource/uuv/issues/451) ([9cdf4ad](https://github.com/Orange-OpenSource/uuv/commit/9cdf4ad0e5ba16d7b8ddb90e014d96fc741acc17))
+
 ## [1.27.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.26.0...docs-v1.27.0) (2024-02-02)
 
 
