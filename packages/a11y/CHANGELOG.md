@@ -1,3 +1,10 @@
+## [1.0.0-beta.9](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.8...a11y-v1.0.0-beta.9) (2024-02-13)
+
+
+### Bug Fixes
+
+* update dependency multiple-cucumber-html-reporter to v3.6.2 ([95d85c3](https://github.com/Orange-OpenSource/uuv/commit/95d85c3f29ff261232f75c83175d795b63766a89))
+
 ## [1.0.0-beta.8](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.7...a11y-v1.0.0-beta.8) (2024-02-13)
 
 
