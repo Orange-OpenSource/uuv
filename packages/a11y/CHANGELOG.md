@@ -1,3 +1,10 @@
+## [1.0.0-beta.10](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.9...a11y-v1.0.0-beta.10) (2024-02-15)
+
+
+### Bug Fixes
+
+* **runner-playwright:** update dependency axe-core to v4.8.4 ([1db34e2](https://github.com/Orange-OpenSource/uuv/commit/1db34e26b498bfc83d47cfd98064faa1aa65f558))
+
 ## [1.0.0-beta.9](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.8...a11y-v1.0.0-beta.9) (2024-02-13)
 
 
