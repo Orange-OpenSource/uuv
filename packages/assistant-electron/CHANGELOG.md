@@ -1,3 +1,10 @@
+## [1.22.2](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.22.1...assistant-electron-v1.22.2) (2024-02-15)
+
+
+### Bug Fixes
+
+* **runner-playwright:** update dependency axe-core to v4.8.4 ([1db34e2](https://github.com/Orange-OpenSource/uuv/commit/1db34e26b498bfc83d47cfd98064faa1aa65f558))
+
 ## [1.22.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.22.0...assistant-electron-v1.22.1) (2024-02-13)
 
 
