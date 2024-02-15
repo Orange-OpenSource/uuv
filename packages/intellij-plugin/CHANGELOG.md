@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.4.2...intellij-plugin-v1.4.3) (2024-02-15)
+
+
+### Bug Fixes
+
+* **runner-playwright:** update dependency axe-core to v4.8.4 ([1db34e2](https://github.com/Orange-OpenSource/uuv/commit/1db34e26b498bfc83d47cfd98064faa1aa65f558))
+
 ## [1.4.2](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.4.1...intellij-plugin-v1.4.2) (2024-02-13)
 
 
