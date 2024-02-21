@@ -1,3 +1,10 @@
+## [2.6.3](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.6.2...runner-commons-v2.6.3) (2024-02-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @mdx-js/react to v3.0.1 ([e4ba234](https://github.com/Orange-OpenSource/uuv/commit/e4ba234ec2883f93e6003a7c27843a35f119281b))
+
 ## [2.6.2](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.6.1...runner-commons-v2.6.2) (2024-02-15)
 
 
