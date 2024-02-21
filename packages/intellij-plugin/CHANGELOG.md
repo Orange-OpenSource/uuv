@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.4.3...intellij-plugin-v1.4.4) (2024-02-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @mdx-js/react to v3.0.1 ([e4ba234](https://github.com/Orange-OpenSource/uuv/commit/e4ba234ec2883f93e6003a7c27843a35f119281b))
+
 ## [1.4.3](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.4.2...intellij-plugin-v1.4.3) (2024-02-15)
 
 
