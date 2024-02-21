@@ -1,3 +1,15 @@
+## [1.29.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.28.2...docs-v1.29.0) (2024-02-21)
+
+
+### Features
+
+* **docs:** add @uuv/a11y to docs diagram, [#485](https://github.com/Orange-OpenSource/uuv/issues/485) ([55af2b2](https://github.com/Orange-OpenSource/uuv/commit/55af2b2be5eca97e542c8f729e00677baec1bbd9))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @mdx-js/react to v3.0.1 ([e4ba234](https://github.com/Orange-OpenSource/uuv/commit/e4ba234ec2883f93e6003a7c27843a35f119281b))
+
 ## [1.28.2](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.28.1...docs-v1.28.2) (2024-02-15)
 
 
