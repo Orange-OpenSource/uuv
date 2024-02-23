@@ -1,3 +1,16 @@
+## [1.30.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.29.0...docs-v1.30.0) (2024-02-23)
+
+
+### Features
+
+* **a11y:** add rgaa topic 6, [#457](https://github.com/Orange-OpenSource/uuv/issues/457) ([ae59c46](https://github.com/Orange-OpenSource/uuv/commit/ae59c46a8973ba4ad24d2d7479362c3f9a5b0b0b))
+
+
+### Bug Fixes
+
+* **a11y:** fix topic 5 typo in warning message, [#451](https://github.com/Orange-OpenSource/uuv/issues/451) ([ac503f0](https://github.com/Orange-OpenSource/uuv/commit/ac503f0641574c05222967eff0babc95bbc3f5fc))
+* **assistant:** update dependency @ant-design/icons to v5.3.0 ([b4b2782](https://github.com/Orange-OpenSource/uuv/commit/b4b2782cfa93290a2e3cece937c02c1b00aec938))
+
 ## [1.29.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.28.2...docs-v1.29.0) (2024-02-21)
 
 
