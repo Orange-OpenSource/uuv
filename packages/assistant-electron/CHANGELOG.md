@@ -1,3 +1,10 @@
+## [1.22.4](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.22.3...assistant-electron-v1.22.4) (2024-02-23)
+
+
+### Bug Fixes
+
+* **assistant:** update dependency @ant-design/icons to v5.3.0 ([b4b2782](https://github.com/Orange-OpenSource/uuv/commit/b4b2782cfa93290a2e3cece937c02c1b00aec938))
+
 ## [1.22.3](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.22.2...assistant-electron-v1.22.3) (2024-02-21)
 
 
