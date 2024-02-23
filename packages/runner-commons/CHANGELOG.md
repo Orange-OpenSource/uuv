@@ -1,3 +1,10 @@
+## [2.6.4](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.6.3...runner-commons-v2.6.4) (2024-02-23)
+
+
+### Bug Fixes
+
+* **assistant:** update dependency @ant-design/icons to v5.3.0 ([b4b2782](https://github.com/Orange-OpenSource/uuv/commit/b4b2782cfa93290a2e3cece937c02c1b00aec938))
+
 ## [2.6.3](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.6.2...runner-commons-v2.6.3) (2024-02-21)
 
 
