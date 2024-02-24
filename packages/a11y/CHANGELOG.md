@@ -1,3 +1,11 @@
+## [1.0.0-beta.13](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.12...a11y-v1.0.0-beta.13) (2024-02-24)
+
+
+### Bug Fixes
+
+* **assistant:** update dependency antd to v5.14.2 ([1335df6](https://github.com/Orange-OpenSource/uuv/commit/1335df676dd4641a4bda7b7f36d29d8216de0da4))
+* **runner-cypress:** update dependency cypress-real-events to v1.12.0 ([55794fd](https://github.com/Orange-OpenSource/uuv/commit/55794fd04362ad2ece397d108ba400c50b152d59))
+
 ## [1.0.0-beta.12](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.11...a11y-v1.0.0-beta.12) (2024-02-23)
 
 
