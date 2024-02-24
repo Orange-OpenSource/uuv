@@ -1,3 +1,11 @@
+## [1.4.6](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.4.5...intellij-plugin-v1.4.6) (2024-02-24)
+
+
+### Bug Fixes
+
+* **assistant:** update dependency antd to v5.14.2 ([1335df6](https://github.com/Orange-OpenSource/uuv/commit/1335df676dd4641a4bda7b7f36d29d8216de0da4))
+* **runner-cypress:** update dependency cypress-real-events to v1.12.0 ([55794fd](https://github.com/Orange-OpenSource/uuv/commit/55794fd04362ad2ece397d108ba400c50b152d59))
+
 ## [1.4.5](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.4.4...intellij-plugin-v1.4.5) (2024-02-23)
 
 
