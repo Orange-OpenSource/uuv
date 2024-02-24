@@ -1,3 +1,11 @@
+## [2.6.5](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.6.4...assistant-v2.6.5) (2024-02-24)
+
+
+### Bug Fixes
+
+* **assistant:** update dependency antd to v5.14.2 ([1335df6](https://github.com/Orange-OpenSource/uuv/commit/1335df676dd4641a4bda7b7f36d29d8216de0da4))
+* **runner-cypress:** update dependency cypress-real-events to v1.12.0 ([55794fd](https://github.com/Orange-OpenSource/uuv/commit/55794fd04362ad2ece397d108ba400c50b152d59))
+
 ## [2.6.4](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.6.3...assistant-v2.6.4) (2024-02-23)
 
 
