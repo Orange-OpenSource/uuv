@@ -1,3 +1,15 @@
+## [1.23.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.22.5...assistant-electron-v1.23.0) (2024-02-25)
+
+
+### Features
+
+* add junit xml report option, [#491](https://github.com/Orange-OpenSource/uuv/issues/491) ([b64b0b2](https://github.com/Orange-OpenSource/uuv/commit/b64b0b2a60200269f558bcf7e0c75d8a74ffc226))
+
+
+### Bug Fixes
+
+* **runner-playwright:** update dependency @cucumber/tag-expressions to v6.1.0 ([47fb579](https://github.com/Orange-OpenSource/uuv/commit/47fb579ee50c26ed67af6390f4e678f8206b7226))
+
 ## [1.22.5](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.22.4...assistant-electron-v1.22.5) (2024-02-24)
 
 
