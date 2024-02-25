@@ -1,3 +1,15 @@
+## [1.0.0-beta.14](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.13...a11y-v1.0.0-beta.14) (2024-02-25)
+
+
+### Features
+
+* add junit xml report option, [#491](https://github.com/Orange-OpenSource/uuv/issues/491) ([b64b0b2](https://github.com/Orange-OpenSource/uuv/commit/b64b0b2a60200269f558bcf7e0c75d8a74ffc226))
+
+
+### Bug Fixes
+
+* **runner-playwright:** update dependency @cucumber/tag-expressions to v6.1.0 ([47fb579](https://github.com/Orange-OpenSource/uuv/commit/47fb579ee50c26ed67af6390f4e678f8206b7226))
+
 ## [1.0.0-beta.13](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.12...a11y-v1.0.0-beta.13) (2024-02-24)
 
 
