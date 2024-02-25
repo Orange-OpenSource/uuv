@@ -1,3 +1,16 @@
+## [1.31.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.30.1...docs-v1.31.0) (2024-02-25)
+
+
+### Features
+
+* add junit xml report option, [#491](https://github.com/Orange-OpenSource/uuv/issues/491) ([b64b0b2](https://github.com/Orange-OpenSource/uuv/commit/b64b0b2a60200269f558bcf7e0c75d8a74ffc226))
+
+
+### Bug Fixes
+
+* **docs:** fix junit report path for cypress runner, [#491](https://github.com/Orange-OpenSource/uuv/issues/491) ([deb0ce1](https://github.com/Orange-OpenSource/uuv/commit/deb0ce1317cd5e1d8ae1df83742408f294fe1dc2))
+* **runner-playwright:** update dependency @cucumber/tag-expressions to v6.1.0 ([47fb579](https://github.com/Orange-OpenSource/uuv/commit/47fb579ee50c26ed67af6390f4e678f8206b7226))
+
 ## [1.30.1](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.30.0...docs-v1.30.1) (2024-02-24)
 
 
