@@ -1,3 +1,15 @@
+## [1.32.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.31.0...docs-v1.32.0) (2024-02-26)
+
+
+### Features
+
+* **a11y:** add rgaa criteria 8.*, [#476](https://github.com/Orange-OpenSource/uuv/issues/476) ([426184b](https://github.com/Orange-OpenSource/uuv/commit/426184b56bec5648f85dd86d54a733e445e7fdcd))
+
+
+### Bug Fixes
+
+* **runner-playwright:** update playwright monorepo to v1.41.2 ([8791934](https://github.com/Orange-OpenSource/uuv/commit/87919348646fb4e5fefed2dc8a16a86e61e7dfc2))
+
 ## [1.31.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.30.1...docs-v1.31.0) (2024-02-25)
 
 
