@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.5.0...intellij-plugin-v1.5.1) (2024-02-26)
+
+
+### Bug Fixes
+
+* **runner-playwright:** update playwright monorepo to v1.41.2 ([8791934](https://github.com/Orange-OpenSource/uuv/commit/87919348646fb4e5fefed2dc8a16a86e61e7dfc2))
+
 ## [1.5.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.4.6...intellij-plugin-v1.5.0) (2024-02-25)
 
 
