@@ -1,3 +1,10 @@
+## [2.7.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.7.0...assistant-v2.7.1) (2024-02-26)
+
+
+### Bug Fixes
+
+* **runner-playwright:** update playwright monorepo to v1.41.2 ([8791934](https://github.com/Orange-OpenSource/uuv/commit/87919348646fb4e5fefed2dc8a16a86e61e7dfc2))
+
 ## [2.7.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.6.5...assistant-v2.7.0) (2024-02-25)
 
 
