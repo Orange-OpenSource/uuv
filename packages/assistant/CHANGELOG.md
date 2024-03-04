@@ -1,3 +1,13 @@
+## [2.7.2](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.7.1...assistant-v2.7.2) (2024-03-04)
+
+
+### Bug Fixes
+
+* **assistant:** update dependency @ant-design/icons to v5.3.1 ([a428304](https://github.com/Orange-OpenSource/uuv/commit/a428304f37759003424e79d93dc1d5582ef34626))
+* **assistant:** update dependency antd to v5.15.0 ([cb516bc](https://github.com/Orange-OpenSource/uuv/commit/cb516bcd7bb6993c6d7de8ec3f24c7d0ce4dd8b7))
+* fix semantic release ([aef0c23](https://github.com/Orange-OpenSource/uuv/commit/aef0c234009fa8eb6e6a1b63c158af7c407f318a))
+* **runner-playwright:** update playwright monorepo to v1.42.1 ([d0e78f6](https://github.com/Orange-OpenSource/uuv/commit/d0e78f6c73be178e7c00bf4e88d57aef3b537a70))
+
 ## [2.7.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.7.0...assistant-v2.7.1) (2024-02-26)
 
 
