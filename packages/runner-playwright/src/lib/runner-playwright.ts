@@ -53,54 +53,6 @@ async function bddGen(tempDir: string, env: any) {
     }
 }
 
-function translateFeatures(tempDir: string, configDir: string) {
-    const FEATURE_DIR = `${tempDir}/${configDir !== "." ? configDir + "/e2e" : "e2e"}`;
-    const filenames = fs.readdirSync(FEATURE_DIR,
-        { encoding: "utf8" });
-    filenames.forEach(file => {
-        const generatedFile = `${FEATURE_DIR}/${file}`;
-        let data = fs.readFileSync(
-            generatedFile,
-            { encoding: "utf8" });
-        data = data
-            .replaceAll("Soit", "Given")
-            .replaceAll("Sachant que", "Given")
-            .replaceAll("Sachant qu'", "Given")
-            .replaceAll("Sachant", "Given")
-            .replaceAll("Etant donné que", "Given")
-            .replaceAll("Étant donné que", "Given")
-            .replaceAll("Étant donné qu'", "Given")
-            .replaceAll("Etant donné qu'", "Given")
-            .replaceAll("Etant données", "Given")
-            .replaceAll("Étant données", "Given")
-            .replaceAll("Etant donnés", "Given")
-            .replaceAll("Étant donnés", "Given")
-            .replaceAll("Etant donnée", "Given")
-            .replaceAll("Étant donnée", "Given")
-            .replaceAll("Etant donné", "Given")
-            .replaceAll("Étant donné", "Given")
-            .replaceAll("Quand", "When")
-            .replaceAll("Lorsque", "When")
-            .replaceAll("Lorsqu'", "When")
-            .replaceAll("Alors", "Then")
-            .replaceAll("Donc", "Then")
-            .replaceAll("Et que", "And")
-            .replaceAll("Et qu'", "And")
-            .replaceAll("Et", "And")
-            .replaceAll("Mais que", "But")
-            .replaceAll("Mais qu'", "But")
-            .replaceAll("Mais", "But");
-        data = "/*******************************\n" +
-            "NE PAS MODIFIER, FICHIER GENERE\n" +
-            "*******************************/\n\n" +
-            data;
-        fs.writeFileSync(generatedFile, data);
-        console.log(
-            chalk.gray(`[WRITE] ${generatedFile} written successfully`)
-        );
-    });
-}
-
 function runPlaywright(mode: "open" | "e2e", configDir: string, browser = "chromium", generateHtmlReport = false, generateJunitReport = false, env?: any, targetTestFile?: string) {
     const configFile = `${configDir}/playwright.config.ts`;
     const reportType = generateHtmlReport ? GeneratedReportType.HTML : GeneratedReportType.CONSOLE;
@@ -145,7 +97,6 @@ function getTargetTestFileForPlawright(targetTestFile?: string): string {
 export async function executePreprocessor(tempDir: string, configDir: string, env: any) {
     console.log("running preprocessor...");
     await bddGen(tempDir, env);
-    translateFeatures(tempDir, configDir);
     console.log("preprocessor executed");
 }
 
