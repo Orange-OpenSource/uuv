@@ -29,15 +29,15 @@
   ],
   "scripts": {
     "nx": "nx",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "tslib": "2.6.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.0.0",
-    "@commitlint/config-conventional": "^19.0.0",
-    "@commitlint/config-nx-scopes": "^19.0.0",
+    "@commitlint/cli": "^18.6.1",
+    "@commitlint/config-conventional": "^18.6.1",
+    "@commitlint/config-nx-scopes": "^18.6.1",
     "@google/semantic-release-replace-plugin": "1.2.0",
     "@jnxplus/nx-gradle": "^0.40.0",
     "@nrwl/eslint-plugin-nx": "16.10.0",

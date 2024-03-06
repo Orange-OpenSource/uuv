@@ -315,7 +315,7 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         name: Push the brand-new package-lock.json
         with:
-          commit_message: "chore(release): update package-lock.json [skip ci]"
+          commit_message: "release: update package-lock.json [skip ci]"
           commit_user_name: UUV Bot
           file_pattern: "package-lock.json"
       - name: Upload Release artifact
