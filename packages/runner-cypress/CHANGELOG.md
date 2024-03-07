@@ -1,3 +1,16 @@
+# [2.12.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.11.1...runner-cypress-v2.12.0) (2024-03-07)
+
+
+### Bug Fixes
+
+* fix husky migration to v9, [#530](https://github.com/Orange-OpenSource/uuv/issues/530) ([dbce11e](https://github.com/Orange-OpenSource/uuv/commit/dbce11e2c8edb8e759538eb9731fbe0ecfb06552))
+
+
+### Features
+
+* **flutter-finder-usercentric:** initialize flutter usercentric finder, [#423](https://github.com/Orange-OpenSource/uuv/issues/423) ([cedcc3a](https://github.com/Orange-OpenSource/uuv/commit/cedcc3a8803b07a21a9fa3ca18c86d7359743ebc))
+* **runner-flutter:** initialize uuv_flutter e2e cucumber library, [#423](https://github.com/Orange-OpenSource/uuv/issues/423) ([bace2f6](https://github.com/Orange-OpenSource/uuv/commit/bace2f6a6e12b48d99fb69b84e7ce930b0292d4a))
+
 ## [2.11.1](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.11.0...runner-cypress-v2.11.1) (2024-03-04)
 
 
