@@ -1,3 +1,11 @@
+## [2.12.1](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.12.0...runner-cypress-v2.12.1) (2024-03-10)
+
+
+### Bug Fixes
+
+* **runner-cypress:** update dependency @testing-library/cypress to v10 ([8ef11bf](https://github.com/Orange-OpenSource/uuv/commit/8ef11bfde65efb9ace5942113a03c06c6f8c3b6e))
+* **runner-playwright:** update dependency axe-playwright to v2 ([7e3f1f4](https://github.com/Orange-OpenSource/uuv/commit/7e3f1f4793f89c9d826c341bb73f59d698c3dfa0))
+
 # [2.12.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.11.1...runner-cypress-v2.12.0) (2024-03-07)
 
 
