@@ -1,3 +1,10 @@
+# [1.35.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.34.0...docs-v1.35.0) (2024-03-11)
+
+
+### Features
+
+* **docs:** add installation content, [#551](https://github.com/Orange-OpenSource/uuv/issues/551) ([01746e4](https://github.com/Orange-OpenSource/uuv/commit/01746e45c2da75a557ce9fafa6eacc68f9e1d0d8))
+
 # [1.34.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.33.1...docs-v1.34.0) (2024-03-11)
 
 
