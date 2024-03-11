@@ -1,3 +1,10 @@
+# [1.25.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.24.1...assistant-electron-v1.25.0) (2024-03-11)
+
+
+### Features
+
+* **runner-cypress,runner-playwright:** add UUV_BASE_URL environment variable to uuv-cli, [#538](https://github.com/Orange-OpenSource/uuv/issues/538) ([7b48c9d](https://github.com/Orange-OpenSource/uuv/commit/7b48c9d28aed7b10d72120d767f50c8705c2b92d))
+
 ## [1.24.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.24.0...assistant-electron-v1.24.1) (2024-03-10)
 
 
