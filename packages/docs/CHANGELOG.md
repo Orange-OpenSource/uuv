@@ -1,3 +1,11 @@
+# [1.34.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.33.1...docs-v1.34.0) (2024-03-11)
+
+
+### Features
+
+* **docs:** refacto installation page, [#551](https://github.com/Orange-OpenSource/uuv/issues/551) ([eec858f](https://github.com/Orange-OpenSource/uuv/commit/eec858fa99fb44f0dac500a61d4446c71446c0e7))
+* **runner-cypress,runner-playwright:** add UUV_BASE_URL environment variable to uuv-cli, [#538](https://github.com/Orange-OpenSource/uuv/issues/538) ([7b48c9d](https://github.com/Orange-OpenSource/uuv/commit/7b48c9d28aed7b10d72120d767f50c8705c2b92d))
+
 ## [1.33.1](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.33.0...docs-v1.33.1) (2024-03-10)
 
 
