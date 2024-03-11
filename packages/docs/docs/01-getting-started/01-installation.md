@@ -41,6 +41,16 @@ yarn add -D @uuv/cypress
 </TabItem>
 </Tabs>
 
+### What's installed
+```
+uuv/
+  cypress.config.ts
+  cypress/
+    support/
+      command.ts
+.cypress-cucumber-preprocessorrc.json  
+```
+
 ## Installing @uuv/playwright
 
 Run the following command :
@@ -61,3 +71,10 @@ yarn add -D @uuv/playwright
 
 </TabItem>
 </Tabs>
+
+### What's installed
+```
+uuv/
+  playwright.config.ts
+cucumber.cjs
+```

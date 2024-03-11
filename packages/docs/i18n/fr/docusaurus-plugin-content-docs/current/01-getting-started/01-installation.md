@@ -6,7 +6,7 @@ import TabItem from '@theme/TabItem';
 :::warning[Configurations requises]
 - Node.js 18+ ([Regarder ici comment installer Node.js et Npm](https://kinsta.com/blog/how-to-install-node-js/#how-to-install-nodejs-and-npm))
 - Npm/Yarn aura besoin d'accéder à internet lors de l'installation de la librairie
-- Un de ces système d'exploitation :
+- Un de ces systèmes d'exploitation :
     - Windows 10+, Windows Server 2016+ ou Windows Subsystem for Linux (WSL).
     - MacOS 12 Monterey, MacOS 13 Ventura, ou MacOS 14 Sonoma.
     - Debian 11, Debian 12, Ubuntu 20.04 ou Ubuntu 22.04, avec l'architecture x86-64 ou arm64.
@@ -41,6 +41,16 @@ yarn add -D @uuv/cypress
 </TabItem>
 </Tabs>
 
+### Ce qui est installé
+```
+uuv/
+  cypress.config.ts
+  cypress/
+    support/
+      command.ts
+.cypress-cucumber-preprocessorrc.json  
+```
+
 ## Installer @uuv/playwright
 
 Exécuter la commande suivante :
@@ -61,3 +71,10 @@ yarn add -D @uuv/playwright
 
 </TabItem>
 </Tabs>
+
+### Ce qui est installé
+```
+uuv/
+  playwright.config.ts
+cucumber.cjs
+```
