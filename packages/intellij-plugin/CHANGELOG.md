@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.6.1...intellij-plugin-v1.6.2) (2024-03-15)
+
+
+### Bug Fixes
+
+* **runner-cypress:** update dependency @cypress/webpack-preprocessor to v6 ([2e9a52b](https://github.com/Orange-OpenSource/uuv/commit/2e9a52b2cc1bfb05e96c212cdec0fd644f41d02b))
+
 ## [1.6.1](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.6.0...intellij-plugin-v1.6.1) (2024-03-10)
 
 
