@@ -1,3 +1,10 @@
+## [2.8.2](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.8.1...runner-commons-v2.8.2) (2024-03-15)
+
+
+### Bug Fixes
+
+* **runner-cypress:** update dependency @cypress/webpack-preprocessor to v6 ([2e9a52b](https://github.com/Orange-OpenSource/uuv/commit/2e9a52b2cc1bfb05e96c212cdec0fd644f41d02b))
+
 ## [2.8.1](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.8.0...runner-commons-v2.8.1) (2024-03-10)
 
 
