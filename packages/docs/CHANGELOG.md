@@ -1,3 +1,12 @@
+## [1.35.2](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.35.1...docs-v1.35.2) (2024-03-17)
+
+
+### Bug Fixes
+
+* fix lint ([ac1084e](https://github.com/Orange-OpenSource/uuv/commit/ac1084e8dbbb1e08311af45b03a7ea3c1f1c0193))
+* **runner-cypress:** disable bad lint autofix ([1e9d5ca](https://github.com/Orange-OpenSource/uuv/commit/1e9d5caa4433b1ea7418eedd6ea7013a5a265391))
+* **runner-playwright:** disable bad lint autofix ([ebe8807](https://github.com/Orange-OpenSource/uuv/commit/ebe8807f8644cd261218ba7d9ffdbd65fdf2fffa))
+
 ## [1.35.1](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.35.0...docs-v1.35.1) (2024-03-15)
 
 
