@@ -14,7 +14,7 @@
  */
 
 import { DataTable, Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
-import { Context } from "./_context";
+import { Context, KEYBOARDCONTEXT } from "./_context";
 import "../../../cypress/commands";
 import { Method } from "cypress/types/net-stubbing";
 import { KEY_PRESS } from "@uuv/runner-commons";
@@ -25,6 +25,7 @@ import {
   findWithRoleAndNameAndContent,
   findWithRoleAndNameAndContentDisable,
   findWithRoleAndNameAndContentEnable,
+  findWithRoleAndNameTabbable,
   notFoundWithRoleAndName,
   withinRoleAndName
 } from "./core-engine";
@@ -78,10 +79,7 @@ When(`${key.when.type}`, function(textToType: string) {
  * */
 When(`${key.when.keyboard.multiplePress}`, function(nbTimes: number, key: string) {
   for (let i = 1; i <= nbTimes; i++) {
-    cy.uuvCheckContextFocusedElement().then((context) => {
-      context.focusedElement!.focus();
-      pressKey(context.focusedElement!, key);
-    });
+    pressKey(key);
   }
 });
 
@@ -89,10 +87,21 @@ When(`${key.when.keyboard.multiplePress}`, function(nbTimes: number, key: string
  * key.when.keyboard.press.description
  * */
 When(`${key.when.keyboard.press}`, function(key: string) {
-  cy.uuvCheckContextFocusedElement().then((context) => {
-    context.focusedElement!.focus();
-    pressKey(context.focusedElement!, key);
-  });
+  pressKey(key);
+});
+
+/**
+ * key.when.keyboard.previousElement.description
+ * */
+When(`${key.when.keyboard.previousElement}`, function() {
+  pressKey("{reverseTab}");
+});
+
+/**
+ * key.when.keyboard.nextElement.description
+ * */
+When(`${key.when.keyboard.nextElement}`, function() {
+  pressKey("{tab}");
 });
 
 ////////////////////////////////////////////
@@ -113,6 +122,29 @@ Given(
  `${key.given.viewport.withWidthAndHeight}`,
  function(width: number, height: number) {
    return cy.viewport(width, height);
+ }
+);
+
+/**
+ * key.given.keyboard.startNavigationFromTheTop.description
+ * */
+Given(
+ `${key.given.keyboard.startNavigationFromTheTop}`,
+ function() {
+   const firstDiv = cy.get("div");
+   cy.wrap(new Context()).as(KEYBOARDCONTEXT);
+   cy.uuvPatchContext({
+     focusedElement: firstDiv
+   }, KEYBOARDCONTEXT);
+   firstDiv.realClick();
+   // cy.document().then(doc => {
+   //   const activeElement = doc.activeElement;
+   //   if (activeElement !== null) {
+   //     cy.wrap(activeElement).blur();
+   //   }
+   //   resetTabbableContext();
+   //   cy.get("a[href], button, input[type='text'], input[type='password'], input[type='search'], input[type='email'], input[type='number'], input[type='tel'], input[type='url'], textarea, input[type='checkbox'], input[type='radio'], input[type='date'], input[type='range'], input[type='color'], input[type='time'], input[type='month'], input[type='week'], input[type='datetime-local'], select, datalist, optgroup, option, input[type='file'], output, progress, meter, [role=progressbar], [role=slider], [role=spinbutton], [role=textbox], [role=listbox], [role=searchbox], [role=combobox], option, [role=checkbox], [role=radio], switch, input[type='submit'], input[type='reset'], input[type='hidden'], input[type='image'], input[type='button'], [role='button'], [tabindex]:not([tabindex='-1'])").first().focus();
+   // });
  }
 );
 
@@ -184,7 +216,7 @@ When(`${key.when.withinElement.selector}`, function(selector: string) {
  * key.when.resetContext.description
  * */
 When(`${key.when.resetContext}`, function() {
-  return cy.wrap(new Context()).as("context");
+  return resetTabbableContext();
 });
 
 /**
@@ -323,6 +355,16 @@ Then(
  `${key.then.element.withRoleAndNameAndContent}`,
  async function(expectedRole: string, name: string, expectedTextContent: string) {
    findWithRoleAndNameAndContent(expectedRole, name, expectedTextContent);
+ }
+);
+
+/**
+ * key.then.element.withRoleAndNameTabbable.description
+ * */
+Then(
+ `${key.then.element.withRoleAndNameTabbable}`,
+ async function(expectedRole: string, name: string) {
+   findWithRoleAndNameTabbable(expectedRole, name);
  }
 );
 
@@ -545,33 +587,53 @@ Then(
    cy.checkUvvA11y(A11yReferenceEnum.RGAA, JSON.parse(expectedResult), true);
  });
 
-function pressKey(context: Cypress.Chainable<JQuery<HTMLElement>>, key: string) {
-  switch (key) {
-    case KEY_PRESS.TAB:
-      context.realPress("Tab");
-      break;
-    case KEY_PRESS.REVERSE_TAB:
-      context.realPress(["ShiftLeft", "Tab"]);
-      break;
-    case KEY_PRESS.UP:
-      context.realPress("ArrowUp");
-      break;
-    case KEY_PRESS.DOWN:
-      context.realPress("ArrowDown");
-      break;
-    case KEY_PRESS.LEFT:
-      context.realPress("ArrowLeft");
-      break;
-    case KEY_PRESS.RIGHT:
-      context.realPress("ArrowRight");
-      break;
-    default:
-      console.error("the command" + key + " is unrecognized.");
-      break;
-  }
-  cy.uuvPatchContext({
-    focusedElement: cy.focused()
-  });
+function pressKey(key: string) {
+  cy.uuvCheckContextFocusedElement().then((context) => {
+     const focusedElement = context.focusedElement!;
+     focusedElement.realClick();
+     switch (key) {
+       case KEY_PRESS.TAB:
+         focusedElement.realPress("Tab");
+         cy.uuvPatchContext({
+           focusedElement: cy.focused()
+         });
+         break;
+       case KEY_PRESS.REVERSE_TAB:
+         focusedElement.realPress(["ShiftLeft", "Tab"]);
+         cy.uuvPatchContext({
+           focusedElement: cy.focused()
+         });
+         break;
+       case KEY_PRESS.UP:
+         focusedElement.realPress("ArrowUp");
+         cy.uuvPatchContext({
+           focusedElement: cy.realClick()
+         });
+         break;
+       case KEY_PRESS.DOWN:
+         focusedElement.realPress("ArrowDown");
+         cy.uuvPatchContext({
+           focusedElement: cy.realClick()
+         });
+         break;
+       case KEY_PRESS.LEFT:
+         focusedElement.realPress("ArrowLeft");
+         cy.uuvPatchContext({
+           focusedElement: cy.realClick()
+         });
+         break;
+       case KEY_PRESS.RIGHT:
+         focusedElement.realPress("ArrowRight");
+         cy.uuvPatchContext({
+           focusedElement: cy.realClick()
+         });
+         break;
+       default:
+         console.error("the command" + key + " is unrecognized.");
+         break;
+     }
+   }
+  );
 }
 
 function click(role: string, name: string) {
@@ -586,3 +648,14 @@ function click(role: string, name: string) {
   });
 }
 
+function resetTabbableContext() {
+  const context = new Context();
+  const focusedElement = cy.get("body, div").first();
+  context.focusedElement = focusedElement;
+  focusedElement.focus();
+  //FIXME Gérer le focus
+  cy.uuvPatchContext({
+    focusedElement: cy.focused()
+  });
+  return cy.wrap(context).as("focusContext");
+}

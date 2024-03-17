@@ -42,9 +42,11 @@ export function assertTextContent<Subject>(
 }
 
 export function findWithRoleAndName(role: string, name: string) {
-    cy.uuvFindByRole(role, { name })
-        .uuvFoundedElement()
-        .should("exist");
+    findByRoleAndName(role, name);
+}
+export function findWithRoleAndNameTabbable(role: string, name: string) {
+    const element = findByRoleAndName(role, name);
+    element.focus();
 }
 
 export function withinRoleAndName(role: string, name: string) {
@@ -94,4 +96,10 @@ export function findWithRoleAndNameAndContentEnable(expectedRole: string, name: 
         })
         .invoke("attr", "disabled")
         .should("eq", undefined);
+}
+
+function findByRoleAndName(role: string, name: string) {
+  return cy.uuvFindByRole(role, { name })
+   .uuvFoundedElement()
+   .should("exist");
 }

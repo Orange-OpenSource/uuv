@@ -14,7 +14,7 @@
 */
 
 import { ByRoleOptions } from "@testing-library/cypress";
-import { Context } from "./_context";
+import { Context, KEYBOARDCONTEXT } from "./_context";
 import Chainable = Cypress.Chainable;
 
 const ENV_GENERATE_A11_REPORT = "generateA11yReport";
@@ -28,12 +28,12 @@ export const getA11yResultFilePath = (): string => {
     return Cypress.env("uuvA11yReportFilePath");
 }
 
-export const uuvGetContext = (): Chainable<Context> => {
-  return cy.get<Context>("@context");
+export const uuvGetContext = (contextName: string = "context"): Chainable<Context> => {
+  return cy.get<Context>(`@${contextName}`);
 };
 
 export function uuvCheckContextFocusedElement(): Cypress.Chainable<Context> {
-  return cy.get<Context>("@context")
+  return cy.uuvGetContext(KEYBOARDCONTEXT)
         .then(context => {
           // console.log("focusedElement: ", context);
           if (!context.focusedElement) {
@@ -44,12 +44,12 @@ export function uuvCheckContextFocusedElement(): Cypress.Chainable<Context> {
 }
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
-export function uuvPatchContext(partOfContext: any): Cypress.Chainable<Context> {
-  return cy.get<Context>("@context").then(context => {
+export function uuvPatchContext(partOfContext: any, contextName: string = "context"): Cypress.Chainable<Context> {
+  return cy.get<Context>(`@${contextName}`).then(context => {
     cy.wrap({
       ...context,
       ...partOfContext
-    }).as("context");
+    }).as(contextName);
   });
 }
 

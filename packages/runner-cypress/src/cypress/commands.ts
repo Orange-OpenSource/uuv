@@ -40,11 +40,11 @@ import { A11yReferenceEnum, A11yResult } from "@uuv/a11y";
 declare global {
   namespace Cypress {
     interface Chainable {
-      uuvGetContext(): Cypress.Chainable<Context>;
+      uuvGetContext(contextName?: string): Cypress.Chainable<Context>;
 
       uuvCheckContextFocusedElement(): Cypress.Chainable<Context>;
 
-      uuvPatchContext(partOfContext: any): Chainable<Context>;
+      uuvPatchContext(partOfContext: any, contextName?: string): Chainable<Context>;
 
       uuvFindByText(textToSearch: string, roleOptions: ByRoleOptions): Cypress.Chainable<JQuery<HTMLElement>>;
 

@@ -88,3 +88,8 @@ Feature: Accessibility Step Definition
       And I reset context
       Then I should see a text box named "Search for a town" and containing "Limoges"
 
+    Scenario: key.when.keyboard.nextElement
+      When I visit path "https://e2e-test-quest.github.io/weather-app/"
+      And I go to next keyboard element
+      And I click
+
