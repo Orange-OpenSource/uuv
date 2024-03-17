@@ -1,3 +1,11 @@
+## [1.25.2](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.25.1...assistant-electron-v1.25.2) (2024-03-17)
+
+
+### Bug Fixes
+
+* fix lint ([ac1084e](https://github.com/Orange-OpenSource/uuv/commit/ac1084e8dbbb1e08311af45b03a7ea3c1f1c0193))
+* **runner-playwright:** disable bad lint autofix ([ebe8807](https://github.com/Orange-OpenSource/uuv/commit/ebe8807f8644cd261218ba7d9ffdbd65fdf2fffa))
+
 ## [1.25.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.25.0...assistant-electron-v1.25.1) (2024-03-15)
 
 
