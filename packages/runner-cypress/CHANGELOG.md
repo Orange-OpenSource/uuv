@@ -1,3 +1,11 @@
+## [2.13.2](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.13.1...runner-cypress-v2.13.2) (2024-03-17)
+
+
+### Bug Fixes
+
+* fix lint ([ac1084e](https://github.com/Orange-OpenSource/uuv/commit/ac1084e8dbbb1e08311af45b03a7ea3c1f1c0193))
+* **runner-cypress:** disable bad lint autofix ([1e9d5ca](https://github.com/Orange-OpenSource/uuv/commit/1e9d5caa4433b1ea7418eedd6ea7013a5a265391))
+
 ## [2.13.1](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.13.0...runner-cypress-v2.13.1) (2024-03-15)
 
 
