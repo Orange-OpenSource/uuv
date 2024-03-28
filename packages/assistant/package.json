@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
-    "@cucumber/cucumber": "9.6.0",
+    "@cucumber/cucumber": "10.3.2",
     "@uuv/runner-commons": "2.9.0",
     "antd": "^5.4.6",
     "figlet": "1.7.0",
