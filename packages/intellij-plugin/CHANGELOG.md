@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.6.2...intellij-plugin-v1.7.0) (2024-03-28)
+
+
+### Features
+
+* **deps:** update node.js to v20 ([f771f22](https://github.com/Orange-OpenSource/uuv/commit/f771f22197d7efc32bba6f8a345b5f6b2f3dd114))
+
 ## [1.6.2](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.6.1...intellij-plugin-v1.6.2) (2024-03-15)
 
 
