@@ -1,3 +1,10 @@
+# [2.14.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.13.2...runner-cypress-v2.14.0) (2024-03-28)
+
+
+### Features
+
+* **deps:** update node.js to v20 ([f771f22](https://github.com/Orange-OpenSource/uuv/commit/f771f22197d7efc32bba6f8a345b5f6b2f3dd114))
+
 ## [2.13.2](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.13.1...runner-cypress-v2.13.2) (2024-03-17)
 
 
