@@ -1,3 +1,10 @@
+# [1.36.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.35.2...docs-v1.36.0) (2024-03-28)
+
+
+### Features
+
+* **deps:** update node.js to v20 ([f771f22](https://github.com/Orange-OpenSource/uuv/commit/f771f22197d7efc32bba6f8a345b5f6b2f3dd114))
+
 ## [1.35.2](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.35.1...docs-v1.35.2) (2024-03-17)
 
 
