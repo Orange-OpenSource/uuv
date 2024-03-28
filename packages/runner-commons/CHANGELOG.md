@@ -1,3 +1,10 @@
+# [2.9.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.8.2...runner-commons-v2.9.0) (2024-03-28)
+
+
+### Features
+
+* **deps:** update node.js to v20 ([f771f22](https://github.com/Orange-OpenSource/uuv/commit/f771f22197d7efc32bba6f8a345b5f6b2f3dd114))
+
 ## [2.8.2](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.8.1...runner-commons-v2.8.2) (2024-03-15)
 
 
