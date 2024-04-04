@@ -1,3 +1,10 @@
+## [2.14.1](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.14.0...runner-cypress-v2.14.1) (2024-04-04)
+
+
+### Bug Fixes
+
+* update nx to version 18.2.1, fixes [#562](https://github.com/Orange-OpenSource/uuv/issues/562) ([669a363](https://github.com/Orange-OpenSource/uuv/commit/669a36307b02d8aa5b41609a08e794eae335b4ed))
+
 # [2.14.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.13.2...runner-cypress-v2.14.0) (2024-03-28)
 
 
