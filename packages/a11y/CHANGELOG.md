@@ -1,3 +1,10 @@
+# [1.0.0-beta.21](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.20...a11y-v1.0.0-beta.21) (2024-04-04)
+
+
+### Bug Fixes
+
+* update nx to version 18.2.1, fixes [#562](https://github.com/Orange-OpenSource/uuv/issues/562) ([669a363](https://github.com/Orange-OpenSource/uuv/commit/669a36307b02d8aa5b41609a08e794eae335b4ed))
+
 # [1.0.0-beta.20](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.19...a11y-v1.0.0-beta.20) (2024-03-28)
 
 
