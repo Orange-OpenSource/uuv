@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.7.0...intellij-plugin-v1.7.1) (2024-04-04)
+
+
+### Bug Fixes
+
+* update nx to version 18.2.1, fixes [#562](https://github.com/Orange-OpenSource/uuv/issues/562) ([669a363](https://github.com/Orange-OpenSource/uuv/commit/669a36307b02d8aa5b41609a08e794eae335b4ed))
+
 # [1.7.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.6.2...intellij-plugin-v1.7.0) (2024-03-28)
 
 
