@@ -1,3 +1,10 @@
+## [2.9.1](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.9.0...runner-commons-v2.9.1) (2024-04-04)
+
+
+### Bug Fixes
+
+* update nx to version 18.2.1, fixes [#562](https://github.com/Orange-OpenSource/uuv/issues/562) ([669a363](https://github.com/Orange-OpenSource/uuv/commit/669a36307b02d8aa5b41609a08e794eae335b4ed))
+
 # [2.9.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.8.2...runner-commons-v2.9.0) (2024-03-28)
 
 
