@@ -1,3 +1,10 @@
+# [1.38.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.37.0...docs-v1.38.0) (2024-04-08)
+
+
+### Features
+
+* **docs:** use carbon.sh for keyboard navigation example, [#493](https://github.com/Orange-OpenSource/uuv/issues/493) ([f649754](https://github.com/Orange-OpenSource/uuv/commit/f649754b48f78439c14d403e1989aee17108803e))
+
 # [1.37.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.36.1...docs-v1.37.0) (2024-04-08)
 
 
