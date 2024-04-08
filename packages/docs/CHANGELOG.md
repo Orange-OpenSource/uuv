@@ -1,3 +1,15 @@
+# [1.37.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.36.1...docs-v1.37.0) (2024-04-08)
+
+
+### Bug Fixes
+
+* **runner-playwright:** keep dependency nanoid to v3 ([9433077](https://github.com/Orange-OpenSource/uuv/commit/94330779ee43a004be738f7faee5dcab45894d7d))
+
+
+### Features
+
+* add keyboard navigation sentences, [#493](https://github.com/Orange-OpenSource/uuv/issues/493) ([a6135ba](https://github.com/Orange-OpenSource/uuv/commit/a6135baf8c91866081bd3cec930cada4c94e21d4))
+
 ## [1.36.1](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.36.0...docs-v1.36.1) (2024-04-04)
 
 
