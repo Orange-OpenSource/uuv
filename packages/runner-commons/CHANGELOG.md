@@ -1,3 +1,10 @@
+# [2.10.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.9.1...runner-commons-v2.10.0) (2024-04-08)
+
+
+### Features
+
+* add keyboard navigation sentences, [#493](https://github.com/Orange-OpenSource/uuv/issues/493) ([a6135ba](https://github.com/Orange-OpenSource/uuv/commit/a6135baf8c91866081bd3cec930cada4c94e21d4))
+
 ## [2.9.1](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.9.0...runner-commons-v2.9.1) (2024-04-04)
 
 
