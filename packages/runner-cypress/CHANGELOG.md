@@ -1,3 +1,10 @@
+# [2.15.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.14.1...runner-cypress-v2.15.0) (2024-04-08)
+
+
+### Features
+
+* add keyboard navigation sentences, [#493](https://github.com/Orange-OpenSource/uuv/issues/493) ([a6135ba](https://github.com/Orange-OpenSource/uuv/commit/a6135baf8c91866081bd3cec930cada4c94e21d4))
+
 ## [2.14.1](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.14.0...runner-cypress-v2.14.1) (2024-04-04)
 
 
