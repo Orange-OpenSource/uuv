@@ -1,3 +1,12 @@
+## [2.15.1](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.15.0...runner-cypress-v2.15.1) (2024-04-14)
+
+
+### Bug Fixes
+
+* **runner-cypress:** update dependency is-admin to v4 ([768819f](https://github.com/Orange-OpenSource/uuv/commit/768819f114dcba0a8a92412cfd877544e187a289))
+* **runner-playwright:** update dependency axe-core to v4.9.0 ([59a4a6f](https://github.com/Orange-OpenSource/uuv/commit/59a4a6f3d07cddad33a9596253ab8b0fbc85c7c3))
+* **runner-playwright:** update playwright monorepo to v1.43.1 ([bf431d5](https://github.com/Orange-OpenSource/uuv/commit/bf431d5d3ec6cfc26845a44fb38251960546d27e))
+
 # [2.15.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.14.1...runner-cypress-v2.15.0) (2024-04-08)
 
 
