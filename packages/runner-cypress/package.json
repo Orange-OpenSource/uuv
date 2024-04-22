@@ -1,6 +1,6 @@
 {
   "name": "@uuv/cypress",
-  "version": "2.15.1",
+  "version": "2.16.0",
   "type": "commonjs",
   "author": "Louis Fredice NJAKO MOLOM (https://github.com/luifr10) & Stanley SERVICAL (https://github.com/stanlee974)",
   "description": "A solution to facilitate the writing and execution of E2E tests understandable by any human being using cucumber(BDD) and cypress",
@@ -46,8 +46,8 @@
     "@badeball/cypress-cucumber-preprocessor": "16.0.3",
     "@cypress/webpack-preprocessor": "6.0.1",
     "@testing-library/cypress": "10.0.1",
-    "@uuv/a11y": "1.0.0-beta.22",
-    "@uuv/runner-commons": "2.10.1",
+    "@uuv/a11y": "1.0.0-beta.23",
+    "@uuv/runner-commons": "2.11.0",
     "axe-core": "4.9.0",
     "chai-subset": "^1.6.0",
     "cucumber-json-report-formatter": "0.1.4",
