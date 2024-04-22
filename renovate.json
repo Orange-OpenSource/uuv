@@ -8,6 +8,7 @@
   "schedule": [ "every weekend" ],
   "baseBranches": ["main"],
   "assignees": ["stanlee974", "luifr10"],
+  "gitIgnoredAuthors": ["stanlee974", "luifr10"],
   "packageRules": [
     {
       "description": "Automatically merge minor and patch-level updates",
