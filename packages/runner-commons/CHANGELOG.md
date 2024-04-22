@@ -1,3 +1,11 @@
+# [2.11.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.10.1...runner-commons-v2.11.0) (2024-04-22)
+
+
+### Features
+
+* (refactor) introduce uuv-cli engine from runner-commons, [#576](https://github.com/Orange-OpenSource/uuv/issues/576) ([6de2feb](https://github.com/Orange-OpenSource/uuv/commit/6de2feb2b2d74eddf1244694dfb7d697af28baf8))
+* add unit tests for uuv-cli implementations, [#576](https://github.com/Orange-OpenSource/uuv/issues/576) ([7e67f13](https://github.com/Orange-OpenSource/uuv/commit/7e67f13b9929577162bce84c5e8b5c08a4396a09))
+
 ## [2.10.1](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.10.0...runner-commons-v2.10.1) (2024-04-14)
 
 
