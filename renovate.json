@@ -30,6 +30,17 @@
       "semanticCommitType": "fix"
     },
     {
+      "matchDepTypes": ["dependencies"],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "rebase",
+      "matchUpdateTypes": [
+        "major",
+        "minor"
+      ],
+      "semanticCommitType": "feat"
+    },
+    {
       "matchFileNames": ["packages/a11y/package.json"],
       "semanticCommitScope": "a11y"
     },
