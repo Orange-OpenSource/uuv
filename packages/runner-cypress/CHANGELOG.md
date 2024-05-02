@@ -1,3 +1,11 @@
+# [2.17.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.16.0...runner-cypress-v2.17.0) (2024-05-02)
+
+
+### Features
+
+* **runner-playwright:** update dependency typescript to v5 ([05eaf55](https://github.com/Orange-OpenSource/uuv/commit/05eaf55924ef481abe9f9442c33458b1f2d4bb02))
+* update package-lock for update dependency typescript to v5 ([f058481](https://github.com/Orange-OpenSource/uuv/commit/f058481e2ae75ba91e708a5c4dd8ce16c0f1a04f))
+
 # [2.16.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.15.1...runner-cypress-v2.16.0) (2024-04-22)
 
 
