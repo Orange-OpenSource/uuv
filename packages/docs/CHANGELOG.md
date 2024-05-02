@@ -1,3 +1,11 @@
+# [1.40.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.39.0...docs-v1.40.0) (2024-05-02)
+
+
+### Features
+
+* **runner-playwright:** update dependency typescript to v5 ([05eaf55](https://github.com/Orange-OpenSource/uuv/commit/05eaf55924ef481abe9f9442c33458b1f2d4bb02))
+* update package-lock for update dependency typescript to v5 ([f058481](https://github.com/Orange-OpenSource/uuv/commit/f058481e2ae75ba91e708a5c4dd8ce16c0f1a04f))
+
 # [1.39.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.38.1...docs-v1.39.0) (2024-04-22)
 
 
