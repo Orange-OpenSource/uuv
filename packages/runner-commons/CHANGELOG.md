@@ -1,3 +1,10 @@
+# [2.12.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.11.0...runner-commons-v2.12.0) (2024-05-02)
+
+
+### Features
+
+* update package-lock for update dependency typescript to v5 ([f058481](https://github.com/Orange-OpenSource/uuv/commit/f058481e2ae75ba91e708a5c4dd8ce16c0f1a04f))
+
 # [2.11.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.10.1...runner-commons-v2.11.0) (2024-04-22)
 
 
