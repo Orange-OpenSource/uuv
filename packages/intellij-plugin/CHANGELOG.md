@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.5.0...intellij-plugin-v1.6.0) (2024-05-02)
+
+
+### Features
+
+* update package-lock for update dependency typescript to v5 ([f058481](https://github.com/Orange-OpenSource/uuv/commit/f058481e2ae75ba91e708a5c4dd8ce16c0f1a04f))
+
 # [1.5.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.4.1...intellij-plugin-v1.5.0) (2024-04-22)
 
 
