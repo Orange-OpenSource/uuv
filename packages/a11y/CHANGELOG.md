@@ -1,3 +1,10 @@
+# [1.0.0-beta.24](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.23...a11y-v1.0.0-beta.24) (2024-05-02)
+
+
+### Features
+
+* update package-lock for update dependency typescript to v5 ([f058481](https://github.com/Orange-OpenSource/uuv/commit/f058481e2ae75ba91e708a5c4dd8ce16c0f1a04f))
+
 # [1.0.0-beta.23](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.22...a11y-v1.0.0-beta.23) (2024-04-22)
 
 
