@@ -1,3 +1,10 @@
+## [1.29.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.29.0...assistant-electron-v1.29.1) (2024-05-06)
+
+
+### Bug Fixes
+
+* **runner-playwright:** remove reporter option when calling playwright ui, [#611](https://github.com/Orange-OpenSource/uuv/issues/611) ([d0b9e6f](https://github.com/Orange-OpenSource/uuv/commit/d0b9e6f89d1913a17e44c254c3c9b1cfb7abdf54))
+
 # [1.29.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.28.0...assistant-electron-v1.29.0) (2024-05-02)
 
 
