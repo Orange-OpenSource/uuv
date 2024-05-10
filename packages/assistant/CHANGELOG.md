@@ -1,3 +1,15 @@
+# [2.14.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.13.1...assistant-v2.14.0) (2024-05-10)
+
+
+### Bug Fixes
+
+* **runner-playwright:** update dependency axe-core to v4.9.1 ([770cd9f](https://github.com/Orange-OpenSource/uuv/commit/770cd9f8e4d87d64c2875dd9e629b3e6c6ad1931))
+
+
+### Features
+
+* **runner-cypress:** update dependency junit-report-merger to v7 ([7a9e310](https://github.com/Orange-OpenSource/uuv/commit/7a9e310dc192081c5feec543f2dca94468b34230))
+
 ## [2.13.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.13.0...assistant-v2.13.1) (2024-05-06)
 
 
