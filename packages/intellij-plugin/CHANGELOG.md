@@ -1,3 +1,15 @@
+# [1.7.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.6.0...intellij-plugin-v1.7.0) (2024-05-10)
+
+
+### Bug Fixes
+
+* **runner-playwright:** update dependency axe-core to v4.9.1 ([770cd9f](https://github.com/Orange-OpenSource/uuv/commit/770cd9f8e4d87d64c2875dd9e629b3e6c6ad1931))
+
+
+### Features
+
+* **runner-cypress:** update dependency junit-report-merger to v7 ([7a9e310](https://github.com/Orange-OpenSource/uuv/commit/7a9e310dc192081c5feec543f2dca94468b34230))
+
 # [1.6.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.5.0...intellij-plugin-v1.6.0) (2024-05-02)
 
 
