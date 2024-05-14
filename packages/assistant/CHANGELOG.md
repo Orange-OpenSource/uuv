@@ -1,3 +1,11 @@
+# [2.15.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.14.0...assistant-v2.15.0) (2024-05-14)
+
+
+### Features
+
+* **runner-cypress:** update dependency @badeball/cypress-cucumber-preprocessor to v20 ([e3e8e7c](https://github.com/Orange-OpenSource/uuv/commit/e3e8e7c6bea1a776d3e9dd1c225206b785bc390f))
+* **runner-playwright:** update playwright monorepo to v1.44.0 ([bbd0518](https://github.com/Orange-OpenSource/uuv/commit/bbd051862e6020b8aa51bc850b5ac65a4361a4e4))
+
 # [2.14.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.13.1...assistant-v2.14.0) (2024-05-10)
 
 
