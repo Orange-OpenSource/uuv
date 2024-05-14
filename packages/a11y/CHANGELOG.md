@@ -1,3 +1,12 @@
+# [1.0.0-beta.26](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.25...a11y-v1.0.0-beta.26) (2024-05-14)
+
+
+### Features
+
+* **runner-cypress:** update dependency @badeball/cypress-cucumber-preprocessor to v20 ([e3e8e7c](https://github.com/Orange-OpenSource/uuv/commit/e3e8e7c6bea1a776d3e9dd1c225206b785bc390f))
+* **runner-cypress:** update steps definitions for @badeball/cypress-cucumber-preprocessor v20 ([9ec1e82](https://github.com/Orange-OpenSource/uuv/commit/9ec1e826868632fff6443adadaf398ad7b6e2ec5))
+* **runner-playwright:** update playwright monorepo to v1.44.0 ([bbd0518](https://github.com/Orange-OpenSource/uuv/commit/bbd051862e6020b8aa51bc850b5ac65a4361a4e4))
+
 # [1.0.0-beta.25](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.24...a11y-v1.0.0-beta.25) (2024-05-10)
 
 
