@@ -1,3 +1,16 @@
+# [2.15.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.14.0...runner-commons-v2.15.0) (2024-05-24)
+
+
+### Bug Fixes
+
+* **runner-playwright:** update playwright monorepo to v1.44.1 ([f2a5cb2](https://github.com/Orange-OpenSource/uuv/commit/f2a5cb26c12af3030b09e2b2bd7de02d6b6504b4))
+
+
+### Features
+
+* **deps:** update dependency clsx to v2 ([d455fb5](https://github.com/Orange-OpenSource/uuv/commit/d455fb504839be771357589434afeed8f64ce1d9))
+* **runner-cypress:** update dependency cypress to v13 ([d21c332](https://github.com/Orange-OpenSource/uuv/commit/d21c332b0de83b4adc77db72fc7e1865f7b6c997))
+
 # [2.14.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.13.0...runner-commons-v2.14.0) (2024-05-14)
 
 
