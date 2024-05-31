@@ -1,3 +1,11 @@
+# [2.21.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.20.0...runner-cypress-v2.21.0) (2024-05-31)
+
+
+### Features
+
+* add keyboard navigation short sentences, closes [#642](https://github.com/Orange-OpenSource/uuv/issues/642) ([91c2665](https://github.com/Orange-OpenSource/uuv/commit/91c2665181318e21759196046acd37c81722e775))
+* **assistant:** redesign assistant and implement keyboard navigation, [#592](https://github.com/Orange-OpenSource/uuv/issues/592), closes [#623](https://github.com/Orange-OpenSource/uuv/issues/623) ([761bfae](https://github.com/Orange-OpenSource/uuv/commit/761bfae4cb6bf5b1bd1c018e93068ded70463821))
+
 # [2.20.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.19.0...runner-cypress-v2.20.0) (2024-05-24)
 
 
