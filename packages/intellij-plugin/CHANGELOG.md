@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.9.0...intellij-plugin-v1.10.0) (2024-05-31)
+
+
+### Features
+
+* **assistant:** redesign assistant and implement keyboard navigation, [#592](https://github.com/Orange-OpenSource/uuv/issues/592), closes [#623](https://github.com/Orange-OpenSource/uuv/issues/623) ([761bfae](https://github.com/Orange-OpenSource/uuv/commit/761bfae4cb6bf5b1bd1c018e93068ded70463821))
+
 # [1.9.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.8.0...intellij-plugin-v1.9.0) (2024-05-24)
 
 
