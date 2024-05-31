@@ -1,3 +1,10 @@
+# [1.0.0-beta.28](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.27...a11y-v1.0.0-beta.28) (2024-05-31)
+
+
+### Features
+
+* **assistant:** redesign assistant and implement keyboard navigation, [#592](https://github.com/Orange-OpenSource/uuv/issues/592), closes [#623](https://github.com/Orange-OpenSource/uuv/issues/623) ([761bfae](https://github.com/Orange-OpenSource/uuv/commit/761bfae4cb6bf5b1bd1c018e93068ded70463821))
+
 # [1.0.0-beta.27](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.26...a11y-v1.0.0-beta.27) (2024-05-24)
 
 
