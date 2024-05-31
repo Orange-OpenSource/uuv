@@ -1,3 +1,17 @@
+# [2.17.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.16.0...assistant-v2.17.0) (2024-05-31)
+
+
+### Bug Fixes
+
+* **runner-playwright:** remove tag parameter for open command, closes [#640](https://github.com/Orange-OpenSource/uuv/issues/640) ([11d3bd7](https://github.com/Orange-OpenSource/uuv/commit/11d3bd735943997965d6326319f79993e38d3806))
+
+
+### Features
+
+* add keyboard navigation short sentences, closes [#642](https://github.com/Orange-OpenSource/uuv/issues/642) ([91c2665](https://github.com/Orange-OpenSource/uuv/commit/91c2665181318e21759196046acd37c81722e775))
+* **assistant:** redesign assistant and implement keyboard navigation, [#592](https://github.com/Orange-OpenSource/uuv/issues/592), closes [#623](https://github.com/Orange-OpenSource/uuv/issues/623) ([761bfae](https://github.com/Orange-OpenSource/uuv/commit/761bfae4cb6bf5b1bd1c018e93068ded70463821))
+* **runner-playwright:** remove cucumber publishQuiet option, closes [#641](https://github.com/Orange-OpenSource/uuv/issues/641) ([5e49341](https://github.com/Orange-OpenSource/uuv/commit/5e493416185106e90eb8ab84339804c5380d2f97))
+
 # [2.16.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.15.0...assistant-v2.16.0) (2024-05-24)
 
 
