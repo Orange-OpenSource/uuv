@@ -1,3 +1,10 @@
+## [1.33.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.33.0...assistant-electron-v1.33.1) (2024-06-03)
+
+
+### Bug Fixes
+
+* **runner-cypress:** use badeball depency to generate cucumber json report, [#643](https://github.com/Orange-OpenSource/uuv/issues/643) ([caf36a3](https://github.com/Orange-OpenSource/uuv/commit/caf36a3269ab23a0c9163b45baf49b3a07bba5a6))
+
 # [1.33.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.32.0...assistant-electron-v1.33.0) (2024-05-31)
 
 
