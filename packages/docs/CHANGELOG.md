@@ -1,3 +1,10 @@
+## [1.44.2](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.44.1...docs-v1.44.2) (2024-06-03)
+
+
+### Bug Fixes
+
+* **runner-playwright:** correct cucumber.cjs configuration for custom step definition, [#613](https://github.com/Orange-OpenSource/uuv/issues/613) ([2a5a927](https://github.com/Orange-OpenSource/uuv/commit/2a5a927196b25b2329f35791da88dc615273ec10))
+
 ## [1.44.1](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.44.0...docs-v1.44.1) (2024-06-03)
 
 
