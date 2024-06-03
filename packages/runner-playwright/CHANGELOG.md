@@ -1,3 +1,10 @@
+## [2.17.2](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v2.17.1...runner-playwright-v2.17.2) (2024-06-03)
+
+
+### Bug Fixes
+
+* **runner-playwright:** correct cucumber.cjs configuration for custom step definition, [#613](https://github.com/Orange-OpenSource/uuv/issues/613) ([2a5a927](https://github.com/Orange-OpenSource/uuv/commit/2a5a927196b25b2329f35791da88dc615273ec10))
+
 ## [2.17.1](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v2.17.0...runner-playwright-v2.17.1) (2024-06-03)
 
 
