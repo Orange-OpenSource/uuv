@@ -1,3 +1,10 @@
+# [1.0.0-beta.29](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.28...a11y-v1.0.0-beta.29) (2024-06-03)
+
+
+### Bug Fixes
+
+* **runner-cypress:** use badeball depency to generate cucumber json report, [#643](https://github.com/Orange-OpenSource/uuv/issues/643) ([caf36a3](https://github.com/Orange-OpenSource/uuv/commit/caf36a3269ab23a0c9163b45baf49b3a07bba5a6))
+
 # [1.0.0-beta.28](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.27...a11y-v1.0.0-beta.28) (2024-05-31)
 
 
