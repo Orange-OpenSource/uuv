@@ -1,3 +1,10 @@
+## [2.17.3](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.17.2...assistant-v2.17.3) (2024-06-04)
+
+
+### Bug Fixes
+
+* add exemple to keyboard sentences description ([8b545e9](https://github.com/Orange-OpenSource/uuv/commit/8b545e9a7fe11963ebae4216735b43e6b142732e))
+
 ## [2.17.2](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.17.1...assistant-v2.17.2) (2024-06-03)
 
 
