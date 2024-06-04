@@ -1,3 +1,10 @@
+## [2.16.2](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.16.1...runner-commons-v2.16.2) (2024-06-04)
+
+
+### Bug Fixes
+
+* add exemple to keyboard sentences description ([8b545e9](https://github.com/Orange-OpenSource/uuv/commit/8b545e9a7fe11963ebae4216735b43e6b142732e))
+
 ## [2.16.1](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.16.0...runner-commons-v2.16.1) (2024-06-03)
 
 
