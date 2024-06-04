@@ -1,3 +1,10 @@
+## [1.33.3](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.33.2...assistant-electron-v1.33.3) (2024-06-04)
+
+
+### Bug Fixes
+
+* add exemple to keyboard sentences description ([8b545e9](https://github.com/Orange-OpenSource/uuv/commit/8b545e9a7fe11963ebae4216735b43e6b142732e))
+
 ## [1.33.2](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.33.1...assistant-electron-v1.33.2) (2024-06-03)
 
 
