@@ -1,3 +1,16 @@
+# [3.0.0](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v2.17.3...runner-playwright-v3.0.0) (2024-06-10)
+
+
+### Features
+
+* **runner-playwright:** move bdd generator to playwright-bdd, [#652](https://github.com/Orange-OpenSource/uuv/issues/652) ([6b812ad](https://github.com/Orange-OpenSource/uuv/commit/6b812ad8bb277fd2e76283284ebf369294bedb70))
+
+
+### BREAKING CHANGES
+
+* **runner-playwright:** see doc https://orange-opensource.github.io/uuv/docs/migration/v2-to-v3#change-playwright-preprocessor-to-playwright-bdd
+[only runner-playwright]
+
 ## [2.17.3](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v2.17.2...runner-playwright-v2.17.3) (2024-06-04)
 
 
