@@ -1,3 +1,11 @@
+## [2.16.3](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.16.2...runner-commons-v2.16.3) (2024-06-16)
+
+
+### Bug Fixes
+
+* **runner-cypress:** update dependency @badeball/cypress-cucumber-preprocessor to v20.0.7 ([8295ae2](https://github.com/Orange-OpenSource/uuv/commit/8295ae2a4bc40e9f4a8fe02ae440253a7e55c2ea))
+* **runner-cypress:** update dependency @cypress/webpack-preprocessor to v6.0.2 ([1b097a0](https://github.com/Orange-OpenSource/uuv/commit/1b097a094faaa1d70b2df44b56e0073334c3135c))
+
 ## [2.16.2](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.16.1...runner-commons-v2.16.2) (2024-06-04)
 
 
