@@ -1,3 +1,12 @@
+## [1.44.4](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.44.3...docs-v1.44.4) (2024-06-16)
+
+
+### Bug Fixes
+
+* **assistant:** update @uuv/playwright dependency ([0905604](https://github.com/Orange-OpenSource/uuv/commit/090560483ac52997ecbe170479c1c67b0fca5e6d))
+* **runner-cypress:** update dependency @badeball/cypress-cucumber-preprocessor to v20.0.7 ([8295ae2](https://github.com/Orange-OpenSource/uuv/commit/8295ae2a4bc40e9f4a8fe02ae440253a7e55c2ea))
+* **runner-cypress:** update dependency @cypress/webpack-preprocessor to v6.0.2 ([1b097a0](https://github.com/Orange-OpenSource/uuv/commit/1b097a094faaa1d70b2df44b56e0073334c3135c))
+
 ## [1.44.3](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.44.2...docs-v1.44.3) (2024-06-04)
 
 
