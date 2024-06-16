@@ -1,3 +1,11 @@
+## [1.10.2](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.10.1...intellij-plugin-v1.10.2) (2024-06-16)
+
+
+### Bug Fixes
+
+* **runner-cypress:** update dependency @badeball/cypress-cucumber-preprocessor to v20.0.7 ([8295ae2](https://github.com/Orange-OpenSource/uuv/commit/8295ae2a4bc40e9f4a8fe02ae440253a7e55c2ea))
+* **runner-cypress:** update dependency @cypress/webpack-preprocessor to v6.0.2 ([1b097a0](https://github.com/Orange-OpenSource/uuv/commit/1b097a094faaa1d70b2df44b56e0073334c3135c))
+
 ## [1.10.1](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.10.0...intellij-plugin-v1.10.1) (2024-06-03)
 
 
