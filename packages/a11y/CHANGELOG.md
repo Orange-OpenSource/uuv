@@ -1,3 +1,11 @@
+# [1.0.0-beta.30](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.29...a11y-v1.0.0-beta.30) (2024-06-16)
+
+
+### Bug Fixes
+
+* **runner-cypress:** update dependency @badeball/cypress-cucumber-preprocessor to v20.0.7 ([8295ae2](https://github.com/Orange-OpenSource/uuv/commit/8295ae2a4bc40e9f4a8fe02ae440253a7e55c2ea))
+* **runner-cypress:** update dependency @cypress/webpack-preprocessor to v6.0.2 ([1b097a0](https://github.com/Orange-OpenSource/uuv/commit/1b097a094faaa1d70b2df44b56e0073334c3135c))
+
 # [1.0.0-beta.29](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.28...a11y-v1.0.0-beta.29) (2024-06-03)
 
 
