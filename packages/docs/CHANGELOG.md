@@ -1,3 +1,16 @@
+# [1.45.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.44.4...docs-v1.45.0) (2024-06-27)
+
+
+### Bug Fixes
+
+* **runner-cypress:** update testing-library monorepo ([bcedb57](https://github.com/Orange-OpenSource/uuv/commit/bcedb5749fd5f062cfb283bedabfe8ad87668c67))
+* **runner-playwright:** pass projectDir to refresh engine, [#662](https://github.com/Orange-OpenSource/uuv/issues/662) ([0eb6f6d](https://github.com/Orange-OpenSource/uuv/commit/0eb6f6db60ec9104ddea2c2a5ee8e33ebecd28f0))
+
+
+### Features
+
+* **runner-playwright:** change @uuv/playwright default browser from chromium to chrome ([5ae099e](https://github.com/Orange-OpenSource/uuv/commit/5ae099edb56b04ed58294369d6a4ca2cd2eaddd9))
+
 ## [1.44.4](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.44.3...docs-v1.44.4) (2024-06-16)
 
 
