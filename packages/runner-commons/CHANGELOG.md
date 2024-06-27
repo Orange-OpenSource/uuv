@@ -1,3 +1,10 @@
+## [2.16.4](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.16.3...runner-commons-v2.16.4) (2024-06-27)
+
+
+### Bug Fixes
+
+* **runner-cypress:** update testing-library monorepo ([bcedb57](https://github.com/Orange-OpenSource/uuv/commit/bcedb5749fd5f062cfb283bedabfe8ad87668c67))
+
 ## [2.16.3](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.16.2...runner-commons-v2.16.3) (2024-06-16)
 
 
