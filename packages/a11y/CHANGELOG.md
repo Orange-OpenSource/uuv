@@ -1,3 +1,10 @@
+# [1.0.0-beta.31](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.30...a11y-v1.0.0-beta.31) (2024-06-27)
+
+
+### Bug Fixes
+
+* **runner-cypress:** update testing-library monorepo ([bcedb57](https://github.com/Orange-OpenSource/uuv/commit/bcedb5749fd5f062cfb283bedabfe8ad87668c67))
+
 # [1.0.0-beta.30](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.29...a11y-v1.0.0-beta.30) (2024-06-16)
 
 
