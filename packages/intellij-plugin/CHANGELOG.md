@@ -1,3 +1,10 @@
+## [1.10.3](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.10.2...intellij-plugin-v1.10.3) (2024-06-27)
+
+
+### Bug Fixes
+
+* **runner-cypress:** update testing-library monorepo ([bcedb57](https://github.com/Orange-OpenSource/uuv/commit/bcedb5749fd5f062cfb283bedabfe8ad87668c67))
+
 ## [1.10.2](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.10.1...intellij-plugin-v1.10.2) (2024-06-16)
 
 
