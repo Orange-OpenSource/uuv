@@ -37,8 +37,8 @@
     "package": "npm pack --pack-destination=\"../../dist/packages\"",
     "postinstall": "node postinstall.js",
     "unit-tests": "jest --runInBand --coverage --config=./jest.config.ts",
-    "e2e-test:run": "node test.js e2e",
-    "e2e-test:open": "node test.js open --",
+    "e2e-test:run": "ts-node test.ts e2e",
+    "e2e-test:open": "ts-node test.ts open --",
     "test": "npm run unit-test && npm run e2e-test:run",
     "lint": "eslint -c .eslintrc.json"
   },
@@ -56,6 +56,7 @@
     "is-admin": "4.0.0",
     "junit-report-merger": "^7.0.0",
     "multiple-cucumber-html-reporter": "3.6.2",
+    "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
     "ts-node": "10.9.2",
     "typescript": "5.4.5",
