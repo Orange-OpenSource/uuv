@@ -81,7 +81,7 @@
     "@cucumber/gherkin": "^28.0.0",
     "@cucumber/messages": "^25.0.1",
     "@types/node-ipc": "^9.2.3",
-    "@uuv/runner-commons": "2.16.4",
+    "@uuv/runner-commons": "2.17.0",
     "node-ipc": "^11.1.0"
   }
 }
