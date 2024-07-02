@@ -1,3 +1,10 @@
+# [1.35.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.34.0...assistant-electron-v1.35.0) (2024-07-02)
+
+
+### Features
+
+* introduce ipc-server to send uuv event, [#664](https://github.com/Orange-OpenSource/uuv/issues/664) ([270ac38](https://github.com/Orange-OpenSource/uuv/commit/270ac388a7abf17b0c296d029d6e12bd66a4f521))
+
 # [1.34.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.33.4...assistant-electron-v1.34.0) (2024-06-27)
 
 
