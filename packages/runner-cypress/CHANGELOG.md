@@ -1,3 +1,10 @@
+# [2.22.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.21.4...runner-cypress-v2.22.0) (2024-07-02)
+
+
+### Features
+
+* introduce ipc-server to send uuv event, [#664](https://github.com/Orange-OpenSource/uuv/issues/664) ([270ac38](https://github.com/Orange-OpenSource/uuv/commit/270ac388a7abf17b0c296d029d6e12bd66a4f521))
+
 ## [2.21.4](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.21.3...runner-cypress-v2.21.4) (2024-06-27)
 
 
