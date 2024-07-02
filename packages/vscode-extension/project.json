@@ -27,7 +27,32 @@
       "executor": "@theunderscorer/nx-semantic-release:semantic-release",
       "options": {
         "commitMessage": "release(vscode-extension): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-      }
+      },
+      "plugins": [
+        [
+          "@google/semantic-release-replace-plugin",
+          {
+            "replacements": [
+              {
+                "files": [
+                  "packages/vscode-extension/package.json"
+                ],
+                "from": "\"version\": \".*\"",
+                "to": "\"version\": \"${nextRelease.version}\"",
+                "results": [
+                  {
+                    "file": "packages/vscode-extension/package.json",
+                    "hasChanged": true,
+                    "numMatches": 1,
+                    "numReplacements": 1
+                  }
+                ],
+                "countMatches": true
+              }
+            ]
+          }
+        ]
+      ]
     }
   },
   "tags": []

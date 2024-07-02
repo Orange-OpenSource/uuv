@@ -347,6 +347,8 @@ jobs:
           path: |
             dist/packages
             packages/intellij-plugin/gradle.properties
+            packages/vscode-extension/package.json
+            packages/vscode-extension/CHANGELOG.md
 
   publish-npm:
     if: github.ref == 'refs/heads/main'
@@ -391,6 +393,10 @@ jobs:
             packages/runner-cypress/node_modules
             packages/runner-playwright/node_modules
             packages/vscode-extension/node_modules
+      - name: Download Release artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: release-artifacts
       - name: Use Node.js ${{env.NODE_VERSION}}
         uses: actions/setup-node@v4
         with:
