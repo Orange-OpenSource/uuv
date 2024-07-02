@@ -1,3 +1,10 @@
+# [1.0.0-beta.32](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.31...a11y-v1.0.0-beta.32) (2024-07-02)
+
+
+### Features
+
+* introduce ipc-server to send uuv event, [#664](https://github.com/Orange-OpenSource/uuv/issues/664) ([270ac38](https://github.com/Orange-OpenSource/uuv/commit/270ac388a7abf17b0c296d029d6e12bd66a4f521))
+
 # [1.0.0-beta.31](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.30...a11y-v1.0.0-beta.31) (2024-06-27)
 
 
