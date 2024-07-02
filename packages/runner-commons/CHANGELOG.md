@@ -1,3 +1,10 @@
+# [2.17.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.16.4...runner-commons-v2.17.0) (2024-07-02)
+
+
+### Features
+
+* introduce ipc-server to send uuv event, [#664](https://github.com/Orange-OpenSource/uuv/issues/664) ([270ac38](https://github.com/Orange-OpenSource/uuv/commit/270ac388a7abf17b0c296d029d6e12bd66a4f521))
+
 ## [2.16.4](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.16.3...runner-commons-v2.16.4) (2024-06-27)
 
 
