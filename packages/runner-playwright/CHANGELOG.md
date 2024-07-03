@@ -1,3 +1,10 @@
+## [3.2.1](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v3.2.0...runner-playwright-v3.2.1) (2024-07-03)
+
+
+### Bug Fixes
+
+* **runner-playwright:** pass suiteTestName relative to test folder, [#644](https://github.com/Orange-OpenSource/uuv/issues/644) ([2668c6f](https://github.com/Orange-OpenSource/uuv/commit/2668c6fa6be8b47b5c040d0763287985a15cf97c))
+
 # [3.2.0](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v3.1.0...runner-playwright-v3.2.0) (2024-07-02)
 
 
