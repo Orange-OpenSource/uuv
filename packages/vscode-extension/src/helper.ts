@@ -32,20 +32,32 @@ export class Helper {
             contents = new TextDecoder().decode(rawContent);
         }
 
-        // TODO : Add file content
-        // some custom logic to fill in test.children from the contents...
+        Helper.clearAllChildren(file);
+
         if (contents) {
-            const gherkinDocument = parser.parse(contents);
-            gherkinDocument.feature?.children.forEach(featureChild => {
-                if (featureChild.scenario?.name) {
-                    file.children.add(
-                        testController.createTestItem(
-                            `${file.id}-${featureChild.scenario.name}`,
-                            featureChild.scenario.name
-                        )
-                    );
-                }
-            });
+            Helper.buildChildren(contents, file, testController);
+        }
+    }
+
+    private static buildChildren(contents: string, file: vscode.TestItem, testController: vscode.TestController) {
+        const gherkinDocument = parser.parse(contents);
+        gherkinDocument.feature?.children.forEach(featureChild => {
+            if (featureChild.scenario?.name) {
+                file.children.add(
+                    testController.createTestItem(
+                        `${file.id}-${featureChild.scenario.name}`,
+                        featureChild.scenario.name
+                    )
+                );
+            }
+        });
+    }
+
+    private static clearAllChildren(file: vscode.TestItem) {
+        const childrenId: string[] = [];
+        file.children.forEach(child => childrenId.push(child.id));
+        for (let index = 0; index < childrenId.length; index++) {
+            file.children.delete(childrenId[index]);
         }
     }
 
