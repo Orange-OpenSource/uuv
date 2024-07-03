@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Orange-OpenSource/uuv/compare/vscode-extension-v1.0.0...vscode-extension-v1.0.1) (2024-07-03)
+
+
+### Bug Fixes
+
+* **vscode-extension:** clear test children before refresh test list when test file is edited, [#644](https://github.com/Orange-OpenSource/uuv/issues/644) ([0132db7](https://github.com/Orange-OpenSource/uuv/commit/0132db76ecd312c6a91887dc33d47121be46817f))
+
 # [1.0.0](https://github.com/Orange-OpenSource/uuv/compare/vscode-extension-v0.0.0...vscode-extension-v1.0.0) (2024-07-02)
 
 
