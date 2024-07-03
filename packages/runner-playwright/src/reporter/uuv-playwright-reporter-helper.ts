@@ -53,6 +53,20 @@ class UuvPlaywrightReporterHelper {
     private consoleReportMap: Map<string, ReportOfFeature> = new Map<string, ReportOfFeature>();
     private errors: TestError[] = [];
     private currentFeatureFile!: string;
+    private foundConf!: {outputDir: string, featuresRoot: string};
+
+    constructor() {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        const bddgenConfAsString = process.env.PLAYWRIGHT_BDD_CONFIGS;
+        if (bddgenConfAsString) {
+            const bddgenConf = JSON.parse(bddgenConfAsString);
+            if (Object.keys.length > 0) {
+                const foundPath = Object.keys(bddgenConf)[0];
+                this.foundConf = bddgenConf[foundPath];
+            }
+        }
+    }
 
     public createTestRunStartedEnvelope(config: FullConfig, suite: Suite, startTimestamp: { seconds: number; nanos: number }) {
         this.testDir = config.projects[0].testDir;
@@ -102,7 +116,7 @@ class UuvPlaywrightReporterHelper {
         }
         UUVEventEmitter.getInstance().emitTestStarted({
             testName: test.title,
-            testSuiteName: featureFile,
+            testSuiteName: this.getTestSuiteName(featureFile),
             testSuitelocation: featureFile
         });
     }
@@ -240,21 +254,21 @@ class UuvPlaywrightReporterHelper {
             case "passed":
                 UUVEventEmitter.getInstance().emitTestFinished({
                     testName: test.title,
-                    testSuiteName: featureFile,
+                    testSuiteName: this.getTestSuiteName(featureFile),
                     duration: result.duration
                 });
                 break;
             case "failed":
                 UUVEventEmitter.getInstance().emitTestFailed({
                     testName: test.title,
-                    testSuiteName: featureFile,
+                    testSuiteName: this.getTestSuiteName(featureFile),
                     duration: result.duration
                 });
                 break;
             default:
                 UUVEventEmitter.getInstance().emitTestIgnored({
                     testName: test.title,
-                    testSuiteName: featureFile
+                    testSuiteName: this.getTestSuiteName(featureFile)
                 });
         }
     }
@@ -264,7 +278,7 @@ class UuvPlaywrightReporterHelper {
         if (featureTestCaseStatus) {
             if (Object.entries(featureTestCaseStatus).find(([, value]) => value === "todo") === undefined) {
                 UUVEventEmitter.getInstance().emitTestSuiteFinished({
-                    testSuiteName: featureFile
+                    testSuiteName: this.getTestSuiteName(featureFile)
                 });
             }
         }
@@ -304,7 +318,7 @@ class UuvPlaywrightReporterHelper {
     private initConsoleReportIfNotExists(featureFile: string) {
         if (!this.consoleReportMap.get(featureFile)) {
             UUVEventEmitter.getInstance().emitTestSuiteStarted({
-                testSuiteName: featureFile,
+                testSuiteName: this.getTestSuiteName(featureFile),
                 testSuitelocation: featureFile
             });
             this.consoleReportMap.set(featureFile, new ReportOfFeature());
@@ -351,26 +365,25 @@ class UuvPlaywrightReporterHelper {
     }
 
     public getOriginalFeatureFile(generatedFile: string): string | undefined {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        const bddgenConfAsString = process.env.PLAYWRIGHT_BDD_CONFIGS;
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        const projectDir = process.env.CONFIG_DIR;
-        if (bddgenConfAsString && projectDir) {
-            const bddgenConf = JSON.parse(bddgenConfAsString);
-            const foundPath = Object.keys(bddgenConf).find(key => generatedFile.startsWith(key));
-            if (foundPath) {
-                const foundConf = bddgenConf[foundPath];
-                return path.relative(
-                    process.cwd(),
-                    generatedFile
-                        .replaceAll(foundConf.outputDir, foundConf.featuresRoot)
-                        .replaceAll(".feature.spec.js", ".feature")
-                );
-            }
+        if (this.foundConf) {
+            return path.relative(
+                process.cwd(),
+                generatedFile
+                    .replaceAll(this.foundConf.outputDir, this.foundConf.featuresRoot)
+                    .replaceAll(".feature.spec.js", ".feature")
+            );
         }
         return;
+    }
+
+    public getTestSuiteName(featureFile: string): string {
+        if (this.foundConf) {
+            return path.relative(
+                this.foundConf.featuresRoot,
+                path.join(process.cwd(), featureFile)
+            );
+        }
+        return featureFile;
     }
 
     public getCurrentRunningScenario(test: TestCase, featureFile: string) {
