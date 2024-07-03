@@ -1,3 +1,10 @@
+## [2.19.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.19.0...assistant-v2.19.1) (2024-07-03)
+
+
+### Bug Fixes
+
+* **runner-playwright:** pass suiteTestName relative to test folder, [#644](https://github.com/Orange-OpenSource/uuv/issues/644) ([2668c6f](https://github.com/Orange-OpenSource/uuv/commit/2668c6fa6be8b47b5c040d0763287985a15cf97c))
+
 # [2.19.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.18.0...assistant-v2.19.0) (2024-07-02)
 
 
