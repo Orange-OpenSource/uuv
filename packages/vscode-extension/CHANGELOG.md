@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Orange-OpenSource/uuv/compare/vscode-extension-v1.0.1...vscode-extension-v1.1.0) (2024-07-04)
+
+
+### Features
+
+* **vscode-extension:** add parameters projectHomeDir and useLocalScript, closes [#667](https://github.com/Orange-OpenSource/uuv/issues/667) ([cbd599b](https://github.com/Orange-OpenSource/uuv/commit/cbd599baefaf9268a89adff90df618316a1b781f))
+
 ## [1.0.1](https://github.com/Orange-OpenSource/uuv/compare/vscode-extension-v1.0.0...vscode-extension-v1.0.1) (2024-07-03)
 
 
