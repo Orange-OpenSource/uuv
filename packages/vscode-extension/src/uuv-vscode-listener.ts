@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import { UUVEvent, UUVEventTestFailed, UUVEventTestFinished, UUVEventTestIgnored, UUVEventTestStarted, UUVEventTestSuiteFinished, UUVEventTestSuiteStarted, UUVEventType } from "@uuv/runner-commons";
+import { UUV_COMMAND_TIMEOUT } from "./helper";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ipc = require("node-ipc").default;
@@ -16,10 +17,11 @@ export function vsCodeListener(terminal: vscode.Terminal, token: vscode.Cancella
         cancellable: true
     }, () => {
         return new Promise<void>(resolve => {
+            setTimeout(() => {
+                endStartNotification(terminal, run, resolve);
+            }, UUV_COMMAND_TIMEOUT);
             token.onCancellationRequested(() => {
-                terminal.dispose();
-                stopIpcServer(run);
-                resolve();
+                endStartNotification(terminal, run, resolve);
             });
             ipc.connectTo(UUV_IPC_SERVER_NAME, () => {
                 ipc.of[UUV_IPC_SERVER_NAME].on("connect", () => {
@@ -57,6 +59,11 @@ export function vsCodeListener(terminal: vscode.Terminal, token: vscode.Cancella
             });
         });
     });
+}
+
+function endStartNotification(terminal: vscode.Terminal, run: vscode.TestRun, resolve : () => void) {
+    stopIpcServer(run);
+    resolve();
 }
 
 export function startTestSuite(run: vscode.TestRun, allTestItems: vscode.TestItem[], data: UUVEventTestSuiteStarted) {

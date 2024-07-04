@@ -7,6 +7,9 @@ const builder = new AstBuilder(uuidFn);
 const matcher = new GherkinClassicTokenMatcher();
 const parser = new Parser(builder, matcher);
 const UUV_TERMINAL_NAME = "UUV";
+const UUV_VSCODE_CONFIGURATION_SECTION = "uuv";
+const DEFAULT_PROJECT_DIR = ".";
+export const UUV_COMMAND_TIMEOUT = 120000;
 
 export class Helper {
     static getUUVTerminal() {
@@ -81,5 +84,18 @@ export class Helper {
             uri = test.parent?.uri;
         }
         return uri;
+    }
+
+    static buildUUVCommand(target: "open" | "e2e"): string {
+        let command = "";
+        const uuvExtconfiguration = vscode.workspace.getConfiguration(UUV_VSCODE_CONFIGURATION_SECTION);
+
+        if (uuvExtconfiguration.get("projectHomeDir") && uuvExtconfiguration.get("projectHomeDir") !== DEFAULT_PROJECT_DIR) {
+            command = `cd ${uuvExtconfiguration.get("projectHomeDir")} && `;
+        }
+
+        command = `${command}${uuvExtconfiguration.get("useLocalScript") === true ? "npm run uuv" : "npx uuv"}`;
+
+        return `${command} ${target}`;
     }
 }

@@ -405,7 +405,7 @@ jobs:
       - name: Publishing VsCode Extension
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
-        run: npx nx build vscode-extension && npx nx publish vscode-extension -- --pre-release
+        run: npx nx build vscode-extension && npx nx publish vscode-extension
 
   publish-intellij:
     if: github.ref == 'refs/heads/main'

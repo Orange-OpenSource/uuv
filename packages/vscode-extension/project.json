@@ -32,7 +32,7 @@
             "@semantic-release/npm",
             {
               "npmPublish": false,
-              "tarballDir": "dist/packages",
+              "tarballDir": "dist/",
               "pkgRoot": "packages/vscode-extension"
             }
           ]

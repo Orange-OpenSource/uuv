@@ -67,6 +67,7 @@ function runHandler(
 	request: vscode.TestRunRequest,
 	token: vscode.CancellationToken
 ) {
+    console.debug("Running UUV e2e command!");
     const run = testController.createTestRun(request);
     const terminal = Helper.getUUVTerminal();
 
@@ -85,12 +86,13 @@ function runHandler(
         testController.items.forEach(test => queue.push(test));
     }
 
-    terminal.sendText(`npx uuv e2e --env="{'enableVsCodeListener':true}"${targetTestArgs}`);
+    terminal.sendText(`${Helper.buildUUVCommand("e2e")} --env="{'enableVsCodeListener':true}"${targetTestArgs}`);
 
-     // For every test that was queued, try to run it. Call run.passed() or run.failed().
+    // For every test that was queued, try to run it. Call run.passed() or run.failed().
     // The `TestMessage` can contain extra information, like a failing location or
     // a diff output. But here we'll just give it a textual message.
     const allTestItems: vscode.TestItem[] = [];
     testController.items.forEach(test => allTestItems.push(test));
     vsCodeListener(terminal, token, run, allTestItems);
+    terminal.show();
 }
