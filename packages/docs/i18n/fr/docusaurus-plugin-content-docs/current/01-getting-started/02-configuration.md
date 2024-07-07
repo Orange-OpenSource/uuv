@@ -33,3 +33,68 @@ Modifier le fichier `.gitignore` pour rajouter les lignes suivantes :
       ]
   }
   ```
+
+## Dev Containers
+Ajouter les fichiers suivants :
+  ```json title='.devcontainer/devcontainer.json'
+    {
+      "name": "UUV TestSpace",
+      "service": "uuv-e2e-testspace",
+      "dockerComposeFile": "docker-compose.yml",
+      "customizations": {
+        "vscode": {
+          "extensions": [
+            "CucumberOpen.cucumber-official",
+            "e2e-test-quest.uuv-vscode-extension"
+          ],
+          "settings": {
+            "cucumber.features": [
+              "uuv/e2e/**/*.feature"
+            ],
+            "cucumber.glue": [
+              "uuv/cucumber/step_definitions/**/*.{js,ts}",
+              "node_modules/@uuv/*/src/cucumber/step_definitions/*/unsafe/**/*.ts",
+              "node_modules/@uuv/*/src/cucumber/step_definitions/*/generated/**/*.ts",
+              "node_modules/@uuv/*/src/cucumber/step_definitions/*/generated/enriched/*/*.ts"
+            ]
+          }
+        }
+      },
+      "forwardPorts": [8080],
+      "workspaceFolder": "/workspace",
+      "postCreateCommand": "npm install"
+    }
+  ```
+  ```yml title='.devcontainer/docker-compose.yml'
+      services:
+        uuv-e2e-testspace:
+          image: e2etesting/uuv
+          command: sleep infinity
+          environment:
+            DISPLAY: ":14"
+            LIBGL_ALWAYS_INDIRECT: 0
+          volumes:
+            - ..:/workspace
+            - cypress-cache:/root/.cache/Cypress/
+          volumes_from:
+            - x11-bridge:rw
+          depends_on:
+            - x11-bridge
+
+        x11-bridge:
+          image: jare/x11-bridge
+          volumes:
+            - "/tmp/.X11-unix:/tmp/.X11-unix:rw"
+          ports:
+            - "8080:8080"
+          restart: always
+          environment:
+            MODE: tcp
+            XPRA_HTML: "yes"
+            DISPLAY: ":14"
+            XPRA_TCP_PORT: "8080"
+            XPRA_PASSWORD: uuv
+
+      volumes:
+        cypress-cache:
+  ```
