@@ -46,6 +46,9 @@ function HomepageHeader() {
                     <a href={'https://plugins.jetbrains.com/plugin/22437-uuv'} target={'_blank'}>
                         <img alt="JetBrains Plugin Downloads" src="https://img.shields.io/jetbrains/plugin/d/22437-uuv?logo=jetbrains&label=UUV%20plugin"></img>
                     </a>
+                    <a href={'https://marketplace.visualstudio.com/items?itemName=e2e-test-quest.uuv-vscode-extension'} target={'_blank'}>
+                        <img alt="VS Code Extension Downloads" src="https://img.shields.io/visual-studio-marketplace/d/e2e-test-quest.uuv-vscode-extension?label=UUV%20VS%20Code%20Extension&cacheSeconds=0"></img>
+                    </a>
                 </div>
                 <div className={styles.buttons}>
                     <Link
