@@ -345,6 +345,7 @@ jobs:
         with:
           name: release-artifacts
           path: |
+            package-lock.json
             dist/packages
             packages/intellij-plugin/gradle.properties
             packages/vscode-extension/package.json
