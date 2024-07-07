@@ -1,3 +1,18 @@
+# [1.12.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.11.0...intellij-plugin-v1.12.0) (2024-07-07)
+
+
+### Bug Fixes
+
+* **assistant:** remove not required cucumber dependency ([da9f7b0](https://github.com/Orange-OpenSource/uuv/commit/da9f7b0089aeffc63604a306a799230fbcd70d3f))
+
+
+### Features
+
+* **assistant:** update dependency @codemirror/view to v6.28.4 ([62aa840](https://github.com/Orange-OpenSource/uuv/commit/62aa8407bef7f2c953d1b7fe5a0b9fc8eb02812c))
+* **assistant:** update dependency @uiw/codemirror-theme-github to v4.23.0 ([ca8e6b8](https://github.com/Orange-OpenSource/uuv/commit/ca8e6b83fac8b14ac0108ba263b968a2f9706528))
+* **runner-cypress:** update dependency cypress to v13.13.0 ([78a9cfc](https://github.com/Orange-OpenSource/uuv/commit/78a9cfc4b0de465c527db65618bd9b4bd70704f6))
+* **runner-playwright:** update dependency playwright-bdd to v6.6.0 ([f30b4d5](https://github.com/Orange-OpenSource/uuv/commit/f30b4d5ae5177e5a4281ee742debf0c3c73b47ac))
+
 # [1.11.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.10.3...intellij-plugin-v1.11.0) (2024-07-02)
 
 
