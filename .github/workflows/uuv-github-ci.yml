@@ -386,7 +386,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment: vscode
-    needs: [ release ]
+    needs: [ release, publish-npm ]
     steps:
       - uses: actions/checkout@v4
       - name: Cache node modules
@@ -410,7 +410,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{env.NODE_VERSION}}            
-      - run: npm ci
+      - run: npm install
       - name: Publishing VsCode Extension
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
