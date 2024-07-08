@@ -1,3 +1,10 @@
+## [1.36.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.36.0...assistant-electron-v1.36.1) (2024-07-08)
+
+
+### Bug Fixes
+
+* add lib path for event classes, [#679](https://github.com/Orange-OpenSource/uuv/issues/679) ([e8e521b](https://github.com/Orange-OpenSource/uuv/commit/e8e521ba4f3f5762cc69cdbb165ea151103d4087))
+
 # [1.36.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.35.1...assistant-electron-v1.36.0) (2024-07-07)
 
 
