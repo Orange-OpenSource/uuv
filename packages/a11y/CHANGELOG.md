@@ -1,3 +1,10 @@
+# [1.0.0-beta.34](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.33...a11y-v1.0.0-beta.34) (2024-07-08)
+
+
+### Bug Fixes
+
+* add lib path for event classes, [#679](https://github.com/Orange-OpenSource/uuv/issues/679) ([e8e521b](https://github.com/Orange-OpenSource/uuv/commit/e8e521ba4f3f5762cc69cdbb165ea151103d4087))
+
 # [1.0.0-beta.33](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.32...a11y-v1.0.0-beta.33) (2024-07-07)
 
 
