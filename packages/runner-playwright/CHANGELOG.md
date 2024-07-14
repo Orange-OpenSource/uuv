@@ -1,3 +1,17 @@
+# [3.4.0](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v3.3.1...runner-playwright-v3.4.0) (2024-07-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency tslib to v2.6.3 ([5f1bd19](https://github.com/Orange-OpenSource/uuv/commit/5f1bd190dce41dd51bbe2cad652fe39a09ff132d))
+
+
+### Features
+
+* **assistant:** update dependency antd to v5.19.1 ([18a90bf](https://github.com/Orange-OpenSource/uuv/commit/18a90bf2d8e0918c8c3f5c10f17eb32a53df5d0e))
+* **runner-cypress:** update dependency cypress-real-events to v1.13.0 ([e3b8dc0](https://github.com/Orange-OpenSource/uuv/commit/e3b8dc06ff6f9fb7cfee89e858676f17e1933af8))
+* **runner-playwright:** update playwright monorepo to v1.45.1 ([6be42dc](https://github.com/Orange-OpenSource/uuv/commit/6be42dc9604f4d786db6c32499319bccda504e29))
+
 ## [3.3.1](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v3.3.0...runner-playwright-v3.3.1) (2024-07-08)
 
 
