@@ -1,3 +1,10 @@
+## [2.19.1](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.19.0...runner-commons-v2.19.1) (2024-07-16)
+
+
+### Bug Fixes
+
+* **runner-commons:** improve uuv command control, [#682](https://github.com/Orange-OpenSource/uuv/issues/682) ([#698](https://github.com/Orange-OpenSource/uuv/issues/698)) ([e5327ce](https://github.com/Orange-OpenSource/uuv/commit/e5327ceb3c3bb1cdb6c6d9f87852ea14ab3b8700))
+
 # [2.19.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.18.1...runner-commons-v2.19.0) (2024-07-14)
 
 
