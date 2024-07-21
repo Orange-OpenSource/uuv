@@ -1,3 +1,21 @@
+# [1.49.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.48.1...docs-v1.49.0) (2024-07-21)
+
+
+### Bug Fixes
+
+* **assistant:** update dependency antd to v5.19.2 ([5407d03](https://github.com/Orange-OpenSource/uuv/commit/5407d0317107bab2dfeae396d13186f9ec941f8f))
+* **assistant:** update dependency antd to v5.19.3 ([9db1dce](https://github.com/Orange-OpenSource/uuv/commit/9db1dce802e44b7e5c4399dd9e059b9506b87929))
+* **runner-cypress:** update dependency cypress to v13.13.1 ([3212aa5](https://github.com/Orange-OpenSource/uuv/commit/3212aa58f4d71f6ca45d1b6a66c2e7132f8ad505))
+* **runner-playwright:** update playwright monorepo to v1.45.2 ([b6a9018](https://github.com/Orange-OpenSource/uuv/commit/b6a901858453418aa2b10db43878bbe18d45fafd))
+
+
+### Features
+
+* **deps:** update dependency @easyops-cn/docusaurus-search-local to v0.44.3 ([377b9b9](https://github.com/Orange-OpenSource/uuv/commit/377b9b9779aeed86c5752c33768f26190a1385e1))
+* **runner-cypress:** update dependency @badeball/cypress-cucumber-preprocessor to v20.1.0 ([ba0f0d9](https://github.com/Orange-OpenSource/uuv/commit/ba0f0d91d845c638fcbc7581fdf54c525ce20f93))
+* **runner-playwright:** update dependency multiple-cucumber-html-reporter to v3.7.0 ([5850b13](https://github.com/Orange-OpenSource/uuv/commit/5850b1362bf8d3c319b3907cae07c8f86ad67820))
+* **vscode-extension:** add uuv.assistant command, [#714](https://github.com/Orange-OpenSource/uuv/issues/714) ([588f4f7](https://github.com/Orange-OpenSource/uuv/commit/588f4f7ea45401a6ede8176a4d63b36857d40241))
+
 ## [1.48.1](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.48.0...docs-v1.48.1) (2024-07-16)
 
 
