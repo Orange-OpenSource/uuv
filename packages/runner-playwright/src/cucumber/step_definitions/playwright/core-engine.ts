@@ -15,6 +15,7 @@
 import { World } from "../../preprocessor/run/world";
 import { Cookie, expect, Locator as LocatorTest } from "@playwright/test";
 import { Locator, Page } from "playwright";
+import { DEFAULT_TIMEOUT } from "@uuv/runner-commons";
 
 export enum COOKIE_NAME {
   SELECTED_ELEMENT = "withinFocusedElement",
@@ -253,4 +254,14 @@ export async function checkTextContentLocator(locator: Locator, expectedTextCont
       }
     }
   }
+}
+
+export async function click(world: World, role: any, name: string) {
+  await getPageOrElement(world).then(async (element) => {
+    const byRole = element.getByRole(role, { name: name, includeHidden: true, exact: true });
+    await expect(byRole).toHaveCount(1);
+    await byRole.click({ timeout: DEFAULT_TIMEOUT });
+    await world.page.waitForLoadState();
+    await deleteCookieByName(world, COOKIE_NAME.SELECTED_ELEMENT);
+  });
 }

@@ -15,14 +15,15 @@
 import { key } from "@uuv/runner-commons/wording/web";
 import { Then, When } from "@cucumber/cucumber";
 import {
-  COOKIE_NAME, deleteCookieByName,
-  findWithRoleAndName,
-  findWithRoleAndNameAndContent,
-  findWithRoleAndNameAndContentDisable,
-  findWithRoleAndNameAndContentEnable, findWithRoleAndNameFocused,
-  getPageOrElement,
-  notFoundWithRoleAndName,
-  withinRoleAndName
+    click,
+    COOKIE_NAME, deleteCookieByName,
+    findWithRoleAndName,
+    findWithRoleAndNameAndContent,
+    findWithRoleAndNameAndContentDisable,
+    findWithRoleAndNameAndContentEnable, findWithRoleAndNameFocused,
+    getPageOrElement,
+    notFoundWithRoleAndName,
+    withinRoleAndName
 } from "./core-engine";
 import { World } from "../../preprocessor/run/world";
 import { expect } from "@playwright/test";
@@ -54,6 +55,17 @@ Then(
 );
 
 // End of General Section
+// Begin of Click Section
+
+/**
+ * key.when.click.description
+ * */
+When(`${key.when.click}`, async function(this: World, name: string) {
+    await click(this, "button", name);
+});
+
+
+// End of Click Section
 // Begin of Type Section
 
 /**
