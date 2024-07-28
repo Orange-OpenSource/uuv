@@ -1,3 +1,17 @@
+# [2.26.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.25.0...runner-cypress-v2.26.0) (2024-07-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @easyops-cn/docusaurus-search-local to v0.44.4 ([fa8cb8f](https://github.com/Orange-OpenSource/uuv/commit/fa8cb8fb5addee1915d733c601bf04b4494afb5f))
+* **runner-cypress:** update dependency @badeball/cypress-cucumber-preprocessor to v20.1.1 ([645c9f0](https://github.com/Orange-OpenSource/uuv/commit/645c9f0dd38a92258d311adfcbda9b58ab37929e))
+* **runner-playwright:** update playwright monorepo to v1.45.3 ([44402e0](https://github.com/Orange-OpenSource/uuv/commit/44402e032cdf996ec6a5ea14f4e3eda7615fc13f))
+
+
+### Features
+
+* **deps:** update dependency @cucumber/messages to v25 ([01c669e](https://github.com/Orange-OpenSource/uuv/commit/01c669e386869658227d92ee5f0b5ebd3fdcda3e))
+
 # [2.25.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.24.1...runner-cypress-v2.25.0) (2024-07-21)
 
 
