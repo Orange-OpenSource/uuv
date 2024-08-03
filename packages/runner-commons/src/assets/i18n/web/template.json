@@ -6,7 +6,12 @@
       "withRole": "",
       "withContext": ""
     },
-    "type": "",
+    "type": {
+      "withContext": ""
+    },
+    "enter": {
+      "withContext": ""
+    },
     "keyboard": {
       "multiplePress": "",
       "press": "",

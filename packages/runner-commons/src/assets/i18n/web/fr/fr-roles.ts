@@ -17,6 +17,7 @@ class FrAccessibleRole extends AccessibleRole {
         override name: string,
         private definiteArticle: FR_DEFINITE_ARTICLE,
         private indefiniteArticle: FR_INDEFINITE_ARTICLE,
+        override shouldGenerateClickSentence: boolean = false,
         override shouldGenerateTypeSentence: boolean = true,
         override shouldGenerateContainsSentence: boolean = true,
         override shouldGenerateKeyboardSentence: boolean = false
@@ -85,6 +86,7 @@ export const FR_ROLES: AccessibleRole[] = [
         name: "bouton",
         definiteArticle: FR_DEFINITE_ARTICLE.LE,
         indefiniteArticle: FR_INDEFINITE_ARTICLE.UN,
+        shouldGenerateClickSentence: true,
         shouldGenerateKeyboardSentence: true
     },
     {
@@ -98,6 +100,7 @@ export const FR_ROLES: AccessibleRole[] = [
         name: "case à cocher",
         definiteArticle: FR_DEFINITE_ARTICLE.LA,
         indefiniteArticle: FR_INDEFINITE_ARTICLE.UNE,
+        shouldGenerateClickSentence: true,
         shouldGenerateKeyboardSentence: true
     },
     {
@@ -232,6 +235,7 @@ export const FR_ROLES: AccessibleRole[] = [
         name: "lien",
         definiteArticle: FR_DEFINITE_ARTICLE.LE,
         indefiniteArticle: FR_INDEFINITE_ARTICLE.UN,
+        shouldGenerateClickSentence: true,
         shouldGenerateKeyboardSentence: true
     },
     {
@@ -359,6 +363,7 @@ export const FR_ROLES: AccessibleRole[] = [
         name: "bouton radio",
         definiteArticle: FR_DEFINITE_ARTICLE.LE,
         indefiniteArticle: FR_INDEFINITE_ARTICLE.UN,
+        shouldGenerateClickSentence: true,
         shouldGenerateKeyboardSentence: true
     },
     {
@@ -579,6 +584,7 @@ export const FR_ROLES: AccessibleRole[] = [
     role.name,
     role.definiteArticle,
     role.indefiniteArticle,
+    role.shouldGenerateClickSentence,
     role.shouldGenerateContainsSentence,
     role.shouldGenerateContainsSentence,
     role.shouldGenerateKeyboardSentence

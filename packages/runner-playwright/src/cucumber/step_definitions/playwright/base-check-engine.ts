@@ -19,21 +19,21 @@ import { devices, expect } from "@playwright/test";
 import { Locator, Page } from "playwright";
 import { DataTable, Given, Then, When } from "@cucumber/cucumber";
 import {
-  addCookie,
-  COOKIE_NAME,
-  deleteCookieByName,
-  FILTER_TYPE,
-  findWithRoleAndName,
-  findWithRoleAndNameAndContent,
-  findWithRoleAndNameAndContentDisable,
-  findWithRoleAndNameAndContentEnable,
-  findWithRoleAndNameFocused,
-  getCookie,
-  getPageOrElement,
-  MockCookie,
-  notFoundWithRoleAndName,
-  SelectedElementCookie,
-  withinRoleAndName
+    addCookie, click,
+    COOKIE_NAME,
+    deleteCookieByName,
+    FILTER_TYPE,
+    findWithRoleAndName,
+    findWithRoleAndNameAndContent,
+    findWithRoleAndNameAndContentDisable,
+    findWithRoleAndNameAndContentEnable,
+    findWithRoleAndNameFocused,
+    getCookie,
+    getPageOrElement,
+    MockCookie,
+    notFoundWithRoleAndName,
+    SelectedElementCookie,
+    withinRoleAndName
 } from "./core-engine";
 import { World } from "../../preprocessor/run/world";
 import { ContextObject, RunOptions } from "axe-core";
@@ -87,13 +87,6 @@ When(`${key.when.click.withContext}`, async function(this: World) {
 });
 
 /**
- * key.when.click.button.description
- * */
-When(`${key.when.click.button}`, async function(this: World, name: string) {
-  await click(this, "button", name);
-});
-
-/**
  * key.when.click.withRole.description
  * */
 When(`${key.when.click.withRole}`, async function(this: World, role: string, name: string) {
@@ -106,7 +99,11 @@ When(`${key.when.click.withRole}`, async function(this: World, role: string, nam
  * */
 When(`${key.when.withinElement.ariaLabel}`, async function(this: World, expectedAriaLabel: string) {
   const sanitizedExpectedAriaLabel = encodeURIComponent(expectedAriaLabel).replaceAll("%20", " ");
-  await getPageOrElement(this).then((element) => expect(element.getByLabel(sanitizedExpectedAriaLabel, { exact: true })).toHaveCount(1));
+  await getPageOrElement(this).then(async (element) => {
+    const locator = element.getByLabel(sanitizedExpectedAriaLabel, { exact: true });
+    await expect(locator).toHaveCount(1);
+    await locator.focus({ timeout: 10000 });
+  });
   await addCookie(this, COOKIE_NAME.SELECTED_ELEMENT, new SelectedElementCookie(FILTER_TYPE.ARIA_LABEL, sanitizedExpectedAriaLabel));
 });
 
@@ -121,24 +118,27 @@ When(`${key.when.resetContext}`, async function(this: World) {
  * key.when.withinElement.selector.description
  * */
 When(`${key.when.withinElement.selector}`, async function(this: World, selector: string) {
+  await getPageOrElement(this).then(async (element) => {
+    const locator = element.locator(selector);
+    await expect(locator).toHaveCount(1);
+    await locator.focus({ timeout: 10000 });
+  });
   await getPageOrElement(this).then((element) => expect(element.locator(selector)).toHaveCount(1));
   await addCookie(this, COOKIE_NAME.SELECTED_ELEMENT, new SelectedElementCookie(FILTER_TYPE.SELECTOR, selector));
 });
 
 /**
- * key.when.type.description
+ * key.when.type.withContext.description
  * */
-When(`${key.when.type}`, async function(this: World, textToType: string) {
-  const keyBoardFocusTargetObj = keyBoardFocusTarget(this);
-  if ((await keyBoardFocusTargetObj.count()) === 1) {
-    await keyBoardFocusTargetObj.type(textToType);
-  } else {
-    await getPageOrElement(this).then(async (element: Locator) => {
-      // console.debug(element);
-      await element.focus({ timeout: 10000 });
-      await element.type(textToType);
-    });
-  }
+When(`${key.when.type.withContext}`, async function(this: World, textToType: string) {
+    await type(this, textToType);
+});
+
+/**
+ * key.when.enter.withContext.description
+ * */
+When(`${key.when.enter.withContext}`, async function(this: World, textToType: string) {
+    await type(this, textToType);
 });
 
 /**
@@ -190,7 +190,11 @@ When(`${key.when.withinElement.roleAndName}`, async function(this: World, role: 
  * */
 When(`${key.when.withinElement.testId}`, async function(this: World, testId: string) {
   testId = encodeURIComponent(testId);
-  await getPageOrElement(this).then(async (element) => await expect(element.getByTestId(testId)).toHaveCount(1));
+  await getPageOrElement(this).then(async (element) => {
+    const locator = element.getByTestId(testId);
+    await expect(locator).toHaveCount(1);
+    await locator.focus({ timeout: 10000 });
+  });
   await addCookie(this, COOKIE_NAME.SELECTED_ELEMENT, new SelectedElementCookie(FILTER_TYPE.TEST_ID, testId));
 });
 
@@ -600,16 +604,6 @@ async function pressKey(world: World, key: string) {
   await addCookie(world, COOKIE_NAME.SELECTED_ELEMENT, new SelectedElementCookie(FILTER_TYPE.SELECTOR_PARENT, "*:focus"));
 }
 
-async function click(world: World, role: any, name: string) {
-  await getPageOrElement(world).then(async (element) => {
-    const byRole = element.getByRole(role, { name: name, includeHidden: true, exact: true });
-    await expect(byRole).toHaveCount(1);
-    await byRole.click({ timeout: DEFAULT_TIMEOUT });
-    await world.page.waitForLoadState();
-    await deleteCookieByName(world, COOKIE_NAME.SELECTED_ELEMENT);
-  });
-}
-
 function keyBoardFocusTarget(world: World) {
   return world.page.locator(":focus");
 }
@@ -629,4 +623,17 @@ async function afterMock(world: World, url: string, verb: string, name: string) 
       await setMockAsConsumed(name, mock, world);
     }
   }
+}
+
+async function type(world: World, textToType: string) {
+    const keyBoardFocusTargetObj = keyBoardFocusTarget(world);
+    if ((await keyBoardFocusTargetObj.count()) === 1) {
+        await keyBoardFocusTargetObj.type(textToType);
+    } else {
+        await getPageOrElement(world).then(async (element: Locator) => {
+            // console.debug(element);
+            await element.focus({ timeout: 10000 });
+            await element.type(textToType);
+        });
+    }
 }

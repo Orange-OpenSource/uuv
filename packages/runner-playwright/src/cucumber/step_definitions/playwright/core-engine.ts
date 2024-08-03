@@ -15,6 +15,7 @@
 import { World } from "../../preprocessor/run/world";
 import { Cookie, expect, Locator as LocatorTest } from "@playwright/test";
 import { Locator, Page } from "playwright";
+import { DEFAULT_TIMEOUT } from "@uuv/runner-commons";
 
 export enum COOKIE_NAME {
   SELECTED_ELEMENT = "withinFocusedElement",
@@ -157,7 +158,7 @@ export async function findWithRoleAndName(world: World, role: string, name: stri
 }
 
 export async function withinRoleAndName(world: World, role: string, name: string) {
-  await findWithRoleAndNameAndContent(world, role, name);
+  await findWithRoleAndNameAndContent(world, role, name, undefined, true);
   await addCookie(world, COOKIE_NAME.SELECTED_ELEMENT, new SelectedElementCookie(FILTER_TYPE.SELECTOR, `role=${role}[name="${name}"]`));
 
 }
@@ -172,7 +173,7 @@ export async function notFoundWithRoleAndName(world: World, role: string, name: 
 
 }
 
-export async function findWithRoleAndNameAndContent(world: World, expectedRole: string, name: string, expectedTextContent: string | undefined = undefined): Promise<any> {
+export async function findWithRoleAndNameAndContent(world: World, expectedRole: string, name: string, expectedTextContent: string | undefined = undefined, setFocus = false): Promise<any> {
   expectedRole = encodeURIComponent(expectedRole);
   await getPageOrElement(world).then(async (element) => {
     const byRole = await element.getByRole(expectedRole, { name: name, includeHidden: true, exact: true });
@@ -180,6 +181,7 @@ export async function findWithRoleAndNameAndContent(world: World, expectedRole: 
     if (expectedTextContent !== undefined) {
       await checkTextContentLocator(byRole, expectedTextContent);
     }
+    await byRole.focus({ timeout: 10000 });
   });
 }
 
@@ -253,4 +255,14 @@ export async function checkTextContentLocator(locator: Locator, expectedTextCont
       }
     }
   }
+}
+
+export async function click(world: World, role: any, name: string) {
+  await getPageOrElement(world).then(async (element) => {
+    const byRole = element.getByRole(role, { name: name, includeHidden: true, exact: true });
+    await expect(byRole).toHaveCount(1);
+    await byRole.click({ timeout: DEFAULT_TIMEOUT });
+    await world.page.waitForLoadState();
+    await deleteCookieByName(world, COOKIE_NAME.SELECTED_ELEMENT);
+  });
 }

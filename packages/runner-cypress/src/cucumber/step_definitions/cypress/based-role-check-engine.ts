@@ -15,6 +15,7 @@
 import { Then, When, } from "@badeball/cypress-cucumber-preprocessor";
 import "../../cypress/commands";
 import {
+    click,
     findWithRoleAndName,
     findWithRoleAndNameAndContent,
     findWithRoleAndNameAndContentDisable,
@@ -53,12 +54,29 @@ Then(
 );
 
 // End of General Section
+// Begin of Click Section
+
+/**
+ * key.when.click.description
+ * */
+When(`${key.when.click}`, function(name: string) {
+    click("$roleId", name);
+});
+
+// End of Click Section
 // Begin of Type Section
 
 /**
  * key.when.type.description
  * */
 When(`${key.when.type}`, function(textToType: string, name: string) {
+    cy.uuvFindByRole("$roleId", { name: name }).uuvFoundedElement().type(textToType);
+});
+
+/**
+ * key.when.enter.description
+ * */
+When(`${key.when.enter}`, function(textToType: string, name: string) {
     cy.uuvFindByRole("$roleId", { name: name }).uuvFoundedElement().type(textToType);
 });
 
