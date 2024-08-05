@@ -1,3 +1,16 @@
+# [2.22.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.21.0...runner-commons-v2.22.0) (2024-08-05)
+
+
+### Bug Fixes
+
+* **runner-cypress:** update dependency cypress to v13.13.2 ([7b0044e](https://github.com/Orange-OpenSource/uuv/commit/7b0044efdf2448c6883029e9cefcae05927d5264))
+
+
+### Features
+
+* add checked state sentences, [#733](https://github.com/Orange-OpenSource/uuv/issues/733) ([62abd39](https://github.com/Orange-OpenSource/uuv/commit/62abd394259574965d543fc5e40c3854f3dbaf1d))
+* **assistant:** update dependency antd to v5.20.0 ([709fdd3](https://github.com/Orange-OpenSource/uuv/commit/709fdd3b222b2b9ff4a6fcc0649e704ad81327b1))
+
 # [2.21.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.20.0...runner-commons-v2.21.0) (2024-07-28)
 
 
