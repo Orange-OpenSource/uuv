@@ -1,3 +1,15 @@
+# [1.0.0-beta.38](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.37...a11y-v1.0.0-beta.38) (2024-08-05)
+
+
+### Bug Fixes
+
+* **runner-cypress:** update dependency cypress to v13.13.2 ([7b0044e](https://github.com/Orange-OpenSource/uuv/commit/7b0044efdf2448c6883029e9cefcae05927d5264))
+
+
+### Features
+
+* **assistant:** update dependency antd to v5.20.0 ([709fdd3](https://github.com/Orange-OpenSource/uuv/commit/709fdd3b222b2b9ff4a6fcc0649e704ad81327b1))
+
 # [1.0.0-beta.37](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.36...a11y-v1.0.0-beta.37) (2024-07-28)
 
 
