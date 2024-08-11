@@ -1,3 +1,17 @@
+# [2.28.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.27.0...runner-cypress-v2.28.0) (2024-08-11)
+
+
+### Bug Fixes
+
+* **assistant:** update dependency antd to v5.20.1 ([5c3abf7](https://github.com/Orange-OpenSource/uuv/commit/5c3abf7872455038ac038dd6abdf81f024a3c14f))
+* **runner-cypress:** update dependency @badeball/cypress-cucumber-preprocessor to v20.1.2 ([7dcb27d](https://github.com/Orange-OpenSource/uuv/commit/7dcb27dec15293aacaad90684bd9eeb290c66e45))
+
+
+### Features
+
+* **assistant:** update dependency @uiw/react-codemirror to v4.23.0 ([8b3b8c7](https://github.com/Orange-OpenSource/uuv/commit/8b3b8c77d8bc6fa30e7077f57575b8d2914eb3a6))
+* **runner-playwright:** update dependency axe-core to v4.10.0 ([a2c7883](https://github.com/Orange-OpenSource/uuv/commit/a2c78835c97cec52f0c9d45116da987ce5a5445b))
+
 # [2.27.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.26.0...runner-cypress-v2.27.0) (2024-08-05)
 
 
