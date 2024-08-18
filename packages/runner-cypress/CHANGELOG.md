@@ -1,3 +1,10 @@
+# [2.29.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.28.0...runner-cypress-v2.29.0) (2024-08-18)
+
+
+### Features
+
+* **deps:** update dependency node-ipc to v12 [security] ([33d3bfd](https://github.com/Orange-OpenSource/uuv/commit/33d3bfdf6a057a8c57c655b099a21a32294d79e8))
+
 # [2.28.0](https://github.com/Orange-OpenSource/uuv/compare/runner-cypress-v2.27.0...runner-cypress-v2.28.0) (2024-08-11)
 
 
