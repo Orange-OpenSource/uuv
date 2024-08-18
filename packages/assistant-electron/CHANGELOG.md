@@ -1,3 +1,10 @@
+# [1.42.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.41.0...assistant-electron-v1.42.0) (2024-08-18)
+
+
+### Features
+
+* **deps:** update dependency node-ipc to v12 [security] ([33d3bfd](https://github.com/Orange-OpenSource/uuv/commit/33d3bfdf6a057a8c57c655b099a21a32294d79e8))
+
 # [1.41.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.40.0...assistant-electron-v1.41.0) (2024-08-11)
 
 
