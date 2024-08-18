@@ -1,3 +1,10 @@
+# [2.26.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.25.0...assistant-v2.26.0) (2024-08-18)
+
+
+### Features
+
+* **deps:** update dependency node-ipc to v12 [security] ([33d3bfd](https://github.com/Orange-OpenSource/uuv/commit/33d3bfdf6a057a8c57c655b099a21a32294d79e8))
+
 # [2.25.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.24.0...assistant-v2.25.0) (2024-08-11)
 
 
