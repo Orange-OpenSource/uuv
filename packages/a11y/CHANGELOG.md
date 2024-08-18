@@ -1,3 +1,10 @@
+# [1.0.0-beta.40](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.39...a11y-v1.0.0-beta.40) (2024-08-18)
+
+
+### Features
+
+* **deps:** update dependency node-ipc to v12 [security] ([33d3bfd](https://github.com/Orange-OpenSource/uuv/commit/33d3bfdf6a057a8c57c655b099a21a32294d79e8))
+
 # [1.0.0-beta.39](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.38...a11y-v1.0.0-beta.39) (2024-08-11)
 
 
