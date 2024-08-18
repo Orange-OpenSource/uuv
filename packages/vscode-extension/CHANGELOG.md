@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/Orange-OpenSource/uuv/compare/vscode-extension-v1.6.0...vscode-extension-v1.7.0) (2024-08-18)
+
+
+### Features
+
+* **deps:** update dependency node-ipc to v12 [security] ([33d3bfd](https://github.com/Orange-OpenSource/uuv/commit/33d3bfdf6a057a8c57c655b099a21a32294d79e8))
+
 # [1.6.0](https://github.com/Orange-OpenSource/uuv/compare/vscode-extension-v1.5.0...vscode-extension-v1.6.0) (2024-08-11)
 
 
