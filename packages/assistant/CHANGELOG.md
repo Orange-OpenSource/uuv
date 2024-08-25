@@ -1,3 +1,11 @@
+## [2.26.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.26.0...assistant-v2.26.1) (2024-08-25)
+
+
+### Bug Fixes
+
+* **runner-cypress:** update dependency cypress to v13.13.3 ([c536497](https://github.com/Orange-OpenSource/uuv/commit/c536497539eeead0b8b14bf5901ac0622e6339c1))
+* **runner-playwright:** update dependency axe-playwright to v2.0.2 ([f745bff](https://github.com/Orange-OpenSource/uuv/commit/f745bffabe494a88962d7d38e7b7450c9f324d52))
+
 # [2.26.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.25.0...assistant-v2.26.0) (2024-08-18)
 
 
