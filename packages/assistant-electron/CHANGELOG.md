@@ -1,3 +1,12 @@
+## [1.42.2](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.42.1...assistant-electron-v1.42.2) (2024-08-30)
+
+
+### Bug Fixes
+
+* clear keyboard focus in reset sentence, [#762](https://github.com/Orange-OpenSource/uuv/issues/762) ([946c5aa](https://github.com/Orange-OpenSource/uuv/commit/946c5aa667a0007b296151351dd450412cd784b3))
+* consider timeout for type and click sentence, [#761](https://github.com/Orange-OpenSource/uuv/issues/761) ([1120a53](https://github.com/Orange-OpenSource/uuv/commit/1120a53fd80c0958a7a6c7b71d802a8c5dbb7e25))
+* **runner-playwright:** consider timeout in finder, [#761](https://github.com/Orange-OpenSource/uuv/issues/761) ([d1dfc11](https://github.com/Orange-OpenSource/uuv/commit/d1dfc113c76d0bffa86ded094fe4feed70ac6f58))
+
 ## [1.42.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.42.0...assistant-electron-v1.42.1) (2024-08-25)
 
 
