@@ -1,3 +1,17 @@
+# [3.10.0](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v3.9.2...runner-playwright-v3.10.0) (2024-09-01)
+
+
+### Bug Fixes
+
+* set focus after within action ([e671f2c](https://github.com/Orange-OpenSource/uuv/commit/e671f2c378e21c90b7f1a57cc4f9ab7481c59283))
+
+
+### Features
+
+* add enter sentence, [#732](https://github.com/Orange-OpenSource/uuv/issues/732) ([ac4ea9e](https://github.com/Orange-OpenSource/uuv/commit/ac4ea9e1fdf27a0c17827f54e12b3f487db66e4d))
+* **assistant:** add form completion, [#719](https://github.com/Orange-OpenSource/uuv/issues/719) ([ea74b23](https://github.com/Orange-OpenSource/uuv/commit/ea74b239c37c1b30b155400d6f2f30a939975d3e))
+* change type and click sentence to basedRole sentence, [#731](https://github.com/Orange-OpenSource/uuv/issues/731) ([3131e3d](https://github.com/Orange-OpenSource/uuv/commit/3131e3d5eecbf6b04a06ba70b20ebe041690747c))
+
 ## [3.9.2](https://github.com/Orange-OpenSource/uuv/compare/runner-playwright-v3.9.1...runner-playwright-v3.9.2) (2024-08-30)
 
 
