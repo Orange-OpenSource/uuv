@@ -1,3 +1,18 @@
+# [1.55.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.54.0...docs-v1.55.0) (2024-09-08)
+
+
+### Bug Fixes
+
+* **assistant:** update dependency @uiw/codemirror-theme-github to v4.23.1 ([e294930](https://github.com/Orange-OpenSource/uuv/commit/e2949303b2cf97af6ea9853fb270aa8c2e64bc10))
+* **assistant:** update dependency @uiw/react-codemirror to v4.23.1 ([554e5e7](https://github.com/Orange-OpenSource/uuv/commit/554e5e7997c8d1065345ddd9de0a63722fd97f1e))
+* **assistant:** update dependency antd to v5.20.5 ([43e76bb](https://github.com/Orange-OpenSource/uuv/commit/43e76bb51b7698c3c6d776d738edc6836a7c5302))
+
+
+### Features
+
+* **runner-cypress:** update dependency cypress to v13.14.2 ([1671339](https://github.com/Orange-OpenSource/uuv/commit/1671339c850a7f967d5b1d18443a3975696f238e))
+* **runner-playwright:** update playwright monorepo to v1.47.0 ([d8cf142](https://github.com/Orange-OpenSource/uuv/commit/d8cf14292602977514c6f1a43fe52057778fc353))
+
 # [1.54.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.53.2...docs-v1.54.0) (2024-09-01)
 
 
