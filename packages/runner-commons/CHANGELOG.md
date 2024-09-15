@@ -1,3 +1,16 @@
+# [2.27.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.26.0...runner-commons-v2.27.0) (2024-09-15)
+
+
+### Bug Fixes
+
+* **assistant:** update dependency antd to v5.20.6 ([63c3caa](https://github.com/Orange-OpenSource/uuv/commit/63c3caa427c4fc4000a8a54f9cfde5ebbd6c43c0))
+* **runner-playwright:** update playwright monorepo to v1.47.1 ([a33a626](https://github.com/Orange-OpenSource/uuv/commit/a33a6267074f966e8a7ca761ec5b11a50c21734b))
+
+
+### Features
+
+* **deps:** update dependency tslib to v2.7.0 ([23cc2de](https://github.com/Orange-OpenSource/uuv/commit/23cc2de00462008055e8e8303aaf1468b5d9a870))
+
 # [2.26.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.25.0...runner-commons-v2.26.0) (2024-09-08)
 
 
