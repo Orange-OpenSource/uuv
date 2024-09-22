@@ -1,3 +1,16 @@
+# [1.46.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.45.0...assistant-electron-v1.46.0) (2024-09-22)
+
+
+### Bug Fixes
+
+* **runner-playwright:** update playwright monorepo to v1.47.2 ([d811c1a](https://github.com/Orange-OpenSource/uuv/commit/d811c1a4bdd5d9db8258f3ad4eff5a44003c988f))
+
+
+### Features
+
+* **deps:** update dependency @cucumber/gherkin to v29 ([7ca3412](https://github.com/Orange-OpenSource/uuv/commit/7ca34128b6d70a09a1bd1fc5c600873ff4701be4))
+* **deps:** update dependency @cucumber/messages to v26 ([759ad7b](https://github.com/Orange-OpenSource/uuv/commit/759ad7b2cdab61d7655f69413cac7a62b14f3bdb))
+
 # [1.45.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-electron-v1.44.0...assistant-electron-v1.45.0) (2024-09-15)
 
 
