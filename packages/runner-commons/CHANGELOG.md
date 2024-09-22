@@ -1,3 +1,16 @@
+# [2.28.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.27.0...runner-commons-v2.28.0) (2024-09-22)
+
+
+### Bug Fixes
+
+* **runner-playwright:** update playwright monorepo to v1.47.2 ([d811c1a](https://github.com/Orange-OpenSource/uuv/commit/d811c1a4bdd5d9db8258f3ad4eff5a44003c988f))
+
+
+### Features
+
+* **deps:** update dependency @cucumber/gherkin to v29 ([7ca3412](https://github.com/Orange-OpenSource/uuv/commit/7ca34128b6d70a09a1bd1fc5c600873ff4701be4))
+* **deps:** update dependency @cucumber/messages to v26 ([759ad7b](https://github.com/Orange-OpenSource/uuv/commit/759ad7b2cdab61d7655f69413cac7a62b14f3bdb))
+
 # [2.27.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.26.0...runner-commons-v2.27.0) (2024-09-15)
 
 
