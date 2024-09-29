@@ -1,3 +1,15 @@
+# [1.22.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.21.0...intellij-plugin-v1.22.0) (2024-09-29)
+
+
+### Bug Fixes
+
+* **assistant:** update codemirror ([2eb05a4](https://github.com/Orange-OpenSource/uuv/commit/2eb05a46b68ce549dc72cc98c62c09c0dbcfd42f))
+
+
+### Features
+
+* **runner-cypress:** update dependency cypress to v13.15.0 ([4a5c3a0](https://github.com/Orange-OpenSource/uuv/commit/4a5c3a05b9c8dc0071275094ccd92efc63644054))
+
 # [1.21.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.20.0...intellij-plugin-v1.21.0) (2024-09-22)
 
 
