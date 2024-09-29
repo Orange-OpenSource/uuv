@@ -1,3 +1,15 @@
+# [2.29.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.28.0...runner-commons-v2.29.0) (2024-09-29)
+
+
+### Bug Fixes
+
+* **assistant:** update codemirror ([2eb05a4](https://github.com/Orange-OpenSource/uuv/commit/2eb05a46b68ce549dc72cc98c62c09c0dbcfd42f))
+
+
+### Features
+
+* **runner-cypress:** update dependency cypress to v13.15.0 ([4a5c3a0](https://github.com/Orange-OpenSource/uuv/commit/4a5c3a05b9c8dc0071275094ccd92efc63644054))
+
 # [2.28.0](https://github.com/Orange-OpenSource/uuv/compare/runner-commons-v2.27.0...runner-commons-v2.28.0) (2024-09-22)
 
 
