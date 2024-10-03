@@ -31,7 +31,6 @@
   ],
   "scripts": {
     "dev": "cross-env ELECTRON_IS_DEV=true electron .",
-    "build:copy-files": "node copy-files.js",
     "build": "electron-packager . uuv-assistant --platform=win32 --arch=x64 --out dist --icon ../../uuv.ico --overwrite --ignore copy-files.js --ignore project.json && electron-installer-zip dist/uuv-assistant-win32-x64 dist/uuv-assistant-win32-x64.zip"
   },
   "browser": {

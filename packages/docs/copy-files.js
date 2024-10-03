@@ -15,8 +15,8 @@ const fs = require("fs");
 
 function copyFiles() {
   console.log("Copying files");
-  fs.copyFileSync("index.html", "../docs/static/assistant/index.html");
-  fs.copyFileSync("style.css", "../docs/static/assistant/style.css");
+  fs.copyFileSync("../assistant-electron/index.html", "./static/assistant/index.html");
+  fs.copyFileSync("../assistant-electron/style.css", "./static/assistant/style.css");
   console.log("Files copied");
 }
 
