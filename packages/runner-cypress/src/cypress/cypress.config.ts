@@ -129,8 +129,11 @@ export async function setupNodeEvents (
 
   function initA11yReport(reportFilePath: string) {
     const emptyReport = {
-      date: (new Date()).toISOString(),
-      features: []
+      app: {
+        name: "First App",
+        description: "A first application",
+        usecases: []
+      }
     };
     fs.writeFileSync(reportFilePath, JSON.stringify(emptyReport, null, 4), { flag: "w" });
   }
