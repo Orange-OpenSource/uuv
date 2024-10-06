@@ -1,3 +1,18 @@
+# [2.32.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.31.0...assistant-v2.32.0) (2024-10-06)
+
+
+### Bug Fixes
+
+* **assistant:** update dependency @uiw/codemirror-theme-github to v4.23.5 ([d34df74](https://github.com/Orange-OpenSource/uuv/commit/d34df74d8fbd56f2cb2a6dd9168ccc148d598289))
+* **assistant:** update dependency @uiw/react-codemirror to v4.23.5 ([9767585](https://github.com/Orange-OpenSource/uuv/commit/9767585affc6d2173a72c6ac661ceed355fd7ba5))
+* **runner-playwright:** update dependency axe-playwright to v2.0.3 ([b9a0450](https://github.com/Orange-OpenSource/uuv/commit/b9a0450f378ee22850cdf9916eb5ee768ff772f5))
+
+
+### Features
+
+* **assistant:** update dependency antd to v5.21.2 ([4217eea](https://github.com/Orange-OpenSource/uuv/commit/4217eea842a5e2b77cddd37062137f78de757a65))
+* **runner-playwright:** update dependency multiple-cucumber-html-reporter to v3.8.0 ([60ac2e5](https://github.com/Orange-OpenSource/uuv/commit/60ac2e5d4c60f035299fd10fbfa5907ade72dd1c))
+
 # [2.31.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.30.0...assistant-v2.31.0) (2024-09-29)
 
 
