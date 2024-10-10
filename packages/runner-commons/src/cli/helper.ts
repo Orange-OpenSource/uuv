@@ -63,6 +63,7 @@ export class UUVCliHelper {
         return {
             // eslint-disable-next-line dot-notation
             baseUrl: process.env["UUV_BASE_URL"],
+            projectDir,
             browser,
             extraArgs: env,
             targetTestFile,

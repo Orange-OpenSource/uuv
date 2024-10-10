@@ -41,31 +41,41 @@ export const injectUvvA11y = () => {
 };
 
 export const checkUvvA11y = (reference: A11yReferenceEnum, expectedResult?: any, isContainsMode = false) => {
+    
     cy.window({ log: false })
         .then((win: any) => {
-            const url = win.location.href;
-            const rgaaChecker = getA11yCheckerForReference(win, reference, url);
-            assert.isDefined(rgaaChecker, "A11y reference not found");
-            return (rgaaChecker?.validate(
-                Cypress.currentTest.title,
-                "empty Script",
-                {
-                    file: Cypress.spec.relative,
-                    column: 0,
-                    line: 0
-                }
-            ) as Observable<UuvA11yResultUsecase>)
-                .pipe(
-                    tap((reportOfUsecase: UuvA11yResultUsecase) => {
-                        if (shouldGenerateA11yReport()) {
-                            storeA11yResult(reportOfUsecase);
+            return new Cypress.Promise(async (resolve, reject) => {
+                try {
+                    const url = win.location.href;
+                    const rgaaChecker = getA11yCheckerForReference(win, reference, url);
+                    assert.isDefined(rgaaChecker, "A11y reference not found");
+                    const validation = () => (rgaaChecker?.validate(
+                        Cypress.currentTest.title,
+                        "empty Script",
+                        {
+                            file: Cypress.spec.relative,
+                            column: 0,
+                            line: 0
                         }
+                    ) as Observable<UuvA11yResultUsecase>).toPromise();
+                    const reportOfUsecase = await validation();
+                    if (shouldGenerateA11yReport() && reportOfUsecase) {
+                        storeA11yResult(reportOfUsecase).then(() => {
+                            logAllA11yRuleResult(reference, reportOfUsecase);
+                            assertWithExpectedResult(reportOfUsecase, expectedResult, isContainsMode);
+                            resolve();
+                        });
+                    } else {
                         logAllA11yRuleResult(reference, reportOfUsecase);
                         assertWithExpectedResult(reportOfUsecase, expectedResult, isContainsMode);
-                    })
-                )
-                .toPromise();
+                        resolve();
+                    }
+                } catch (error) {
+                    reject(error);
+                }
+            });
         });
+    
 };
 
 export const showUvvA11yReport = (reference: A11yReferenceEnum) => {
@@ -100,7 +110,7 @@ function getA11yCheckerForReference(win: any, reference: A11yReferenceEnum, url)
     return checker;
 }
 
-function assertWithExpectedResult(reportOfUsecase: UuvA11yResultUsecase, expectedResult?: any, isContainsMode = false) {
+function assertWithExpectedResult(reportOfUsecase?: UuvA11yResultUsecase, expectedResult?: any, isContainsMode = false) {
     const validationFailedMessage = "A11y validation failed";
     if (expectedResult) {
         // if (!isContainsMode) {
@@ -111,13 +121,13 @@ function assertWithExpectedResult(reportOfUsecase: UuvA11yResultUsecase, expecte
         // }
         throw new Error("Not implemented");
     } else {
-        assert.equal(reportOfUsecase.result.issues.filter(issue => issue.type === IssueType.Error).length, 0, validationFailedMessage);
-        assert.equal(reportOfUsecase.result.issues.filter(issue => issue.type === IssueType.Warning).length, 0, validationFailedMessage);
+        assert.equal(reportOfUsecase?.result.issues.filter(issue => issue.type === IssueType.Error).length, 0, validationFailedMessage);
+        assert.equal(reportOfUsecase?.result.issues.filter(issue => issue.type === IssueType.Warning).length, 0, validationFailedMessage);
     }
 }
 
-function logAllA11yRuleResult(reference: A11yReferenceEnum, reportOfUsecase: UuvA11yResultUsecase) {
-    reportOfUsecase.result.issues.forEach(a11yIssue => {
+function logAllA11yRuleResult(reference: A11yReferenceEnum, reportOfUsecase?: UuvA11yResultUsecase) {
+    reportOfUsecase?.result.issues.forEach(a11yIssue => {
         // logValidatingA11yRule(result.reference, ruleResult);
         logA11yRuleResult(reference, a11yIssue);
     });

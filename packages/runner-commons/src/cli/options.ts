@@ -6,6 +6,7 @@ export enum UUV_TARGET_COMMAND {
 
 export type UUVCliOptions = {
     baseUrl: string;
+    projectDir: string;
     command: UUV_TARGET_COMMAND;
     browser: string;
     targetTestFile: string;
