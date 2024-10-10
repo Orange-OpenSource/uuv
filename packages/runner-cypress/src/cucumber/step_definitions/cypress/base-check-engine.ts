@@ -517,8 +517,8 @@ Then(`${key.then.element.withSelector}`, function(selector: string) {
 Then(
  `${key.then.a11y.axecore.default}`,
   function() {
-   cy.injectAxe();
-   cy.checkA11y();
+    cy.injectUvvA11y();
+    cy.checkUvvA11y(A11yReferenceEnum.WCAG_WEB);
  });
 
 /**

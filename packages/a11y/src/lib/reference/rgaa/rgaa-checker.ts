@@ -1,9 +1,9 @@
 import { Observable } from "rxjs";
-import { A11yChecker } from "../../model";
 import { Engine } from "../../engine/engine";
 import { A11Y_RGAA_REFERENCE } from "./rgaa-reference";
+import { A11yChecklistChecker } from "../../model/checklist-checker";
 
-export class RgaaChecker extends A11yChecker {
+export class RgaaChecker extends A11yChecklistChecker {
     emitter: Observable<boolean> = new Observable();
 
     constructor(url: string, enabledRules?: string[]) {

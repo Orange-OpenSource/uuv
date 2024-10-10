@@ -14,14 +14,15 @@
 
 import {
     A11yChecker,
-    A11yReference, A11yReferenceEnum,
-    A11yResult,
-    A11yResultStatus,
-    A11yRuleResult,
+    A11yReferenceEnum,
     NodeToCheckManually,
-    NonCompliantNode
+    NonCompliantNode,
+    UuvA11yResult,
+    UuvA11yResultUsecase,
+    AccessibilityIssue,
+    IssueType
 } from "@uuv/a11y";
-import { tap } from "rxjs";
+import { tap, Observable } from "rxjs";
 import ObjectLike = Cypress.ObjectLike;
 import $ from "jquery";
 import { getA11yResultFilePath, shouldGenerateA11yReport } from "./_.common";
@@ -40,23 +41,41 @@ export const injectUvvA11y = () => {
 };
 
 export const checkUvvA11y = (reference: A11yReferenceEnum, expectedResult?: any, isContainsMode = false) => {
+    
     cy.window({ log: false })
         .then((win: any) => {
-            const url = win.location.href;
-            const rgaaChecker = getA11yCheckerForReference(win, reference, url);
-            assert.isDefined(rgaaChecker, "A11y reference not found");
-            return rgaaChecker?.validate()
-                .pipe(
-                    tap((result: A11yResult) => {
-                        if (shouldGenerateA11yReport()) {
-                            storeA11yResult(result);
+            return new Cypress.Promise(async (resolve, reject) => {
+                try {
+                    const url = win.location.href;
+                    const rgaaChecker = getA11yCheckerForReference(win, reference, url);
+                    assert.isDefined(rgaaChecker, "A11y reference not found");
+                    const validation = () => (rgaaChecker?.validate(
+                        Cypress.currentTest.title,
+                        "empty Script",
+                        {
+                            file: Cypress.spec.relative,
+                            column: 0,
+                            line: 0
                         }
-                        logAllA11yRuleResult(result);
-                        assertWithExpectedResult(result, expectedResult, isContainsMode);
-                    })
-                )
-                .toPromise();
+                    ) as Observable<UuvA11yResultUsecase>).toPromise();
+                    const reportOfUsecase = await validation();
+                    if (shouldGenerateA11yReport() && reportOfUsecase) {
+                        storeA11yResult(reportOfUsecase).then(() => {
+                            logAllA11yRuleResult(reference, reportOfUsecase);
+                            assertWithExpectedResult(reportOfUsecase, expectedResult, isContainsMode);
+                            resolve();
+                        });
+                    } else {
+                        logAllA11yRuleResult(reference, reportOfUsecase);
+                        assertWithExpectedResult(reportOfUsecase, expectedResult, isContainsMode);
+                        resolve();
+                    }
+                } catch (error) {
+                    reject(error);
+                }
+            });
         });
+    
 };
 
 export const showUvvA11yReport = (reference: A11yReferenceEnum) => {
@@ -72,9 +91,12 @@ export const showUvvA11yReport = (reference: A11yReferenceEnum) => {
 };
 
 function getA11yCheckerForReference(win: any, reference: A11yReferenceEnum, url): A11yChecker | undefined {
-    let rgaaChecker;
+    let checker;
+    console.log("reference", reference);
     switch (reference) {
         case A11yReferenceEnum.WCAG_WEB:
+            console.log("WcagChecker");
+            checker = new win.uuvA11y.WcagChecker(url);
             break;
         case A11yReferenceEnum.WCAG_ANDROID:
             break;
@@ -82,46 +104,48 @@ function getA11yCheckerForReference(win: any, reference: A11yReferenceEnum, url)
             break;
         case A11yReferenceEnum.RGAA:
         default:
-            rgaaChecker = new win.uuvA11y.RgaaChecker(url);
+            checker = new win.uuvA11y.RgaaChecker(url);
             break;
     }
-    return rgaaChecker;
+    return checker;
 }
 
-function assertWithExpectedResult(result: A11yResult, expectedResult?: any, isContainsMode = false) {
+function assertWithExpectedResult(reportOfUsecase?: UuvA11yResultUsecase, expectedResult?: any, isContainsMode = false) {
     const validationFailedMessage = "A11y validation failed";
     if (expectedResult) {
-        if (!isContainsMode) {
-            assert.deepEqual(result.summary(), expectedResult, validationFailedMessage);
-        } else {
-            cy.wrap(result.summary())
-                .should("containSubset", expectedResult);
-        }
+        // if (!isContainsMode) {
+        //     assert.deepEqual(report.summary(), expectedResult, validationFailedMessage);
+        // } else {
+        //     cy.wrap(report.summary())
+        //         .should("containSubset", expectedResult);
+        // }
+        throw new Error("Not implemented");
     } else {
-        assert.notEqual(result.status, A11yResultStatus.ERROR, validationFailedMessage);
-        assert.notEqual(result.status, A11yResultStatus.UNKNOWN, validationFailedMessage);
+        assert.equal(reportOfUsecase?.result.issues.filter(issue => issue.type === IssueType.Error).length, 0, validationFailedMessage);
+        assert.equal(reportOfUsecase?.result.issues.filter(issue => issue.type === IssueType.Warning).length, 0, validationFailedMessage);
     }
 }
 
-function logAllA11yRuleResult(result: A11yResult) {
-    result.ruleResults.forEach(ruleResult => {
+function logAllA11yRuleResult(reference: A11yReferenceEnum, reportOfUsecase?: UuvA11yResultUsecase) {
+    reportOfUsecase?.result.issues.forEach(a11yIssue => {
         // logValidatingA11yRule(result.reference, ruleResult);
-        logA11yRuleResult(result.reference, ruleResult);
+        logA11yRuleResult(reference, a11yIssue);
     });
 }
 
-function logA11yRuleResult(reference: A11yReference, ruleResult: A11yRuleResult) {
-    switch (ruleResult.status) {
-        case A11yResultStatus.ERROR:
-            logNonCompliantNode(reference, ruleResult);
+function logA11yRuleResult(reference: A11yReferenceEnum, a11yIssue: AccessibilityIssue) {
+    switch (a11yIssue.type) {
+        case "error":
+        case "warning":
+            logNonCompliantNode(reference, a11yIssue, a11yIssue.type);
             break;
-        case A11yResultStatus.MANUAL:
-            logNodeToCheckManually(reference, ruleResult);
-            break;
-        case A11yResultStatus.UNKNOWN:
-            break;
-        case A11yResultStatus.SUCCESS:
-            break;
+        // case A11yResultStatus.MANUAL:
+        //     logNodeToCheckManually(reference, ruleResult);
+        //     break;
+        // case A11yResultStatus.UNKNOWN:
+        //     break;
+        // case A11yResultStatus.SUCCESS:
+        //     break;
     }
 }
 
@@ -136,54 +160,56 @@ function buildCypressLog(name: string, message: string, consoleLog?: ObjectLike)
     });
 }
 
-function logNonCompliantNode(reference: A11yReference, ruleResult: A11yRuleResult) {
-    const errorNodes = ruleResult.getErrorNodes();
+function logNonCompliantNode(reference: A11yReferenceEnum, a11yIssue: AccessibilityIssue, type: "error" | "warning") {
+    const errorNode = a11yIssue.htmlElement;
     const log = buildCypressLog(
-        `${reference.name} error !`,
-        `criteria ${ruleResult.rule.criterion} on ${errorNodes.length} nodes`,
-        getConsoleDetails(reference, ruleResult, errorNodes)
+        `${reference.toString()} error !`,
+        `criteria ${a11yIssue.code} with message : ${a11yIssue.message}`,
+        getConsoleDetails(a11yIssue, errorNode as any)
     );
-    errorNodes.forEach(nonCompliantNode => log.set({ $el: $(nonCompliantNode.node as any) }).snapshot());
-    log.error(new Error(`Validation failed on ${errorNodes.length} nodes`));
+    if (errorNode) {
+        log.set({ $el: $(errorNode as any) }).snapshot();
+    }
+    log.error(new Error(`Validation ${type} on node: ${errorNode}`));
 }
 
-function logNodeToCheckManually(reference: A11yReference, ruleResult: A11yRuleResult) {
-    const nodesToCheckManually = ruleResult.getNodesToCheckManually();
-    const log = buildCypressLog(
-        `${reference.name} to validate manually !`,
-        `criteria ${ruleResult.rule.criterion} on ${nodesToCheckManually.length} nodes`,
-        getConsoleDetails(reference, ruleResult, nodesToCheckManually)
-    );
-    nodesToCheckManually.forEach(nodeToCheck => log.set({ $el: $(nodeToCheck.node.domNode) }).snapshot());
-    log.finish();
-}
+// function logNodeToCheckManually(reference: A11yReferenceEnum, ruleResult: A11yRuleResult) {
+//     const nodesToCheckManually = ruleResult.getNodesToCheckManually();
+//     const log = buildCypressLog(
+//         `${reference.toString()} to validate manually !`,
+//         `criteria ${ruleResult.rule.criterion} on ${nodesToCheckManually.length} nodes`,
+//         getConsoleDetails(reference, ruleResult, nodesToCheckManually)
+//     );
+//     nodesToCheckManually.forEach(nodeToCheck => log.set({ $el: $(nodeToCheck.node.domNode) }).snapshot());
+//     log.finish();
+// }
 
-function getConsoleDetails(reference: A11yReference, ruleResult: A11yRuleResult, nodes: (NonCompliantNode | NodeToCheckManually)[]) {
+function getConsoleDetails(a11yIssue: AccessibilityIssue, nodes: (NonCompliantNode | NodeToCheckManually)[]) {
     return {
-        Id: ruleResult.rule.id,
-        WCAG: ruleResult.rule.wcag,
-        targetUrl: ruleResult.url,
-        Criteria: ruleResult.rule.criterion,
-        "Element type": ruleResult.rule.elementType,
-        Description: ruleResult.rule.description,
-        Help: `${ruleResult.rule.help}, ${reference.getRuleUrl(ruleResult.rule.id)}`,
+        // Id: a11yIssue.runnerExtras.help rule.id,
+        // WCAG: a11yIssue.code,
+        // targetUrl: ruleResult.url,
+        Criteria: a11yIssue.code,
+        // "Element type": ruleResult.rule.elementType,
+        Help: `${a11yIssue.runnerExtras.help}, ${a11yIssue.runnerExtras.helpUrl}`,
+        // Help: ruleResult.rule.help,
         nodes: nodes
     };
 }
 
-function storeA11yResult(a11yResult: A11yResult) {
-    const resultToAdd = {
-        target: Cypress.currentTest,
-        a11yResult,
-    };
-    return readA11yReport().then((list) => {
-        list.features.push(resultToAdd);
-        writeA11yReport(list);
+function storeA11yResult(reportOfUsecase: UuvA11yResultUsecase): Cypress.Chainable<any> {
+    reportOfUsecase.result.issues.forEach(issue => delete issue.htmlElement);
+    console.log("reportOfUsecase", reportOfUsecase);
+    return readA11yReport().then((report: any) => {
+        console.log("report", report);
+        report.app.usecases.push(reportOfUsecase);
+        writeA11yReport(report);
     });
 }
 
-function readA11yReport() {
+function readA11yReport(): Cypress.Chainable<any> {
     const filePath = getA11yResultFilePath();
+    console.log("filePath", filePath);
     return cy.readFile(filePath);
 }
 
