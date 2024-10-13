@@ -18,7 +18,7 @@ env:
 
 jobs:
   install:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - name: Cache node modules
@@ -45,7 +45,7 @@ jobs:
       - run: npm ci
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: install
     steps:
       - uses: actions/checkout@v4
@@ -83,7 +83,7 @@ jobs:
           path: packages/docs/build
 
   build-electron:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: install
     steps:
       - uses: actions/checkout@v4
@@ -116,7 +116,7 @@ jobs:
             packages/assistant-electron/dist/uuv-assistant-win32-x64.zip
 
   unit-tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: install
     steps:
       - uses: actions/checkout@v4
@@ -135,7 +135,7 @@ jobs:
           reporter: jest-junit
 
   unit-tests-a11y:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: [ lint, unit-tests, build, build-electron ]
     steps:
       - uses: actions/checkout@v4
@@ -155,7 +155,7 @@ jobs:
           reporter: jest-junit
 
   integration-tests-assistant:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: [ lint, unit-tests, build, build-electron ]
     steps:
       - uses: actions/checkout@v4
@@ -174,7 +174,7 @@ jobs:
           reporter: jest-junit
 
   unit-tests-cypress:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     container:
       image: cypress/browsers:node18.12.0-chrome107
     needs: [ lint, unit-tests, build, build-electron ]
@@ -201,7 +201,7 @@ jobs:
         run: npx nx verify-report runner-cypress
 
   unit-tests-playwright:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: [ lint, unit-tests, build, build-electron ]
     steps:
       - uses: actions/checkout@v4
@@ -226,7 +226,7 @@ jobs:
         run: npx nx verify-report runner-playwright
 
   unit-tests-runner-flutter:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: [ lint, unit-tests, build, build-electron ]
     steps:
       - uses: actions/checkout@v3
@@ -238,7 +238,7 @@ jobs:
           generate-test: "true"
 
   integration-tests-cypress:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     container:
       image: e2etesting/uuv
     needs: [ lint, unit-tests, build, build-electron ]
@@ -290,7 +290,7 @@ jobs:
           reporter: jest-junit
 
   integration-tests-playwright:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     container:
       image: e2etesting/uuv
     needs: [ lint, unit-tests, build, build-electron ]
@@ -337,7 +337,7 @@ jobs:
           reporter: jest-junit
 
   lint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: install
     steps:
       - uses: actions/checkout@v4
@@ -354,7 +354,7 @@ jobs:
   release:
     if: github.ref == 'refs/heads/main'
     needs: [ integration-tests-cypress, integration-tests-playwright, unit-tests-a11y, unit-tests-playwright, unit-tests-cypress, integration-tests-assistant, unit-tests-runner-flutter ]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     environment: release
     steps:
       - uses: actions/checkout@v4
@@ -400,7 +400,7 @@ jobs:
 
   publish-npm:
     if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: [ release ]
     steps:
       - uses: actions/checkout@v4
@@ -423,7 +423,7 @@ jobs:
 
   publish-vscode:
     if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     environment: vscode
     needs: [ release, publish-npm ]
     steps:
@@ -457,7 +457,7 @@ jobs:
 
   publish-intellij:
     if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     environment: intellij
     needs: [ release ]
     steps:
@@ -492,7 +492,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
