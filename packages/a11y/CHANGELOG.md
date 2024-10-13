@@ -1,3 +1,16 @@
+# [1.0.0-beta.47](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.46...a11y-v1.0.0-beta.47) (2024-10-13)
+
+
+### Bug Fixes
+
+* **assistant:** update dependency antd to v5.21.3 ([a472e5c](https://github.com/Orange-OpenSource/uuv/commit/a472e5cc5d3801c03bb7a8d63e233f5cfef8fa07))
+
+
+### Features
+
+* **runner-commons:** update dependency figlet to v1.8.0 ([40314a6](https://github.com/Orange-OpenSource/uuv/commit/40314a64a4fe9f3b2b0edb0a6b1cb5259734bea4))
+* **runner-playwright:** update playwright monorepo to v1.48.0 ([9aa7541](https://github.com/Orange-OpenSource/uuv/commit/9aa75414bc87e90a17b752875c4bead0f99c2d50))
+
 # [1.0.0-beta.46](https://github.com/Orange-OpenSource/uuv/compare/a11y-v1.0.0-beta.45...a11y-v1.0.0-beta.46) (2024-10-06)
 
 
