@@ -1,3 +1,18 @@
+# [1.60.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.59.0...docs-v1.60.0) (2024-10-13)
+
+
+### Bug Fixes
+
+* **assistant:** update dependency antd to v5.21.3 ([a472e5c](https://github.com/Orange-OpenSource/uuv/commit/a472e5cc5d3801c03bb7a8d63e233f5cfef8fa07))
+* **runner-playwright:** replace PW_JUNIT_OUTPUT_NAME by PW_JUNIT_OUTPUT_FILE for junit report ([5843b45](https://github.com/Orange-OpenSource/uuv/commit/5843b45684bbb19875dbbbf7950d4783c21a3228))
+
+
+### Features
+
+* **docs:** adding hover effects to components and buttons ([f71b10d](https://github.com/Orange-OpenSource/uuv/commit/f71b10db7476c2761078b03232f0fa0d31cb9341))
+* **runner-commons:** update dependency figlet to v1.8.0 ([40314a6](https://github.com/Orange-OpenSource/uuv/commit/40314a64a4fe9f3b2b0edb0a6b1cb5259734bea4))
+* **runner-playwright:** update playwright monorepo to v1.48.0 ([9aa7541](https://github.com/Orange-OpenSource/uuv/commit/9aa75414bc87e90a17b752875c4bead0f99c2d50))
+
 # [1.59.0](https://github.com/Orange-OpenSource/uuv/compare/docs-v1.58.0...docs-v1.59.0) (2024-10-06)
 
 
