@@ -82,7 +82,7 @@ export class UUVCliPlaywrightRunner implements UUVCliRunner {
             if (options.report?.junit.enabled) {
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 // @ts-ignore
-                process.env.PLAYWRIGHT_JUNIT_OUTPUT_NAME = options.report?.junit.outputFile;
+                process.env.PLAYWRIGHT_JUNIT_OUTPUT_FILE = options.report?.junit.outputFile;
                 reporter = `${reporter},junit`;
             }
 
