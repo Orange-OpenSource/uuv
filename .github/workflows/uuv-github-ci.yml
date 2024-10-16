@@ -38,6 +38,7 @@ jobs:
             packages/runner-cypress/node_modules
             packages/runner-playwright/node_modules
             packages/vscode-extension/node_modules
+            packages/a11y-dashboard/node_modules
       - name: Use Node.js ${{env.NODE_VERSION}}
         uses: actions/setup-node@v4
         with:
@@ -76,6 +77,7 @@ jobs:
             packages/a11y/dist
             packages/a11y/bundle
             packages/assistant-electron/dist/uuv-assistant-win32-x64.zip
+            packages/a11y-dashboard/.output
       - name: Upload docs artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -102,6 +104,7 @@ jobs:
             packages/runner-cypress/node_modules
             packages/runner-playwright/node_modules
             packages/vscode-extension/node_modules
+            packages/a11y-dashboard/node_modules
       - name: Use Node.js ${{ inputs.node-version }}
         uses: actions/setup-node@v4
         with:
@@ -133,12 +136,18 @@ jobs:
             packages/runner-cypress/node_modules
             packages/runner-playwright/node_modules
             packages/vscode-extension/node_modules
+            packages/a11y-dashboard/node_modules
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+          path: packages
       - name: Use Node.js ${{ inputs.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ inputs.node-version }}
       - name: Build images
-        run: npx nx run-many --target=docker:build -p docker-images
+        run: npx nx run-many --target=docker:build
 
   unit-tests:
     runs-on: ubuntu-22.04
@@ -282,6 +291,7 @@ jobs:
             packages/runner-cypress/node_modules
             packages/runner-playwright/node_modules
             packages/vscode-extension/node_modules
+            packages/a11y-dashboard/node_modules
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
@@ -334,6 +344,7 @@ jobs:
             packages/runner-cypress/node_modules
             packages/runner-playwright/node_modules
             packages/vscode-extension/node_modules
+            packages/a11y-dashboard/node_modules
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
@@ -466,6 +477,7 @@ jobs:
             packages/runner-cypress/node_modules
             packages/runner-playwright/node_modules
             packages/vscode-extension/node_modules
+            packages/a11y-dashboard/node_modules
       - name: Download Release artifact
         uses: actions/download-artifact@v4
         with:

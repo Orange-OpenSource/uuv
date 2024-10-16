@@ -63,6 +63,7 @@ export class UUVCliHelper {
         return {
             // eslint-disable-next-line dot-notation
             baseUrl: process.env["UUV_BASE_URL"],
+            projectDir: path.join(process.cwd(), projectDir),
             browser,
             extraArgs: env,
             targetTestFile,
@@ -71,6 +72,7 @@ export class UUVCliHelper {
                 outputDir: reportDir,
                 a11y: {
                     enabled: argv.generateA11yReport,
+                    relativePath: path.join(reportDir, "a11y-report.json"),
                     outputFile: path.join(process.cwd(), reportDir, "a11y-report.json")
                 },
                 html: {
