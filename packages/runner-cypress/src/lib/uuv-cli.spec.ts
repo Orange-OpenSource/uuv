@@ -49,7 +49,30 @@ describe("UUV Cli Cypress", () => {
     expect(mockOpen).toHaveBeenCalledWith(
       {
         project: projectDir,
-        env: {}
+        env: {
+          uuvOptions: {
+            command: "open",
+            browser: "chrome",
+            baseUrl: undefined,
+            extraArgs: {},
+            report: {
+              outputDir: "reports",
+              a11y: {
+                  enabled: undefined,
+                  outputFile: path.join(process.cwd(), "reports", "a11y-report.json")
+              },
+              html: {
+                  enabled: undefined,
+                  outputDir: path.join("reports", "e2e/html")
+              },
+              junit: {
+                  enabled: undefined,
+                  outputFile: "reports/e2e/junit-report.xml"
+              }
+            },
+            targetTestFile: null
+          }
+        }
       }
     );
   });
@@ -62,7 +85,32 @@ describe("UUV Cli Cypress", () => {
         project: projectDir,
         env: {
           a: "valueA",
-          b: "valueB"
+          b: "valueB",
+          uuvOptions: {
+            command: "open",
+            browser: "chrome",
+            baseUrl: undefined,
+            extraArgs: {
+              a: "valueA",
+              b: "valueB",
+            },
+            report: {
+              outputDir: "reports",
+              a11y: {
+                  enabled: undefined,
+                  outputFile: path.join(process.cwd(), "reports", "a11y-report.json")
+              },
+              html: {
+                  enabled: undefined,
+                  outputDir: path.join("reports", "e2e/html")
+              },
+              junit: {
+                  enabled: undefined,
+                  outputFile: "reports/e2e/junit-report.xml"
+              }
+            },
+            targetTestFile: null
+          }
         }
       }
     );
