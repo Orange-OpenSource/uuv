@@ -1,3 +1,18 @@
+# [1.25.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.24.0...intellij-plugin-v1.25.0) (2024-10-20)
+
+
+### Bug Fixes
+
+* **assistant:** update dependency antd to v5.21.4 ([b4f23df](https://github.com/Orange-OpenSource/uuv/commit/b4f23df6bc3c9919e4e1e38a42b5f2d33bbe5582))
+* revert dependency @badeball/cypress-cucumber-preprocessor to v20.1.2 ([84646ae](https://github.com/Orange-OpenSource/uuv/commit/84646aed57562c6461ae561fc7bdffb98fe78c6a))
+* **runner-playwright:** update dependency axe-core to v4.10.1 ([8abc703](https://github.com/Orange-OpenSource/uuv/commit/8abc7032fd176f5d5df1fcca888aa6c6ae73e110))
+* **runner-playwright:** update playwright monorepo to v1.48.1 ([21718e8](https://github.com/Orange-OpenSource/uuv/commit/21718e8078a3bc27f7359e729f3b8a4912ba4228))
+
+
+### Features
+
+* **runner-cypress:** update dependency @badeball/cypress-cucumber-preprocessor to v21 ([f6872eb](https://github.com/Orange-OpenSource/uuv/commit/f6872eb301cf15628ca5d0c722e5137d63248048))
+
 # [1.24.0](https://github.com/Orange-OpenSource/uuv/compare/intellij-plugin-v1.23.0...intellij-plugin-v1.24.0) (2024-10-13)
 
 
