@@ -1,3 +1,14 @@
+## [2.34.1](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.34.0...assistant-v2.34.1) (2024-10-27)
+
+
+### Bug Fixes
+
+* **assistant:** update dependency @uiw/react-codemirror to v4.23.6 ([378160a](https://github.com/Orange-OpenSource/uuv/commit/378160a144eff3d0b041797c7f480cc4663eb1d3))
+* **assistant:** update dependency antd to v5.21.5 ([b212ee4](https://github.com/Orange-OpenSource/uuv/commit/b212ee4acc24452e4c4a6b91caac6d8abb854036))
+* **runner-cypress:** update dependency cypress to v13.15.1 ([b18ea16](https://github.com/Orange-OpenSource/uuv/commit/b18ea164773135b5f331947c0a1664625134cbd7))
+* **runner-playwright:** update dependency axe-core to v4.10.2 ([19c65d2](https://github.com/Orange-OpenSource/uuv/commit/19c65d2da4538d92f7d1b883b7117c3c52cedac4))
+* **runner-playwright:** update playwright monorepo to v1.48.2 ([1bce4e5](https://github.com/Orange-OpenSource/uuv/commit/1bce4e5d0a310d1fd4ea64299adf3c8e30f51d2f))
+
 # [2.34.0](https://github.com/Orange-OpenSource/uuv/compare/assistant-v2.33.0...assistant-v2.34.0) (2024-10-20)
 
 
