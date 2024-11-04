@@ -1,3 +1,6 @@
+> [!CAUTION]
+> This repository is an archive, please check the current version on the repository: https://github.com/e2e-test-quest/uuv
+
 <p align="center">  
 <a href="https://orange-opensource.github.io/uuv/">  
 <picture>  
@@ -6,6 +9,8 @@
 </a>  
 </p>  
 
+> [!CAUTION]
+> This repository is an archive, please check the current version on the repository: https://github.com/e2e-test-quest/uuv
 # UUV - User centric Usecases Validator
 <h3 align="center">  
 Discovering your application by usecase validation  

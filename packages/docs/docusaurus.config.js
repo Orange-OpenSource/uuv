@@ -28,7 +28,8 @@ const config = {
     locales: ["fr", "en"]
   },
   scripts: [
-    { src: "/uuv/script/analytics.js", async: false }
+    { src: "/uuv/script/analytics.js", async: false },
+    { src: "/uuv/script/redirectToNewUuv.js", async: false }
   ],
   presets: [
     [
