@@ -485,7 +485,7 @@ jobs:
 
   publish-docs:
     if: github.ref == 'refs/heads/main'
-    needs: [ integration-tests-cypress, integration-tests-playwright, unit-tests-a11y, unit-tests-playwright, unit-tests-cypress, integration-tests-assistant, unit-tests-runner-flutter ]
+    needs: [ build ]
     permissions:
       pages: write
       id-token: write
