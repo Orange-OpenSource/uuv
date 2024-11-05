@@ -1,0 +1,499 @@
+name: 'UUV CI'
+
+on:
+  push:
+    branches: [ "main"]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+  actions: read
+  checks: write
+
+env:
+  NODE_VERSION: 20.8.1
+  NPM_PACKAGE_SCOPE: uuv
+  UUV_BASE_URL: https://e2e-test-quest.github.io
+
+jobs:
+  install:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+          path: |
+            node_modules
+            packages/assistant/node_modules
+            packages/docs/node_modules
+            packages/a11y/node_modules
+            packages/runner-commons/node_modules
+            packages/runner-cypress/node_modules
+            packages/runner-playwright/node_modules
+            packages/vscode-extension/node_modules
+      - name: Use Node.js ${{env.NODE_VERSION}}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{env.NODE_VERSION}}
+      - run: npm ci
+
+  build:
+    runs-on: ubuntu-22.04
+    needs: install
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Build artifacts
+        uses: ./.github/actions/nx-run-many
+        with:
+          node-version: ${{env.NODE_VERSION}}
+          target: "build"
+          exclude: "assistant-electron,runner-flutter"
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          path: |
+            packages/runner-commons/dist
+            packages/runner-cypress/dist
+            packages/runner-cypress/src/cucumber/step_definitions/cypress/generated
+            packages/runner-playwright/src/cucumber/step_definitions/playwright/generated
+            packages/runner-playwright/dist
+            packages/docs/docs/03-wordings/01-generated-wording-description
+            packages/docs/static/assistant
+            packages/assistant/dist
+            packages/assistant/build
+            packages/a11y/dist
+            packages/a11y/bundle
+            packages/assistant-electron/dist/uuv-assistant-win32-x64.zip
+      - name: Upload docs artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: github-pages
+          path: packages/docs/build
+
+  build-electron:
+    runs-on: ubuntu-22.04
+    needs: install
+    steps:
+      - uses: actions/checkout@v4
+      - name: Installing Wine
+        run: sudo apt-get update -y && sudo apt install wine64
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./package-lock.json') }}
+          path: |
+            node_modules
+            packages/assistant/node_modules
+            packages/docs/node_modules
+            packages/a11y/node_modules
+            packages/runner-commons/node_modules
+            packages/runner-cypress/node_modules
+            packages/runner-playwright/node_modules
+            packages/vscode-extension/node_modules
+      - name: Use Node.js ${{ inputs.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+      - name: Build artifacts electron
+        run: npx nx build assistant-electron --verbose
+      - name: Upload build artifact electron
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts-electron
+          path: |
+            packages/assistant-electron/dist/uuv-assistant-win32-x64.zip
+
+  unit-tests:
+    runs-on: ubuntu-22.04
+    needs: install
+    steps:
+      - uses: actions/checkout@v4
+      - name: Running units tests except a11y and runner-flutter
+        uses: ./.github/actions/nx-run-many
+        with:
+          node-version: ${{env.NODE_VERSION}}
+          target: "unit-tests"
+          exclude: "a11y,runner-flutter"
+      - name: Test Report
+        uses: MichaelVoelkel/test-reporter@main
+        if: success() || failure()
+        with:
+          name: Report - Unit Tests - General
+          path: packages/**/reports/junit-report.xml
+          reporter: jest-junit
+
+  unit-tests-a11y:
+    runs-on: ubuntu-22.04
+    needs: [ lint, unit-tests, build, build-electron ]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: browser-actions/setup-chrome@v1
+      - run: chrome --version
+      - name: Running A11y unit tests with Puppeteer
+        uses: ./.github/actions/nx-test-web-runner
+        with:
+          node-version: ${{env.NODE_VERSION}}
+          runner-name: "a11y"
+      - name: Test Report
+        uses: MichaelVoelkel/test-reporter@main
+        if: success() || failure()
+        with:
+          name: Report - Unit Tests - A11y
+          path: packages/a11y/reports/junit-report.xml
+          reporter: jest-junit
+
+  integration-tests-assistant:
+    runs-on: ubuntu-22.04
+    needs: [ lint, unit-tests, build, build-electron ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Running assistant integration tests
+        uses: ./.github/actions/nx-test-web-runner
+        with:
+          node-version: ${{env.NODE_VERSION}}
+          runner-name: "assistant"
+          options: "--generateJunitReport"
+      - name: Test Report
+        uses: MichaelVoelkel/test-reporter@main
+        if: success() || failure()
+        with:
+          name: Report - Integration Tests - Assistant
+          path: packages/assistant/uuv/reports/e2e/junit-report.xml
+          reporter: jest-junit
+
+  unit-tests-cypress:
+    runs-on: ubuntu-22.04
+    container:
+      image: cypress/browsers:node18.12.0-chrome107
+    needs: [ lint, unit-tests, build, build-electron ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Running cypress unit tests
+        env:
+          UUV_BASE_URL: ${{env.UUV_BASE_URL}}
+        uses: ./.github/actions/nx-test-web-runner
+        with:
+          node-version: ${{env.NODE_VERSION}}
+          runner-name: "runner-cypress"
+          options: "--generateJunitReport --generateHtmlReport --generateA11yReport || echo 'UUV Test executed'"
+      - name: Test Report
+        uses: MichaelVoelkel/test-reporter@main
+        if: success() || failure()
+        with:
+          name: Report - Unit Tests - Cypress
+          path: packages/runner-cypress/reports/e2e/junit-report.xml
+          reporter: java-junit
+          fail-on-error: false
+      - name: Verify Junit Report
+        if: success() || failure()
+        run: npx nx verify-report runner-cypress
+
+  unit-tests-playwright:
+    runs-on: ubuntu-22.04
+    needs: [ lint, unit-tests, build, build-electron ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Running playwright unit tests
+        env:
+          UUV_BASE_URL: ${{env.UUV_BASE_URL}}
+        uses: ./.github/actions/nx-test-web-runner
+        with:
+          node-version: ${{env.NODE_VERSION}}
+          runner-name: "runner-playwright"
+          options: "--generateJunitReport --generateHtmlReport --generateA11yReport || echo 'UUV Test executed'"
+      - name: Test Report
+        uses: MichaelVoelkel/test-reporter@main
+        if: success() || failure()
+        with:
+          name: Report - Unit Tests - Playwright
+          path: packages/runner-playwright/reports/e2e/junit-report.xml
+          reporter: java-junit
+          fail-on-error: false
+      - name: Verify Junit Report
+        if: success() || failure()
+        run: npx nx verify-report runner-playwright
+
+  unit-tests-runner-flutter:
+    runs-on: ubuntu-22.04
+    needs: [ lint, unit-tests, build, build-electron ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Running runner-flutter unit tests
+        uses: ./.github/actions/nx-test-flutter-runner
+        with:
+          node-version: ${{env.NODE_VERSION}}
+          runner-name: "runner-flutter"
+          generate-test: "true"
+
+  integration-tests-cypress:
+    runs-on: ubuntu-22.04
+    container:
+      image: e2etesting/uuv
+    needs: [ lint, unit-tests, build, build-electron ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./package-lock.json') }}
+          path: |
+            node_modules
+            packages/assistant/node_modules
+            packages/docs/node_modules
+            packages/a11y/node_modules
+            packages/runner-commons/node_modules
+            packages/runner-cypress/node_modules
+            packages/runner-playwright/node_modules
+            packages/vscode-extension/node_modules
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+          path: packages
+      - name: Use Node.js ${{ inputs.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version:
+            ${{env.NODE_VERSION}}
+      - run: npm ci
+      - name: Package runner-cypress
+        run: mkdir -p ./dist/packages && npx nx package a11y && npx nx package runner-commons && npx nx package runner-cypress
+      - name: Running cypress integration tests
+        env:
+          UUV_BASE_URL: ${{env.UUV_BASE_URL}}
+        run: cd ./tests/integration && chmod 755 ./integration-tests-runner-cypress.sh && ./integration-tests-runner-cypress.sh
+      - name: Upload uuv test artifact
+        if: success() || failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: integration-tests-cypress-artifacts
+          path: |
+            tests/integration/runner-cypress/uuv/reports
+      - name: Test Report
+        uses: MichaelVoelkel/test-reporter@main
+        if: success() || failure()
+        with:
+          name: Report - Integration Tests - Cypress
+          path: tests/integration/runner-cypress/uuv/reports/e2e/junit-report.xml
+          reporter: jest-junit
+
+  integration-tests-playwright:
+    runs-on: ubuntu-22.04
+    container:
+      image: e2etesting/uuv
+    needs: [ lint, unit-tests, build, build-electron ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./package-lock.json') }}
+          path: |
+            node_modules
+            packages/assistant/node_modules
+            packages/docs/node_modules
+            packages/a11y/node_modules
+            packages/runner-commons/node_modules
+            packages/runner-cypress/node_modules
+            packages/runner-playwright/node_modules
+            packages/vscode-extension/node_modules
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+          path: packages
+      - run: npm ci
+      - name: Package runner-playwright
+        run: mkdir -p ./dist/packages && npx nx package a11y && npx nx package runner-commons && npx nx package runner-playwright
+      - name: Running playwright integration tests
+        env:
+          UUV_BASE_URL: ${{env.UUV_BASE_URL}}
+        run: cd ./tests/integration && chmod 755 ./integration-tests-runner-playwright.sh && ./integration-tests-runner-playwright.sh
+      - name: Upload uuv test artifact
+        uses: actions/upload-artifact@v4
+        if: success() || failure()
+        with:
+          name: integration-tests-playwright-artifacts
+          path: |
+            tests/integration/runner-playwright/uuv/reports
+      - name: Test Report
+        uses: MichaelVoelkel/test-reporter@main
+        if: success() || failure()
+        with:
+          name: Report - Integration Tests - Playwright
+          path: tests/integration/runner-playwright/uuv/reports/e2e/junit-report.xml
+          reporter: jest-junit
+
+  lint:
+    runs-on: ubuntu-22.04
+    needs: install
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.16.9'
+          channel: 'stable'
+      - name: Lint for all projects
+        uses: ./.github/actions/nx-run-many
+        with:
+          node-version: ${{env.NODE_VERSION}}
+          target: "lint"
+
+  release:
+    if: github.ref == 'refs/heads/main'
+    needs: [ integration-tests-cypress, integration-tests-playwright, unit-tests-a11y, unit-tests-playwright, unit-tests-cypress, integration-tests-assistant, unit-tests-runner-flutter ]
+    runs-on: ubuntu-22.04
+    environment: release
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+          path: packages
+      - name: Download build electron artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts-electron
+          path: packages/assistant-electron/dist
+      - name: Release public packages
+        uses: ./.github/actions/nx-run-many
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          node-version: ${{env.NODE_VERSION}}
+          target: "semantic-release"
+          parallel: "false"
+      - name: Update package-lock.json
+        run: npm install
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        name: Push the brand-new package-lock.json
+        with:
+          commit_message: "release: update package-lock.json [skip ci]"
+          commit_user_name: UUV Bot
+          file_pattern: "package-lock.json"
+      - name: Upload Release artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-artifacts
+          path: |
+            package-lock.json
+            dist/packages
+            packages/intellij-plugin/gradle.properties
+            packages/vscode-extension/package.json
+            packages/vscode-extension/CHANGELOG.md
+
+  publish-npm:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-22.04
+    needs: [ release ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download Release artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: release-artifacts
+      - name: Use Node.js ${{env.NODE_VERSION}}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{env.NODE_VERSION}}
+          registry-url: 'https://registry.npmjs.org'
+      - name: Publishing NPM packages
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: |
+          for packagePath in $(find dist/packages -name "*.tgz"); do
+          npm publish $packagePath --scope ${{env.NPM_PACKAGE_SCOPE}} --access public
+          done
+
+  publish-vscode:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-22.04
+    environment: vscode
+    needs: [ release, publish-npm ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./package-lock.json') }}
+          path: |
+            node_modules
+            packages/assistant/node_modules
+            packages/docs/node_modules
+            packages/a11y/node_modules
+            packages/runner-commons/node_modules
+            packages/runner-cypress/node_modules
+            packages/runner-playwright/node_modules
+            packages/vscode-extension/node_modules
+      - name: Download Release artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: release-artifacts
+      - name: Use Node.js ${{env.NODE_VERSION}}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{env.NODE_VERSION}}            
+      - run: npm install
+      - name: Publishing VsCode Extension
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        run: npx nx build vscode-extension && npx nx publish vscode-extension
+
+  publish-intellij:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-22.04
+    environment: intellij
+    needs: [ release ]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Use Node.js ${{env.NODE_VERSION}}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{env.NODE_VERSION}}
+          registry-url: 'https://registry.npmjs.org'
+      - name: Download Release artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: release-artifacts
+      - name: Publishing Intellij plugin
+        env:
+          UUV_PUBLISH_TOKEN: ${{ secrets.UUV_PUBLISH_TOKEN }}
+          UUV_PRIVATE_KEY_PASSWORD: ${{ secrets.UUV_PRIVATE_KEY_PASSWORD }}
+          UUV_PRIVATE_KEY: ${{ secrets.UUV_PRIVATE_KEY }}
+          UUV_CERTIFICATE_CHAIN: ${{ secrets.UUV_CERTIFICATE_CHAIN }}
+        run: npm install && npx nx build intellij-plugin && npx nx publish intellij-plugin
+
+  publish-docs:
+    if: github.ref == 'refs/heads/main'
+    needs: [ integration-tests-cypress, integration-tests-playwright, unit-tests-a11y, unit-tests-playwright, unit-tests-cypress, integration-tests-assistant, unit-tests-runner-flutter ]
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
